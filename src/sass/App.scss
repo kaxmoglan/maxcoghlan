@@ -1,0 +1,11 @@
+@import "page-transitions";
+
+html {
+  font-size: 20px;
+}
+
+.blog {
+  position: relative;
+  transition: all 1000ms ease;
+  transform: translateY(-10px);
+}
