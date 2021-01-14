@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // ICONS
 import {
@@ -21,6 +21,30 @@ const DATA = [
   { to: "/contact", icon: ContactIcon, text: "Contact" },
   { to: "/blog", icon: BlogIcon, text: "Blog" },
 ];
+
+export const MobileNav: React.FC = () => {
+  return (
+    <nav className="mobile-menu">
+      <Link className="mobile-menu__logo" to="/">
+        <div className="million"></div>
+        <div className="archivo">M</div>
+      </Link>
+
+      <div className="mobile-menu__container">
+        {DATA.map((item) => (
+          <NavLink
+            className="mobile-menu__link"
+            activeClassName="active"
+            to={item.to}
+            exact
+          >
+            <div className="mobile-menu__icon">{item.icon}</div>
+          </NavLink>
+        ))}
+      </div>
+    </nav>
+  );
+};
 
 export const DesktopNav: React.FC = () => {
   return (

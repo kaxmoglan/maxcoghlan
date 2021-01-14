@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 
 // COMPONENTS
-import { DesktopNav } from "./components/Nav";
+import { DesktopNav, MobileNav } from "./components/Nav";
 
 // UTIL
 import { ROUTES } from "./util/routes";
@@ -23,6 +23,15 @@ function App() {
           unmountOnExit
         >
           <DesktopNav />
+        </CSSTransition>
+
+        <CSSTransition
+          in={showNav}
+          timeout={1000}
+          classNames="mobile-menu"
+          unmountOnExit
+        >
+          <MobileNav />
         </CSSTransition>
 
         {ROUTES.map(({ path, Component }) => (

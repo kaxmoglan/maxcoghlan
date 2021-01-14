@@ -1,0 +1,5 @@
+@mixin medium-screen {
+  @media (max-height: 780px) {
+    @content;
+  }
+}

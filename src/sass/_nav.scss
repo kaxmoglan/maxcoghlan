@@ -17,6 +17,10 @@
   flex-direction: column;
   justify-content: center;
 
+  @include medium-screen {
+    display: none;
+  }
+
   .logo {
     position: absolute;
     top: 0;
@@ -59,6 +63,13 @@
     align-items: center;
     height: 6.5rem;
     transition: all 350ms ease;
+
+    &:focus {
+      outline: 0;
+      .navbar__link-icon svg {
+        color: $highlight;
+      }
+    }
 
     &-icon {
       position: relative;

@@ -1,13 +1,15 @@
-@import "colors";
-@import "page-transitions";
-@import "nav";
-
 // FONTS
 // Main font: Roboto
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
 
 // Header font: Archivo
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+@import "colors";
+@import "responsive";
+@import "page-transitions";
+@import "nav";
+@import "mobile-nav";
 
 * {
   margin: 0;
@@ -29,7 +31,7 @@ a {
 }
 
 .App {
-  transition: all 500ms ease;
+  transition: all 1000ms ease;
   width: 100vw;
   min-height: 100vh;
 
@@ -42,4 +44,9 @@ a {
     background-color: $white;
     color: $black;
   }
+}
+
+.content {
+  margin-left: 49vw;
+  margin-top: 49vh;
 }
