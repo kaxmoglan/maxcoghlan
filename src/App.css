@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 .content {
   position: absolute; }
 
@@ -38,14 +40,211 @@
   transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms, -webkit-transform 300ms; }
 
-html {
-  font-size: 20px; }
+.navbar {
+  z-index: 999;
+  width: 6.5rem;
+  height: 75rem;
+  position: fixed;
+  top: calc((100vh - 75rem) / 2);
+  left: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #707070;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  overflow: hidden;
+  background-color: rgba(29, 29, 29, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+    .navbar {
+      background-color: rgba(103, 103, 103, 0.2);
+      -webkit-backdrop-filter: blur(3px);
+              backdrop-filter: blur(3px); } }
+  .navbar .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid #707070;
+    width: 100%;
+    padding: 1.25rem 0 1rem 1.6rem; }
+    .navbar .logo .million {
+      position: absolute;
+      width: 2.5rem;
+      left: 1.8rem;
+      top: 1.25rem;
+      height: 0.4rem;
+      background-color: #dddbdb; }
+    .navbar .logo p {
+      display: inline;
+      font-size: 3.5rem;
+      font-weight: bold; }
+    .navbar .logo .aximilian {
+      -webkit-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      opacity: 0;
+      white-space: nowrap;
+      overflow: hidden; }
+  .navbar__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 6.5rem;
+    -webkit-transition: all 350ms ease;
+    -o-transition: all 350ms ease;
+    transition: all 350ms ease; }
+    .navbar__link-icon {
+      position: relative;
+      margin: 0 3rem 0 2rem; }
+      .navbar__link-icon svg {
+        -webkit-transition: all 350ms ease;
+        -o-transition: all 350ms ease;
+        transition: all 350ms ease;
+        color: #dddbdb;
+        width: 2.2rem; }
+    .navbar__link-text {
+      font-size: 2rem;
+      height: 6.5rem;
+      stroke: #08fdd8;
+      fill: #dddbdb;
+      stroke-width: 1;
+      stroke-dasharray: 250;
+      stroke-dashoffset: -250;
+      -webkit-transition: all 2000ms ease-out;
+      -o-transition: all 2000ms ease-out;
+      transition: all 2000ms ease-out; }
+      .navbar__link-text-container {
+        -webkit-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+        opacity: 0;
+        -webkit-transform: translateX(-2rem);
+            -ms-transform: translateX(-2rem);
+                transform: translateX(-2rem); }
+    .navbar__link:hover {
+      background: rgba(0, 0, 0, 0.5); }
+      .navbar__link:hover .navbar__link-icon svg {
+        color: #08fdd8; }
+      .navbar__link:hover .navbar__link-text {
+        -webkit-transition: all 750ms ease;
+        -o-transition: all 750ms ease;
+        transition: all 750ms ease;
+        stroke-dashoffset: 0;
+        fill: transparent; }
+    .navbar__link.active .navbar__link-icon svg {
+      color: #08fdd8; }
+  .navbar:hover {
+    width: 22.5rem; }
+    .navbar:hover .aximilian {
+      opacity: 1;
+      -webkit-animation: typing 750ms steps(12) forwards;
+              animation: typing 750ms steps(12) forwards;
+      -webkit-animation-delay: 500ms;
+              animation-delay: 500ms; }
+    .navbar:hover .navbar__link-text-container {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0); }
 
-.blog {
-  position: relative;
+@-webkit-keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@-webkit-keyframes blink {
+  50% {
+    border-color: transparent; } }
+
+@keyframes blink {
+  50% {
+    border-color: transparent; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif; }
+
+.archivo {
+  font-family: "Archivo", "Roboto", sans-serif; }
+
+a {
+  color: inherit; }
+
+.App {
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  width: 100vw;
+  min-height: 100vh; }
+  .App.dark {
+    background-color: #000;
+    color: #dddbdb; }
+  .App.light {
+    background-color: #fff;
+    color: #000; }
+
+#sidebar {
   -webkit-transition: all 1000ms ease;
   -o-transition: all 1000ms ease;
-  transition: all 1000ms ease;
-  -webkit-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
-          transform: translateY(-10px); }
+  transition: all 1000ms ease; }
+
+.mainNav-enter {
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px); }
+
+.mainNav-enter-active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, -webkit-transform 300ms;
+  -o-transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
+  -webkit-transition-delay: 300ms;
+       -o-transition-delay: 300ms;
+          transition-delay: 300ms; }
+
+.mainNav-exit {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+.mainNav-exit-active {
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, -webkit-transform 300ms;
+  -o-transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms; }

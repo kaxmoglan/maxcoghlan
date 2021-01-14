@@ -1,11 +1,70 @@
+@import "colors";
 @import "page-transitions";
+@import "nav";
 
-html {
-  font-size: 20px;
+// FONTS
+// Main font: Roboto
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+// Header font: Archivo
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.blog {
-  position: relative;
+html {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.archivo {
+  font-family: "Archivo", "Roboto", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.App {
+  transition: all 500ms ease;
+  width: 100vw;
+  min-height: 100vh;
+
+  &.dark {
+    background-color: $black;
+    color: $main-font;
+  }
+
+  &.light {
+    background-color: $white;
+    color: $black;
+  }
+}
+
+// EXPERIMENTS
+
+#sidebar {
   transition: all 1000ms ease;
-  transform: translateY(-10px);
+}
+
+.mainNav-enter {
+  transform: translateY(10px);
+}
+
+.mainNav-enter-active {
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+  transition-delay: 300ms;
+}
+
+.mainNav-exit {
+  transform: scale(1);
+}
+
+.mainNav-exit-active {
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
 }

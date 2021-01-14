@@ -1,9 +1,11 @@
 import React from "react";
 
-export const Blog: React.FC = () => {
+interface Props {}
+
+export const Blog: React.FC<Props> = (props) => {
   return (
     <>
-      <h1>THIS IS THE BLOG</h1>
+      <h2>Blog</h2>
     </>
   );
 };

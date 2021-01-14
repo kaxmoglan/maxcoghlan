@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
@@ -6,31 +6,25 @@ import { CSSTransition } from "react-transition-group";
 // COMPONENTS
 import { DesktopNav } from "./components/Nav";
 
-// PAGES
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Skills } from "./pages/Skills";
-import { Projects } from "./pages/Projects";
-import { Contact } from "./pages/Contact";
-import { Blog } from "./pages/Blog";
-
-// ALL ROUTES DATA
-const ROUTES = [
-  { path: "/", Component: Home },
-  { path: "/about", Component: About },
-  { path: "/skills", Component: Skills },
-  { path: "/projects", Component: Projects },
-  { path: "/contact", Component: Contact },
-  { path: "/blog", Component: Blog },
-];
+// UTIL
+import { ROUTES } from "./util/routes";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+  const [showNav, setShowNav] = useState(false);
+
   return (
     <Router>
-      <div className="App">
-        <DesktopNav />
+      <div className={`App ${theme}`}>
+        <CSSTransition
+          in={showNav}
+          timeout={1000}
+          classNames="mainNav"
+          unmountOnExit
+        >
+          <DesktopNav />
+        </CSSTransition>
 
-        {/* <div className="container"> */}
         {ROUTES.map(({ path, Component }) => (
           <Route exact key={path} path={path}>
             {({ match }) => (
@@ -41,13 +35,12 @@ function App() {
                 unmountOnExit
               >
                 <div className="content">
-                  <Component />
+                  <Component setTheme={setTheme} setShowNav={setShowNav} />
                 </div>
               </CSSTransition>
             )}
           </Route>
         ))}
-        {/* </div> */}
       </div>
     </Router>
   );

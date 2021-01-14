@@ -1,9 +1,11 @@
 import React from "react";
 
-export const Skills: React.FC = () => {
+interface Props {}
+
+export const Skills: React.FC<Props> = (props) => {
   return (
     <>
-      <h1>Skills</h1>
+      <h2>Skills</h2>
     </>
   );
 };

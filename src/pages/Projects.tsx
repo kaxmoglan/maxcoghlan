@@ -1,5 +1,11 @@
 import React from "react";
 
-export const Projects: React.FC = () => {
-  return <>PROJECTS</>;
+interface Props {}
+
+export const Projects: React.FC<Props> = (props) => {
+  return (
+    <>
+      <h2>Projects</h2>
+    </>
+  );
 };

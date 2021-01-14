@@ -1,5 +1,11 @@
 import React from "react";
 
-export const Contact: React.FC = () => {
-  return <>CONTACT</>;
+interface Props {}
+
+export const Contact: React.FC<Props> = (props) => {
+  return (
+    <>
+      <h2>Contact</h2>
+    </>
+  );
 };

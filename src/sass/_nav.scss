@@ -1,0 +1,145 @@
+.navbar {
+  z-index: 999;
+  width: 6.5rem;
+  height: 75rem;
+
+  position: fixed;
+  top: calc((100vh - 75rem) / 2);
+  left: 2rem;
+  border-radius: 1rem;
+  border: 2px solid $mid-grey;
+
+  transition: all 500ms ease;
+  overflow: hidden;
+  @include glass;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border-bottom: 2px solid $mid-grey;
+    width: 100%;
+    padding: 1.25rem 0 1rem 1.6rem;
+
+    .million {
+      position: absolute;
+      width: 2.5rem;
+      left: 1.8rem;
+      top: 1.25rem;
+      height: 0.4rem;
+      background-color: $main-font;
+    }
+
+    p {
+      display: inline;
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+
+    .aximilian {
+      transition: all 250ms ease;
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      opacity: 0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 6.5rem;
+    transition: all 350ms ease;
+
+    &-icon {
+      position: relative;
+      margin: 0 3rem 0 2rem;
+
+      svg {
+        transition: all 350ms ease;
+        color: $main-font;
+        width: 2.2rem;
+      }
+    }
+
+    &-text {
+      &-container {
+        transition: all 250ms ease;
+        opacity: 0;
+        transform: translateX(-2rem);
+      }
+
+      font-size: 2rem;
+      height: 6.5rem;
+      stroke: $highlight;
+      fill: $main-font;
+      stroke-width: 1;
+      stroke-dasharray: 250;
+      stroke-dashoffset: -250;
+      transition: all 2000ms ease-out;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+
+      .navbar__link {
+        &-icon {
+          svg {
+            color: $highlight;
+          }
+        }
+        &-text {
+          transition: all 750ms ease;
+          stroke-dashoffset: 0;
+          fill: transparent;
+        }
+      }
+    }
+
+    &.active {
+      .navbar__link-icon {
+        svg {
+          color: $highlight;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    width: 22.5rem;
+
+    .aximilian {
+      opacity: 1;
+      animation: typing 750ms steps(12) forwards;
+      animation-delay: 500ms;
+    }
+
+    .navbar__link-text-container {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+// ANIMATIONS
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
