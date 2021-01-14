@@ -1,18 +1,23 @@
 import React, { useEffect } from "react";
 
 interface Props {
+  theme: String;
   setTheme: Function;
+  showNav: Boolean;
   setShowNav: Function;
 }
 
 export const Home: React.FC<Props> = (props) => {
-  const { setShowNav, setTheme } = props;
+  const { theme, setTheme, showNav, setShowNav } = props;
 
   useEffect(() => {
-    setShowNav(true);
-    setTheme("dark");
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (theme !== "dark") {
+      setTheme("dark");
+    }
+    if (!showNav) {
+      setShowNav(true);
+    }
+    // eslint-disable-next-line
   }, []);
 
   return (

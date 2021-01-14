@@ -73,6 +73,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    color: #dddbdb;
     border-bottom: 2px solid #707070;
     width: 100%;
     padding: 1.25rem 0 1rem 1.6rem; }
@@ -161,6 +162,22 @@
       -webkit-transform: translateX(0);
           -ms-transform: translateX(0);
               transform: translateX(0); }
+  .navbar-enter {
+    -webkit-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+            transform: translateX(-100px); }
+  .navbar-enter-active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
+  .navbar-exit {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
+  .navbar-exit-active {
+    -webkit-transform: translateX(-250px);
+        -ms-transform: translateX(-250px);
+            transform: translateX(-250px); }
 
 @-webkit-keyframes typing {
   from {
@@ -210,41 +227,3 @@ a {
   .App.light {
     background-color: #fff;
     color: #000; }
-
-#sidebar {
-  -webkit-transition: all 1000ms ease;
-  -o-transition: all 1000ms ease;
-  transition: all 1000ms ease; }
-
-.mainNav-enter {
-  -webkit-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-          transform: translateY(10px); }
-
-.mainNav-enter-active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  -o-transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
-  -webkit-transition-delay: 300ms;
-       -o-transition-delay: 300ms;
-          transition-delay: 300ms; }
-
-.mainNav-exit {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1); }
-
-.mainNav-exit-active {
-  -webkit-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-          transform: translateY(10px);
-  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  -o-transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms;
-  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms; }

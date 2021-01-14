@@ -19,7 +19,7 @@ function App() {
         <CSSTransition
           in={showNav}
           timeout={1000}
-          classNames="mainNav"
+          classNames="navbar"
           unmountOnExit
         >
           <DesktopNav />
@@ -35,7 +35,12 @@ function App() {
                 unmountOnExit
               >
                 <div className="content">
-                  <Component setTheme={setTheme} setShowNav={setShowNav} />
+                  <Component
+                    theme={theme}
+                    setTheme={setTheme}
+                    showNav={showNav}
+                    setShowNav={setShowNav}
+                  />
                 </div>
               </CSSTransition>
             )}

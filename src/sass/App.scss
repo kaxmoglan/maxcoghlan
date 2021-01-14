@@ -43,28 +43,3 @@ a {
     color: $black;
   }
 }
-
-// EXPERIMENTS
-
-#sidebar {
-  transition: all 1000ms ease;
-}
-
-.mainNav-enter {
-  transform: translateY(10px);
-}
-
-.mainNav-enter-active {
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
-  transition-delay: 300ms;
-}
-
-.mainNav-exit {
-  transform: scale(1);
-}
-
-.mainNav-exit-active {
-  transform: translateY(10px);
-  transition: opacity 300ms, transform 300ms;
-}
