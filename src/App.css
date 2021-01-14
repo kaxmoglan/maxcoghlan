@@ -318,6 +318,52 @@
         -ms-transform: translateY(-100px);
             transform: translateY(-100px); }
 
+.social {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease; }
+  @media (max-height: 760px) {
+    .social {
+      display: none; } }
+  .social__link {
+    margin: 0 0.5rem; }
+    .social__link svg {
+      height: 2rem;
+      color: #707070;
+      -webkit-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease; }
+    .social__link:hover svg {
+      color: #08fdd8; }
+  .social-enter {
+    -webkit-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+            transform: translateX(200px); }
+  .social-enter-active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
+  .social-exit {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
+  .social-exit-active {
+    -webkit-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+            transform: translateX(200px); }
+
 * {
   margin: 0;
   padding: 0;

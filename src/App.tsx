@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 
 // COMPONENTS
 import { DesktopNav, MobileNav } from "./components/Nav";
+import Social from "./components/Social";
 
 // UTIL
 import { ROUTES } from "./util/routes";
@@ -16,6 +17,15 @@ function App() {
   return (
     <Router>
       <div className={`App ${theme}`}>
+        <CSSTransition
+          in={showNav && theme === "dark"}
+          timeout={1000}
+          classNames="social"
+          unmountOnExit
+        >
+          <Social />
+        </CSSTransition>
+
         <CSSTransition
           in={showNav}
           timeout={1000}

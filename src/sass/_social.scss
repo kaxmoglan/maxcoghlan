@@ -1,0 +1,43 @@
+.social {
+  @include medium-screen {
+    display: none;
+  }
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 500ms ease;
+
+  &__link {
+    margin: 0 0.5rem;
+    svg {
+      height: 2rem;
+      color: $mid-grey;
+      transition: all 250ms ease;
+    }
+
+    &:hover {
+      svg {
+        color: $highlight;
+      }
+    }
+  }
+
+  &-enter {
+    transform: translateX(200px);
+  }
+
+  &-enter-active {
+    transform: translateX(0);
+  }
+
+  &-exit {
+    transform: translateX(0);
+  }
+
+  &-exit-active {
+    transform: translateX(200px);
+  }
+}
