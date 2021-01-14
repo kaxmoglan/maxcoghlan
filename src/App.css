@@ -69,7 +69,7 @@
       background-color: rgba(103, 103, 103, 0.2);
       -webkit-backdrop-filter: blur(3px);
               backdrop-filter: blur(3px); } }
-  @media (max-height: 780px) {
+  @media (max-height: 760px) {
     .navbar {
       display: none; } }
   .navbar .logo {
@@ -126,7 +126,7 @@
         color: #dddbdb;
         width: 2.2rem; }
     .navbar__link-text {
-      font-size: 2rem;
+      font-size: 1.8rem;
       height: 6.5rem;
       stroke: #08fdd8;
       fill: #dddbdb;
@@ -207,23 +207,27 @@
     border-color: transparent; } }
 
 .mobile-menu {
+  display: none;
   position: fixed;
   top: 1rem;
   width: 90vw;
   height: 6rem;
   left: 0;
   right: 0;
+  z-index: 999;
   margin: auto;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border: 2px solid #707070;
   border-radius: 1rem;
   background-color: rgba(29, 29, 29, 0.8);
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease; }
+  @media (max-height: 760px) {
+    .mobile-menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
   @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
     .mobile-menu {
       background-color: rgba(103, 103, 103, 0.2);
@@ -324,6 +328,12 @@ html {
   font-size: 10px;
   font-family: "Roboto", sans-serif; }
 
+html,
+body,
+#root,
+.App {
+  height: 100%; }
+
 .archivo {
   font-family: "Archivo", "Roboto", sans-serif; }
 
@@ -333,9 +343,7 @@ a {
 .App {
   -webkit-transition: all 1000ms ease;
   -o-transition: all 1000ms ease;
-  transition: all 1000ms ease;
-  width: 100vw;
-  min-height: 100vh; }
+  transition: all 1000ms ease; }
   .App.dark {
     background-color: #000;
     color: #dddbdb; }

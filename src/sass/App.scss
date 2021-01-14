@@ -22,6 +22,13 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
 .archivo {
   font-family: "Archivo", "Roboto", sans-serif;
 }
@@ -32,8 +39,6 @@ a {
 
 .App {
   transition: all 1000ms ease;
-  width: 100vw;
-  min-height: 100vh;
 
   &.dark {
     background-color: $black;

@@ -1,13 +1,17 @@
 .mobile-menu {
+  @include medium-screen {
+    display: flex;
+  }
+  display: none;
   position: fixed;
   top: 1rem;
   width: 90vw;
   height: 6rem;
   left: 0;
   right: 0;
+  z-index: 999;
   margin: auto;
   overflow: hidden;
-  display: flex;
   border: 2px solid $mid-grey;
   border-radius: 1rem;
   @include glass;
