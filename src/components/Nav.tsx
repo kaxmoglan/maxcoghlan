@@ -33,10 +33,12 @@ export const MobileNav: React.FC = () => {
       <div className="mobile-menu__container">
         {DATA.map((item) => (
           <NavLink
+            key={item.to}
             className="mobile-menu__link"
             activeClassName="active"
             to={item.to}
-            exact
+            // exact
+            strict
           >
             <div className="mobile-menu__icon">{item.icon}</div>
           </NavLink>
@@ -56,6 +58,7 @@ export const DesktopNav: React.FC = () => {
       </div>
       {DATA.map((item) => (
         <NavLink
+          key={item.to}
           className="navbar__link"
           activeClassName="active"
           to={item.to}

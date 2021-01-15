@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 
 // COMPONENTS
@@ -11,7 +11,7 @@ import Social from "./components/Social";
 import { ROUTES } from "./util/routes";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -65,6 +65,9 @@ function App() {
             )}
           </Route>
         ))}
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
       </div>
     </Router>
   );

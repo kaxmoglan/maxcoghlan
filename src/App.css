@@ -372,7 +372,8 @@
 
 html {
   font-size: 10px;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden; }
 
 html,
 body,
