@@ -11,7 +11,7 @@ import Social from "./components/Social";
 import { ROUTES } from "./util/routes";
 
 function App() {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState("dark");
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -65,9 +65,7 @@ function App() {
             )}
           </Route>
         ))}
-        <Route path="*">
-          <Redirect to="/" />
-        </Route>
+        <Route render={() => <Redirect to="/" />} />
       </div>
     </Router>
   );
