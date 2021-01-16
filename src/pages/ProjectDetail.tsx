@@ -16,7 +16,6 @@ interface IPROJECT {
   workShort: string[];
   workExpanded: string[];
   links: {
-    project: string;
     app: string;
     github?: string;
   };
@@ -49,8 +48,8 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     workShort: [],
     workExpanded: [],
     links: {
-      project: "",
       app: "",
+      github: "",
     },
     tech: [],
     icons: [],

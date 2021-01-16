@@ -11,7 +11,13 @@
 @import "nav";
 @import "mobile-nav";
 @import "social";
+@import "projects";
 
+/*
+-----------------------------------------
+RESETS
+-----------------------------------------
+*/
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +37,14 @@ body,
   height: 100%;
 }
 
-.archivo {
+/*
+-----------------------------------------
+FONTS
+-----------------------------------------
+*/
+
+.archivo,
+.page-header {
   font-family: "Archivo", "Roboto", sans-serif;
 }
 
@@ -39,21 +52,67 @@ a {
   color: inherit;
 }
 
+h1 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  display: block;
+}
+
+/*
+-----------------------------------------
+GLOBAL STYLING
+-----------------------------------------
+*/
+
 .App {
   transition: all 1000ms ease;
 
   &.dark {
-    background-color: $black;
     color: $main-font;
   }
 
   &.light {
-    background-color: $white;
     color: $black;
   }
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: all 1000ms ease;
+
+  &.dark {
+    background-color: $black;
+  }
+  &.light {
+    background-color: $white;
+  }
+}
+
 .content {
-  margin-left: 49vw;
-  margin-top: 49vh;
+  padding-left: 15rem;
+  padding-right: 6rem;
+  padding-top: calc((100vh - 75rem) / 2);
+  width: 100%;
+
+  .page-header {
+    text-align: center;
+  }
+}
+
+.million {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0.25rem;
+    top: 0.1rem;
+    width: 2.8rem;
+    height: 0.45rem;
+    background-color: $main-font;
+  }
 }

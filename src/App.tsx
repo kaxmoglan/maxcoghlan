@@ -17,6 +17,7 @@ function App() {
   return (
     <Router>
       <div className={`App ${theme}`}>
+        <div className={`background ${theme}`}></div>
         <CSSTransition
           in={showNav && theme === "dark"}
           timeout={1000}

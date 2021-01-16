@@ -35,7 +35,6 @@ export default {
     "Back End Development",
   ],
   links: {
-    project: "/projects/projectname",
     app: "https://www.themoderncalligraphystudio.com",
     github: "https://github.com/kaxmoglan/the-modern-calligraphy-studio",
   },
@@ -52,14 +51,14 @@ export default {
     "SQL",
   ],
   icons: [
-    SassIcon,
+    JavascriptIcon,
     HtmlIcon,
+    BootstrapIcon,
+    SassIcon,
     NodeIcon,
     LaravelIcon,
-    JavascriptIcon,
     WordpressIcon,
     PhpIcon,
-    BootstrapIcon,
   ],
   subheading: "UI/UX | Front End | Back End",
   description:

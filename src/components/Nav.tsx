@@ -26,7 +26,7 @@ export const MobileNav: React.FC = () => {
   return (
     <nav className="mobile-menu">
       <Link className="mobile-menu__logo" to="/">
-        <div className="million"></div>
+        <div className="mobile-menu__logo-million"></div>
         <div className="archivo">M</div>
       </Link>
 
@@ -52,7 +52,7 @@ export const DesktopNav: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <div className="million"></div>
+        <div className="logo__million"></div>
         <p className="archivo">M</p>
         <p className="archivo aximilian">aximilian.</p>
       </div>

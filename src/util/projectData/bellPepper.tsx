@@ -35,7 +35,6 @@ export default {
     "Back End Development",
   ],
   links: {
-    project: "/projects/projectname",
     app: "https://www.themoderncalligraphystudio.com",
     github: "https://github.com/kaxmoglan/the-modern-calligraphy-studio",
   },
