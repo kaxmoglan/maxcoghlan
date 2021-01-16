@@ -83,7 +83,7 @@
 
       &:hover,
       &:focus {
-        color: lighten($main-font, 25%);
+        color: lighten($main-font, 15%);
         &::after {
           width: 5rem;
         }

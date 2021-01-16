@@ -57,8 +57,8 @@ export default {
     SassIcon,
     NodeIcon,
     LaravelIcon,
-    WordpressIcon,
     PhpIcon,
+    WordpressIcon,
   ],
   subheading: "UI/UX | Front End | Back End",
   description:
