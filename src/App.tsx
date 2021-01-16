@@ -65,7 +65,7 @@ function App() {
             )}
           </Route>
         ))}
-        <Route render={() => <Redirect to="/" />} />
+        {/* <Route render={() => <Redirect to="/" />} /> */}
       </div>
     </Router>
   );

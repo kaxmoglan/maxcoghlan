@@ -1,3 +1,15 @@
+import React from "react";
+
+// IMPORT IMAGES
+
+import desktopImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-desktop.png";
+
+import tabletImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-tablet.png";
+
+import mobileImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-mobile.png";
+
+import wholesaleImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-wholesale.png";
+
 import {
   BootstrapIcon,
   HtmlIcon,
@@ -22,6 +34,8 @@ export default {
     project: "/projects/projectname",
     app: "https://www.themoderncalligraphystudio.com",
     github: "https://github.com/kaxmoglan/the-modern-calligraphy-studio",
+    next: "",
+    previous: "",
   },
   tech: [
     "Wordpress",
@@ -48,12 +62,18 @@ export default {
   subheading: "UI/UX | Front End | Back End",
   description:
     "A fully user-editable e-commerce solution, complete with a wholesale customer section including individual accounts, pricing, shipping options and minimum order values.",
-  mobileImg:
-    "../images/dist/projects/modern-calligraphy/modern-calligraphy-mobile.png",
-  desktopImg:
-    "../images/dist/projects/modern-calligraphy/modern-calligraphy-desktop.png",
-  tabletImg:
-    "../images/dist/projects/modern-calligraphy/modern-calligraphy-tablet.png",
+  mobileImg: {
+    src: mobileImg,
+    alt: "THIS IS THE ALT TEXT",
+  },
+  tabletImg: {
+    src: tabletImg,
+    alt: "THIS IS THE ALT TEXT",
+  },
+  desktopImg: {
+    src: desktopImg,
+    alt: "THIS IS THE ALT TEXT",
+  },
   content: (
     <div className="project-body">
       <div className="narrow">
@@ -70,10 +90,7 @@ export default {
 
       <div className="wide">
         <div className="container">
-          <img
-            src="../images/dist/projects/modern-calligraphy/modern-calligraphy-wholesale.png"
-            alt="Custom login portal for wholesale customers on bespoke Wordpress theme"
-          />
+          <img src={wholesaleImg} alt="" />
 
           <div className="text">
             <h2>The Solution</h2>
