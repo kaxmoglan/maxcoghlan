@@ -397,3 +397,7 @@ a {
   .App.light {
     background-color: #fff;
     color: #000; }
+
+.content {
+  margin-left: 49vw;
+  margin-top: 49vh; }

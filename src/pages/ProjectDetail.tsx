@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import { PROJECTS } from "../util/projects";
 
@@ -19,8 +19,6 @@ interface IPROJECT {
     project: string;
     app: string;
     github?: string;
-    next: string;
-    previous: string;
   };
   tech: string[];
   icons: JSX.Element[];
@@ -53,8 +51,6 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     links: {
       project: "",
       app: "",
-      next: "",
-      previous: "",
     },
     tech: [],
     icons: [],
@@ -74,14 +70,34 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     },
     content: <></>,
   });
+  const [prevProject, setPrevProject] = useState("");
+  const [nextProject, setNextProject] = useState("");
 
-  useEffect(() => {
+  const getProject = () => {
     // FIND AND LOAD PROJECT DATA INTO COMPONENT STATE
     for (let i = 0; i < PROJECTS.length; i++) {
       if (PROJECTS[i].url === id) {
         setProject(PROJECTS[i]);
+
+        // SET PREV & NEXT PROJECT LINKS
+        if (PROJECTS[i - 1]) {
+          setPrevProject(PROJECTS[i - 1].url);
+        } else {
+          setPrevProject(PROJECTS[PROJECTS.length - 1].url);
+        }
+
+        if (PROJECTS[i + 1]) {
+          setNextProject(PROJECTS[i + 1].url);
+        } else {
+          setNextProject(PROJECTS[0].url);
+        }
       }
     }
+  };
+
+  useEffect(() => {
+    getProject();
+
     // SET THEME & NAVIGATION GLOBAL STATE
     if (theme !== "dark") {
       setTheme("dark");
@@ -91,14 +107,13 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     }
 
     // eslint-disable-next-line
-  }, []);
+  }, [id]);
 
   const markup = (
     <>
       <h1>{project.name.join(" ")}</h1>
-      <img src={project.mobileImg.src} alt={project.mobileImg.alt} />
-      <img src={project.desktopImg.src} alt="" />
-      {project.content}
+      <Link to={prevProject}>PREVIOUS</Link>
+      <Link to={nextProject}>NEXT</Link>
     </>
   );
 

@@ -10,6 +10,8 @@ import mobileImg from "../../images/dist/projects/modern-calligraphy/modern-call
 
 import wholesaleImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-wholesale.png";
 
+// IMPORT ICONS
+
 import {
   BootstrapIcon,
   HtmlIcon,
@@ -21,9 +23,11 @@ import {
   SassIcon,
 } from "../icons";
 
+// PROJECT DATA
+
 export default {
-  url: "the-modern-calligraphy-studio",
-  name: ["THE", "MODERN", "CALLIGRAPHY", "STUDIO"],
+  url: "bell-pepper-design",
+  name: ["BELL PEPPER", "DESIGN"],
   workShort: ["Design", "Development"],
   workExpanded: [
     "UI/UX Design",
@@ -34,8 +38,6 @@ export default {
     project: "/projects/projectname",
     app: "https://www.themoderncalligraphystudio.com",
     github: "https://github.com/kaxmoglan/the-modern-calligraphy-studio",
-    next: "/projects/the-modern-calligraphy-studio",
-    previous: "/projects/bell-pepper-design",
   },
   tech: [
     "Wordpress",
