@@ -23,12 +23,7 @@ const Social: React.FC = () => {
   return (
     <div className="social">
       {DATA.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          target="_blank"
-          className="social__link"
-        >
+        <a key={link.href} href={link.href} target="_blank" className="link">
           {link.icon}
         </a>
       ))}

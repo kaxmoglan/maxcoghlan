@@ -40,6 +40,21 @@
   transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms, -webkit-transform 300ms; }
 
+.project-detail-page {
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease; }
+  .project-detail-page.fade-in {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); }
+  .project-detail-page.fade-out {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+            transform: translateY(10px); }
+
 .navbar {
   z-index: 999;
   width: 6.5rem;
@@ -337,15 +352,16 @@
   @media (max-height: 760px) {
     .social {
       display: none; } }
-  .social__link {
+  .social .link {
     margin: 0 0.5rem; }
-    .social__link svg {
+    .social .link svg {
       height: 2rem;
+      width: 2rem;
       color: #707070;
       -webkit-transition: all 250ms ease;
       -o-transition: all 250ms ease;
       transition: all 250ms ease; }
-    .social__link:hover svg {
+    .social .link:hover svg {
       color: #08fdd8; }
   .social-enter {
     -webkit-transform: translateX(200px);

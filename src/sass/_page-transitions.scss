@@ -24,3 +24,19 @@
   transform: translateY(10px);
   transition: opacity 300ms, transform 300ms;
 }
+
+// PROJECT DETAIL PAGE
+
+.project-detail-page {
+  transition: all 300ms ease;
+
+  &.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}

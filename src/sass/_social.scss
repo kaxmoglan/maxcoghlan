@@ -10,10 +10,11 @@
   justify-content: center;
   transition: all 500ms ease;
 
-  &__link {
+  .link {
     margin: 0 0.5rem;
     svg {
       height: 2rem;
+      width: 2rem;
       color: $mid-grey;
       transition: all 250ms ease;
     }

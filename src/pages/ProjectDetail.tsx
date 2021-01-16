@@ -72,12 +72,19 @@ export const ProjectDetail: React.FC<Props> = (props) => {
   });
   const [prevProject, setPrevProject] = useState("");
   const [nextProject, setNextProject] = useState("");
+  const [animationClass, setAnimationClass] = useState("fade-in");
+
+  const handleAnimationClass = () => {
+    setAnimationClass("fade-out");
+    setTimeout(() => setAnimationClass("fade-in"), 300);
+  };
 
   const getProject = () => {
     // FIND AND LOAD PROJECT DATA INTO COMPONENT STATE
     for (let i = 0; i < PROJECTS.length; i++) {
       if (PROJECTS[i].url === id) {
-        setProject(PROJECTS[i]);
+        // DELAY FOR ANIMATION
+        setTimeout(() => setProject(PROJECTS[i]), 300);
 
         // SET PREV & NEXT PROJECT LINKS
         if (PROJECTS[i - 1]) {
@@ -110,11 +117,15 @@ export const ProjectDetail: React.FC<Props> = (props) => {
   }, [id]);
 
   const markup = (
-    <>
+    <div className={`project-detail-page ${animationClass}`}>
       <h1>{project.name.join(" ")}</h1>
-      <Link to={prevProject}>PREVIOUS</Link>
-      <Link to={nextProject}>NEXT</Link>
-    </>
+      <Link onClick={() => handleAnimationClass()} to={prevProject}>
+        PREVIOUS
+      </Link>
+      <Link onClick={() => handleAnimationClass()} to={nextProject}>
+        NEXT
+      </Link>
+    </div>
   );
 
   return markup;
