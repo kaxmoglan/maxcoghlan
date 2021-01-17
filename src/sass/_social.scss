@@ -29,7 +29,12 @@
       transition: all 250ms ease;
     }
 
-    &:hover {
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover,
+    &:focus {
       svg {
         color: $highlight;
       }

@@ -33,7 +33,7 @@ export default {
   ],
   links: {
     app: "https://www.themoderncalligraphystudio.com",
-    github: "https://github.com/kaxmoglan/the-modern-calligraphy-studio",
+    github: "",
   },
   tech: [
     "Wordpress",

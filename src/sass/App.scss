@@ -12,6 +12,7 @@
 @import "mobile-nav";
 @import "social";
 @import "projects";
+@import "project-detail";
 
 /*
 -----------------------------------------
@@ -70,6 +71,15 @@ GLOBAL STYLING
 
   &.dark {
     color: $main-font;
+
+    p::selection,
+    h1::selection,
+    a::selection,
+    h2::selection,
+    span::selection {
+      background: $highlight;
+      color: $black;
+    }
   }
 
   &.light {
@@ -94,9 +104,8 @@ GLOBAL STYLING
 }
 
 .content {
-  padding-left: 14rem;
+  padding-left: 13.5rem;
   padding-right: 6rem;
-  padding-top: calc((100vh - 75rem) / 2);
   width: 100%;
 
   .page-header {
@@ -115,5 +124,48 @@ GLOBAL STYLING
     width: 2.8rem;
     height: 0.45rem;
     background-color: $main-font;
+  }
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
+.project__link {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-decoration: none;
+  position: relative;
+  margin-bottom: 1.5rem;
+  color: $main-font;
+  transition: all 250ms ease;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.2rem;
+    width: 3rem;
+    background-color: $highlight;
+    bottom: -0.5rem;
+
+    transition: all 250ms ease;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &:focus {
+    // color: lighten($main-font, 15%);
+    &::after {
+      width: 5rem;
+    }
   }
 }

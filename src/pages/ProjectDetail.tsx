@@ -69,21 +69,26 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     },
     content: <></>,
   });
+
   const [prevProject, setPrevProject] = useState("");
   const [nextProject, setNextProject] = useState("");
-  const [animationClass, setAnimationClass] = useState("fade-in");
+  const [animationClass, setAnimationClass] = useState("fade-out");
 
   const handleAnimationClass = () => {
-    setAnimationClass("fade-out");
+    animationClass == "fade-in" && setAnimationClass("fade-out");
     setTimeout(() => setAnimationClass("fade-in"), 300);
   };
 
   const getProject = () => {
     // FIND AND LOAD PROJECT DATA INTO COMPONENT STATE
+    handleAnimationClass();
+
     for (let i = 0; i < PROJECTS.length; i++) {
       if (PROJECTS[i].url === id) {
         // DELAY FOR ANIMATION
-        setTimeout(() => setProject(PROJECTS[i]), 300);
+        setTimeout(() => {
+          setProject(PROJECTS[i]);
+        }, 300);
 
         // SET PREV & NEXT PROJECT LINKS
         if (PROJECTS[i - 1]) {
@@ -117,13 +122,58 @@ export const ProjectDetail: React.FC<Props> = (props) => {
 
   const markup = (
     <div className={`project-detail-page ${animationClass}`}>
-      <h1>{project.name.join(" ")}</h1>
-      <Link onClick={() => handleAnimationClass()} to={prevProject}>
-        PREVIOUS
-      </Link>
-      <Link onClick={() => handleAnimationClass()} to={nextProject}>
-        NEXT
-      </Link>
+      {/* TOP SECTION */}
+      <div className="project-detail-page__header">
+        <div className="container">
+          {/* LEFT COLUMN */}
+          <div className="heading">
+            <div className="heading__container">
+              <h1 className="project-name">
+                {project.name.map((word) => (
+                  <>
+                    {word}
+                    <br />
+                  </>
+                ))}
+              </h1>
+              <p className="project-subheading">{project.subheading}</p>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="description">
+            <div className="description__container">
+              <p className="description__text">{project.description}</p>
+              <div className="description__links">
+                <a
+                  href={project.links.app}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project__link"
+                >
+                  Open App
+                </a>
+                {project.links.github != "" && (
+                  <>
+                    <p> | </p>
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project__link"
+                    >
+                      GitHub
+                    </a>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <h1>{project.name.join(" ")}</h1> */}
+      {/* <Link to={prevProject}>PREVIOUS</Link>
+      <Link to={nextProject}>NEXT</Link> */}
     </div>
   );
 

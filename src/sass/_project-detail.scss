@@ -1,0 +1,63 @@
+.project-detail-page {
+  &__header {
+    padding-top: calc((100vh - 75rem) / 2);
+    height: 100vh;
+    letter-spacing: 0.02rem;
+
+    .container {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 12rem;
+
+      // LEFT COLUMN
+      .heading {
+        text-align: right;
+
+        &__container {
+          height: 77%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .project-name {
+          font-size: 4.5rem;
+        }
+
+        .project-subheading {
+          font-size: 1.6rem;
+        }
+      }
+
+      // RIGHT COLUMN
+      .description {
+        font-size: 1.6rem;
+
+        &__container {
+          height: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        &__text {
+          margin-bottom: 3rem;
+          max-width: 480px;
+        }
+
+        &__links {
+          width: 100%;
+          max-width: 480px;
+          display: flex;
+          align-items: flex-start;
+
+          p {
+            display: inline-block;
+            margin: 0 1rem;
+          }
+        }
+      }
+    }
+  }
+}

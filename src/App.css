@@ -368,7 +368,9 @@
       -webkit-transition: all 250ms ease;
       -o-transition: all 250ms ease;
       transition: all 250ms ease; }
-    .social .link:hover svg {
+    .social .link:focus {
+      outline: 0; }
+    .social .link:hover svg, .social .link:focus svg {
       color: #08fdd8; }
   .social-enter {
     -webkit-transform: translateX(200px);
@@ -386,14 +388,6 @@
     -webkit-transform: translateX(200px);
         -ms-transform: translateX(200px);
             transform: translateX(200px); }
-
-#tsparticles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 0; }
 
 .projects {
   position: relative;
@@ -452,34 +446,17 @@
       padding-left: 33%; }
     .projects .project-card__work {
       margin-bottom: 3rem; }
+    .projects .project-card__links {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
     .projects .project-card__text {
       font-size: 1.6rem;
       margin-bottom: 0.3rem; }
-    .projects .project-card__link {
-      display: block;
-      font-size: 1.6rem;
-      text-decoration: none;
-      position: relative;
-      margin-bottom: 1.5rem;
-      color: #dddbdb;
-      -webkit-transition: all 250ms ease;
-      -o-transition: all 250ms ease;
-      transition: all 250ms ease; }
-      .projects .project-card__link::after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 0.2rem;
-        width: 3rem;
-        background-color: #08fdd8;
-        bottom: -0.4rem;
-        -webkit-transition: all 250ms ease;
-        -o-transition: all 250ms ease;
-        transition: all 250ms ease; }
-      .projects .project-card__link:focus {
-        outline: 0; }
-      .projects .project-card__link:hover::after, .projects .project-card__link:focus::after {
-        width: 5rem; }
     .projects .project-card__tech {
       text-align: center; }
       .projects .project-card__tech .container {
@@ -510,6 +487,66 @@
           .projects .project-card__tech .container .icon .fa-node {
             width: auto;
             height: 38px; }
+
+.project-detail-page__header {
+  padding-top: calc((100vh - 75rem) / 2);
+  height: 100vh;
+  letter-spacing: 0.02rem; }
+  .project-detail-page__header .container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 12rem; }
+    .project-detail-page__header .container .heading {
+      text-align: right; }
+      .project-detail-page__header .container .heading__container {
+        height: 77%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+      .project-detail-page__header .container .heading .project-name {
+        font-size: 4.5rem; }
+      .project-detail-page__header .container .heading .project-subheading {
+        font-size: 1.6rem; }
+    .project-detail-page__header .container .description {
+      font-size: 1.6rem; }
+      .project-detail-page__header .container .description__container {
+        height: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+      .project-detail-page__header .container .description__text {
+        margin-bottom: 3rem;
+        max-width: 480px; }
+      .project-detail-page__header .container .description__links {
+        width: 100%;
+        max-width: 480px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start; }
+        .project-detail-page__header .container .description__links p {
+          display: inline-block;
+          margin: 0 1rem; }
 
 /*
 -----------------------------------------
@@ -562,6 +599,16 @@ GLOBAL STYLING
   transition: all 1000ms ease; }
   .App.dark {
     color: #dddbdb; }
+    .App.dark p::-moz-selection, .App.dark h1::-moz-selection, .App.dark a::-moz-selection, .App.dark h2::-moz-selection, .App.dark span::-moz-selection {
+      background: #08fdd8;
+      color: #000; }
+    .App.dark p::selection,
+    .App.dark h1::selection,
+    .App.dark a::selection,
+    .App.dark h2::selection,
+    .App.dark span::selection {
+      background: #08fdd8;
+      color: #000; }
   .App.light {
     color: #000; }
 
@@ -580,9 +627,8 @@ GLOBAL STYLING
     background-color: #fff; }
 
 .content {
-  padding-left: 14rem;
+  padding-left: 13.5rem;
   padding-right: 6rem;
-  padding-top: calc((100vh - 75rem) / 2);
   width: 100%; }
   .content .page-header {
     text-align: center; }
@@ -598,3 +644,37 @@ GLOBAL STYLING
     width: 2.8rem;
     height: 0.45rem;
     background-color: #dddbdb; }
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0; }
+
+.project__link {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-decoration: none;
+  position: relative;
+  margin-bottom: 1.5rem;
+  color: #dddbdb;
+  -webkit-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease; }
+  .project__link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.2rem;
+    width: 3rem;
+    background-color: #08fdd8;
+    bottom: -0.5rem;
+    -webkit-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease; }
+  .project__link:focus {
+    outline: 0; }
+  .project__link:hover::after, .project__link:focus::after {
+    width: 5rem; }

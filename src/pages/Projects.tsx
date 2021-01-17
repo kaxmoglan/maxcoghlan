@@ -64,7 +64,7 @@ export const Projects: React.FC<Props> = (props) => {
                 <div className="project-card__links">
                   <p className="project-card__header">LINKS</p>
                   <Link
-                    className="project-card__link"
+                    className="project__link"
                     to={`/projects/${project.url}`}
                   >
                     View Project
@@ -72,17 +72,19 @@ export const Projects: React.FC<Props> = (props) => {
                   <a
                     href={project.links.app}
                     target="_blank"
-                    className="project-card__link"
+                    className="project__link"
                   >
                     Open App
                   </a>
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    className="project-card__link"
-                  >
-                    GitHub
-                  </a>
+                  {project.links.github != "" && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      className="project__link"
+                    >
+                      GitHub
+                    </a>
+                  )}
                 </div>
               </div>
 
