@@ -68,6 +68,8 @@ GLOBAL STYLING
 
 .App {
   transition: all 1000ms ease;
+  display: flex;
+  justify-content: center;
 
   &.dark {
     color: $main-font;
@@ -107,10 +109,7 @@ GLOBAL STYLING
   padding-left: 13.5rem;
   padding-right: 6rem;
   width: 100%;
-
-  .page-header {
-    text-align: center;
-  }
+  max-width: 1200px;
 }
 
 .million {
@@ -165,7 +164,7 @@ GLOBAL STYLING
   &:focus {
     // color: lighten($main-font, 15%);
     &::after {
-      width: 5rem;
+      width: 100%;
     }
   }
 }

@@ -1,96 +1,103 @@
-.projects {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  margin-bottom: 15rem;
+.projects-page {
+  &__title {
+    text-align: center;
+    margin-top: calc((100vh - 75rem) / 2);
+    margin-bottom: 6rem;
+  }
+  .projects {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin-bottom: 15rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .project-card {
-    margin: 2rem 0;
-    width: 95%;
-    max-width: 800px;
+    .project-card {
+      margin: 2rem 0;
+      width: 95%;
+      max-width: 800px;
 
-    @include glass;
-    border: 2px solid $mid-grey;
-    border-radius: 1rem;
+      @include glass;
+      border: 2px solid $mid-grey;
+      border-radius: 1rem;
 
-    &__header {
-      color: $mid-grey;
-      font-size: 1.3rem;
-      letter-spacing: 0.05rem;
-      margin-bottom: 0.8rem;
-    }
-
-    &__container {
-      width: 100%;
-      height: 100%;
-      padding: 6rem 4rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5rem;
-    }
-
-    // LEFT COLUMN
-    &__name {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: right;
-
-      &-text {
-        font-size: 2.4rem;
+      &__header {
+        color: $mid-grey;
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+        margin-bottom: 0.8rem;
       }
-    }
 
-    // CENTRAL COLUMN
-    &__details {
-      padding-left: 33%;
-    }
+      &__container {
+        width: 100%;
+        height: 100%;
+        padding: 6rem 4rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+      }
 
-    &__work {
-      margin-bottom: 3rem;
-    }
-
-    &__links {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__text {
-      font-size: 1.6rem;
-      margin-bottom: 0.3rem;
-    }
-
-    // RIGHT COLUMN
-    &__tech {
-      text-align: center;
-
-      .container {
+      // LEFT COLUMN
+      &__name {
         display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-evenly;
+        flex-direction: column;
+        justify-content: center;
+        text-align: right;
 
-        .icon {
-          flex: 0 0 auto;
+        &-text {
+          font-size: 2.4rem;
+        }
+      }
 
-          svg {
-            margin: 1.3rem;
-            width: 28px;
-          }
+      // CENTRAL COLUMN
+      &__details {
+        padding-left: 33%;
+      }
 
-          .fa-php {
-            width: auto;
-            height: 38px;
-            margin: 0;
-          }
+      &__work {
+        margin-bottom: 3rem;
+      }
 
-          .fa-node {
-            width: auto;
-            height: 38px;
+      &__links {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__text {
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
+      }
+
+      // RIGHT COLUMN
+      &__tech {
+        text-align: center;
+
+        .container {
+          display: flex;
+          flex-flow: row wrap;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .icon {
+            flex: 0 0 auto;
+
+            svg {
+              margin: 1.3rem;
+              width: 28px;
+            }
+
+            .fa-php {
+              width: auto;
+              height: 38px;
+              margin: 0;
+            }
+
+            .fa-node {
+              width: auto;
+              height: 38px;
+            }
           }
         }
       }

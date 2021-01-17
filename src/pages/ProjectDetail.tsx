@@ -75,7 +75,7 @@ export const ProjectDetail: React.FC<Props> = (props) => {
   const [animationClass, setAnimationClass] = useState("fade-out");
 
   const handleAnimationClass = () => {
-    animationClass == "fade-in" && setAnimationClass("fade-out");
+    animationClass === "fade-in" && setAnimationClass("fade-out");
     setTimeout(() => setAnimationClass("fade-in"), 300);
   };
 
@@ -153,7 +153,7 @@ export const ProjectDetail: React.FC<Props> = (props) => {
                 >
                   Open App
                 </a>
-                {project.links.github != "" && (
+                {project.links.github !== "" && (
                   <>
                     <p> | </p>
                     <a

@@ -27,9 +27,9 @@ export const Projects: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <>
+    <div className="projects-page">
       <Particles id="tsparticles" options={particlesConfig} />
-      <h1 className="page-header">
+      <h1 className="projects-page__title">
         <span className="million">M</span>y Work
       </h1>
       <div className="projects">
@@ -63,27 +63,33 @@ export const Projects: React.FC<Props> = (props) => {
 
                 <div className="project-card__links">
                   <p className="project-card__header">LINKS</p>
-                  <Link
-                    className="project__link"
-                    to={`/projects/${project.url}`}
-                  >
-                    View Project
-                  </Link>
-                  <a
-                    href={project.links.app}
-                    target="_blank"
-                    className="project__link"
-                  >
-                    Open App
-                  </a>
-                  {project.links.github != "" && (
+                  <div>
+                    <Link
+                      className="project__link"
+                      to={`/projects/${project.url}`}
+                    >
+                      View Project
+                    </Link>
+                  </div>
+                  <div>
                     <a
-                      href={project.links.github}
+                      href={project.links.app}
                       target="_blank"
                       className="project__link"
                     >
-                      GitHub
+                      Open App
                     </a>
+                  </div>
+                  {project.links.github != "" && (
+                    <div>
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        className="project__link"
+                      >
+                        GitHub
+                      </a>
+                    </div>
                   )}
                 </div>
               </div>
@@ -101,6 +107,6 @@ export const Projects: React.FC<Props> = (props) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
