@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import Particles from "react-tsparticles";
+import particlesConfig from "../util/particlesjs-config.json";
 
 import { PROJECTS } from "../util/projects";
 
@@ -26,6 +28,7 @@ export const Projects: React.FC<Props> = (props) => {
 
   return (
     <>
+      <Particles id="tsparticles" options={particlesConfig} />
       <h1 className="page-header">
         <span className="million">M</span>y Work
       </h1>

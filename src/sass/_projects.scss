@@ -1,5 +1,17 @@
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
 .projects {
+  position: relative;
+  z-index: 10;
   width: 100%;
+  margin-bottom: 15rem;
 
   display: flex;
   flex-direction: column;
