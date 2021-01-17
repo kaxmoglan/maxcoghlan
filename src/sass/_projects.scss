@@ -95,7 +95,7 @@
 
       &:hover,
       &:focus {
-        color: lighten($main-font, 15%);
+        // color: lighten($main-font, 15%);
         &::after {
           width: 5rem;
         }
@@ -124,6 +124,11 @@
             width: auto;
             height: 38px;
             margin: 0;
+          }
+
+          .fa-node {
+            width: auto;
+            height: 38px;
           }
         }
       }

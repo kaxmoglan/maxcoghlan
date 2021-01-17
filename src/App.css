@@ -126,7 +126,8 @@
     height: 6.5rem;
     -webkit-transition: all 350ms ease;
     -o-transition: all 350ms ease;
-    transition: all 350ms ease; }
+    transition: all 350ms ease;
+    text-decoration: none; }
     .navbar__link:focus {
       outline: 0; }
       .navbar__link:focus .navbar__link-icon svg {
@@ -147,7 +148,7 @@
       fill: #dddbdb;
       stroke-width: 1;
       stroke-dasharray: 250;
-      stroke-dashoffset: -250;
+      stroke-dashoffset: 250;
       -webkit-transition: all 2000ms ease-out;
       -o-transition: all 2000ms ease-out;
       transition: all 2000ms ease-out; }
@@ -167,7 +168,7 @@
         -webkit-transition: all 750ms ease;
         -o-transition: all 750ms ease;
         transition: all 750ms ease;
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 500;
         fill: transparent; }
     .navbar__link.active .navbar__link-icon svg {
       color: #08fdd8; }
@@ -477,10 +478,8 @@
         transition: all 250ms ease; }
       .projects .project-card__link:focus {
         outline: 0; }
-      .projects .project-card__link:hover, .projects .project-card__link:focus {
-        color: white; }
-        .projects .project-card__link:hover::after, .projects .project-card__link:focus::after {
-          width: 5rem; }
+      .projects .project-card__link:hover::after, .projects .project-card__link:focus::after {
+        width: 5rem; }
     .projects .project-card__tech {
       text-align: center; }
       .projects .project-card__tech .container {
@@ -508,6 +507,9 @@
             width: auto;
             height: 38px;
             margin: 0; }
+          .projects .project-card__tech .container .icon .fa-node {
+            width: auto;
+            height: 38px; }
 
 /*
 -----------------------------------------

@@ -63,6 +63,7 @@
     align-items: center;
     height: 6.5rem;
     transition: all 350ms ease;
+    text-decoration: none;
 
     &:focus {
       outline: 0;
@@ -95,7 +96,7 @@
       fill: $main-font;
       stroke-width: 1;
       stroke-dasharray: 250;
-      stroke-dashoffset: -250;
+      stroke-dashoffset: 250;
       transition: all 2000ms ease-out;
     }
 
@@ -110,7 +111,7 @@
         }
         &-text {
           transition: all 750ms ease;
-          stroke-dashoffset: 0;
+          stroke-dashoffset: 500;
           fill: transparent;
         }
       }

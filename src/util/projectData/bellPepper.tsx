@@ -3,11 +3,8 @@ import React from "react";
 // IMPORT IMAGES
 
 import desktopImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-desktop.png";
-
 import tabletImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-tablet.png";
-
 import mobileImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-mobile.png";
-
 import wholesaleImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-wholesale.png";
 
 // IMPORT ICONS
