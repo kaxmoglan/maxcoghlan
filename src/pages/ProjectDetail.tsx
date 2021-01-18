@@ -171,9 +171,10 @@ export const ProjectDetail: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      {/* <h1>{project.name.join(" ")}</h1> */}
-      {/* <Link to={prevProject}>PREVIOUS</Link>
-      <Link to={nextProject}>NEXT</Link> */}
+
+      {/* SCREEN SHOTS */}
+
+      {/* CLOSING DIV */}
     </div>
   );
 

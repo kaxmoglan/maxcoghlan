@@ -65,15 +65,18 @@ export default {
     "A fully user-editable e-commerce solution, complete with a wholesale customer section including individual accounts, pricing, shipping options and minimum order values.",
   mobileImg: {
     src: mobileImg,
-    alt: "THIS IS THE ALT TEXT",
+    alt:
+      "A screen shot of The Modern Calligraphy Studio's home page on a smart phone",
   },
   tabletImg: {
     src: tabletImg,
-    alt: "THIS IS THE ALT TEXT",
+    alt:
+      "A screen shot of The Modern Calligraphy Studio's home page on a tablet computer",
   },
   desktopImg: {
     src: desktopImg,
-    alt: "THIS IS THE ALT TEXT",
+    alt:
+      "A screen shot of The Modern Calligraphy Studio's home page on a desktop computer",
   },
   content: (
     <div className="project-body">
