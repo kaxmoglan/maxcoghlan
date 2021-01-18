@@ -96,6 +96,8 @@ GLOBAL STYLING
   width: 100vw;
   height: 100vh;
   transition: all 1000ms ease;
+  pointer-events: none;
+  z-index: -1;
 
   &.dark {
     background-color: $black;

@@ -521,7 +521,11 @@
                   flex-direction: column;
           -webkit-box-pack: center;
               -ms-flex-pack: center;
-                  justify-content: center; }
+                  justify-content: center;
+          position: relative; }
+          .project-detail-page__header .container .heading__container-inner {
+            position: absolute;
+            left: 0; }
         .project-detail-page__header .container .heading .project-name {
           font-size: 4.5rem; }
         .project-detail-page__header .container .heading .project-subheading {
@@ -539,13 +543,9 @@
                   flex-direction: column;
           -webkit-box-pack: center;
               -ms-flex-pack: center;
-                  justify-content: center;
-          -webkit-box-align: center;
-              -ms-flex-align: center;
-                  align-items: center; }
+                  justify-content: center; }
         .project-detail-page__header .container .description__text {
-          margin-bottom: 3rem;
-          max-width: 480px; }
+          margin-bottom: 3rem; }
         .project-detail-page__header .container .description__links {
           width: 100%;
           max-width: 480px;
@@ -558,6 +558,34 @@
           .project-detail-page__header .container .description__links p {
             display: inline-block;
             margin: 0 1rem; }
+  .project-detail-page .screen-shots {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    height: 100vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .project-detail-page .screen-shots img {
+      position: absolute; }
+    .project-detail-page .screen-shots__desktop {
+      width: 62%;
+      bottom: -17%;
+      z-index: 1;
+      -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75);
+              box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75); }
+    .project-detail-page .screen-shots__tablet {
+      width: 32%;
+      bottom: -34%;
+      right: 0; }
+    .project-detail-page .screen-shots__mobile {
+      width: 20%;
+      bottom: -35%;
+      left: 0; }
 
 /*
 -----------------------------------------
@@ -637,7 +665,9 @@ GLOBAL STYLING
   height: 100vh;
   -webkit-transition: all 1000ms ease;
   -o-transition: all 1000ms ease;
-  transition: all 1000ms ease; }
+  transition: all 1000ms ease;
+  pointer-events: none;
+  z-index: -1; }
   .background.dark {
     background-color: #000; }
   .background.light {

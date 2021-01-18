@@ -128,15 +128,17 @@ export const ProjectDetail: React.FC<Props> = (props) => {
           {/* LEFT COLUMN */}
           <div className="heading">
             <div className="heading__container">
-              <h1 className="project-name">
-                {project.name.map((word) => (
-                  <>
-                    {word}
-                    <br />
-                  </>
-                ))}
-              </h1>
-              <p className="project-subheading">{project.subheading}</p>
+              <div className="heading__container-inner">
+                <h1 className="project-name">
+                  {project.name.map((word) => (
+                    <>
+                      {word}
+                      <br />
+                    </>
+                  ))}
+                </h1>
+                <p className="project-subheading">{project.subheading}</p>
+              </div>
             </div>
           </div>
 
@@ -173,7 +175,23 @@ export const ProjectDetail: React.FC<Props> = (props) => {
       </div>
 
       {/* SCREEN SHOTS */}
-
+      <div className="screen-shots">
+        <img
+          src={project.desktopImg.src}
+          alt={project.desktopImg.alt}
+          className="screen-shots__desktop"
+        />
+        <img
+          src={project.tabletImg.src}
+          alt={project.tabletImg.alt}
+          className="screen-shots__tablet"
+        />
+        <img
+          src={project.mobileImg.src}
+          alt={project.mobileImg.alt}
+          className="screen-shots__mobile"
+        />
+      </div>
       {/* CLOSING DIV */}
     </div>
   );
