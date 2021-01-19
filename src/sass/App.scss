@@ -100,7 +100,8 @@ GLOBAL STYLING
   z-index: -1;
 
   &.dark {
-    background-color: $black;
+    // background-color: $black;
+    background-color: #0b0b0b;
   }
   &.light {
     background-color: $white;
@@ -108,7 +109,7 @@ GLOBAL STYLING
 }
 
 .content {
-  padding-left: 13.5rem;
+  padding-left: 12.5rem;
   padding-right: 6rem;
   width: 100%;
   max-width: 1200px;
@@ -162,11 +163,16 @@ GLOBAL STYLING
     outline: 0;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     // color: lighten($main-font, 15%);
     &::after {
       width: 100%;
+    }
+  }
+
+  &.mirror {
+    &::after {
+      right: 0;
     }
   }
 }

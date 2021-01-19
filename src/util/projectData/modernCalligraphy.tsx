@@ -28,7 +28,7 @@ import {
 export default {
   url: "the-modern-calligraphy-studio",
   name: ["THE", "MODERN", "CALLIGRAPHY", "STUDIO"],
-  workShort: ["Design", "Development"],
+  workShort: ["Ecommerce", "Design", "Development"],
   workExpanded: [
     "UI/UX Design",
     "Front End Development",
@@ -93,10 +93,15 @@ export default {
       </div>
 
       <div className="wide">
-        <div className="container">
-          <img src={wholesaleImg} alt="" />
+        <div className="half-and-half">
+          <div className="left-column">
+            <img
+              src={wholesaleImg}
+              alt="A screen shot on a desktop computer of the custom login gateway for wholesale customers"
+            />
+          </div>
 
-          <div className="text">
+          <div className="right-column">
             <h2>The Solution</h2>
             <p>
               I designed the site in Adobe XD and, upon approval, built a

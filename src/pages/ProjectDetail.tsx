@@ -70,17 +70,23 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     content: <></>,
   });
 
-  const [prevProject, setPrevProject] = useState("");
-  const [nextProject, setNextProject] = useState("");
+  const [prevProject, setPrevProject] = useState({ name: "", url: "" });
+  const [nextProject, setNextProject] = useState({ name: "", url: "" });
   const [animationClass, setAnimationClass] = useState("fade-out");
+  const [offsetY, setOffsetY] = useState(0);
+
+  // HANDLERS
+  const handleScroll = () => setOffsetY(window.pageYOffset);
 
   const handleAnimationClass = () => {
     animationClass === "fade-in" && setAnimationClass("fade-out");
-    setTimeout(() => setAnimationClass("fade-in"), 300);
+    setTimeout(() => {
+      setAnimationClass("fade-in");
+      window.scrollTo(0, 0);
+    }, 300);
   };
 
   const getProject = () => {
-    // FIND AND LOAD PROJECT DATA INTO COMPONENT STATE
     handleAnimationClass();
 
     for (let i = 0; i < PROJECTS.length; i++) {
@@ -88,26 +94,40 @@ export const ProjectDetail: React.FC<Props> = (props) => {
         // DELAY FOR ANIMATION
         setTimeout(() => {
           setProject(PROJECTS[i]);
+
+          // SET PREV & NEXT PROJECT LINKS
+          if (PROJECTS[i - 1]) {
+            setPrevProject({
+              name: PROJECTS[i - 1].name.join(" "),
+              url: PROJECTS[i - 1].url,
+            });
+          } else {
+            setPrevProject({
+              name: PROJECTS[PROJECTS.length - 1].name.join(" "),
+              url: PROJECTS[PROJECTS.length - 1].url,
+            });
+          }
+
+          if (PROJECTS[i + 1]) {
+            setNextProject({
+              name: PROJECTS[i + 1].name.join(" "),
+              url: PROJECTS[i + 1].url,
+            });
+          } else {
+            setNextProject({
+              name: PROJECTS[0].name.join(" "),
+              url: PROJECTS[0].url,
+            });
+          }
         }, 300);
-
-        // SET PREV & NEXT PROJECT LINKS
-        if (PROJECTS[i - 1]) {
-          setPrevProject(PROJECTS[i - 1].url);
-        } else {
-          setPrevProject(PROJECTS[PROJECTS.length - 1].url);
-        }
-
-        if (PROJECTS[i + 1]) {
-          setNextProject(PROJECTS[i + 1].url);
-        } else {
-          setNextProject(PROJECTS[0].url);
-        }
       }
     }
   };
 
+  // INITIAL COMPONENT LOAD
   useEffect(() => {
-    getProject();
+    window.addEventListener("scroll", handleScroll);
+    setTimeout(() => window.scrollTo(0, 0), 300);
 
     // SET THEME & NAVIGATION GLOBAL STATE
     if (theme !== "dark") {
@@ -116,6 +136,16 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     if (!showNav) {
       setShowNav(true);
     }
+
+    // UNLOAD EVENT LISTENER
+    return () => window.removeEventListener("scroll", handleScroll);
+
+    // eslint-disable-next-line
+  }, []);
+
+  // NEXT / PREV PROJECT LOAD
+  useEffect(() => {
+    getProject();
 
     // eslint-disable-next-line
   }, [id]);
@@ -179,18 +209,100 @@ export const ProjectDetail: React.FC<Props> = (props) => {
         <img
           src={project.desktopImg.src}
           alt={project.desktopImg.alt}
-          className="screen-shots__desktop"
+          className="screen-shots__desktop screen-shot"
+          style={{ transform: `translateY(-${offsetY * 0.25}px)` }}
         />
         <img
           src={project.tabletImg.src}
           alt={project.tabletImg.alt}
-          className="screen-shots__tablet"
+          style={{ transform: `translateY(-${offsetY * 0.6}px)` }}
+          className="screen-shots__tablet screen-shot"
         />
         <img
           src={project.mobileImg.src}
           alt={project.mobileImg.alt}
-          className="screen-shots__mobile"
+          style={{ transform: `translateY(-${offsetY * 0.75}px)` }}
+          className="screen-shots__mobile screen-shot"
         />
+      </div>
+
+      {/* CUSTOM CONTENT */}
+      <div className="custom-content">{project.content}</div>
+
+      {/* SUMMARY CARD */}
+      <div className="project-details">
+        <div className="project-details__container">
+          {/* LEFT COLUMN */}
+          <div className="project-details__tech">
+            <div className="project-details__tech-container">
+              <p className="project-details__header">TECH</p>
+              {project.tech.map((t, i) => (
+                <p className="project-details__tech-item" key={i}>
+                  {t}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* CENTRE COLUMN */}
+          <div className="project-details__work">
+            <div className="project-details__work-container">
+              <p className="project-details__header">WORK</p>
+              <p className="project-details__work-text">
+                {project.workExpanded.map((w, i) => (
+                  <span key={i}>
+                    {w} <br />
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="project-details__links">
+            <div className="project-details__links-container">
+              <p className="project-details__header">LINKS</p>
+              <div>
+                <a
+                  href={project.links.app}
+                  target="_blank"
+                  className="project__link"
+                >
+                  Open App
+                </a>
+              </div>
+              {project.links.github != "" && (
+                <div>
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    className="project__link"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* NEXT & PREV PROJECT */}
+      <div className="more-projects">
+        <div className="more-projects__container">
+          <div className="more-projects__previous">
+            <p className="more-projects__title">PREV</p>
+            <Link className="project__link mirror" to={prevProject.url}>
+              {prevProject.name}
+            </Link>
+          </div>
+          <div className="more-projects__next">
+            <p className="more-projects__title">NEXT</p>
+            <Link className="project__link" to={nextProject.url}>
+              {nextProject.name}
+            </Link>
+          </div>
+        </div>
       </div>
       {/* CLOSING DIV */}
     </div>
