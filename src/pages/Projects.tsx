@@ -28,7 +28,7 @@ export const Projects: React.FC<Props> = (props) => {
 
   return (
     <div className="projects-page">
-      {/* <Particles id="tsparticles" options={particlesConfig} /> */}
+      <Particles id="tsparticles" options={particlesConfig} />
       <h1 className="projects-page__title">
         <span className="million">M</span>y Work
       </h1>

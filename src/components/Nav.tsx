@@ -14,12 +14,12 @@ import {
 
 // NAV DATA
 const DATA = [
-  { to: "/", icon: HomeIcon, text: "Home" },
-  { to: "/about", icon: AboutIcon, text: "About" },
-  { to: "/skills", icon: SkillsIcon, text: "Skills" },
-  { to: "/projects", icon: ProjectsIcon, text: "Projects" },
-  { to: "/contact", icon: ContactIcon, text: "Contact" },
-  { to: "/blog", icon: BlogIcon, text: "Blog" },
+  { to: "/", icon: HomeIcon, text: "Home", exact: true },
+  { to: "/about", icon: AboutIcon, text: "About", exact: true },
+  { to: "/skills", icon: SkillsIcon, text: "Skills", exact: true },
+  { to: "/projects", icon: ProjectsIcon, text: "Projects", exact: false },
+  { to: "/contact", icon: ContactIcon, text: "Contact", exact: true },
+  { to: "/blog", icon: BlogIcon, text: "Blog", exact: true },
 ];
 
 export const MobileNav: React.FC = () => {
@@ -37,7 +37,7 @@ export const MobileNav: React.FC = () => {
             className="mobile-menu__link"
             activeClassName="active"
             to={item.to}
-            // exact
+            exact={item.exact}
             strict
           >
             <div className="mobile-menu__icon">{item.icon}</div>
@@ -62,7 +62,7 @@ export const DesktopNav: React.FC = () => {
           className="navbar__link"
           activeClassName="active"
           to={item.to}
-          exact
+          exact={item.exact}
         >
           <div className="navbar__link-icon">{item.icon}</div>
 

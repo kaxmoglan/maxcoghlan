@@ -13,10 +13,10 @@
   z-index: 999;
   // background-color: rgba(0, 0, 0, 0.5);
 
-  @supports (backdrop-filter: blur()) {
-    // background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(3px);
-  }
+  // @supports (backdrop-filter: blur()) {
+  //   // background-color: rgba(0, 0, 0, 0.2);
+  //   backdrop-filter: blur(3px);
+  // }
 
   // border: 1px solid hotpink;
 

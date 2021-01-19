@@ -355,10 +355,6 @@
   @media (max-height: 760px) {
     .social {
       display: none; } }
-  @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
-    .social {
-      -webkit-backdrop-filter: blur(3px);
-              backdrop-filter: blur(3px); } }
   .social .link {
     margin: 0 0.5rem; }
     .social .link svg {
@@ -413,6 +409,9 @@
     margin: 2rem 0;
     width: 95%;
     max-width: 800px;
+    -webkit-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
     background-color: rgba(29, 29, 29, 0.8);
     border: 2px solid #707070;
     border-radius: 1rem; }
