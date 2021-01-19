@@ -49,6 +49,11 @@
         &-text {
           font-size: 2.4rem;
         }
+        &-tagline {
+          font-size: 1.4rem;
+          margin-top: 1rem;
+          color: $light-grey;
+        }
       }
 
       // CENTRAL COLUMN
@@ -90,13 +95,12 @@
 
             .fa-php {
               width: auto;
-              height: 38px;
-              margin: 0;
+              height: 32px;
             }
 
             .fa-node {
               width: auto;
-              height: 38px;
+              height: 36px;
             }
 
             .fa-gulp {
@@ -106,7 +110,11 @@
 
             .fa-sass {
               height: auto;
-              width: 36px;
+              width: 32px;
+            }
+
+            .fa-npm {
+              width: 42px;
             }
           }
         }

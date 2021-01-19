@@ -21,6 +21,7 @@ import {
   WordpressIcon,
   PhpIcon,
   SassIcon,
+  NpmIcon,
 } from "../icons";
 
 // PROJECT DATA
@@ -28,6 +29,7 @@ import {
 export default {
   url: "the-modern-calligraphy-studio",
   name: ["THE", "MODERN", "CALLIGRAPHY", "STUDIO"],
+  tagline: "Full stack e-commerce solution",
   workShort: ["UI / UX", "Front End", "Back End"],
   workExpanded: [
     "UI/UX Design",
@@ -55,9 +57,10 @@ export default {
     HtmlIcon,
     BootstrapIcon,
     SassIcon,
-    NodeIcon,
+    NpmIcon,
     LaravelIcon,
     PhpIcon,
+    NodeIcon,
     WordpressIcon,
   ],
   subheading: "UI/UX | Front End | Back End",

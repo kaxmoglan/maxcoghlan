@@ -13,6 +13,7 @@ interface Props {
 interface IPROJECT {
   url: string;
   name: string[];
+  tagline: string;
   workShort: string[];
   workExpanded: string[];
   links: {
@@ -45,6 +46,7 @@ export const ProjectDetail: React.FC<Props> = (props) => {
   const [project, setProject] = useState<IPROJECT>({
     url: "",
     name: [],
+    tagline: "",
     workShort: [],
     workExpanded: [],
     links: {

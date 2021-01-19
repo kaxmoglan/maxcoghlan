@@ -19,6 +19,7 @@ import {
   JavascriptIcon,
   GulpIcon,
   SassIcon,
+  NpmIcon,
 } from "../icons";
 
 // PROJECT DATA
@@ -26,6 +27,7 @@ import {
 export default {
   url: "bell-pepper-design",
   name: ["BELL PEPPER", "DESIGN"],
+  tagline: "Modern brochure site",
   workShort: ["UI / UX", "Front End"],
   workExpanded: ["UI/UX Design", "Front End Development"],
   links: {
@@ -33,7 +35,7 @@ export default {
     github: "https://github.com/kaxmoglan/charlieapple",
   },
   tech: ["Node.js", "Pug", "Sass", "GSAP", "Gulp", "Javascript"],
-  icons: [JavascriptIcon, GulpIcon, HtmlIcon, SassIcon, NodeIcon],
+  icons: [JavascriptIcon, GulpIcon, HtmlIcon, SassIcon, NpmIcon, NodeIcon],
   subheading: "UI/UX | Front End",
   description:
     "A clean and modern Jamstack app for a web design, graphic design and marketing company.",
@@ -147,24 +149,31 @@ export default {
         </div>
       </div>
 
-      <div className="narrow">
-        <h2>THE RESULT</h2>
-        <p>
-          The Modern Calligraphy Studio now have a fully editable, maintainable
-          and scaleable e-commerce solution with a backend they’re familiar
-          with. Custom user roles ensure their wholesale customers always have
-          an up-to-date catalogue, and they’re able to take all payments upfront
-          without even having to send an invoice.
-        </p>
-        <p>
-          On top of fulfilling the brief, I incorporated a bespoke JS menu, an
-          animated loader on selected pages, a pop-up search box that searches
-          all WooCommerce product names, SKUs, tags and categories, and custom
-          icons I asked the client to create to achieve a truly unique result. I
-          also utilised the Bootstrap grid system so that it was easy for the
-          client (or myself) to change or create powerful page layouts using
-          Bootstrap classnames from within the Gutenberg editor.
-        </p>
+      <div className="wide">
+        <div className="half-and-half">
+          <div className="left-column">
+            <img
+              src={beforeImg}
+              alt="A screen shot of Bell Pepper Design's home page before my redesign on a desktop computer"
+            />
+            <p style={{ textAlign: "center", marginTop: "2rem" }}>
+              <strong>BEFORE</strong>
+              <br />
+              SEObility score: 56%
+            </p>
+          </div>
+          <div className="right-column">
+            <img
+              src={afterImg}
+              alt="A screen shot of Bell Pepper Design's home page before my redesign on a desktop computer"
+            />
+            <p style={{ textAlign: "center", marginTop: "2rem" }}>
+              <strong>AFTER</strong>
+              <br />
+              SEObility score: 87%
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   ),

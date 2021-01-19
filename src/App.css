@@ -447,6 +447,10 @@
       text-align: right; }
       .projects-page .projects .project-card__name-text {
         font-size: 2.4rem; }
+      .projects-page .projects .project-card__name-tagline {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        color: #676767; }
     .projects-page .projects .project-card__details {
       padding-left: 33%; }
     .projects-page .projects .project-card__work {
@@ -487,17 +491,18 @@
             width: 28px; }
           .projects-page .projects .project-card__tech .container .icon .fa-php {
             width: auto;
-            height: 38px;
-            margin: 0; }
+            height: 32px; }
           .projects-page .projects .project-card__tech .container .icon .fa-node {
             width: auto;
-            height: 38px; }
+            height: 36px; }
           .projects-page .projects .project-card__tech .container .icon .fa-gulp {
             width: auto;
             height: 38px; }
           .projects-page .projects .project-card__tech .container .icon .fa-sass {
             height: auto;
-            width: 36px; }
+            width: 32px; }
+          .projects-page .projects .project-card__tech .container .icon .fa-npm {
+            width: 42px; }
 
 .project-detail-page {
   /*
@@ -552,7 +557,8 @@
         .project-detail-page__header .container .heading .project-subheading {
           font-size: 1.6rem; }
       .project-detail-page__header .container .description {
-        font-size: 1.6rem; }
+        font-size: 1.6rem;
+        line-height: 2.3rem; }
         .project-detail-page__header .container .description__container {
           height: 80%;
           display: -webkit-box;
@@ -718,21 +724,17 @@
         margin-bottom: 2rem; }
   .project-detail-page .more-projects {
     margin: 4rem auto 10rem auto;
-    width: 100%; }
+    width: 100%;
+    max-width: 800px; }
     .project-detail-page .more-projects__container {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center; }
-    .project-detail-page .more-projects__previous, .project-detail-page .more-projects__next {
-      margin: 0 2rem; }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; }
     .project-detail-page .more-projects__previous {
       text-align: right; }
     .project-detail-page .more-projects__title {
       color: #707070;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       letter-spacing: 0.05rem;
       margin-bottom: 0.5rem; }
 

@@ -39,6 +39,7 @@
       // RIGHT COLUMN
       .description {
         font-size: 1.6rem;
+        line-height: 2.3rem;
 
         &__container {
           height: 80%;
@@ -257,15 +258,12 @@
   .more-projects {
     margin: 4rem auto 10rem auto;
     width: 100%;
+    max-width: 800px;
 
     &__container {
-      display: flex;
-      justify-content: center;
-    }
-
-    &__previous,
-    &__next {
-      margin: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
     }
 
     &__previous {
@@ -274,7 +272,7 @@
 
     &__title {
       color: $mid-grey;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       letter-spacing: 0.05rem;
       margin-bottom: 0.5rem;
     }
