@@ -2,21 +2,22 @@ import React from "react";
 
 // IMPORT IMAGES
 
-import desktopImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-desktop.png";
-import tabletImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-tablet.png";
-import mobileImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-mobile.png";
-import wholesaleImg from "../../images/dist/projects/modern-calligraphy/modern-calligraphy-wholesale.png";
+import desktopImg from "../../images/dist/projects/bell-pepper/bell-pepper-desktop.png";
+import tabletImg from "../../images/dist/projects/bell-pepper/bell-pepper-tablet.png";
+import mobileImg from "../../images/dist/projects/bell-pepper/bell-pepper-mobile.png";
+
+import beforeImg from "../../images/dist/projects/bell-pepper/bell-pepper-before.png";
+import afterImg from "../../images/dist/projects/bell-pepper/bell-pepper-after.png";
+import menu1 from "../../images/dist/projects/bell-pepper/bell-pepper-menu-1.png";
+import menu2 from "../../images/dist/projects/bell-pepper/bell-pepper-menu-2.png";
 
 // IMPORT ICONS
 
 import {
-  BootstrapIcon,
   HtmlIcon,
   NodeIcon,
-  LaravelIcon,
   JavascriptIcon,
-  WordpressIcon,
-  PhpIcon,
+  GulpIcon,
   SassIcon,
 } from "../icons";
 
@@ -25,87 +26,123 @@ import {
 export default {
   url: "bell-pepper-design",
   name: ["BELL PEPPER", "DESIGN"],
-  workShort: ["Design", "Development"],
-  workExpanded: [
-    "UI/UX Design",
-    "Front End Development",
-    "Back End Development",
-  ],
+  workShort: ["UI / UX", "Front End"],
+  workExpanded: ["UI/UX Design", "Front End Development"],
   links: {
-    app: "https://www.themoderncalligraphystudio.com",
-    github: "",
+    app: "https://www.bellpepperdesign.co.uk",
+    github: "https://github.com/kaxmoglan/charlieapple",
   },
-  tech: [
-    "Wordpress",
-    "WooCommerce",
-    "PHP",
-    "Laravel Mix",
-    "Sass",
-    "HTML5",
-    "Bootstrap",
-    "Node.js",
-    "Javascript",
-    "SQL",
-  ],
-  icons: [
-    SassIcon,
-    HtmlIcon,
-    NodeIcon,
-    LaravelIcon,
-    JavascriptIcon,
-    WordpressIcon,
-    PhpIcon,
-    BootstrapIcon,
-  ],
-  subheading: "UI/UX | Front End | Back End",
+  tech: ["Node.js", "Pug", "Sass", "GSAP", "Gulp", "Javascript"],
+  icons: [JavascriptIcon, GulpIcon, HtmlIcon, SassIcon, NodeIcon],
+  subheading: "UI/UX | Front End",
   description:
-    "A fully user-editable e-commerce solution, complete with a wholesale customer section including individual accounts, pricing, shipping options and minimum order values.",
+    "A clean and modern Jamstack app for a web design, graphic design and marketing company.",
   mobileImg: {
     src: mobileImg,
-    alt: "THIS IS THE ALT TEXT",
+    alt: "A screen shot of Bell Pepper Design's home page on a smart phone",
   },
   tabletImg: {
     src: tabletImg,
-    alt: "THIS IS THE ALT TEXT",
+    alt: "A screen shot of Bell Pepper Design's home page on a tablet computer",
   },
   desktopImg: {
     src: desktopImg,
-    alt: "THIS IS THE ALT TEXT",
+    alt:
+      "A screen shot of Bell Pepper Design's home page on a desktop computer",
   },
   content: (
     <div className="project-body">
       <div className="narrow">
         <h2>THE BRIEF</h2>
         <p>
-          The Modern Calligraphy Studio wanted a fully editable e-commerce
-          solution built in Wordpress with WooCommerce. The design brief was for
-          the site to be clean, modern and bright with the user-focus on their
-          products. They also wanted their Wholesale Customers to be able to log
-          in to see their wholesale catalogue with custom pricing, shipping
-          rates and minimum order values.{" "}
+          Bell Pepper Design (formerly Charlie Apple) wanted a complete
+          re-design of their old website. They gave me free rein over the
+          design, but wanted the copy and page names to stay the same for their
+          SEO.
+        </p>
+
+        <h2>THE SOLUTION</h2>
+        <p>
+          I designed the site in Adobe XD and, upon approval, made a bespoke app
+          using a Node.js development environment with Gulp, Pug, Sass and
+          Javascript.
         </p>
       </div>
 
       <div className="wide">
-        <div className="container">
-          <img src={wholesaleImg} alt="" />
-
+        <div className="two-one">
           <div className="text">
-            <h2>The Solution</h2>
+            <h2>THE CHALLENGES</h2>
+            <p className="subheading">Text & Structure</p>
             <p>
-              I designed the site in Adobe XD and, upon approval, built a
-              Wordpress theme using PHP, Sass, Javascript and the Bootstrap
-              grid, compiled using Laraval Mix and Node.js. All customers are
-              able to log in with fully styled gateways and redirects based on
-              their account type, sign up to Mail Chimp mailing lists with
-              bespoke sign-up forms and AJAX calls (so there are no redirects to
-              Mail Chimp), and payment gateways that never leave the site.
+              The original site made it hard to see what the business offered at
+              a glance. The company offers a lot of services, all of which were
+              hidden under one ‘services’ drop-down menu and even when you
+              clicked through to different pages, you were met with large bodies
+              of text that hid the main points.
             </p>
 
             <p>
-              I also used some freely available plugins for additional features
-              like minimum order quantities per user-role and wholesale pricing.
+              I restructured the site to emphasise the company’s slogan,
+              ‘Design, Marketing, Events’ and created, what I referred to as, ‘3
+              mini sites’:
+              <ul>
+                <li>
+                  - A Design mini-site to host all design-related services
+                </li>
+                <li>
+                  {" "}
+                  - A Marketing mini-site to host all marketing-related services
+                  and
+                </li>
+                <li>
+                  {" "}
+                  - An Events mini-site to host all event-management-related
+                  services
+                </li>
+              </ul>
             </p>
+            <p>
+              Once the site was split up into more user-friendly sections, I
+              restructured the text on every page so that the main points of
+              each article were easy to see thus, in theory, increasing the
+              company’s conversion rate.
+            </p>
+            <p className="subheading">The Mobile Menu</p>
+            <p>
+              The new site structure presented a design challenge for the mobile
+              menu. My solution was a bespoke JS menu that always tells you
+              where you are, and allows you to see the entire site map without
+              having to navigate through any other pages.
+            </p>
+            <p className="subheading">Show Me The Websites</p>
+            <p>
+              My last main challenge was finding a way to showcase Bell Pepper
+              Design’s previous websites without links that take users away from
+              the site, or intrusive screen shots that detract from the design
+              of the app itself.
+            </p>
+            <p>
+              My solution was an interactive scrolling experience built using
+              the GSAP library where the user (as part of the natural page
+              scroll) is greeted with a computer screen that they turn on and
+              scroll through each Bell Pepper Design’s site before returning to
+              the natural page flow.
+            </p>
+          </div>
+          <div className="bell-pepper-images">
+            <div className="bell-pepper-images__container">
+              <img
+                className="bell-pepper-images__image one"
+                src={menu1}
+                alt="ALT"
+              />
+              <img
+                className="bell-pepper-images__image two"
+                src={menu2}
+                alt="ALT"
+              />
+            </div>
           </div>
         </div>
       </div>

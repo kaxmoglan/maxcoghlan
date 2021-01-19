@@ -143,7 +143,7 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     // eslint-disable-next-line
   }, []);
 
-  // NEXT / PREV PROJECT LOAD
+  // NEXT & PREV PROJECT LOAD
   useEffect(() => {
     getProject();
 

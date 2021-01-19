@@ -82,8 +82,8 @@
   @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
     .navbar {
       background-color: rgba(103, 103, 103, 0.2);
-      -webkit-backdrop-filter: blur(3px);
-              backdrop-filter: blur(3px); } }
+      -webkit-backdrop-filter: blur(4px);
+              backdrop-filter: blur(4px); } }
   @media (max-height: 760px) {
     .navbar {
       display: none; } }
@@ -247,8 +247,8 @@
   @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
     .mobile-menu {
       background-color: rgba(103, 103, 103, 0.2);
-      -webkit-backdrop-filter: blur(3px);
-              backdrop-filter: blur(3px); } }
+      -webkit-backdrop-filter: blur(4px);
+              backdrop-filter: blur(4px); } }
   .mobile-menu__logo {
     position: relative;
     display: -webkit-box;
@@ -419,8 +419,8 @@
     @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
       .projects-page .projects .project-card {
         background-color: rgba(103, 103, 103, 0.2);
-        -webkit-backdrop-filter: blur(3px);
-                backdrop-filter: blur(3px); } }
+        -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px); } }
     .projects-page .projects .project-card__header {
       color: #707070;
       font-size: 1.3rem;
@@ -492,6 +492,12 @@
           .projects-page .projects .project-card__tech .container .icon .fa-node {
             width: auto;
             height: 38px; }
+          .projects-page .projects .project-card__tech .container .icon .fa-gulp {
+            width: auto;
+            height: 38px; }
+          .projects-page .projects .project-card__tech .container .icon .fa-sass {
+            height: auto;
+            width: 36px; }
 
 .project-detail-page {
   /*
@@ -608,19 +614,25 @@
     letter-spacing: 0.02rem; }
     .project-detail-page .custom-content h2 {
       font-size: 2.5rem;
-      margin-bottom: 1rem; }
+      margin-bottom: 2rem;
+      margin-top: 5rem; }
     .project-detail-page .custom-content p {
-      font-size: 1.6rem; }
+      font-size: 1.6rem;
+      margin-bottom: 2rem; }
     .project-detail-page .custom-content .project-body {
-      width: 100%; }
+      width: 100%;
+      line-height: 2.2rem; }
+      .project-detail-page .custom-content .project-body ul {
+        list-style-type: none;
+        padding-left: 1rem; }
       .project-detail-page .custom-content .project-body .narrow {
         text-align: center;
         max-width: 600px;
-        margin: 0 auto;
-        margin-bottom: 10rem; }
+        margin: 2rem auto;
+        margin-bottom: 5rem; }
       .project-detail-page .custom-content .project-body .wide {
         width: 100%;
-        margin-bottom: 10rem; }
+        margin: 5rem 0 10rem 0; }
         .project-detail-page .custom-content .project-body .wide .half-and-half {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -639,8 +651,20 @@
             -webkit-box-pack: center;
                 -ms-flex-pack: center;
                     justify-content: center; }
+        .project-detail-page .custom-content .project-body .wide .two-one {
+          margin-top: 15rem;
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          gap: 6rem; }
+          .project-detail-page .custom-content .project-body .wide .two-one h2 {
+            margin-top: 0;
+            margin-bottom: 3rem; }
+          .project-detail-page .custom-content .project-body .wide .two-one .text .subheading {
+            font-weight: bold;
+            margin-top: 3rem;
+            margin-bottom: 1rem; }
   .project-detail-page .project-details {
-    margin: 2rem auto;
+    margin: 10rem auto;
     width: 95%;
     max-width: 800px;
     background-color: rgba(29, 29, 29, 0.8);
@@ -649,8 +673,8 @@
     @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
       .project-detail-page .project-details {
         background-color: rgba(103, 103, 103, 0.2);
-        -webkit-backdrop-filter: blur(3px);
-                backdrop-filter: blur(3px); } }
+        -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px); } }
     .project-detail-page .project-details__header {
       color: #707070;
       font-size: 1.3rem;
@@ -711,6 +735,29 @@
       font-size: 1.3rem;
       letter-spacing: 0.05rem;
       margin-bottom: 0.5rem; }
+
+/*
+-----------------------------------------
+BELL PEPPER
+-----------------------------------------
+*/
+.bell-pepper-images {
+  width: 100%;
+  height: 100%; }
+  .bell-pepper-images__container {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  .bell-pepper-images__image {
+    position: absolute;
+    width: 55%; }
+    .bell-pepper-images__image.one {
+      left: 0;
+      -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+              transform: translateY(50%); }
+    .bell-pepper-images__image.two {
+      right: 0; }
 
 /*
 -----------------------------------------
@@ -794,12 +841,12 @@ GLOBAL STYLING
   pointer-events: none;
   z-index: -1; }
   .background.dark {
-    background-color: #0b0b0b; }
+    background-color: #0c0c0c; }
   .background.light {
     background-color: #fff; }
 
 .content {
-  padding-left: 12.5rem;
+  padding-left: 14.5rem;
   padding-right: 6rem;
   width: 100%;
   max-width: 1200px; }

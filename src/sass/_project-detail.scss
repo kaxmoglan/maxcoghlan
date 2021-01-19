@@ -118,25 +118,33 @@
 
     h2 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      margin-top: 5rem;
     }
     p {
       font-size: 1.6rem;
+      margin-bottom: 2rem;
     }
 
     .project-body {
       width: 100%;
+      line-height: 2.2rem;
+
+      ul {
+        list-style-type: none;
+        padding-left: 1rem;
+      }
 
       .narrow {
         text-align: center;
         max-width: 600px;
-        margin: 0 auto;
-        margin-bottom: 10rem;
+        margin: 2rem auto;
+        margin-bottom: 5rem;
       }
 
       .wide {
         width: 100%;
-        margin-bottom: 10rem;
+        margin: 5rem 0 10rem 0;
 
         .half-and-half {
           display: grid;
@@ -154,6 +162,26 @@
             justify-content: center;
           }
         }
+
+        .two-one {
+          margin-top: 15rem;
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          gap: 6rem;
+
+          h2 {
+            margin-top: 0;
+            margin-bottom: 3rem;
+          }
+
+          .text {
+            .subheading {
+              font-weight: bold;
+              margin-top: 3rem;
+              margin-bottom: 1rem;
+            }
+          }
+        }
       }
     }
   }
@@ -165,7 +193,7 @@
   */
 
   .project-details {
-    margin: 2rem auto;
+    margin: 10rem auto;
     width: 95%;
     max-width: 800px;
 

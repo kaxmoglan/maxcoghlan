@@ -28,7 +28,7 @@ import {
 export default {
   url: "the-modern-calligraphy-studio",
   name: ["THE", "MODERN", "CALLIGRAPHY", "STUDIO"],
-  workShort: ["Ecommerce", "Design", "Development"],
+  workShort: ["UI / UX", "Front End", "Back End"],
   workExpanded: [
     "UI/UX Design",
     "Front End Development",

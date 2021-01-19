@@ -13,6 +13,7 @@
 @import "social";
 @import "projects";
 @import "project-detail";
+@import "project-custom";
 
 /*
 -----------------------------------------
@@ -101,7 +102,7 @@ GLOBAL STYLING
 
   &.dark {
     // background-color: $black;
-    background-color: #0b0b0b;
+    background-color: #0c0c0c;
   }
   &.light {
     background-color: $white;
@@ -109,7 +110,7 @@ GLOBAL STYLING
 }
 
 .content {
-  padding-left: 12.5rem;
+  padding-left: 14.5rem;
   padding-right: 6rem;
   width: 100%;
   max-width: 1200px;

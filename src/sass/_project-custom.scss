@@ -1,0 +1,30 @@
+/*
+-----------------------------------------
+BELL PEPPER
+-----------------------------------------
+*/
+
+.bell-pepper-images {
+  width: 100%;
+  height: 100%;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    width: 55%;
+
+    &.one {
+      left: 0;
+      transform: translateY(50%);
+    }
+
+    &.two {
+      right: 0;
+    }
+  }
+}
