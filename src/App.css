@@ -638,7 +638,7 @@ PROJECT DETAIL PAGE
         margin-bottom: 5rem; }
       .project-detail-page .custom-content .project-body .wide {
         width: 100%;
-        margin: 5rem 0 10rem 0; }
+        margin: 10rem 0 10rem 0; }
         .project-detail-page .custom-content .project-body .wide .half-and-half {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -657,6 +657,9 @@ PROJECT DETAIL PAGE
             -webkit-box-pack: center;
                 -ms-flex-pack: center;
                     justify-content: center; }
+            .project-detail-page .custom-content .project-body .wide .half-and-half .left-column h2,
+            .project-detail-page .custom-content .project-body .wide .half-and-half .right-column h2 {
+              margin-top: 2rem; }
         .project-detail-page .custom-content .project-body .wide .two-one {
           margin-top: 15rem;
           display: grid;
@@ -670,7 +673,7 @@ PROJECT DETAIL PAGE
             margin-top: 3rem;
             margin-bottom: 1rem; }
   .project-detail-page .project-details {
-    margin: 10rem auto;
+    margin: 8rem auto;
     width: 95%;
     max-width: 800px;
     background-color: rgba(29, 29, 29, 0.8);
@@ -723,7 +726,7 @@ PROJECT DETAIL PAGE
       .project-detail-page .project-details__links .project__link {
         margin-bottom: 2rem; }
   .project-detail-page .more-projects {
-    margin: 4rem auto 10rem auto;
+    margin: 0 auto 10rem auto;
     width: 100%;
     max-width: 800px; }
     .project-detail-page .more-projects__container {
@@ -851,7 +854,7 @@ html {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  background-color: #000; }
+  background-color: #0c0c0c; }
 
 html,
 body,

@@ -145,7 +145,7 @@
 
       .wide {
         width: 100%;
-        margin: 5rem 0 10rem 0;
+        margin: 10rem 0 10rem 0;
 
         .half-and-half {
           display: grid;
@@ -161,6 +161,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            h2 {
+              margin-top: 2rem;
+            }
           }
         }
 
@@ -194,7 +198,7 @@
   */
 
   .project-details {
-    margin: 10rem auto;
+    margin: 8rem auto;
     width: 95%;
     max-width: 800px;
 
@@ -256,7 +260,7 @@
   */
 
   .more-projects {
-    margin: 4rem auto 10rem auto;
+    margin: 0 auto 10rem auto;
     width: 100%;
     max-width: 800px;
 

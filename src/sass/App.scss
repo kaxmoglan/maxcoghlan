@@ -31,7 +31,7 @@ html {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  background-color: $black;
+  background-color: $background;
 }
 
 html,
@@ -102,8 +102,7 @@ GLOBAL STYLING
   z-index: -1;
 
   &.dark {
-    // background-color: $black;
-    background-color: #0c0c0c;
+    background-color: $background;
   }
   &.light {
     background-color: $white;
