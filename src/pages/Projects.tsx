@@ -30,10 +30,19 @@ interface Props {
   setTheme: Function;
   showNav: Boolean;
   setShowNav: Function;
+  showSocial: Boolean;
+  setShowSocial: Function;
 }
 
 export const Projects: React.FC<Props> = (props) => {
-  const { theme, setTheme, showNav, setShowNav } = props;
+  const {
+    theme,
+    setTheme,
+    showNav,
+    setShowNav,
+    showSocial,
+    setShowSocial,
+  } = props;
 
   useEffect(() => {
     if (theme !== "dark") {
@@ -42,12 +51,15 @@ export const Projects: React.FC<Props> = (props) => {
     if (!showNav) {
       setShowNav(true);
     }
+    if (!showSocial) {
+      setShowSocial(true);
+    }
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className="projects-page">
-      {/* <Particles id="tsparticles" options={particlesConfig} /> */}
+      <Particles id="tsparticles" options={particlesConfig} />
       <h1 className="projects-page__title">
         <span className="million">M</span>y Work
       </h1>

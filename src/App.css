@@ -839,6 +839,134 @@ BELL PEPPER
 .project-detail-page .drum-machine__image {
   width: 100%; }
 
+.contact-page {
+  /*
+  -----------------------------------------
+  FORM
+  -----------------------------------------
+  */ }
+  .contact-page #tsparticles {
+    z-index: -1; }
+  .contact-page__container {
+    width: 100%;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem; }
+  .contact-page__title {
+    font-size: 5rem; }
+  .contact-page__content {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .contact-page__content-container .social {
+      position: initial; }
+      .contact-page__content-container .social svg {
+        color: #dddbdb;
+        width: 2.5rem;
+        height: 2.5rem; }
+  .contact-page__form {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .contact-page__form-container {
+      width: 100%; }
+    .contact-page__form .contact-form fieldset {
+      margin: 0;
+      padding: 0;
+      border: none; }
+    .contact-page__form .contact-form .text-input {
+      margin-bottom: 2rem; }
+      .contact-page__form .contact-form .text-input input {
+        width: 100%;
+        background: none;
+        background-color: rgba(29, 29, 29, 0.8);
+        color: #dddbdb;
+        font-size: 1.6rem;
+        border: none;
+        border: 2px solid #676767;
+        border-radius: 1rem;
+        padding: 1rem 1.4rem;
+        -webkit-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease; }
+        @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+          .contact-page__form .contact-form .text-input input {
+            background-color: rgba(103, 103, 103, 0.2);
+            -webkit-backdrop-filter: blur(4px);
+                    backdrop-filter: blur(4px); } }
+        .contact-page__form .contact-form .text-input input:focus {
+          border: 2px solid #08fdd8;
+          outline: none; }
+    .contact-page__form .contact-form .message-area label {
+      display: block;
+      font-size: 1.6rem;
+      color: #707070;
+      margin-bottom: 1rem; }
+    .contact-page__form .contact-form .message-area textarea {
+      width: 100%;
+      height: 15rem;
+      color: #dddbdb;
+      font-size: 1.6rem;
+      font-family: "Roboto", sans-serif;
+      padding: 1.2rem;
+      background: none;
+      background-color: rgba(29, 29, 29, 0.8);
+      border-radius: 1rem;
+      border: 2px solid #707070;
+      -webkit-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease; }
+      @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+        .contact-page__form .contact-form .message-area textarea {
+          background-color: rgba(103, 103, 103, 0.2);
+          -webkit-backdrop-filter: blur(4px);
+                  backdrop-filter: blur(4px); } }
+      .contact-page__form .contact-form .message-area textarea:focus {
+        outline: none;
+        border: 2px solid #08fdd8; }
+    .contact-page__form .submit-btn {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      background: none;
+      background-color: rgba(29, 29, 29, 0.8);
+      color: #707070;
+      border: 2px solid #707070;
+      border-radius: 1rem;
+      margin-top: 2rem;
+      -webkit-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      cursor: pointer; }
+      @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+        .contact-page__form .submit-btn {
+          background-color: rgba(103, 103, 103, 0.2);
+          -webkit-backdrop-filter: blur(4px);
+                  backdrop-filter: blur(4px); } }
+      .contact-page__form .submit-btn:hover {
+        border: 2px solid #08fdd8;
+        color: #08fdd8; }
+
 /*
 -----------------------------------------
 RESETS
@@ -854,6 +982,7 @@ html {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll;
   background-color: #0c0c0c; }
 
 html,
@@ -949,7 +1078,25 @@ GLOBAL STYLING
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 0; }
+  z-index: 0;
+  -webkit-animation: fade-in-particles 3s;
+          animation: fade-in-particles 3s; }
+
+@-webkit-keyframes fade-in-particles {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in-particles {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .project__link {
   display: inline-block;

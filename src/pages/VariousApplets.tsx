@@ -25,10 +25,19 @@ interface Props {
   setTheme: Function;
   showNav: Boolean;
   setShowNav: Function;
+  showSocial: Boolean;
+  setShowSocial: Function;
 }
 
 export const VariousApplets: React.FC<Props> = (props) => {
-  const { theme, setTheme, showNav, setShowNav } = props;
+  const {
+    theme,
+    setTheme,
+    showNav,
+    setShowNav,
+    showSocial,
+    setShowSocial,
+  } = props;
 
   const [animationClass, setAnimationClass] = useState("fade-out");
 
@@ -49,6 +58,9 @@ export const VariousApplets: React.FC<Props> = (props) => {
     }
     if (!showNav) {
       setShowNav(true);
+    }
+    if (!showSocial) {
+      setShowSocial(true);
     }
     // eslint-disable-next-line
   }, []);

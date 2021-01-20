@@ -15,6 +15,7 @@
 @import "project-detail";
 @import "project-custom";
 @import "various-applets";
+@import "contact";
 
 /*
 -----------------------------------------
@@ -31,6 +32,7 @@ html {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll;
   background-color: $background;
 }
 
@@ -137,6 +139,19 @@ GLOBAL STYLING
   height: 100vh;
   width: 100vw;
   z-index: 0;
+  animation: fade-in-particles 3s;
+}
+
+@keyframes fade-in-particles {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .project__link {

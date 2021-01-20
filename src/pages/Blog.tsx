@@ -7,10 +7,19 @@ interface Props {
   setTheme: Function;
   showNav: Boolean;
   setShowNav: Function;
+  showSocial: Boolean;
+  setShowSocial: Function;
 }
 
 export const Blog: React.FC<Props> = (props) => {
-  const { theme, setTheme, showNav, setShowNav } = props;
+  const {
+    theme,
+    setTheme,
+    showNav,
+    setShowNav,
+    showSocial,
+    setShowSocial,
+  } = props;
 
   useEffect(() => {
     if (theme !== "light") {
@@ -18,6 +27,9 @@ export const Blog: React.FC<Props> = (props) => {
     }
     if (showNav) {
       setShowNav(false);
+    }
+    if (showSocial) {
+      setShowSocial(false);
     }
     // eslint-disable-next-line
   }, []);

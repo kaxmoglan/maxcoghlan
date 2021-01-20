@@ -1,0 +1,135 @@
+.contact-page {
+  #tsparticles {
+    z-index: -1;
+  }
+
+  &__container {
+    width: 100%;
+    height: 95vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+
+  &__title {
+    font-size: 5rem;
+  }
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-container {
+      .social {
+        position: initial;
+
+        svg {
+          color: $main-font;
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+
+  /*
+  -----------------------------------------
+  FORM
+  -----------------------------------------
+  */
+
+  &__form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-container {
+      width: 100%;
+    }
+
+    .contact-form {
+      fieldset {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      .text-input {
+        margin-bottom: 2rem;
+        input {
+          width: 100%;
+          background: none;
+          @include glass;
+          color: $main-font;
+          font-size: 1.6rem;
+          border: none;
+          border: 2px solid $light-grey;
+          border-radius: 1rem;
+          padding: 1rem 1.4rem;
+
+          transition: all 250ms ease;
+
+          &:focus {
+            border: 2px solid $highlight;
+            outline: none;
+          }
+        }
+      }
+
+      .message-area {
+        // margin-top: 2rem;
+        label {
+          display: block;
+          font-size: 1.6rem;
+          color: $mid-grey;
+          margin-bottom: 1rem;
+        }
+
+        textarea {
+          width: 100%;
+          height: 15rem;
+          color: $main-font;
+          font-size: 1.6rem;
+          font-family: "Roboto", sans-serif;
+          padding: 1.2rem;
+          background: none;
+          @include glass;
+          border-radius: 1rem;
+          border: 2px solid $mid-grey;
+          transition: all 250ms ease;
+
+          &:focus {
+            outline: none;
+            border: 2px solid $highlight;
+          }
+        }
+      }
+    }
+
+    .submit-btn {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      background: none;
+      @include glass;
+      color: $mid-grey;
+      border: 2px solid $mid-grey;
+      border-radius: 1rem;
+      margin-top: 2rem;
+
+      transition: all 250ms ease;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid $highlight;
+        color: $highlight;
+      }
+    }
+  }
+}

@@ -8,6 +8,8 @@ interface Props {
   setTheme: Function;
   showNav: Boolean;
   setShowNav: Function;
+  showSocial: Boolean;
+  setShowSocial: Function;
 }
 
 interface IPROJECT {
@@ -40,7 +42,14 @@ interface IPROJECT {
 }
 
 export const ProjectDetail: React.FC<Props> = (props) => {
-  const { theme, setTheme, showNav, setShowNav } = props;
+  const {
+    theme,
+    setTheme,
+    showNav,
+    setShowNav,
+    showSocial,
+    setShowSocial,
+  } = props;
   let { id } = useParams<any>();
 
   const [project, setProject] = useState<IPROJECT>({
@@ -137,6 +146,9 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     }
     if (!showNav) {
       setShowNav(true);
+    }
+    if (!showSocial) {
+      setShowSocial(true);
     }
 
     // UNLOAD EVENT LISTENER

@@ -13,13 +13,14 @@ import { ROUTES } from "./util/routes";
 function App() {
   const [theme, setTheme] = useState("dark");
   const [showNav, setShowNav] = useState(false);
+  const [showSocial, setShowSocial] = useState(false);
 
   return (
     <Router>
       <div className={`App ${theme}`}>
         <div className={`background ${theme}`}></div>
         <CSSTransition
-          in={showNav && theme === "dark"}
+          in={showSocial}
           timeout={1000}
           classNames="social"
           unmountOnExit
@@ -60,6 +61,8 @@ function App() {
                     setTheme={setTheme}
                     showNav={showNav}
                     setShowNav={setShowNav}
+                    showSocial={showSocial}
+                    setShowSocial={setShowSocial}
                   />
                 </div>
               </CSSTransition>
