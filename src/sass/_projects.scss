@@ -81,16 +81,17 @@
         text-align: center;
 
         .container {
-          display: flex;
-          flex-flow: row wrap;
-          align-items: center;
-          justify-content: space-evenly;
+          margin-top: 2rem;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
 
           .icon {
-            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             svg {
-              margin: 1.3rem;
               width: 28px;
             }
 
@@ -111,7 +112,7 @@
 
             .fa-sass {
               height: auto;
-              width: 32px;
+              width: 35px;
             }
 
             .fa-npm {

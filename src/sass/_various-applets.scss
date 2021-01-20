@@ -1,0 +1,93 @@
+.project-detail-page {
+  .various {
+    &__header {
+      padding-top: calc((100vh - 75rem) / 2);
+    }
+    &__title {
+      text-align: center;
+    }
+
+    &__subheading,
+    &__description {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    &__description {
+      margin: 2rem 0 4rem 0;
+    }
+
+    &__screen-shots {
+      position: relative;
+      pointer-events: none;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+
+      &.markdown-images {
+        margin-bottom: 8rem;
+      }
+
+      img {
+        position: absolute;
+      }
+
+      &__desktop {
+        width: 62%;
+        top: 15%;
+        z-index: 1;
+        box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75);
+      }
+
+      &__tablet {
+        width: 32%;
+        top: 24%;
+        right: 0;
+      }
+
+      &__mobile {
+        width: 20%;
+        top: 25%;
+        left: 0;
+      }
+    }
+    .links {
+      margin-top: 3rem;
+
+      .link-seperator {
+        display: inline-block;
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  .mobile-only {
+    &__container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 5rem;
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .drum-machine {
+    &__image {
+      width: 100%;
+    }
+  }
+}

@@ -105,8 +105,8 @@ export const ProjectDetail: React.FC<Props> = (props) => {
             });
           } else {
             setPrevProject({
-              name: PROJECTS[PROJECTS.length - 1].name.join(" "),
-              url: PROJECTS[PROJECTS.length - 1].url,
+              name: "Various Applets",
+              url: "/projects/custom/various-applets",
             });
           }
 
@@ -117,8 +117,8 @@ export const ProjectDetail: React.FC<Props> = (props) => {
             });
           } else {
             setNextProject({
-              name: PROJECTS[0].name.join(" "),
-              url: PROJECTS[0].url,
+              name: "Various Applets",
+              url: "/projects/custom/various-applets",
             });
           }
         }, 300);
@@ -162,9 +162,9 @@ export const ProjectDetail: React.FC<Props> = (props) => {
             <div className="heading__container">
               <div className="heading__container-inner">
                 <h1 className="project-name">
-                  {project.name.map((word) => (
+                  {project.name.map((word, i) => (
                     <>
-                      {word}
+                      <span key={i}>{word}</span>
                       <br />
                     </>
                   ))}

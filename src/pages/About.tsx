@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   theme: String;
@@ -23,6 +24,9 @@ export const About: React.FC<Props> = (props) => {
   return (
     <>
       <h2>About</h2>
+      <Link className="project__link" to="/projects/custom/various-applets">
+        View Projects
+      </Link>
     </>
   );
 };
