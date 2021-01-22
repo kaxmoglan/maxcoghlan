@@ -133,6 +133,7 @@ GLOBAL STYLING
     left: 0.25rem;
     top: 0.1rem;
     width: 2.8rem;
+    width: 86%;
     height: 0.45rem;
     background-color: $main-font;
   }
@@ -195,6 +196,42 @@ GLOBAL STYLING
   &.mirror {
     &::after {
       right: 0;
+    }
+  }
+}
+
+.contact-button {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border: 2px solid $highlight;
+  border-radius: 1rem;
+  color: $highlight;
+  text-decoration: none;
+  margin-top: 3rem;
+
+  transition: all 250ms ease;
+  cursor: pointer;
+
+  .million {
+    &::before {
+      background-color: $highlight;
+      left: 1px;
+      top: 0;
+      height: 1px;
+      transition: all 200ms ease;
+    }
+  }
+
+  &:hover {
+    border: 2px solid darken($highlight, 20%);
+    color: lighten($highlight, 10%);
+
+    .million {
+      &::before {
+        background-color: lighten($highlight, 10%);
+        top: -2px;
+      }
     }
   }
 }

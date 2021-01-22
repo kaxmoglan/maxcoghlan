@@ -64,9 +64,7 @@ export const Skills: React.FC<Props> = (props) => {
           {/* LEFT COLUMN */}
           <div className="main-page-template__left-column">
             <div className="main-page-template__left-column-container">
-              <h1 className="main-page-template__title skills__title">
-                Skills
-              </h1>
+              <h1 className="skills__title">Skills</h1>
               <div className="skills">
                 <div
                   className={`skills__category ${

@@ -856,7 +856,8 @@ BELL PEPPER
     grid-template-columns: 1fr 1fr;
     gap: 6rem; }
   .contact-page__title {
-    font-size: 5rem; }
+    font-size: 5rem;
+    margin-bottom: 1rem; }
   .contact-page__content {
     height: 100%;
     width: 100%;
@@ -870,9 +871,9 @@ BELL PEPPER
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
     .contact-page__content-container .social {
       position: initial; }
       .contact-page__content-container .social svg {
@@ -977,14 +978,34 @@ BELL PEPPER
     position: relative;
     min-height: 100vh;
     width: 100%;
+    margin-top: -2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem; }
+    .main-page-template__container .home-page-subtitle {
+      font-size: 2.3rem;
+      letter-spacing: 0.03rem;
+      line-height: 3rem; }
   .main-page-template__left-column {
     width: 100%;
     height: 100%; }
+    .main-page-template__left-column.flex {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .main-page-template__left-column-container {
+      width: 100%; }
   .main-page-template__title {
     margin-bottom: 3rem; }
+    .main-page-template__title.home-page-title {
+      font-size: 5rem; }
   .main-page-template__right-column {
     height: 100%; }
     .main-page-template__right-column-container {
@@ -1007,6 +1028,11 @@ BELL PEPPER
         width: 100%;
         height: auto; }
 
+/*
+-----------------------------------------
+ILLUSTRATION ANIMATION
+-----------------------------------------
+*/
 #frame-1 {
   visibility: hidden;
   -webkit-animation: 1s show infinite;
@@ -1063,7 +1089,8 @@ BELL PEPPER
     visibility: hidden; } }
 
 .skills__title {
-  margin-top: 25vh; }
+  margin-top: 30vh;
+  margin-bottom: 3rem; }
 
 .skills__heading {
   cursor: pointer;
@@ -1243,6 +1270,7 @@ GLOBAL STYLING
     left: 0.25rem;
     top: 0.1rem;
     width: 2.8rem;
+    width: 86%;
     height: 0.45rem;
     background-color: #dddbdb; }
 
@@ -1299,3 +1327,31 @@ GLOBAL STYLING
     width: 100%; }
   .project__link.mirror::after {
     right: 0; }
+
+.contact-button {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border: 2px solid #08fdd8;
+  border-radius: 1rem;
+  color: #08fdd8;
+  text-decoration: none;
+  margin-top: 3rem;
+  -webkit-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
+  cursor: pointer; }
+  .contact-button .million::before {
+    background-color: #08fdd8;
+    left: 1px;
+    top: 0;
+    height: 1px;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease; }
+  .contact-button:hover {
+    border: 2px solid #019e86;
+    color: #3bfde0; }
+    .contact-button:hover .million::before {
+      background-color: #3bfde0;
+      top: -2px; }
