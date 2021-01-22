@@ -53,15 +53,10 @@ export const VariousApplets: React.FC<Props> = (props) => {
   useEffect(() => {
     handleAnimationClass();
 
-    if (theme !== "dark") {
-      setTheme("dark");
-    }
-    if (!showNav) {
-      setShowNav(true);
-    }
-    if (!showSocial) {
-      setShowSocial(true);
-    }
+    theme !== "dark" && setTheme("dark");
+    !showNav && setShowNav(true);
+    !showSocial && setShowSocial(true);
+
     // eslint-disable-next-line
   }, []);
 

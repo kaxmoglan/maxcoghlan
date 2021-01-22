@@ -22,15 +22,10 @@ export const Blog: React.FC<Props> = (props) => {
   } = props;
 
   useEffect(() => {
-    if (theme !== "light") {
-      setTheme("light");
-    }
-    if (showNav) {
-      setShowNav(false);
-    }
-    if (showSocial) {
-      setShowSocial(false);
-    }
+    theme !== "light" && setTheme("light");
+    showNav && setShowNav(false);
+    showSocial && setShowSocial(false);
+
     // eslint-disable-next-line
   }, []);
   return (

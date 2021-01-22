@@ -141,15 +141,9 @@ export const ProjectDetail: React.FC<Props> = (props) => {
     setTimeout(() => window.scrollTo(0, 0), 300);
 
     // SET THEME & NAVIGATION GLOBAL STATE
-    if (theme !== "dark") {
-      setTheme("dark");
-    }
-    if (!showNav) {
-      setShowNav(true);
-    }
-    if (!showSocial) {
-      setShowSocial(true);
-    }
+    theme !== "dark" && setTheme("dark");
+    !showNav && setShowNav(true);
+    !showSocial && setShowSocial(true);
 
     // UNLOAD EVENT LISTENER
     return () => window.removeEventListener("scroll", handleScroll);

@@ -45,15 +45,10 @@ export const Projects: React.FC<Props> = (props) => {
   } = props;
 
   useEffect(() => {
-    if (theme !== "dark") {
-      setTheme("dark");
-    }
-    if (!showNav) {
-      setShowNav(true);
-    }
-    if (!showSocial) {
-      setShowSocial(true);
-    }
+    theme !== "dark" && setTheme("dark");
+    !showNav && setShowNav(true);
+    !showSocial && setShowSocial(true);
+
     // eslint-disable-next-line
   }, []);
 

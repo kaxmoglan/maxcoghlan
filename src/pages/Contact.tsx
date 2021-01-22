@@ -25,15 +25,10 @@ export const Contact: React.FC<Props> = (props) => {
   } = props;
 
   useEffect(() => {
-    if (theme !== "dark") {
-      setTheme("dark");
-    }
-    if (!showNav) {
-      setShowNav(true);
-    }
-    if (showSocial) {
-      setShowSocial(false);
-    }
+    theme !== "dark" && setTheme("dark");
+    !showNav && setShowNav(true);
+    showSocial && setShowSocial(false);
+
     // eslint-disable-next-line
   }, []);
 

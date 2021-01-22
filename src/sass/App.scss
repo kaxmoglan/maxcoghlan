@@ -16,6 +16,8 @@
 @import "project-custom";
 @import "various-applets";
 @import "contact";
+@import "main-page-template";
+@import "skills";
 
 /*
 -----------------------------------------
@@ -60,7 +62,7 @@ a {
 
 h1 {
   font-size: 4rem;
-  margin: 2rem 0;
+  // margin: 2rem 0;
   display: block;
 }
 
