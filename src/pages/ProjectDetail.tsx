@@ -149,7 +149,7 @@ export const ProjectDetail: React.FC<Props> = (props) => {
   }, [id]);
 
   const markup = (
-    <div className="main content__main">
+    <main className="content__main">
       <div className={`project-detail-page ${animationClass}`}>
         {/* TOP SECTION */}
         <div className="project-detail-page__header">
@@ -305,7 +305,7 @@ export const ProjectDetail: React.FC<Props> = (props) => {
         </div>
         {/* CLOSING DIV */}
       </div>
-    </div>
+    </main>
   );
 
   return markup;

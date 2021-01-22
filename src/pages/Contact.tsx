@@ -23,7 +23,7 @@ export const Contact: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <div className="main content__main">
+    <main className="content__main">
       <div className="contact-page">
         <Particles id="tsparticles" options={particlesConfig} />
         <div className="contact-page__container">
@@ -80,6 +80,6 @@ export const Contact: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };

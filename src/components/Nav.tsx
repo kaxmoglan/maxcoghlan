@@ -19,7 +19,7 @@ const DATA = [
   { to: "/skills", icon: SkillsIcon, text: "Skills", exact: true },
   { to: "/projects", icon: ProjectsIcon, text: "Projects", exact: false },
   { to: "/contact", icon: ContactIcon, text: "Contact", exact: true },
-  { to: "/blog", icon: BlogIcon, text: "Blog", exact: true },
+  { to: "/blog/home", icon: BlogIcon, text: "Blog", exact: true },
 ];
 
 export const MobileNav: React.FC = () => {

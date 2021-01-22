@@ -53,7 +53,7 @@ export const VariousApplets: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <div className="main content__main">
+    <main className="content__main">
       <div className={`project-detail-page ${animationClass}`}>
         {/* TOP SECTION */}
         <div className="various__header">
@@ -342,6 +342,6 @@ export const VariousApplets: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };

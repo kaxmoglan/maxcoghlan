@@ -19,11 +19,11 @@ export const About: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <div className="main content__main">
+    <main className="content__main">
       <h2>About</h2>
       <Link className="project__link" to="/projects/custom/various-applets">
         View Projects
       </Link>
-    </div>
+    </main>
   );
 };

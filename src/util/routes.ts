@@ -9,7 +9,7 @@ import { Contact } from "../pages/Contact";
 import { Blog } from "../pages/Blog";
 
 // COMPONENTS
-import { BlogPost } from "../components/BlogPost";
+// import { BlogPost } from "../components/BlogPost";
 
 // ROUTES DATA
 export const ROUTES = [
@@ -20,6 +20,6 @@ export const ROUTES = [
   { path: "/projects/:id", Component: ProjectDetail },
   { path: "/projects/custom/various-applets", Component: VariousApplets },
   { path: "/contact", Component: Contact },
-  { path: "/blog", Component: Blog },
-  { path: "/blog/:id", Component: BlogPost },
+  // { path: "/blog", Component: Blog },
+  { path: "/blog/:id", Component: Blog },
 ];

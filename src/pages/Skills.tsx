@@ -58,7 +58,7 @@ export const Skills: React.FC<Props> = (props) => {
   };
 
   return (
-    <div className="main content__main">
+    <main className="content__main">
       <div className="main-page-template">
         <div className="main-page-template__container">
           {/* LEFT COLUMN */}
@@ -149,6 +149,6 @@ export const Skills: React.FC<Props> = (props) => {
           {/* RIGHT COLUMN */}
         </div>
       </div>
-    </div>
+    </main>
   );
 };

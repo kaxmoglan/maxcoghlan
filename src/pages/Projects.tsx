@@ -43,7 +43,7 @@ export const Projects: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <div className="main content__main">
+    <main className="content__main">
       <div className="projects-page">
         <Particles id="tsparticles" options={particlesConfig} />
         <h1 className="projects-page__title">
@@ -178,6 +178,6 @@ export const Projects: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
