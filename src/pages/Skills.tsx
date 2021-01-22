@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 import { ChevronIcon } from "../util/icons";
 
 interface Props {
-  theme: String;
   setTheme: Function;
-  showNav: Boolean;
   setShowNav: Function;
-  showSocial: Boolean;
   setShowSocial: Function;
 }
 
@@ -16,19 +13,12 @@ export const Skills: React.FC<Props> = (props) => {
   const [showBackEnd, setShowBackEnd] = useState(false);
   const [showOther, setShowOther] = useState(false);
 
-  const {
-    theme,
-    setTheme,
-    showNav,
-    setShowNav,
-    showSocial,
-    setShowSocial,
-  } = props;
+  const { setTheme, setShowNav, setShowSocial } = props;
 
   useEffect(() => {
-    theme !== "dark" && setTheme("dark");
-    !showNav && setShowNav(true);
-    !showSocial && setShowSocial(true);
+    setTheme("dark");
+    setShowNav(true);
+    setShowSocial(true);
 
     // eslint-disable-next-line
   }, []);
@@ -68,7 +58,7 @@ export const Skills: React.FC<Props> = (props) => {
   };
 
   return (
-    <>
+    <div className="main content__main">
       <div className="main-page-template">
         <div className="main-page-template__container">
           {/* LEFT COLUMN */}
@@ -159,6 +149,6 @@ export const Skills: React.FC<Props> = (props) => {
           {/* RIGHT COLUMN */}
         </div>
       </div>
-    </>
+    </div>
   );
 };

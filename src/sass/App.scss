@@ -114,10 +114,13 @@ GLOBAL STYLING
 }
 
 .content {
-  padding-left: 14.5rem;
-  padding-right: 6rem;
   width: 100%;
-  max-width: 1200px;
+
+  &__main {
+    padding-left: 14.5rem;
+    padding-right: 6rem;
+    max-width: 1200px;
+  }
 }
 
 .million {

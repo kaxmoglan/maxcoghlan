@@ -1,35 +1,25 @@
 import React, { useEffect } from "react";
 
 interface Props {
-  theme: String;
   setTheme: Function;
-  showNav: Boolean;
   setShowNav: Function;
-  showSocial: Boolean;
   setShowSocial: Function;
 }
 
 export const Home: React.FC<Props> = (props) => {
-  const {
-    theme,
-    setTheme,
-    showNav,
-    setShowNav,
-    showSocial,
-    setShowSocial,
-  } = props;
+  const { setTheme, setShowNav, setShowSocial } = props;
 
   useEffect(() => {
-    theme !== "dark" && setTheme("dark");
-    !showNav && setShowNav(true);
-    !showSocial && setShowSocial(true);
+    setTheme("dark");
+    setShowNav(true);
+    setShowSocial(true);
 
     // eslint-disable-next-line
   }, []);
 
   return (
-    <>
+    <div className="main content__main">
       <h2>Home</h2>
-    </>
+    </div>
   );
 };

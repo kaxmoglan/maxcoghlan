@@ -57,11 +57,8 @@ function App() {
               >
                 <div className="content">
                   <Component
-                    theme={theme}
                     setTheme={setTheme}
-                    showNav={showNav}
                     setShowNav={setShowNav}
-                    showSocial={showSocial}
                     setShowSocial={setShowSocial}
                   />
                 </div>

@@ -6,34 +6,24 @@ import Particles from "react-tsparticles";
 import particlesConfig from "../util/particlesjs-config.json";
 
 interface Props {
-  theme: String;
   setTheme: Function;
-  showNav: Boolean;
   setShowNav: Function;
-  showSocial: Boolean;
   setShowSocial: Function;
 }
 
 export const Contact: React.FC<Props> = (props) => {
-  const {
-    theme,
-    setTheme,
-    showNav,
-    setShowNav,
-    showSocial,
-    setShowSocial,
-  } = props;
+  const { setTheme, setShowNav, setShowSocial } = props;
 
   useEffect(() => {
-    theme !== "dark" && setTheme("dark");
-    !showNav && setShowNav(true);
-    showSocial && setShowSocial(false);
+    setTheme("dark");
+    setShowNav(true);
+    setShowSocial(false);
 
     // eslint-disable-next-line
   }, []);
 
   return (
-    <>
+    <div className="main content__main">
       <div className="contact-page">
         <Particles id="tsparticles" options={particlesConfig} />
         <div className="contact-page__container">
@@ -90,6 +80,6 @@ export const Contact: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
