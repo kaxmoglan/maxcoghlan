@@ -3,6 +3,12 @@
     text-align: center;
     margin-top: calc((100vh - 75rem) / 2);
     margin-bottom: 6rem;
+
+    .million {
+      &::before {
+        left: 0.25rem;
+      }
+    }
   }
   .projects {
     position: relative;

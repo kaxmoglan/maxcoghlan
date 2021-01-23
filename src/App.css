@@ -394,6 +394,8 @@ PROJECT DETAIL PAGE
   text-align: center;
   margin-top: calc((100vh - 75rem) / 2);
   margin-bottom: 6rem; }
+  .projects-page__title .million::before {
+    left: 0.25rem; }
 
 .projects-page .projects {
   position: relative;
@@ -1130,6 +1132,8 @@ ILLUSTRATION ANIMATION
 
 .skills__category {
   margin-bottom: 2rem; }
+  .skills__category.visible .skills__heading {
+    cursor: initial; }
   .skills__category.visible .skills__content {
     max-height: 500px;
     opacity: 1;
@@ -1267,7 +1271,7 @@ GLOBAL STYLING
     content: "";
     display: block;
     position: absolute;
-    left: 0.25rem;
+    left: 0.3rem;
     top: 0.1rem;
     width: 2.8rem;
     width: 86%;
@@ -1350,7 +1354,7 @@ GLOBAL STYLING
     -o-transition: all 200ms ease;
     transition: all 200ms ease; }
   .contact-button:hover {
-    border: 2px solid #019e86;
+    border: 2px solid #01b79c;
     color: #3bfde0; }
     .contact-button:hover .million::before {
       background-color: #3bfde0;

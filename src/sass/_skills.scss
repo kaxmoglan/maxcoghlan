@@ -49,6 +49,9 @@
     margin-bottom: 2rem;
 
     &.visible {
+      .skills__heading {
+        cursor: initial;
+      }
       .skills__content {
         max-height: 500px;
         opacity: 1;
