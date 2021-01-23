@@ -117,9 +117,23 @@
           }
 
           .text {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 2rem;
           }
+        }
+      }
+    }
+
+    .right-column {
+      position: relative;
+      .spinner {
+        &__container {
+          position: absolute;
+          width: 100%;
+          margin-top: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
