@@ -23,11 +23,11 @@ export const homePage3 = (
         y2="558.95"
         spreadMethod="pad"
       >
-        <stop offset="0%" stop-color="#0C0C0C" />
+        <stop offset="0%" stopColor="#0C0C0C" />
 
-        <stop offset="42.745098039215684%" stop-color="#147161" />
+        <stop offset="42.745098039215684%" stopColor="#147161" />
 
-        <stop offset="100%" stop-color="#2DFCD8" />
+        <stop offset="100%" stopColor="#2DFCD8" />
       </linearGradient>
 
       <g id="Layer1_0_FILL">

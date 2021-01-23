@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
+import { BlogProfile } from "../components/Blog/BlogProfile";
 
 interface Props {
   setTheme: Function;
@@ -11,6 +13,13 @@ interface Props {
 export const Blog: React.FC<Props> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
+  const { id }: any = useParams();
+  const [loading, setLoading] = useState(true);
+  const [allPosts, setAllPosts] = useState();
+  const [post, setPost] = useState();
+  const [page, setPage] = useState<"ALL" | "SINGLE">("ALL");
+
+  // SET GLOBAL STATE ON LOAD
   useEffect(() => {
     setTheme("light");
     setShowNav(false);
@@ -18,10 +27,15 @@ export const Blog: React.FC<Props> = (props) => {
 
     // eslint-disable-next-line
   }, []);
+
   return (
-    <>
-      <h2>Blog</h2>
-      <Link to="/">Home</Link>
-    </>
+    <div className="blog-page-template">
+      <div className="blog-page-template__container">
+        <div className="left-column">
+          <BlogProfile />
+        </div>
+        <div className="right-column"></div>
+      </div>
+    </div>
   );
 };

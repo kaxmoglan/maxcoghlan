@@ -987,7 +987,8 @@ BELL PEPPER
     .main-page-template__container .home-page-subtitle {
       font-size: 2.3rem;
       letter-spacing: 0.03rem;
-      line-height: 3rem; }
+      line-height: 3rem;
+      margin: 3rem 0; }
   .main-page-template__left-column {
     width: 100%;
     height: 100%; }
@@ -1007,7 +1008,8 @@ BELL PEPPER
   .main-page-template__title {
     margin-bottom: 3rem; }
     .main-page-template__title.home-page-title {
-      font-size: 5rem; }
+      font-size: 5rem;
+      margin-bottom: 0; }
   .main-page-template__right-column {
     height: 100%; }
     .main-page-template__right-column-container {
@@ -1170,6 +1172,77 @@ ILLUSTRATION ANIMATION
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+
+.blog-page-template {
+  padding: 4rem;
+  max-width: 1200px;
+  margin: 0 auto; }
+  .blog-page-template__container {
+    display: grid;
+    grid-template-columns: 275px auto;
+    gap: 6rem; }
+    .blog-page-template__container .left-column .blog-profile {
+      padding: 2rem;
+      border: 3px solid #000;
+      border-radius: 1rem;
+      width: 275px; }
+      .blog-page-template__container .left-column .blog-profile__header {
+        text-decoration: none;
+        text-align: center; }
+        .blog-page-template__container .left-column .blog-profile__header .logo {
+          font-size: 3.3rem;
+          font-weight: bold; }
+          .blog-page-template__container .left-column .blog-profile__header .logo .million::before {
+            background-color: #000;
+            left: 2px;
+            top: 0;
+            width: 85%;
+            -webkit-transition: all 250ms ease;
+            -o-transition: all 250ms ease;
+            transition: all 250ms ease; }
+        .blog-page-template__container .left-column .blog-profile__header .the-blog {
+          font-size: 1.6rem;
+          margin-top: 0.5rem; }
+        .blog-page-template__container .left-column .blog-profile__header:hover .million::before {
+          -webkit-transform: translateY(-2px);
+              -ms-transform: translateY(-2px);
+                  transform: translateY(-2px); }
+      .blog-page-template__container .left-column .blog-profile .social {
+        position: initial;
+        padding-top: 3.5rem; }
+        .blog-page-template__container .left-column .blog-profile .social .link svg {
+          color: #707070; }
+        .blog-page-template__container .left-column .blog-profile .social .link:hover svg {
+          color: #000; }
+      .blog-page-template__container .left-column .blog-profile__back-to-site {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-top: 2rem;
+        text-decoration: none; }
+        .blog-page-template__container .left-column .blog-profile__back-to-site svg {
+          width: 1.5rem;
+          margin-right: 1rem;
+          -webkit-transition: all 250ms ease;
+          -o-transition: all 250ms ease;
+          transition: all 250ms ease; }
+        .blog-page-template__container .left-column .blog-profile__back-to-site p {
+          font-size: 1.4rem;
+          -webkit-transition: all 250ms ease;
+          -o-transition: all 250ms ease;
+          transition: all 250ms ease; }
+        .blog-page-template__container .left-column .blog-profile__back-to-site:hover {
+          color: #707070; }
+          .blog-page-template__container .left-column .blog-profile__back-to-site:hover svg {
+            -webkit-transform: translateX(-2px);
+                -ms-transform: translateX(-2px);
+                    transform: translateX(-2px); }
 
 /*
 -----------------------------------------
@@ -1340,7 +1413,6 @@ GLOBAL STYLING
   border-radius: 1rem;
   color: #08fdd8;
   text-decoration: none;
-  margin-top: 3rem;
   -webkit-transition: all 250ms ease;
   -o-transition: all 250ms ease;
   transition: all 250ms ease;
