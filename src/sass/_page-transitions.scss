@@ -45,3 +45,36 @@ PROJECT DETAIL PAGE
     transform: translateY(10px);
   }
 }
+
+/*
+-----------------------------------------
+BLOG
+-----------------------------------------
+*/
+
+.blog-second-panel {
+  position: absolute;
+  transform: translateY(0);
+}
+
+.blog-second-panel-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.blog-second-panel-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+  transition-delay: 300ms;
+}
+
+.blog-second-panel-exit {
+  opacity: 1;
+}
+
+.blog-second-panel-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
+}

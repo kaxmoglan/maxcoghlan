@@ -9,15 +9,20 @@
     gap: 6rem;
 
     .left-column {
-      .blog-profile {
-        padding: 2rem;
+      .panel {
         border: 3px solid $black;
         border-radius: 1rem;
         width: 275px;
+        margin-bottom: 3rem;
+      }
+
+      .blog-header {
+        padding: 2rem;
 
         &__header {
           text-decoration: none;
           text-align: center;
+          transition: all 250ms ease;
 
           .logo {
             font-size: 3.3rem;
@@ -39,7 +44,9 @@
           }
 
           &:hover {
+            color: $mid-grey;
             .million::before {
+              background-color: $mid-grey;
               transform: translateY(-2px);
             }
           }
@@ -51,12 +58,12 @@
 
           .link {
             svg {
-              color: $mid-grey;
+              color: $black;
             }
 
             &:hover {
               svg {
-                color: $black;
+                color: $mid-grey;
               }
             }
           }
@@ -68,7 +75,6 @@
           justify-content: center;
           margin-top: 2rem;
           text-decoration: none;
-          // color: $mid-grey;
 
           svg {
             width: 1.5rem;
@@ -81,11 +87,38 @@
           }
 
           &:hover {
-            // color: $black;
             color: $mid-grey;
             svg {
               transform: translateX(-2px);
             }
+          }
+        }
+      }
+
+      .blog-second-panel {
+        text-align: center;
+        font-size: 1.4rem;
+
+        &__title {
+          font-size: 2.5rem;
+          font-weight: bold;
+          padding: 1rem 0;
+          border-bottom: 3px solid $black;
+          border-radius: 1rem;
+        }
+
+        &__body {
+          padding: 2rem;
+
+          .subheading {
+            font-size: 1.2rem;
+            color: $mid-grey;
+            margin-bottom: 0.2rem;
+          }
+
+          .text {
+            margin-bottom: 1rem;
+            line-height: 2rem;
           }
         }
       }

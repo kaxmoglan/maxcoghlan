@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import { Link, useParams } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
-import { BlogProfile } from "../components/Blog/BlogProfile";
+import { BlogHeader } from "../components/Blog/BlogHeader";
+import { BlogAbout } from "../components/Blog/BlogAbout";
+import { BlogLatestPosts } from "../components/Blog/BlogLatestPosts";
 
 interface Props {
   setTheme: Function;
@@ -17,7 +20,7 @@ export const Blog: React.FC<Props> = (props) => {
   const [loading, setLoading] = useState(true);
   const [allPosts, setAllPosts] = useState();
   const [post, setPost] = useState();
-  const [page, setPage] = useState<"ALL" | "SINGLE">("ALL");
+  const [showAbout, setShowAbout] = useState(true);
 
   // SET GLOBAL STATE ON LOAD
   useEffect(() => {
@@ -28,13 +31,37 @@ export const Blog: React.FC<Props> = (props) => {
     // eslint-disable-next-line
   }, []);
 
+  const handleClick = () => {
+    setShowAbout(!showAbout);
+  };
+
   return (
     <div className="blog-page-template">
       <div className="blog-page-template__container">
         <div className="left-column">
-          <BlogProfile />
+          <BlogHeader />
+          <>
+            <CSSTransition
+              in={showAbout}
+              timeout={1000}
+              classNames="blog-second-panel"
+              unmountOnExit
+            >
+              <BlogAbout />
+            </CSSTransition>
+            <CSSTransition
+              in={!showAbout}
+              timeout={1000}
+              classNames="blog-second-panel"
+              unmountOnExit
+            >
+              <BlogLatestPosts />
+            </CSSTransition>
+          </>
         </div>
-        <div className="right-column"></div>
+        <div className="right-column">
+          <p onClick={() => handleClick()}>CLICK ME</p>
+        </div>
       </div>
     </div>
   );
