@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface IALLPOSTS {
   type_of: null | string;
@@ -41,9 +42,27 @@ interface Props {
 
 export const BlogPostAll: React.FC<Props> = (props) => {
   const { allPosts } = props;
+
   return (
-    <>
-      <h1>ALL BLOG POSTS</h1>
-    </>
+    <div className="blog-post-all__container">
+      {allPosts.length === 0 && (
+        <p className="blog-post-all__error">
+          The blog appears to be missing =/
+        </p>
+      )}
+      {allPosts.length > 0 &&
+        allPosts.map((post, i) => (
+          <>
+            <Link to={`/blog/${post.id}`} className="blog-post-card" key={i}>
+              <h2 className="blog-post-card__title">{post.title}</h2>
+              <p className="blog-post-card__description">{post.description}</p>
+              <p className="blog-post-card__date">
+                {post.readable_publish_date}
+              </p>
+            </Link>
+            <hr />
+          </>
+        ))}
+    </div>
   );
 };

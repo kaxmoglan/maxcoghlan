@@ -51,29 +51,46 @@ BLOG
 -----------------------------------------
 */
 
-.blog-second-panel {
+.blog-animate {
   position: absolute;
   transform: translateY(0);
 }
 
-.blog-second-panel-enter {
+.blog-animate-enter {
   opacity: 0;
   transform: translateY(10px);
+  transition: all 300ms ease;
 }
 
-.blog-second-panel-enter-active {
+.blog-animate-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
   transition-delay: 300ms;
 }
 
-.blog-second-panel-exit {
+.blog-animate-exit {
+  opacity: 1;
+  transition: all 300ms ease;
+}
+
+.blog-animate-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.blog-loading-spinner-enter {
+  opacity: 0;
+}
+
+.blog-loading-spinner-enter-active {
   opacity: 1;
 }
 
-.blog-second-panel-exit-active {
+.blog-loading-spinner-exit {
+  opacity: 1;
+}
+
+.blog-loading-spinner-exit-active {
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 300ms, transform 300ms;
+  transition: all 300ms ease;
 }

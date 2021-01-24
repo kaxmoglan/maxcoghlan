@@ -25,9 +25,11 @@ export const Blog: React.FC<Props> = (props) => {
 
   const { id }: any = useParams();
   const [loading, setLoading] = useState(true);
+  const [isPostDetailPage, setIsPostDetailPage] = useState(false);
+
   const [allPosts, setAllPosts] = useState([]);
   const [post, setPost] = useState({});
-  const [showAbout, setShowAbout] = useState(true);
+  const [err, setErr] = useState("");
 
   // GET REQUESTS
   const getAllPosts = () => {
@@ -38,6 +40,7 @@ export const Blog: React.FC<Props> = (props) => {
         setAllPosts(res.data);
         setTimeout(() => setLoading(false), 2000);
       })
+
       .catch((err) => console.log(err));
   };
 
@@ -47,6 +50,7 @@ export const Blog: React.FC<Props> = (props) => {
       .get(`/articles/${id}`)
       .then((res) => {
         setPost(res.data);
+        setTimeout(() => setLoading(false), 500);
       })
       .catch((err) => console.log(err));
   };
@@ -56,23 +60,20 @@ export const Blog: React.FC<Props> = (props) => {
     setTheme("light");
     setShowNav(false);
     setShowSocial(false);
-
-    getAllPosts();
   }, [setTheme, setShowNav, setShowSocial]);
 
   // GET SINGLE POSTS
   useEffect(() => {
     if (id !== "home" && id !== undefined) {
+      allPosts.length === 0 && getAllPosts();
       getSinglePost();
+      setIsPostDetailPage(true);
+      setTimeout(() => window.scrollTo(0, 0), 300);
+    } else {
+      allPosts.length === 0 && getAllPosts();
+      setIsPostDetailPage(false);
     }
-
-    console.log(id);
   }, [id]);
-
-  // HANDLERS
-  const handleClick = () => {
-    setShowAbout(!showAbout);
-  };
 
   return (
     <div className="blog-page-template">
@@ -81,17 +82,17 @@ export const Blog: React.FC<Props> = (props) => {
           <BlogHeader />
           <>
             <CSSTransition
-              in={showAbout}
+              in={!isPostDetailPage}
               timeout={1000}
-              classNames="blog-second-panel"
+              classNames="blog-animate"
               unmountOnExit
             >
               <BlogAbout />
             </CSSTransition>
             <CSSTransition
-              in={!showAbout}
+              in={isPostDetailPage}
               timeout={1000}
-              classNames="blog-second-panel"
+              classNames="blog-animate"
               unmountOnExit
             >
               <BlogLatestPosts />
@@ -99,8 +100,12 @@ export const Blog: React.FC<Props> = (props) => {
           </>
         </div>
         <div className="right-column">
-          <p onClick={() => handleClick()}>CLICK ME</p>
-          {loading && (
+          <CSSTransition
+            in={loading}
+            timeout={1000}
+            classNames="blog-loading-spinner"
+            unmountOnExit
+          >
             <div className="spinner__container">
               <Loader
                 type="TailSpin"
@@ -110,8 +115,16 @@ export const Blog: React.FC<Props> = (props) => {
                 className="spinner"
               />
             </div>
-          )}
-          {!loading && <BlogPostAll allPosts={allPosts} />}
+          </CSSTransition>
+
+          <CSSTransition
+            in={!loading && !isPostDetailPage}
+            timeout={1000}
+            classNames="blog-animate"
+            unmountOnExit
+          >
+            <BlogPostAll allPosts={allPosts} />
+          </CSSTransition>
         </div>
       </div>
     </div>
