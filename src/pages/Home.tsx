@@ -38,6 +38,7 @@ export const Home: React.FC<Props> = (props) => {
               <ContactBtn />
             </div>
           </div>
+          {/* RIGHT COLUMN */}
           <div className="main-page-template__right-column">
             <div className="main-page-template__right-column-container">
               <div className="animation-frame__container">

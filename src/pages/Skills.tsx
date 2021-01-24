@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { ChevronIcon } from "../util/icons";
+import { HOMEPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
 interface Props {
   setTheme: Function;
@@ -145,6 +146,17 @@ export const Skills: React.FC<Props> = (props) => {
           </div>
 
           {/* RIGHT COLUMN */}
+          <div className="main-page-template__right-column">
+            <div className="main-page-template__right-column-container">
+              <div className="animation-frame__container">
+                {HOMEPAGEANIMATIONFRAMES.map((frame, i) => (
+                  <div className="animation-frame" key={i}>
+                    {frame}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>

@@ -121,7 +121,7 @@ GLOBAL STYLING
   &__main {
     padding-left: 14.5rem;
     padding-right: 6rem;
-    max-width: 1200px;
+    max-width: calc(1200px + 20.5rem);
     margin: 0 auto;
   }
 }
