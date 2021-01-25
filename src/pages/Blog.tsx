@@ -1,26 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
 import { BlogHeader } from "../components/Blog/BlogHeader";
 import { BlogAbout } from "../components/Blog/BlogAbout";
-import { BlogLatestPosts } from "../components/Blog/BlogLatestPosts";
 import { BlogPostAll } from "../components/Blog/BlogPostAll";
+import { BlogPost } from "../components/Blog/BlogPost";
 
-interface Props {
-  setTheme: Function;
-  setShowNav: Function;
-  setShowSocial: Function;
-}
+import { IGLOBALSTATE } from "../util/interfaces";
+import { IPOST } from "../util/interfaces";
 
 const api = axios.create({
   baseURL: "https://dev.to/api/",
 });
 
-export const Blog: React.FC<Props> = (props) => {
+export const Blog: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
   const { id }: any = useParams();
@@ -28,10 +25,45 @@ export const Blog: React.FC<Props> = (props) => {
   const [isPostDetailPage, setIsPostDetailPage] = useState(false);
 
   const [allPosts, setAllPosts] = useState([]);
-  const [post, setPost] = useState({});
-  const [err, setErr] = useState("");
+  const [post, setPost] = useState<IPOST>({
+    type_of: "",
+    id: 0,
+    title: "",
+    description: "",
+    readable_publish_date: "",
+    slug: "",
+    path: "",
+    url: "",
+    comments_count: 0,
+    public_reactions_count: 0,
+    collection_id: 0,
+    published_timestamp: "",
+    positive_reactions_count: 0,
+    cover_image: "",
+    social_image: "",
+    canonical_url: "",
+    created_at: "",
+    edited_at: "",
+    crossposted_at: "",
+    published_at: "",
+    last_comment_at: "",
+    tag_list: "",
+    tags: [""],
+    body_html: "",
+    body_markdown: "",
+    user: {
+      name: "",
+      username: "",
+      twitter_username: "",
+      github_username: "",
+      website_url: "",
+      profile_image: "",
+      profile_image_90: "",
+    },
+  });
+  const [getPostError, setGetPostError] = useState(false);
 
-  // GET REQUESTS
+  // API CALLS
   const getAllPosts = () => {
     setLoading(true);
     api
@@ -52,7 +84,7 @@ export const Blog: React.FC<Props> = (props) => {
         setPost(res.data);
         setTimeout(() => setLoading(false), 500);
       })
-      .catch((err) => console.log(err));
+      .catch(() => setGetPostError(true));
   };
 
   // GLOBAL STATE
@@ -73,6 +105,7 @@ export const Blog: React.FC<Props> = (props) => {
       allPosts.length === 0 && getAllPosts();
       setIsPostDetailPage(false);
     }
+    // eslint-disable-next-line
   }, [id]);
 
   return (
@@ -80,24 +113,7 @@ export const Blog: React.FC<Props> = (props) => {
       <div className="blog-page-template__container">
         <div className="left-column">
           <BlogHeader />
-          <>
-            <CSSTransition
-              in={!isPostDetailPage}
-              timeout={1000}
-              classNames="blog-animate"
-              unmountOnExit
-            >
-              <BlogAbout />
-            </CSSTransition>
-            <CSSTransition
-              in={isPostDetailPage}
-              timeout={1000}
-              classNames="blog-animate"
-              unmountOnExit
-            >
-              <BlogLatestPosts />
-            </CSSTransition>
-          </>
+          <BlogAbout />
         </div>
         <div className="right-column">
           <CSSTransition
@@ -124,6 +140,14 @@ export const Blog: React.FC<Props> = (props) => {
             unmountOnExit
           >
             <BlogPostAll allPosts={allPosts} />
+          </CSSTransition>
+          <CSSTransition
+            in={!loading && isPostDetailPage}
+            timeout={1000}
+            classNames="blog-animate"
+            unmountOnExit
+          >
+            <BlogPost post={post} getPostError={getPostError} />
           </CSSTransition>
         </div>
       </div>

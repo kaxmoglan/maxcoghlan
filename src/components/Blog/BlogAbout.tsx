@@ -12,7 +12,8 @@ export const BlogAbout: React.FC = () => {
         <p className="subheading">My favourite things are</p>
         <p className="text">
           Learning. Making things. Listening to music. Making music. Watching
-          films. Design. Problem solving. Skating. Eating good food. Exercising.
+          films. Design. Problem solving. Skating. Drinking coffee. Eating good
+          food. Exercising.
         </p>
         <p className="subheading">Disclaimer</p>
         <p className="text">I am not a writer.</p>

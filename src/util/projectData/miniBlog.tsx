@@ -18,7 +18,7 @@ import {
 
 // PROJECT DATA
 
-export default {
+const DATA = {
   url: "mini-blog",
   name: ["MAX'S", "MINI BLOG"],
   tagline: "Full stack blogging platform",
@@ -69,3 +69,5 @@ export default {
     </div>
   ),
 };
+
+export default DATA;

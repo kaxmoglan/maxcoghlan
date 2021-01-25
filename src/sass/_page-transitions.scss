@@ -80,6 +80,7 @@ BLOG
 
 .blog-loading-spinner-enter {
   opacity: 0;
+  transition: all 300ms ease;
 }
 
 .blog-loading-spinner-enter-active {
@@ -88,9 +89,9 @@ BLOG
 
 .blog-loading-spinner-exit {
   opacity: 1;
+  transition: all 300ms ease;
 }
 
 .blog-loading-spinner-exit-active {
   opacity: 0;
-  transition: all 300ms ease;
 }

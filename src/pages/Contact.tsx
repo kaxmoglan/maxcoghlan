@@ -5,13 +5,9 @@ import Social from "../components/Social";
 import Particles from "react-tsparticles";
 import particlesConfig from "../util/particlesjs-config.json";
 
-interface Props {
-  setTheme: Function;
-  setShowNav: Function;
-  setShowSocial: Function;
-}
+import { IGLOBALSTATE } from "../util/interfaces";
 
-export const Contact: React.FC<Props> = (props) => {
+export const Contact: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
   useEffect(() => {

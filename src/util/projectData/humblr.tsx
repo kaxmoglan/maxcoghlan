@@ -19,7 +19,7 @@ import {
 
 // PROJECT DATA
 
-export default {
+const DATA = {
   url: "humblr",
   name: ["HUMBLR"],
   tagline: "Full stack social media app",
@@ -90,3 +90,5 @@ export default {
     </div>
   ),
 };
+
+export default DATA;

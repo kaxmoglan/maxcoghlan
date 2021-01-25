@@ -26,7 +26,7 @@ import {
 
 // PROJECT DATA
 
-export default {
+const DATA = {
   url: "the-modern-calligraphy-studio",
   name: ["THE", "MODERN", "CALLIGRAPHY", "STUDIO"],
   tagline: "Full stack e-commerce solution",
@@ -146,3 +146,5 @@ export default {
     </div>
   ),
 };
+
+export default DATA;

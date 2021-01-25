@@ -3,13 +3,9 @@ import React, { useEffect, useState } from "react";
 import { ChevronIcon } from "../util/icons";
 import { HOMEPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
-interface Props {
-  setTheme: Function;
-  setShowNav: Function;
-  setShowSocial: Function;
-}
+import { IGLOBALSTATE } from "../util/interfaces";
 
-export const Skills: React.FC<Props> = (props) => {
+export const Skills: React.FC<IGLOBALSTATE> = (props) => {
   const [showFrontEnd, setShowFrontEnd] = useState(true);
   const [showBackEnd, setShowBackEnd] = useState(false);
   const [showOther, setShowOther] = useState(false);

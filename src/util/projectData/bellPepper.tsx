@@ -24,7 +24,7 @@ import {
 
 // PROJECT DATA
 
-export default {
+const DATA = {
   url: "bell-pepper-design",
   name: ["BELL PEPPER", "DESIGN"],
   tagline: "Modern brochure site",
@@ -88,22 +88,20 @@ export default {
               I restructured the site to emphasise the company’s slogan,
               ‘Design, Marketing, Events’ and created, what I referred to as, ‘3
               mini sites’:
-              <ul>
-                <li>
-                  - A Design mini-site to host all design-related services
-                </li>
-                <li>
-                  {" "}
-                  - A Marketing mini-site to host all marketing-related services
-                  and
-                </li>
-                <li>
-                  {" "}
-                  - An Events mini-site to host all event-management-related
-                  services
-                </li>
-              </ul>
             </p>
+            <ul>
+              <li>- A Design mini-site to host all design-related services</li>
+              <li>
+                {" "}
+                - A Marketing mini-site to host all marketing-related services
+                and
+              </li>
+              <li>
+                {" "}
+                - An Events mini-site to host all event-management-related
+                services
+              </li>
+            </ul>
             <p>
               Once the site was split up into more user-friendly sections, I
               restructured the text on every page so that the main points of
@@ -178,3 +176,5 @@ export default {
     </div>
   ),
 };
+
+export default DATA;

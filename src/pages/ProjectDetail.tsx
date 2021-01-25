@@ -3,42 +3,10 @@ import { useParams, Link } from "react-router-dom";
 
 import { PROJECTS } from "../util/projects";
 
-interface Props {
-  setTheme: Function;
-  setShowNav: Function;
-  setShowSocial: Function;
-}
+import { IGLOBALSTATE } from "../util/interfaces";
+import { IPROJECT } from "../util/interfaces";
 
-interface IPROJECT {
-  url: string;
-  name: string[];
-  tagline: string;
-  workShort: string[];
-  workExpanded: string[];
-  links: {
-    app: string;
-    github?: string;
-  };
-  tech: string[];
-  icons: JSX.Element[];
-  subheading: string;
-  description: string;
-  mobileImg: {
-    src: string;
-    alt: string;
-  };
-  tabletImg: {
-    src: string;
-    alt: string;
-  };
-  desktopImg: {
-    src: string;
-    alt: string;
-  };
-  content: JSX.Element;
-}
-
-export const ProjectDetail: React.FC<Props> = (props) => {
+export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
   let { id } = useParams<any>();
 
@@ -160,10 +128,10 @@ export const ProjectDetail: React.FC<Props> = (props) => {
                 <div className="heading__container-inner">
                   <h1 className="project-name">
                     {project.name.map((word, i) => (
-                      <>
-                        <span key={i}>{word}</span>
+                      <div key={i}>
+                        <span>{word}</span>
                         <br />
-                      </>
+                      </div>
                     ))}
                   </h1>
                   <p className="project-subheading">{project.subheading}</p>
@@ -265,16 +233,18 @@ export const ProjectDetail: React.FC<Props> = (props) => {
                   <a
                     href={project.links.app}
                     target="_blank"
+                    rel="noreferrer"
                     className="project__link"
                   >
                     Open App
                   </a>
                 </div>
-                {project.links.github != "" && (
+                {project.links.github !== "" && (
                   <div>
                     <a
                       href={project.links.github}
                       target="_blank"
+                      rel="noreferrer"
                       className="project__link"
                     >
                       GitHub

@@ -4,13 +4,9 @@ import { Link } from "react-router-dom";
 import { ContactBtn } from "../components/ContactBtn";
 import { HOMEPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
-interface Props {
-  setTheme: Function;
-  setShowNav: Function;
-  setShowSocial: Function;
-}
+import { IGLOBALSTATE } from "../util/interfaces";
 
-export const About: React.FC<Props> = (props) => {
+export const About: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
   useEffect(() => {

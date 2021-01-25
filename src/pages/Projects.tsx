@@ -5,6 +5,7 @@ import Particles from "react-tsparticles";
 import particlesConfig from "../util/particlesjs-config.json";
 
 import { PROJECTS } from "../util/projects";
+import { IGLOBALSTATE } from "../util/interfaces";
 
 // ICONS AND ARRAY FOR 'VARIOUS APPLETS' PROJECTS
 import {
@@ -25,13 +26,7 @@ const appletIcons = [
   NodeIcon,
 ];
 
-interface Props {
-  setTheme: Function;
-  setShowNav: Function;
-  setShowSocial: Function;
-}
-
-export const Projects: React.FC<Props> = (props) => {
+export const Projects: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
   useEffect(() => {
@@ -74,8 +69,8 @@ export const Projects: React.FC<Props> = (props) => {
                 <div className="project-card__details">
                   <div className="project-card__work">
                     <p className="project-card__header">WORK</p>
-                    {project.workShort.map((w) => (
-                      <p key={w} className="project-card__text">
+                    {project.workShort.map((w, i) => (
+                      <p key={i} className="project-card__text">
                         {w}
                       </p>
                     ))}
@@ -95,16 +90,18 @@ export const Projects: React.FC<Props> = (props) => {
                       <a
                         href={project.links.app}
                         target="_blank"
+                        rel="noreferrer"
                         className="project__link"
                       >
                         Open App
                       </a>
                     </div>
-                    {project.links.github != "" && (
+                    {project.links.github !== "" && (
                       <div>
                         <a
                           href={project.links.github}
                           target="_blank"
+                          rel="noreferrer"
                           className="project__link"
                         >
                           GitHub
@@ -118,8 +115,10 @@ export const Projects: React.FC<Props> = (props) => {
                 <div className="project-card__tech">
                   <p className="project-card__header">TECH</p>
                   <div className="container">
-                    {project.icons.map((icon) => (
-                      <div className="icon">{icon}</div>
+                    {project.icons.map((icon, i) => (
+                      <div key={i} className="icon">
+                        {icon}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -169,8 +168,10 @@ export const Projects: React.FC<Props> = (props) => {
               <div className="project-card__tech">
                 <p className="project-card__header">TECH</p>
                 <div className="container">
-                  {appletIcons.map((icon) => (
-                    <div className="icon">{icon}</div>
+                  {appletIcons.map((icon, i) => (
+                    <div key={i} className="icon">
+                      {icon}
+                    </div>
                   ))}
                 </div>
               </div>

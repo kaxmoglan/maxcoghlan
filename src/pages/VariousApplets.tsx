@@ -20,15 +20,9 @@ import pomodoroMobile from "../images/dist/projects/pomodoro-clock/pomodoro-cloc
 // IMPORT PROJECTS LIST
 import { PROJECTS } from "../util/projects";
 
-interface Props {
-  setTheme: Function;
+import { IGLOBALSTATE } from "../util/interfaces";
 
-  setShowNav: Function;
-
-  setShowSocial: Function;
-}
-
-export const VariousApplets: React.FC<Props> = (props) => {
+export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
   const [animationClass, setAnimationClass] = useState("fade-out");
