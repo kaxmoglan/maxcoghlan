@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
@@ -63,29 +63,6 @@ export const Blog: React.FC<IGLOBALSTATE> = (props) => {
   });
   const [getPostError, setGetPostError] = useState(false);
 
-  // API CALLS
-  const getAllPosts = () => {
-    setLoading(true);
-    api
-      .get("/articles?username=jameswallis&state=all")
-      .then((res) => {
-        setAllPosts(res.data);
-        setTimeout(() => setLoading(false), 2000);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const getSinglePost = useCallback(() => {
-    setLoading(true);
-    api
-      .get(`/articles/${id}`)
-      .then((res) => {
-        setPost(res.data);
-        setTimeout(() => setLoading(false), 500);
-      })
-      .catch(() => setGetPostError(true));
-  }, [id]);
-
   // GLOBAL STATE
   useEffect(() => {
     setTheme("light");
@@ -96,15 +73,35 @@ export const Blog: React.FC<IGLOBALSTATE> = (props) => {
   // GET POSTS
   useEffect(() => {
     if (id !== "home" && id !== undefined) {
-      getSinglePost();
+      setLoading(true);
+
+      api
+        // GET SINGLE POST
+        .get(`/articles/${id}`)
+        .then((res) => {
+          setPost(res.data);
+          setTimeout(() => setLoading(false), 500);
+        })
+        .catch(() => setGetPostError(true));
+
       setIsPostDetailPage(true);
       setTimeout(() => window.scrollTo(0, 0), 300);
     } else {
-      allPosts.length === 0 && getAllPosts();
+      if (allPosts.length === 0) {
+        setLoading(true);
+        api
+          // GET ALL POSTS
+          .get("/articles?username=mustapha&state=all")
+          .then((res) => {
+            setAllPosts(res.data);
+            setTimeout(() => setLoading(false), 2000);
+          })
+          .catch((err) => console.log(err));
+      }
       setIsPostDetailPage(false);
       setTimeout(() => window.scrollTo(0, 0), 300);
     }
-  }, [id, allPosts, getSinglePost]);
+  }, [id, allPosts]);
 
   return (
     <div className="blog-page-template">
