@@ -50,7 +50,7 @@
             color: $mid-grey;
             .million::before {
               background-color: $mid-grey;
-              transform: translateY(-2px);
+              transform: translateY(-4px);
             }
           }
           &:focus {
@@ -240,7 +240,7 @@
         &__title {
           font-size: 3.5rem;
           line-height: 5rem;
-          text-align: justify;
+          // text-align: center;
 
           margin-bottom: 2rem;
         }
@@ -251,6 +251,29 @@
           font-style: italic;
           text-align: center;
           margin-bottom: 4rem;
+        }
+
+        &__publish-date {
+          font-size: 1.4rem;
+          color: $mid-grey;
+          font-style: italic;
+          text-align: right;
+        }
+
+        &__footer {
+          margin: 5rem 0;
+          text-align: center;
+          font-size: 1.4rem;
+          color: $mid-grey;
+
+          &-link {
+            margin: 0 1rem;
+            transition: all 250ms ease;
+
+            &:hover {
+              color: $black;
+            }
+          }
         }
 
         &__body {
@@ -271,7 +294,8 @@
             }
           }
 
-          ol {
+          ol,
+          ul {
             padding-left: 5rem;
             margin: 2rem 0;
 
@@ -280,14 +304,19 @@
             }
           }
 
+          h1 {
+            font-size: 3rem;
+            margin: 5rem 0 2rem 0;
+          }
+
           h2 {
             font-size: 2.5rem;
-            margin: 3rem 0;
+            margin: 5rem 0 2rem 0;
           }
 
           h3 {
             font-size: 2.2rem;
-            margin: 2rem 0;
+            margin: 5rem 0 2rem 0;
           }
 
           .js-actions-panel {
@@ -312,14 +341,42 @@
             border-radius: 0.2rem;
           }
 
-          // CODE
+          table {
+            padding: 1rem;
+            margin: 4rem 0;
+            border-collapse: collapse;
+
+            thead {
+              background-color: $light-grey;
+
+              th {
+                border: 1px solid $mid-grey;
+                padding: 0.5rem;
+              }
+            }
+
+            tbody {
+              td {
+                padding: 1rem;
+                border: 1px solid $light-grey;
+              }
+            }
+          }
+
+          /*
+          -----------------------------------------
+          CODE
+          -----------------------------------------
+          */
           .highlight {
             margin: 4rem 0;
 
             &.shell,
             &.javascript,
             &.json,
-            &.yaml {
+            &.yaml,
+            &.typescript,
+            &.markdown {
               width: 600px;
               overflow: auto;
               background-color: $bg;
@@ -334,38 +391,80 @@
 
             &.shell {
               .c {
-                color: $c;
+                color: $comment;
               }
               .nt {
-                color: $nt;
+                color: $pastelBlue;
               }
             }
             &.javascript {
               .kd,
-              .o {
-                color: $kd;
+              .sr,
+              .err {
+                color: $pastelGreen;
               }
               .nx,
+              .nd {
+                color: $pastelGreen;
+              }
+
               .na {
-                color: $nx;
+                color: $pastelBlue;
               }
               .dl {
-                color: $s1;
+                color: $pastelYellow;
               }
               .s1 {
-                color: $s1;
+                color: $pastelYellow;
               }
               .mi {
-                color: $mi;
+                color: $pastelGreen;
               }
               .s2 {
-                color: $s1;
+                color: $pastelYellow;
               }
               .kc {
-                color: $mi;
+                color: $pastelGreen;
               }
-              .c1 {
-                color: $c;
+              .c1,
+              .cm {
+                color: $comment;
+              }
+              .k {
+                color: $pastelYellow;
+              }
+            }
+            &.yaml {
+              .na {
+                color: $pastelBlue;
+              }
+              .s {
+                color: $pastelYellow;
+              }
+            }
+            &.json {
+              .nl {
+                color: $pastelBlue;
+              }
+              .s2 {
+                color: $pastelYellow;
+              }
+            }
+            &.typescript {
+              .k,
+              .kd,
+              .nb,
+              .na {
+                color: $pastelPurple;
+              }
+              .nx {
+                color: $pastelBlue;
+              }
+              .dl,
+              .s1,
+              .s2,
+              .kr {
+                color: $pastelYellow;
               }
             }
           }

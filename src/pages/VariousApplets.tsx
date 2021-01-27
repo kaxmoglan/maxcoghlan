@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -25,30 +25,19 @@ import { IGLOBALSTATE } from "../util/interfaces";
 export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
 
-  const [animationClass, setAnimationClass] = useState("fade-out");
-
-  // HANDLERS
-  const handleAnimationClass = () => {
-    animationClass === "fade-in" && setAnimationClass("fade-out");
+  useEffect(() => {
     setTimeout(() => {
-      setAnimationClass("fade-in");
       window.scrollTo(0, 0);
     }, 300);
-  };
-
-  useEffect(() => {
-    handleAnimationClass();
 
     setTheme("dark");
     setShowNav(true);
     setShowSocial(true);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [setTheme, setShowNav, setShowSocial]);
 
   return (
     <main className="content__main">
-      <div className={`project-detail-page ${animationClass}`}>
+      <div className={`project-detail-page`}>
         {/* TOP SECTION */}
         <div className="various__header">
           <div className="heading">
@@ -114,6 +103,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
               <div className="links">
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   className="project__link"
                   href="https://github.com/kaxmoglan/to-do-list"
                 >
@@ -122,6 +112,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                 <p className="link-seperator"> | </p>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   className="project__link"
                   href="https://kaxmoglan.github.io/to-do-list/"
                 >
@@ -158,6 +149,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                     <div className="links">
                       <a
                         target="_blank"
+                        rel="noreferrer"
                         className="project__link"
                         href="https://github.com/kaxmoglan/react-calculator"
                       >
@@ -166,6 +158,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                       <p className="link-seperator"> | </p>
                       <a
                         target="_blank"
+                        rel="noreferrer"
                         className="project__link"
                         href="https://kaxmoglan.github.io/react-calculator/"
                       >
@@ -205,6 +198,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                   <div className="links">
                     <a
                       target="_blank"
+                      rel="noreferrer"
                       className="project__link"
                       href="https://github.com/kaxmoglan/drum-machine/"
                     >
@@ -213,6 +207,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                     <p className="link-seperator"> | </p>
                     <a
                       target="_blank"
+                      rel="noreferrer"
                       className="project__link"
                       href="https://kaxmoglan.github.io/drum-machine/"
                     >
@@ -253,6 +248,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
               <div className="links">
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   className="project__link"
                   href="https://github.com/kaxmoglan/markdown-previewer"
                 >
@@ -261,6 +257,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                 <p className="link-seperator"> | </p>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   className="project__link"
                   href="https://kaxmoglan.github.io/markdown-previewer/"
                 >
@@ -291,6 +288,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                     <div className="links">
                       <a
                         target="_blank"
+                        rel="noreferrer"
                         className="project__link"
                         href="https://github.com/kaxmoglan/pomodoro-clock"
                       >
@@ -299,6 +297,7 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                       <p className="link-seperator"> | </p>
                       <a
                         target="_blank"
+                        rel="noreferrer"
                         className="project__link"
                         href="https://kaxmoglan.github.io/pomodoro-clock/"
                       >

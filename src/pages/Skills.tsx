@@ -16,9 +16,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
     setTheme("dark");
     setShowNav(true);
     setShowSocial(true);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [setTheme, setShowNav, setShowSocial]);
 
   const handleAccordion = (menu: string) => {
     switch (menu) {

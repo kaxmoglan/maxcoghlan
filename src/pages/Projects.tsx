@@ -33,9 +33,7 @@ export const Projects: React.FC<IGLOBALSTATE> = (props) => {
     setTheme("dark");
     setShowNav(true);
     setShowSocial(true);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [setTheme, setShowNav, setShowSocial]);
 
   return (
     <main className="content__main">

@@ -14,9 +14,7 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
     setTheme("dark");
     setShowNav(true);
     setShowSocial(false);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [setTheme, setShowNav, setShowSocial]);
 
   return (
     <main className="content__main">

@@ -105,9 +105,7 @@ export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
 
     // UNLOAD EVENT LISTENER
     return () => window.removeEventListener("scroll", handleScroll);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [setTheme, setShowNav, setShowSocial]);
 
   // NEXT & PREV PROJECT LOAD
   useEffect(() => {

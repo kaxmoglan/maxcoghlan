@@ -76,7 +76,7 @@ export interface IPOST {
   readable_publish_date: null | string;
   slug: null | string;
   path: null | string;
-  url: null | string;
+  url: string;
   comments_count: null | number;
   public_reactions_count: null | number;
   collection_id: null | number;

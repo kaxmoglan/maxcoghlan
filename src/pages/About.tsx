@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { ContactBtn } from "../components/ContactBtn";
 import { HOMEPAGEANIMATIONFRAMES } from "../util/animations/animations";
@@ -13,9 +12,7 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
     setTheme("dark");
     setShowNav(true);
     setShowSocial(true);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [setTheme, setShowNav, setShowSocial]);
 
   return (
     <main className="content__main">

@@ -2,6 +2,7 @@
   .various {
     &__header {
       padding-top: calc((100vh - 75rem) / 2);
+      margin: 10rem 0;
     }
     &__title {
       text-align: center;
@@ -52,6 +53,11 @@
         left: 0;
       }
     }
+
+    &.custom-content {
+      margin-top: 15rem;
+    }
+
     .links {
       margin-top: 3rem;
 

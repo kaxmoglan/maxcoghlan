@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
@@ -72,11 +72,10 @@ export const Blog: React.FC<IGLOBALSTATE> = (props) => {
         setAllPosts(res.data);
         setTimeout(() => setLoading(false), 2000);
       })
-
       .catch((err) => console.log(err));
   };
 
-  const getSinglePost = () => {
+  const getSinglePost = useCallback(() => {
     setLoading(true);
     api
       .get(`/articles/${id}`)
@@ -85,7 +84,7 @@ export const Blog: React.FC<IGLOBALSTATE> = (props) => {
         setTimeout(() => setLoading(false), 500);
       })
       .catch(() => setGetPostError(true));
-  };
+  }, [id]);
 
   // GLOBAL STATE
   useEffect(() => {
@@ -94,19 +93,18 @@ export const Blog: React.FC<IGLOBALSTATE> = (props) => {
     setShowSocial(false);
   }, [setTheme, setShowNav, setShowSocial]);
 
-  // GET SINGLE POSTS
+  // GET POSTS
   useEffect(() => {
     if (id !== "home" && id !== undefined) {
-      allPosts.length === 0 && getAllPosts();
       getSinglePost();
       setIsPostDetailPage(true);
       setTimeout(() => window.scrollTo(0, 0), 300);
     } else {
       allPosts.length === 0 && getAllPosts();
       setIsPostDetailPage(false);
+      setTimeout(() => window.scrollTo(0, 0), 300);
     }
-    // eslint-disable-next-line
-  }, [id]);
+  }, [id, allPosts, getSinglePost]);
 
   return (
     <div className="blog-page-template">

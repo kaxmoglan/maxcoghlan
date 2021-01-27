@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { IPOST } from "../../util/interfaces";
 
@@ -40,6 +41,22 @@ export const BlogPost: React.FC<Props> = (props) => {
         className="blog-post__body"
         dangerouslySetInnerHTML={{ __html: post.body_html }}
       />
+      <div className="blog-post__publish-date">
+        <p>Published on {post.readable_publish_date}</p>
+      </div>
+      <div className="blog-post__footer">
+        <Link to="/blog/home" className="blog-post__footer-link">
+          View All Posts
+        </Link>
+        <a
+          href={post.url}
+          target="_blank"
+          rel="noreferrer"
+          className="blog-post__footer-link"
+        >
+          Read on Dev.to
+        </a>
+      </div>
     </div>
   );
 
