@@ -376,7 +376,9 @@
             &.json,
             &.yaml,
             &.typescript,
-            &.markdown {
+            &.markdown,
+            &.html,
+            &.css {
               width: 600px;
               overflow: auto;
               background-color: $bg;
@@ -465,6 +467,34 @@
               .s2,
               .kr {
                 color: $pastelYellow;
+              }
+            }
+            &.html {
+              .nt {
+                color: $pastelPurple;
+              }
+              .na {
+                color: $pastelBlue;
+              }
+              .s {
+                color: $pastelYellow;
+              }
+            }
+            &.css {
+              .nc,
+              .nb,
+              .m {
+                color: $pastelYellow;
+              }
+              .nl,
+              .py {
+                color: $pastelBlue;
+              }
+              .n {
+                color: $pastelPurple;
+              }
+              .c {
+                color: $comment;
               }
             }
           }

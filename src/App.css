@@ -1533,13 +1533,13 @@ ILLUSTRATION ANIMATION
               border: 1px solid #cecece; }
           .blog-page-template__container .right-column .blog-post__body .highlight {
             margin: 4rem 0; }
-            .blog-page-template__container .right-column .blog-post__body .highlight.shell, .blog-page-template__container .right-column .blog-post__body .highlight.javascript, .blog-page-template__container .right-column .blog-post__body .highlight.json, .blog-page-template__container .right-column .blog-post__body .highlight.yaml, .blog-page-template__container .right-column .blog-post__body .highlight.typescript, .blog-page-template__container .right-column .blog-post__body .highlight.markdown {
+            .blog-page-template__container .right-column .blog-post__body .highlight.shell, .blog-page-template__container .right-column .blog-post__body .highlight.javascript, .blog-page-template__container .right-column .blog-post__body .highlight.json, .blog-page-template__container .right-column .blog-post__body .highlight.yaml, .blog-page-template__container .right-column .blog-post__body .highlight.typescript, .blog-page-template__container .right-column .blog-post__body .highlight.markdown, .blog-page-template__container .right-column .blog-post__body .highlight.html, .blog-page-template__container .right-column .blog-post__body .highlight.css {
               width: 600px;
               overflow: auto;
               background-color: #17181a;
               border-radius: 0.5rem;
               padding: 2rem; }
-              .blog-page-template__container .right-column .blog-post__body .highlight.shell code, .blog-page-template__container .right-column .blog-post__body .highlight.javascript code, .blog-page-template__container .right-column .blog-post__body .highlight.json code, .blog-page-template__container .right-column .blog-post__body .highlight.yaml code, .blog-page-template__container .right-column .blog-post__body .highlight.typescript code, .blog-page-template__container .right-column .blog-post__body .highlight.markdown code {
+              .blog-page-template__container .right-column .blog-post__body .highlight.shell code, .blog-page-template__container .right-column .blog-post__body .highlight.javascript code, .blog-page-template__container .right-column .blog-post__body .highlight.json code, .blog-page-template__container .right-column .blog-post__body .highlight.yaml code, .blog-page-template__container .right-column .blog-post__body .highlight.typescript code, .blog-page-template__container .right-column .blog-post__body .highlight.markdown code, .blog-page-template__container .right-column .blog-post__body .highlight.html code, .blog-page-template__container .right-column .blog-post__body .highlight.css code {
                 background-color: initial;
                 color: #dddbdb; }
             .blog-page-template__container .right-column .blog-post__body .highlight.shell .c {
@@ -1590,6 +1590,23 @@ ILLUSTRATION ANIMATION
             .blog-page-template__container .right-column .blog-post__body .highlight.typescript .s2,
             .blog-page-template__container .right-column .blog-post__body .highlight.typescript .kr {
               color: #fac96f; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.html .nt {
+              color: #b6a6ff; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.html .na {
+              color: #84e6ff; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.html .s {
+              color: #fac96f; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .nc,
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .nb,
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .m {
+              color: #fac96f; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .nl,
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .py {
+              color: #84e6ff; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .n {
+              color: #b6a6ff; }
+            .blog-page-template__container .right-column .blog-post__body .highlight.css .c {
+              color: #8b8b8b; }
 
 /*
 -----------------------------------------
