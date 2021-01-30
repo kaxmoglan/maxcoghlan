@@ -28,31 +28,28 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
               <div className="about-me">
                 <p>
                   I have a passion for learning, understanding how things work
-                  and building and making things. I’m self motivated, self
-                  disciplined and well organised with a high attention to
-                  detail.
+                  and making things. I’m self motivated, self disciplined and
+                  well organised with a high attention to detail.
                 </p>
 
                 <p>
-                  I love music, film and design, have played drums and performed
+                  I love music, film and design, played drums and performed
                   around the world since I was 17, went to BRIT School (after
                   self-teaching my GCSEs from home) and have started several
                   entertainment businesses, all of which are running today.
                 </p>
 
                 <p>
-                  My first job at 13 was working for a company repairing,
-                  unlocking and flashing mobile phones, my second job at 14 was
-                  for an architect’s firm setting up, maintaining and repairing
-                  computers, servers and render farms. Everything I did always
-                  centred around tech, so I decided to commit myself to software
-                  development.
+                  My first job at 13 was working for a company repairing mobile
+                  phones, my second job at 14 was for an architect’s firm
+                  setting up, maintaining and repairing computers, servers and
+                  render farms.
                 </p>
 
                 <p>
-                  I enjoy working with Node.js, React, Sass, Wordpress & PHP and
-                  Python & Django, but I’m always looking to further my
-                  knowledge and try new technologies.
+                  I enjoy working with Node.js, React, JavsScript, TypeScript,
+                  Sass, Wordpress & PHP and Python & Django, but I’m always
+                  looking to further my knowledge and try new technologies.
                 </p>
 
                 <p>
