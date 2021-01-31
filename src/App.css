@@ -554,7 +554,9 @@ BLOG
               -ms-flex-pack: center;
                   justify-content: center; }
           .projects-page .projects .project-card__tech .container .icon svg {
-            width: 28px; }
+            width: 28px;
+            color: #dddbdb;
+            fill: #dddbdb; }
           .projects-page .projects .project-card__tech .container .icon .fa-php {
             width: auto;
             height: 32px; }
@@ -1236,6 +1238,66 @@ ILLUSTRATION ANIMATION
   .skills__category.visible .skills__heading:hover .fa-chevron-right {
     -webkit-animation: none;
             animation: none; }
+
+.skills__tech-icons {
+  position: relative; }
+  .skills__tech-icons__container {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    margin-top: 25%;
+    overflow: hidden; }
+    .skills__tech-icons__container .icon {
+      width: 3rem;
+      margin: 1rem;
+      position: absolute; }
+      .skills__tech-icons__container .icon svg {
+        fill: #cecece;
+        color: #cecece; }
+      .skills__tech-icons__container .icon:nth-child(1) {
+        top: 35%;
+        left: 40%;
+        width: 4rem; }
+      .skills__tech-icons__container .icon:nth-child(2) {
+        top: 1rem;
+        left: 10rem;
+        width: 6rem; }
+      .skills__tech-icons__container .icon:nth-child(3) {
+        top: 6rem;
+        right: 8rem;
+        width: 6rem; }
+      .skills__tech-icons__container .icon:nth-child(4) {
+        right: 15rem;
+        top: 1rem;
+        width: 5rem; }
+      .skills__tech-icons__container .icon:nth-child(5) {
+        right: 12rem;
+        bottom: 3rem;
+        width: 5rem; }
+      .skills__tech-icons__container .icon:nth-child(6) {
+        left: 10rem;
+        bottom: 4rem;
+        width: 4.5rem; }
+      .skills__tech-icons__container .icon:nth-child(7) {
+        right: 2rem;
+        bottom: 8rem;
+        width: 4rem; }
+      .skills__tech-icons__container .icon:nth-child(8) {
+        left: 5rem;
+        bottom: 12rem;
+        width: 3.5rem; }
+      .skills__tech-icons__container .icon:nth-child(9) {
+        left: 1rem;
+        top: 2rem;
+        width: 4rem; }
+      .skills__tech-icons__container .icon:nth-child(10) {
+        right: 6rem;
+        top: 0;
+        width: 3rem; }
+      .skills__tech-icons__container .icon:nth-child(11) {
+        left: 13rem;
+        top: 40%;
+        width: 3rem; }
 
 @-webkit-keyframes chevrondance {
   0% {

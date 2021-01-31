@@ -1,4 +1,5 @@
 .skills {
+  // LEFT COLUMN
   &__title {
     margin-top: 15rem;
     margin-bottom: 3rem;
@@ -67,6 +68,95 @@
       .skills__heading:hover {
         .fa-chevron-right {
           animation: none;
+        }
+      }
+    }
+  }
+  // RIGHT COLUMN
+  &__tech-icons {
+    position: relative;
+
+    &__container {
+      position: absolute;
+      width: 450px;
+      height: 280px;
+      margin-top: 25%;
+      overflow: hidden;
+
+      .icon {
+        width: 3rem;
+        margin: 1rem;
+        position: absolute;
+        svg {
+          fill: $light-grey;
+          color: $light-grey;
+        }
+
+        &:nth-child(1) {
+          // JS
+          top: 35%;
+          left: 40%;
+          width: 4rem;
+        }
+        &:nth-child(2) {
+          // Node
+          top: 1rem;
+          left: 10rem;
+          width: 6rem;
+        }
+        &:nth-child(3) {
+          // PHP
+          top: 6rem;
+          right: 8rem;
+          width: 6rem;
+        }
+        &:nth-child(4) {
+          // SASS
+          right: 15rem;
+          top: 1rem;
+          width: 5rem;
+        }
+        &:nth-child(5) {
+          // REACT
+          right: 12rem;
+          bottom: 3rem;
+          width: 5rem;
+        }
+        &:nth-child(6) {
+          // REDUX
+          left: 10rem;
+          bottom: 4rem;
+          width: 4.5rem;
+        }
+        &:nth-child(7) {
+          // PYTHON
+          right: 2rem;
+          bottom: 8rem;
+          width: 4rem;
+        }
+        &:nth-child(8) {
+          // DJANGO
+          left: 5rem;
+          bottom: 12rem;
+          width: 3.5rem;
+        }
+        &:nth-child(9) {
+          // TYPESCRIPT
+          left: 1rem;
+          top: 2rem;
+          width: 4rem;
+        }
+        &:nth-child(10) {
+          // FIREBASE
+          right: 6rem;
+          top: 0;
+          width: 3rem;
+        }
+        &:nth-child(11) {
+          // HTML
+          left: 13rem;
+          top: 40%;
+          width: 3rem;
         }
       }
     }

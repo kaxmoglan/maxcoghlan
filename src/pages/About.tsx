@@ -27,27 +27,15 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 
               <div className="about-me">
                 <p>
-                  I have a passion for learning, understanding how things work
-                  and making things. I’m self motivated, self disciplined and
-                  well organised with a high attention to detail.
+                  I'm a web developer based in London, England. When I'm not
+                  coding, I'm usually making music, watching a film, ice
+                  skating, weight training, playing or watching football,
+                  reading about all things tech and finance or eating and
+                  drinking my weight in coffee and pastries.
                 </p>
 
                 <p>
-                  I love music, film and design, played drums and performed
-                  around the world since I was 17, went to BRIT School (after
-                  self-teaching my GCSEs from home) and have started several
-                  entertainment businesses, all of which are running today.
-                </p>
-
-                <p>
-                  My first job at 13 was working for a company repairing mobile
-                  phones, my second job at 14 was for an architect’s firm
-                  setting up, maintaining and repairing computers, servers and
-                  render farms.
-                </p>
-
-                <p>
-                  I enjoy working with Node.js, React, JavsScript, TypeScript,
+                  I enjoy working with Node.js, React, JavaScript, TypeScript,
                   Sass, Wordpress & PHP and Python & Django, but I’m always
                   looking to further my knowledge and try new technologies.
                 </p>

@@ -1,9 +1,35 @@
 import React, { useEffect, useState } from "react";
 
-import { ChevronIcon } from "../util/icons";
-import { SKILLSPAGEANIMATIONFRAMES } from "../util/animations/animations";
+// ICONS
+import {
+  ChevronIcon,
+  JavascriptIcon,
+  NodeIcon,
+  PhpIcon,
+  SassIcon,
+  ReactIcon,
+  ReduxIcon,
+  PythonIcon,
+  DjangoIcon,
+  TypescriptIcon,
+  FirebaseIcon,
+} from "../util/icons";
 
+import { SKILLSPAGEANIMATIONFRAMES } from "../util/animations/animations";
 import { IGLOBALSTATE } from "../util/interfaces";
+
+const TECHICONS = [
+  JavascriptIcon,
+  NodeIcon,
+  PhpIcon,
+  SassIcon,
+  ReactIcon,
+  ReduxIcon,
+  PythonIcon,
+  DjangoIcon,
+  TypescriptIcon,
+  FirebaseIcon,
+];
 
 export const Skills: React.FC<IGLOBALSTATE> = (props) => {
   const [showFrontEnd, setShowFrontEnd] = useState(true);
@@ -141,6 +167,15 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
           {/* RIGHT COLUMN */}
           <div className="main-page-template__right-column">
+            <div className="skills__tech-icons">
+              <div className="skills__tech-icons__container">
+                {TECHICONS.map((icon, i) => (
+                  <div className="icon" key={i}>
+                    {icon}
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="main-page-template__right-column-container">
               <div className="animation-frame__container skills">
                 {SKILLSPAGEANIMATIONFRAMES.map((frame, i) => (
