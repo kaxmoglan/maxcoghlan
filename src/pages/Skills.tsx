@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { ChevronIcon } from "../util/icons";
-import { HOMEPAGEANIMATIONFRAMES } from "../util/animations/animations";
+import { SKILLSPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
 import { IGLOBALSTATE } from "../util/interfaces";
 
@@ -142,8 +142,8 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
           {/* RIGHT COLUMN */}
           <div className="main-page-template__right-column">
             <div className="main-page-template__right-column-container">
-              <div className="animation-frame__container">
-                {HOMEPAGEANIMATIONFRAMES.map((frame, i) => (
+              <div className="animation-frame__container skills">
+                {SKILLSPAGEANIMATIONFRAMES.map((frame, i) => (
                   <div className="animation-frame" key={i}>
                     {frame}
                   </div>

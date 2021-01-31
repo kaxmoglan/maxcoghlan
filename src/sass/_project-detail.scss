@@ -1,4 +1,6 @@
 .project-detail-page {
+  padding-bottom: 8rem;
+
   &__header {
     padding-top: calc((100vh - 75rem) / 2);
     height: 100vh;
@@ -263,7 +265,7 @@
   */
 
   .more-projects {
-    margin: 0 auto 10rem auto;
+    margin: 0 auto;
     width: 100%;
     max-width: 800px;
 

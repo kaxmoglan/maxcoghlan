@@ -571,6 +571,7 @@ BLOG
             width: 42px; }
 
 .project-detail-page {
+  padding-bottom: 8rem;
   /*
   -----------------------------------------
   SCREEN SHOTS
@@ -795,7 +796,7 @@ BLOG
       .project-detail-page .project-details__links .project__link {
         margin-bottom: 2rem; }
   .project-detail-page .more-projects {
-    margin: 0 auto 10rem auto;
+    margin: 0 auto;
     width: 100%;
     max-width: 800px; }
     .project-detail-page .more-projects__container {
@@ -1107,6 +1108,11 @@ BELL PEPPER
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; }
+        .main-page-template__right-column .animation-frame__container.skills .animation-frame {
+          width: initial;
+          position: fixed;
+          bottom: 0;
+          right: 0; }
       .main-page-template__right-column .animation-frame svg {
         width: 100%;
         height: auto; }
@@ -1172,7 +1178,7 @@ ILLUSTRATION ANIMATION
     visibility: hidden; } }
 
 .skills__title {
-  margin-top: 18rem;
+  margin-top: 15rem;
   margin-bottom: 3rem; }
 
 .skills__heading {
@@ -1778,18 +1784,18 @@ GLOBAL STYLING
   border-radius: 1rem;
   color: #08fdd8;
   text-decoration: none;
-  -webkit-transition: all 250ms ease;
-  -o-transition: all 250ms ease;
-  transition: all 250ms ease;
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
   cursor: pointer; }
   .contact-button .million::before {
     background-color: #08fdd8;
     left: 1px;
     top: 0;
     height: 1px;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease; }
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease; }
   .contact-button:hover {
     border: 2px solid #01b79c;
     color: #3bfde0; }

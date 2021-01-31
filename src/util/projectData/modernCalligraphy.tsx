@@ -137,7 +137,7 @@ const DATA = {
           On top of fulfilling the brief, I incorporated a bespoke JS menu, an
           animated loader on selected pages, a pop-up search box that searches
           all WooCommerce product names, SKUs, tags and categories, and custom
-          icons I asked the client to create to achieve a truly unique result. I
+          icons I asked the client to create to achieve a truly unique design. I
           also utilised the Bootstrap grid system so that it was easy for the
           client (or myself) to change or create powerful page layouts using
           Bootstrap classnames from within the Gutenberg editor.
