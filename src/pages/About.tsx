@@ -36,7 +36,7 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 
                 <p>
                   I enjoy working with Node.js, React, JavaScript, TypeScript,
-                  Sass, Wordpress & PHP and Python & Django, but I’m always
+                  Sass, Wordpress, PHP, Python and Django, but I’m always
                   looking to further my knowledge and try new technologies.
                 </p>
 

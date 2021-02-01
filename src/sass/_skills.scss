@@ -73,90 +73,106 @@
     }
   }
   // RIGHT COLUMN
-  &__tech-icons {
+  &__icons {
     position: relative;
 
-    &__container {
+    &-container {
       position: absolute;
       width: 450px;
       height: 280px;
       margin-top: 25%;
       overflow: hidden;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 500ms ease;
+      transition-delay: initial;
+
+      // border: 2px solid hotpink;
+
+      &.visible {
+        opacity: 1;
+        transform: scale(1);
+        transition-delay: 500ms;
+      }
 
       .icon {
-        width: 3rem;
+        width: 4rem;
         margin: 1rem;
         position: absolute;
+        margin-left: 3rem;
         svg {
           fill: $light-grey;
           color: $light-grey;
         }
 
+        #gulp-icon,
+        #mongo-icon {
+          transform: scale(0.8);
+        }
+
+        #php-icon {
+          transform: scale(1.5);
+        }
+
+        #node-icon {
+          transform: scale(1.8);
+        }
+
+        #mysql-icon {
+          transform: scale(1.5);
+        }
+
+        #jquery-icon {
+          transform: scale(1.3);
+        }
+
+        #sass-icon {
+          transform: scale(1.3);
+        }
+
         &:nth-child(1) {
-          // JS
-          top: 35%;
-          left: 40%;
-          width: 4rem;
+          top: 0;
+          left: 2%;
         }
         &:nth-child(2) {
-          // Node
-          top: 1rem;
-          left: 10rem;
-          width: 6rem;
+          top: 10%;
+          left: 25%;
         }
         &:nth-child(3) {
-          // PHP
-          top: 6rem;
-          right: 8rem;
-          width: 6rem;
+          top: 0;
+          left: 50%;
         }
         &:nth-child(4) {
-          // SASS
-          right: 15rem;
-          top: 1rem;
-          width: 5rem;
+          top: 5%;
+          left: 75%;
         }
         &:nth-child(5) {
-          // REACT
-          right: 12rem;
-          bottom: 3rem;
-          width: 5rem;
+          top: 30%;
+          left: 10%;
         }
         &:nth-child(6) {
-          // REDUX
-          left: 10rem;
-          bottom: 4rem;
-          width: 4.5rem;
+          top: 35%;
+          left: 40%;
         }
         &:nth-child(7) {
-          // PYTHON
-          right: 2rem;
-          bottom: 8rem;
-          width: 4rem;
+          top: 30%;
+          left: 70%;
         }
         &:nth-child(8) {
-          // DJANGO
-          left: 5rem;
-          bottom: 12rem;
-          width: 3.5rem;
+          top: 60%;
+          left: 0;
         }
         &:nth-child(9) {
-          // TYPESCRIPT
-          left: 1rem;
-          top: 2rem;
-          width: 4rem;
+          top: 60%;
+          left: 58%;
         }
         &:nth-child(10) {
-          // FIREBASE
-          right: 6rem;
-          top: 0;
-          width: 3rem;
+          top: 65%;
+          left: 30%;
         }
         &:nth-child(11) {
-          // HTML
-          left: 13rem;
-          top: 40%;
-          width: 3rem;
+          top: 62%;
+          left: 78%;
         }
       }
     }

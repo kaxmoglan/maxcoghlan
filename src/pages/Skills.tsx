@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import {
   ChevronIcon,
   JavascriptIcon,
+  CssIcon,
   NodeIcon,
   PhpIcon,
   SassIcon,
@@ -13,26 +14,74 @@ import {
   DjangoIcon,
   TypescriptIcon,
   FirebaseIcon,
+  HtmlIcon,
+  BootstrapIcon,
+  MaterialIcon,
+  WordpressIcon,
+  MySqlIcon,
+  PostgresIcon,
+  MongoIcon,
+  GulpIcon,
+  WebpackIcon,
+  IllustratorIcon,
+  PhotoshopIcon,
+  XdIcon,
+  VsCodeIcon,
+  GitIcon,
+  GithubIcon,
+  JinjaIcon,
+  HerokuIcon,
+  SublimeTextIcon,
+  JqueryIcon,
 } from "../util/icons";
 
 import { SKILLSPAGEANIMATIONFRAMES } from "../util/animations/animations";
 import { IGLOBALSTATE } from "../util/interfaces";
+import SkillsCloud from "../components/SkillsCloud";
 
-const TECHICONS = [
+const FRONTENDICONS: Array<JSX.Element> = [
+  HtmlIcon,
+  CssIcon,
   JavascriptIcon,
-  NodeIcon,
-  PhpIcon,
-  SassIcon,
-  ReactIcon,
-  ReduxIcon,
-  PythonIcon,
-  DjangoIcon,
   TypescriptIcon,
+  BootstrapIcon,
+  JqueryIcon,
+  ReactIcon,
+  SassIcon,
+  MaterialIcon,
+  ReduxIcon,
+];
+
+const BACKENDICONS: Array<JSX.Element> = [
+  NodeIcon,
   FirebaseIcon,
+  PythonIcon,
+  WordpressIcon,
+  MySqlIcon,
+  PhpIcon,
+  WebpackIcon,
+  MongoIcon,
+
+  DjangoIcon,
+
+  PostgresIcon,
+  GulpIcon,
+];
+
+const OTHERICONS: Array<JSX.Element> = [
+  SublimeTextIcon,
+  JinjaIcon,
+  XdIcon,
+  VsCodeIcon,
+  IllustratorIcon,
+  GitIcon,
+  PhotoshopIcon,
+  HerokuIcon,
+  GithubIcon,
 ];
 
 export const Skills: React.FC<IGLOBALSTATE> = (props) => {
-  const [showFrontEnd, setShowFrontEnd] = useState(true);
+  const [showFrontEnd, setShowFrontEnd] = useState(false);
   const [showBackEnd, setShowBackEnd] = useState(false);
   const [showOther, setShowOther] = useState(false);
 
@@ -167,13 +216,27 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
           {/* RIGHT COLUMN */}
           <div className="main-page-template__right-column">
-            <div className="skills__tech-icons">
-              <div className="skills__tech-icons__container">
-                {TECHICONS.map((icon, i) => (
-                  <div className="icon" key={i}>
-                    {icon}
-                  </div>
-                ))}
+            <div className="skills__icons">
+              <div
+                className={`skills__icons-container ${
+                  showFrontEnd ? "visible" : ""
+                }`}
+              >
+                <SkillsCloud icons={FRONTENDICONS} />
+              </div>
+              <div
+                className={`skills__icons-container ${
+                  showBackEnd ? "visible" : ""
+                }`}
+              >
+                <SkillsCloud icons={BACKENDICONS} />
+              </div>
+              <div
+                className={`skills__icons-container ${
+                  showOther ? "visible" : ""
+                }`}
+              >
+                <SkillsCloud icons={OTHERICONS} />
               </div>
             </div>
             <div className="main-page-template__right-column-container">
