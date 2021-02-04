@@ -47,8 +47,8 @@ const FRONTENDICONS: Array<JSX.Element> = [
   BootstrapIcon,
   JqueryIcon,
   ReactIcon,
-  SassIcon,
   MaterialIcon,
+  SassIcon,
   ReduxIcon,
 ];
 
@@ -61,9 +61,7 @@ const BACKENDICONS: Array<JSX.Element> = [
   PhpIcon,
   WebpackIcon,
   MongoIcon,
-
   DjangoIcon,
-
   PostgresIcon,
   GulpIcon,
 ];
@@ -74,9 +72,9 @@ const OTHERICONS: Array<JSX.Element> = [
   XdIcon,
   VsCodeIcon,
   IllustratorIcon,
-  GitIcon,
-  PhotoshopIcon,
   HerokuIcon,
+  PhotoshopIcon,
+  GitIcon,
   GithubIcon,
 ];
 

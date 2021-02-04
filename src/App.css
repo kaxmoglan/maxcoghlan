@@ -889,15 +889,11 @@ BELL PEPPER
     display: inline-block;
     margin: 0 1rem; }
 
-.project-detail-page .mobile-only__container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 5rem; }
-
+.project-detail-page .tablet-only__image,
 .project-detail-page .mobile-only__image {
   width: 100%; }
 
+.project-detail-page .tablet-only__text,
 .project-detail-page .mobile-only__text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -909,8 +905,21 @@ BELL PEPPER
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  .project-detail-page .tablet-only__text h2,
   .project-detail-page .mobile-only__text h2 {
     margin-top: 0; }
+
+.project-detail-page .tablet-only__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem; }
+
+.project-detail-page .mobile-only__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5rem; }
 
 .project-detail-page .drum-machine__image {
   width: 100%; }
@@ -1245,7 +1254,7 @@ ILLUSTRATION ANIMATION
     position: absolute;
     width: 450px;
     height: 280px;
-    margin-top: 25%;
+    margin-top: 20%;
     overflow: hidden;
     opacity: 0;
     -webkit-transform: scale(0);
@@ -1302,8 +1311,8 @@ ILLUSTRATION ANIMATION
         top: 0;
         left: 2%; }
       .skills__icons-container .icon:nth-child(2) {
-        top: 10%;
-        left: 25%; }
+        top: 8%;
+        left: 28%; }
       .skills__icons-container .icon:nth-child(3) {
         top: 0;
         left: 50%; }

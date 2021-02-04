@@ -7,6 +7,8 @@ import toDoDesktop from "../images/dist/projects/to-do-list/to-do-list-desktop.p
 import toDoTablet from "../images/dist/projects/to-do-list/to-do-list-tablet.png";
 import toDoMobile from "../images/dist/projects/to-do-list/to-do-list-mobile.png";
 
+import chordGeneratorTablet from "../images/dist/projects/chord-generator/chord-generator-tablet.png";
+
 import calculatorMobile from "../images/dist/projects/calculator/calculator-mobile.png";
 
 import drumMachineDesktop from "../images/dist/projects/drum-machine/drum-machine-desktop.png";
@@ -118,6 +120,72 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                 >
                   Open App
                 </a>
+              </div>
+            </div>
+
+            {/* CHORD GENERATOR */}
+            <div className="wide">
+              <div className="tablet-only">
+                <div className="tablet-only__container">
+                  <div className="tablet-only__text">
+                    <h2>A CHORD GENERATOR</h2>
+                    <p>Before you judge those hideous colours, hear me out:</p>
+                    <p>
+                      This was a project my brother asked me to build for him
+                      when I was initially learning Javascript. Needless to say,
+                      I made it as ugly as possible for him to look at,
+                      because... well... he's my brother.
+                    </p>
+                    <p>
+                      The brief was to create an app that randomly generates a
+                      key and an interval, and then gives the user a chord to
+                      play that contains the interval to practice music theory.
+                    </p>
+                    <p>
+                      If the user hovers over the interval or the chord, it
+                      reveals the answers: the name of the interval note, and
+                      the notes in the chord along with the chord formula. It
+                      also has an autoplay feature where the user can set an
+                      interval time for the app to refresh every (n) seconds.
+                    </p>
+                    <p>
+                      This was actually a fun project to sit and work out. I
+                      ended up making a keyboard using Javascript arrays, so the
+                      browser is actually working out the chords for itself
+                      based on chord formulas!
+                    </p>
+                    <p>
+                      To make the app better, besides making it nice to look at,
+                      I'd include the ability to play the notes and the chords
+                      that the app generates so the user can hear the answers to
+                      help with their ear training.
+                    </p>
+                    <div className="links">
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project__link"
+                        href="https://github.com/kaxmoglan/joels-chord-generator"
+                      >
+                        GitHub
+                      </a>
+                      <p className="link-seperator"> | </p>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project__link"
+                        href="https://kaxmoglan.github.io/joels-chord-generator/"
+                      >
+                        Open App
+                      </a>
+                    </div>
+                  </div>
+                  <img
+                    className="tablet-only__image"
+                    src={chordGeneratorTablet}
+                    alt="A screen shot of the Chord Generator app on a tablet device"
+                  />
+                </div>
               </div>
             </div>
 

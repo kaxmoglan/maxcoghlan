@@ -68,14 +68,8 @@
     }
   }
 
+  .tablet-only,
   .mobile-only {
-    &__container {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 5rem;
-    }
-
     &__image {
       width: 100%;
     }
@@ -88,6 +82,24 @@
       h2 {
         margin-top: 0;
       }
+    }
+  }
+
+  .tablet-only {
+    &__container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  .mobile-only {
+    &__container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 5rem;
     }
   }
 
