@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { ContactBtn } from "../components/ContactBtn";
-import { HOMEPAGEANIMATIONFRAMES } from "../util/animations/animations";
+import { ABOUTPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
 import { IGLOBALSTATE } from "../util/interfaces";
 
@@ -52,7 +52,7 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
           <div className="main-page-template__right-column">
             <div className="main-page-template__right-column-container">
               <div className="animation-frame__container">
-                {HOMEPAGEANIMATIONFRAMES.map((frame, i) => (
+                {ABOUTPAGEANIMATIONFRAMES.map((frame, i) => (
                   <div className="animation-frame" key={i}>
                     {frame}
                   </div>

@@ -12,6 +12,12 @@ import { skillsPage3 } from "./skills-page/skills-page-3";
 import { skillsPage4 } from "./skills-page/skills-page-4";
 import { skillsPage5 } from "./skills-page/skills-page-5";
 
+import { aboutPage1 } from "./about-page/about-page-1";
+import { aboutPage2 } from "./about-page/about-page-2";
+import { aboutPage3 } from "./about-page/about-page-3";
+import { aboutPage4 } from "./about-page/about-page-4";
+import { aboutPage5 } from "./about-page/about-page-5";
+
 export const HOMEPAGEANIMATIONFRAMES = [
   homePage1,
   homePage2,
@@ -26,4 +32,12 @@ export const SKILLSPAGEANIMATIONFRAMES = [
   skillsPage3,
   skillsPage4,
   skillsPage5,
+];
+
+export const ABOUTPAGEANIMATIONFRAMES = [
+  aboutPage1,
+  aboutPage2,
+  aboutPage3,
+  aboutPage4,
+  aboutPage5,
 ];

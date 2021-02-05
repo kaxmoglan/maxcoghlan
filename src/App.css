@@ -1198,6 +1198,7 @@ ILLUSTRATION ANIMATION
   margin-bottom: 1rem; }
   .skills__heading-text {
     font-size: 1.8rem;
+    letter-spacing: 0.05rem;
     display: inline-block; }
   .skills__heading .fa-chevron-right {
     width: 0.8rem;
@@ -1224,10 +1225,10 @@ ILLUSTRATION ANIMATION
   -o-transition: all 1s ease;
   transition: all 1s ease; }
   .skills__content p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 2.5rem;
-    letter-spacing: 0.03rem; }
+    letter-spacing: 0.04rem; }
 
 .skills__category {
   margin-bottom: 2rem; }

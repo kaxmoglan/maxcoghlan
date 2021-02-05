@@ -168,8 +168,8 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
                   <div className="skills__content">
                     <p>
-                      Node.js, Express.js, Python, Django, PHP, Wordpress &
-                      WooCommerce, SQL, MongoDB & Atlas, Linux, REST, Gulp,
+                      Node.js, Express.js, Python, Django, PHP, Wordpress,
+                      WooCommerce, SQL, MongoDB, Atlas, Linux, REST, Gulp,
                       Firebase, Postgres, Webpack
                     </p>
                   </div>
