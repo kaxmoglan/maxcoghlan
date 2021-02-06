@@ -1,5 +1,3 @@
-import React from "react";
-
 export const skillsPage1 = (
   <svg
     xmlns="http://www.w3.org/2000/svg"

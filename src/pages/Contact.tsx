@@ -6,6 +6,7 @@ import Particles from "react-tsparticles";
 import particlesConfig from "../util/particlesjs-config.json";
 
 import { IGLOBALSTATE } from "../util/interfaces";
+import { CONTACTPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
 export const Contact: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
@@ -28,6 +29,13 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
                 Contact <span className="million">M</span>e
               </h1>
               <Social />
+            </div>
+            <div className="animation-frame__container contact">
+              {CONTACTPAGEANIMATIONFRAMES.map((frame, i) => (
+                <div className="animation-frame" key={i}>
+                  {frame}
+                </div>
+              ))}
             </div>
           </div>
 

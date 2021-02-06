@@ -91,7 +91,7 @@ export const Blog: React.FC<IGLOBALSTATE> = (props) => {
         setLoading(true);
         api
           // GET ALL POSTS
-          .get("/articles?username=mustapha&state=all")
+          .get("/articles?username=kaxmoglan&state=all")
           .then((res) => {
             setAllPosts(res.data);
             setTimeout(() => setLoading(false), 2000);

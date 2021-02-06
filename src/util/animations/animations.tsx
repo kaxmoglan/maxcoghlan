@@ -18,6 +18,12 @@ import { aboutPage3 } from "./about-page/about-page-3";
 import { aboutPage4 } from "./about-page/about-page-4";
 import { aboutPage5 } from "./about-page/about-page-5";
 
+import { contactPage1 } from "./contact-page/contact-page-1";
+import { contactPage2 } from "./contact-page/contact-page-2";
+import { contactPage3 } from "./contact-page/contact-page-3";
+import { contactPage4 } from "./contact-page/contact-page-4";
+import { contactPage5 } from "./contact-page/contact-page-5";
+
 export const HOMEPAGEANIMATIONFRAMES = [
   homePage1,
   homePage2,
@@ -40,4 +46,12 @@ export const ABOUTPAGEANIMATIONFRAMES = [
   aboutPage3,
   aboutPage4,
   aboutPage5,
+];
+
+export const CONTACTPAGEANIMATIONFRAMES = [
+  contactPage1,
+  contactPage2,
+  contactPage3,
+  contactPage4,
+  contactPage5,
 ];
