@@ -1129,9 +1129,9 @@ ILLUSTRATION ANIMATION
             align-items: center; }
     .animation-frame__container.skills .animation-frame {
       width: initial;
-      position: fixed;
+      position: absolute;
       bottom: 0;
-      right: 0; }
+      right: -5rem; }
     .animation-frame__container.contact {
       width: 40%;
       height: 100%;
@@ -1207,7 +1207,7 @@ ILLUSTRATION ANIMATION
     visibility: hidden; } }
 
 .skills__title {
-  margin-top: 15rem;
+  margin-top: 15vh;
   margin-bottom: 3rem; }
 
 .skills__heading {
@@ -1271,6 +1271,7 @@ ILLUSTRATION ANIMATION
   position: relative; }
   .skills__icons-container {
     position: absolute;
+    left: 0;
     width: 450px;
     height: 280px;
     margin-top: 20%;

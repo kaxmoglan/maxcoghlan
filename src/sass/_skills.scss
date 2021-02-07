@@ -1,7 +1,7 @@
 .skills {
   // LEFT COLUMN
   &__title {
-    margin-top: 15rem;
+    margin-top: 15vh;
     margin-bottom: 3rem;
   }
 
@@ -79,6 +79,7 @@
 
     &-container {
       position: absolute;
+      left: 0;
       width: 450px;
       height: 280px;
       margin-top: 20%;

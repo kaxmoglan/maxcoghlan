@@ -79,7 +79,7 @@ const OTHERICONS: Array<JSX.Element> = [
 ];
 
 export const Skills: React.FC<IGLOBALSTATE> = (props) => {
-  const [showFrontEnd, setShowFrontEnd] = useState(false);
+  const [showFrontEnd, setShowFrontEnd] = useState(true);
   const [showBackEnd, setShowBackEnd] = useState(false);
   const [showOther, setShowOther] = useState(false);
 

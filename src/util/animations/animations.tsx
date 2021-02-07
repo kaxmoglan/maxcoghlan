@@ -1,5 +1,3 @@
-import React from "react";
-
 import { homePage1 } from "./home-page/home-page-1";
 import { homePage2 } from "./home-page/home-page-2";
 import { homePage3 } from "./home-page/home-page-3";

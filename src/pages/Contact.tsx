@@ -20,7 +20,7 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
   return (
     <main className="content__main">
       <div className="contact-page">
-        <Particles id="tsparticles" options={particlesConfig} />
+        {/* <Particles id="tsparticles" options={particlesConfig} /> */}
         <div className="contact-page__container">
           {/* LEFT COLUMN */}
           <div className="contact-page__content">
