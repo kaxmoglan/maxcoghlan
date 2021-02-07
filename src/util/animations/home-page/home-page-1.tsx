@@ -6,9 +6,9 @@ export const homePage1 = (
     preserveAspectRatio="none"
     x="0px"
     y="0px"
-    width="1200px"
-    height="880px"
-    viewBox="0 0 1200 880"
+    width="500px"
+    height="356px"
+    viewBox="0 0 500 356"
     id="frame-1"
   >
     <defs>
@@ -21,11 +21,25 @@ export const homePage1 = (
         y2="558.95"
         spreadMethod="pad"
       >
-        <stop offset="0%" stopColor="#0C0C0C" />
+        <stop offset="15.686274509803921%" stop-color="#0C0C0C" />
 
-        <stop offset="42.745098039215684%" stopColor="#147161" />
+        <stop offset="31.372549019607842%" stop-color="#0C0F0E" />
 
-        <stop offset="100%" stopColor="#2DFCD8" />
+        <stop offset="42.745098039215684%" stop-color="#0C1816" />
+
+        <stop offset="52.94117647058823%" stop-color="#0D2824" />
+
+        <stop offset="61.96078431372549%" stop-color="#0E3F37" />
+
+        <stop offset="70.98039215686275%" stop-color="#125C50" />
+
+        <stop offset="79.2156862745098%" stop-color="#17806E" />
+
+        <stop offset="87.45098039215686%" stop-color="#1EAA92" />
+
+        <stop offset="95.29411764705883%" stop-color="#27DABB" />
+
+        <stop offset="100%" stop-color="#2DFCD8" />
       </linearGradient>
 
       <g id="Layer1_0_FILL">
@@ -38,7 +52,7 @@ L 942.95 676.75 1201 604.95 1201 513 942.95 441.2 Z"
         />
       </g>
 
-      <g id="LAYER1_0_MEMBER_0_FILL">
+      <g id="Layer1_0_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -58,7 +72,7 @@ Q 927.7 562.2 928.65 561.3 929.4 560.4 929.55 559.65 929.7 558.95 929.25 558.45 
         />
       </g>
 
-      <g id="LAYER1_1_MEMBER_0_FILL">
+      <g id="Layer1_1_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -70,7 +84,7 @@ Q 858.5 692.95 857.05 692.5 854.75 691.85 851.85 690.65 847.65 688.85 842.25 685
         />
       </g>
 
-      <g id="LAYER1_2_MEMBER_0_FILL">
+      <g id="Layer1_2_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -80,7 +94,7 @@ Q 818.55 591.6 818.7 592.85 818.8 594.15 820 594 823.7 593.5 835.25 591.6 844.75
         />
       </g>
 
-      <g id="LAYER1_3_MEMBER_0_FILL">
+      <g id="Layer1_3_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -90,7 +104,7 @@ Q 947.2 592.6 947.4 592.7 962.25 598.6 985 600.8 994.65 601.75 1007.1 600.35 101
         />
       </g>
 
-      <g id="LAYER1_4_MEMBER_0_FILL">
+      <g id="Layer1_4_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -102,7 +116,7 @@ Q 1164.45 661.044140625 1164.4 661.6 1162.5380859375 660.1466796875 1161.5 659.8
         />
       </g>
 
-      <g id="LAYER1_5_MEMBER_0_FILL">
+      <g id="Layer1_5_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -112,7 +126,7 @@ Q 1114.5 616.95 1115.9 617.55 1117.75 618.4 1119.4 619.4 1122.15625 620.93554687
         />
       </g>
 
-      <g id="LAYER1_6_MEMBER_0_FILL">
+      <g id="Layer1_6_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -122,7 +136,7 @@ Q 1191.95 515.25 1191.15 515.85 1187.65 518.25 1185.2 522.95 1183.55 526.15 1181
         />
       </g>
 
-      <g id="LAYER1_7_MEMBER_0_FILL">
+      <g id="Layer1_7_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -132,7 +146,7 @@ Q 1196.9 497.55 1196.8 498.95 1196.6 501.5 1196.95 505.35 1197.15 507.45 1197.55
         />
       </g>
 
-      <g id="LAYER1_8_MEMBER_0_FILL">
+      <g id="Layer1_8_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -148,7 +162,7 @@ Q 1215.2 504.05 1212.25 502.35 Z"
         />
       </g>
 
-      <g id="LAYER1_9_MEMBER_0_FILL">
+      <g id="Layer1_9_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -164,7 +178,7 @@ Q 1222.95 516.05 1222.95 514 1222.9 510.4 1222.4 507.95 1222.35 507.6 1221.95 50
         />
       </g>
 
-      <g id="LAYER1_10_MEMBER_0_FILL">
+      <g id="Layer1_10_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -174,7 +188,7 @@ Q 1220.7 621.35 1216.35 622.95 1212.65 624.25 1210.85 625 1207.35 626.45 1205.55
         />
       </g>
 
-      <g id="LAYER1_11_MEMBER_0_FILL">
+      <g id="Layer1_11_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -184,7 +198,7 @@ Q 1224.85 547.6 1225.15 548.6 1226.35 553.05 1229.4 561.7 1231.45 568.3 1232.85 
         />
       </g>
 
-      <g id="LAYER1_12_MEMBER_0_FILL">
+      <g id="Layer1_12_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -194,7 +208,7 @@ Q 1124.25 629.05 1124.45 629.3 1125.35 630.65 1127.4 631.95 1128.5 632.7 1130.8 
         />
       </g>
 
-      <g id="LAYER1_13_MEMBER_0_FILL">
+      <g id="Layer1_13_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -206,7 +220,7 @@ Q 1140.15 669.25 1139.95 669.65 1139.75 670 1139.8 670.35 1139.85 671.05 1140.15
         />
       </g>
 
-      <g id="LAYER1_14_MEMBER_0_FILL">
+      <g id="Layer1_14_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -228,7 +242,7 @@ Q 1123.5 670.35 1124.55 669.5 1125.15 669 1124.7 668.2 Z"
         />
       </g>
 
-      <g id="LAYER1_15_MEMBER_0_FILL">
+      <g id="Layer1_15_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -238,7 +252,7 @@ Q 965.6 455.85 965.7 455.9 983.4 462.05 994.25 469.35 1007.6 478.35 1016.7 491 1
         />
       </g>
 
-      <g id="LAYER1_16_MEMBER_0_FILL">
+      <g id="Layer1_16_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -251,7 +265,7 @@ L 915.4 552.5 Z"
         />
       </g>
 
-      <g id="LAYER1_17_MEMBER_0_FILL">
+      <g id="Layer1_17_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -275,7 +289,7 @@ L 915.35 456.05 915.35 456.1 915.4 456 915.4 456 Z"
         />
       </g>
 
-      <g id="LAYER1_18_MEMBER_0_FILL">
+      <g id="Layer1_18_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -285,7 +299,7 @@ Q 924.35 465.95 924 466.85 923.95 467 922.9 470 922.3 471.95 921.5 473 920.6 474
         />
       </g>
 
-      <g id="LAYER1_19_MEMBER_0_FILL">
+      <g id="Layer1_19_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -297,7 +311,7 @@ Q 898.3 444.2 897.75 443.65 897.5 443.4 897.15 443.35 Z"
         />
       </g>
 
-      <g id="LAYER1_20_MEMBER_0_FILL">
+      <g id="Layer1_20_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -309,7 +323,7 @@ Q 879 454.4 879.85 455.3 880.65 456 881.3 456.3 881.75 456.5 882.2 456.25 882.65
         />
       </g>
 
-      <g id="LAYER1_21_MEMBER_0_FILL">
+      <g id="Layer1_21_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -324,7 +338,7 @@ L 873.35 457.05 873.4 457.1 873.3 456.9 873.2 456.6 872.75 455.55 Z"
         />
       </g>
 
-      <g id="LAYER1_22_MEMBER_0_FILL">
+      <g id="Layer1_22_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -342,7 +356,7 @@ Q 901.25 393.55 899.7 390.9 896.1 384.85 891.05 382.35 887.2 380.3 885.2 381.55 
         />
       </g>
 
-      <g id="LAYER1_23_MEMBER_0_FILL">
+      <g id="Layer1_23_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -356,7 +370,7 @@ Q 951.5 400.2 952.5 397.6 953.8 394.25 951.85 391.65 950.15 389.45 946 389.15 Z"
         />
       </g>
 
-      <g id="LAYER1_24_MEMBER_0_FILL">
+      <g id="Layer1_24_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -370,7 +384,7 @@ Q 952.1 408.1 955.6 406.9 Z"
         />
       </g>
 
-      <g id="LAYER1_25_MEMBER_0_FILL">
+      <g id="Layer1_25_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -389,7 +403,7 @@ Q 993.55 419.95 986.6 417.4 979.7 414.85 969.5 415.4 963.2 415.7 959.75 416.35 9
         />
       </g>
 
-      <g id="LAYER1_26_MEMBER_0_FILL">
+      <g id="Layer1_26_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -399,7 +413,7 @@ Q 960.55 511.6 960.1 519.55 960.05 520.55 960.85 521.3 961.65 522.1 962.6 522.05
         />
       </g>
 
-      <g id="LAYER1_27_MEMBER_0_FILL">
+      <g id="Layer1_27_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -416,7 +430,7 @@ L 953.15 512.35 Z"
         />
       </g>
 
-      <g id="LAYER1_28_MEMBER_0_FILL">
+      <g id="Layer1_28_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -436,7 +450,7 @@ Q 943.15 513.05 943 512.75 942.7 512.25 942.15 512 941.6 511.85 941.2 511.9 Z"
         />
       </g>
 
-      <g id="LAYER1_29_MEMBER_0_FILL">
+      <g id="Layer1_29_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -458,7 +472,7 @@ Q 932.15 515.95 931.95 515.7 Z"
         />
       </g>
 
-      <g id="LAYER1_30_MEMBER_0_FILL">
+      <g id="Layer1_30_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -474,7 +488,7 @@ L 960.8 540.95 960.85 540.85 960.8 541 960.75 541.55 Z"
         />
       </g>
 
-      <g id="LAYER1_31_MEMBER_0_FILL">
+      <g id="Layer1_31_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -492,7 +506,7 @@ Q 955.65 541.45 955.65 541.4 955.5 540.9 955.2 540.45 954.7 539.8 954.05 539.8 Z
         />
       </g>
 
-      <g id="LAYER1_32_MEMBER_0_FILL">
+      <g id="Layer1_32_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -506,7 +520,7 @@ Q 947.2 539 946.85 538.9 Z"
         />
       </g>
 
-      <g id="LAYER1_33_MEMBER_0_FILL">
+      <g id="Layer1_33_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -516,7 +530,7 @@ Q 854.45 566.8 867.6 569.85 885.8 574.1 898.15 584.3 898.7 584.75 899.2 584.25 8
         />
       </g>
 
-      <g id="LAYER1_34_MEMBER_0_FILL">
+      <g id="Layer1_34_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -526,7 +540,7 @@ Q 781.4 632.75 773.8 627.7 764.95 621.8 764.1 615.35 763.6 611.1 767.1 607.1 768
         />
       </g>
 
-      <g id="LAYER1_35_MEMBER_0_FILL">
+      <g id="Layer1_35_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -536,7 +550,7 @@ Q 864.5 574.85 863.05 574.65 842.95 572.25 823 576.2 802.9 580.2 785.4 590.15 77
         />
       </g>
 
-      <g id="LAYER1_36_MEMBER_0_FILL">
+      <g id="Layer1_36_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -551,7 +565,7 @@ L 1101.25 704.2 Z"
         />
       </g>
 
-      <g id="LAYER1_37_MEMBER_0_FILL">
+      <g id="Layer1_37_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -569,7 +583,7 @@ Q 1167.05 684 1166.95 683.9 1166.25 683.25 1165.5 683 1164.5 682.7 1163.8 683.45
         />
       </g>
 
-      <g id="LAYER1_38_MEMBER_0_FILL">
+      <g id="Layer1_38_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -583,19 +597,19 @@ Q 1105.35 689.1 1105.6 688.4 1106.05 687.3 1104.95 686.7 Z"
         />
       </g>
 
-      <g id="LAYER1_39_MEMBER_0_FILL">
+      <g id="Layer1_39_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
           d="
-M 1098.05 710.6
-Q 1098.05 713.2 1100.55 713.25 1132.3 714 1159.15 711.15 1163.35 710.7 1167.55 710.1 1170.45 709.7 1171.5 709.5 1173.65 709 1175.25 708.05 1175.7 707.8 1175.6 707.3 1175.55 706.8 1175.05 706.65 1173.5 706.1 1171.55 706.05 1170.6 706.05 1168 706.2
+M 1098.1 710.6
+Q 1098.1 713.15 1100.55 713.2 1132.7 713.95 1159.15 711.15 1163.35 710.7 1167.55 710.1 1170.45 709.7 1171.5 709.5 1173.65 709 1175.25 708.05 1175.7 707.8 1175.6 707.3 1175.55 706.8 1175.05 706.65 1173.5 706.1 1171.55 706.05 1170.6 706.05 1168 706.2
 L 1146.35 707.4
-Q 1131.3 708.25 1117.05 708.25 1110.2 708.3 1100.55 708.05 1098.05 708 1098.05 710.6 Z"
+Q 1133.05 708.2 1117.05 708.3 1107.9 708.3 1100.55 708.1 1098.1 708.05 1098.1 710.6 Z"
         />
       </g>
 
-      <g id="LAYER1_40_MEMBER_0_FILL">
+      <g id="Layer1_40_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -615,7 +629,7 @@ L 1101.05 667.55 Z"
         />
       </g>
 
-      <g id="LAYER1_41_MEMBER_0_FILL">
+      <g id="Layer1_41_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -630,7 +644,7 @@ Q 1177.05 666.4 1177.05 665.7 1177.15 665.15 1176.6 664.65 1176.1 664.15 1175.55
         />
       </g>
 
-      <g id="LAYER1_42_MEMBER_0_FILL">
+      <g id="Layer1_42_MEMBER_1_FILL">
         <path
           fill="#DDDBDB"
           stroke="none"
@@ -643,180 +657,180 @@ Q 1098 675.65 1098 675.55 1097.95 675.4 1097.85 675.4 1097.15 675.4 1096.55 675.
       </g>
     </defs>
 
-    <g transform="matrix( 2.3344879150390625, 0, 0, 2.3344879150390625, -1725.1,-821.6) ">
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
       <use xlinkHref="#Layer1_0_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_0_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_0_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_1_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_1_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_2_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_2_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_3_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_3_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_4_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_4_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_5_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_5_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_6_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_6_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_7_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_7_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_8_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_8_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_9_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_9_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_10_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_10_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_11_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_11_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_12_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_12_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_13_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_13_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_14_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_14_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_15_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_15_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_16_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_16_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_17_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_17_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_18_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_18_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_19_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_19_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_20_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_20_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_21_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_21_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_22_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_22_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_23_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_23_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_24_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_24_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_25_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_25_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_26_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_26_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_27_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_27_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_28_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_28_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_29_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_29_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_30_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_30_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_31_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_31_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_32_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_32_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_33_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_33_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_34_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_34_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_35_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_35_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_36_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_36_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_37_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_37_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_38_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_38_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_39_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_39_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_40_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_40_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_41_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_41_MEMBER_1_FILL" />
     </g>
 
-    <g transform="matrix( 2.334381103515625, 0, 0, 2.334381103515625, -1725.1,-821.6) ">
-      <use xlinkHref="#LAYER1_42_MEMBER_0_FILL" />
+    <g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
+      <use xlinkHref="#Layer1_42_MEMBER_1_FILL" />
     </g>
   </svg>
 );

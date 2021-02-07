@@ -29,9 +29,9 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
                 <p>
                   I'm a web developer based in London, England. When I'm not
                   coding, I'm usually making music, watching a film, ice
-                  skating, weight training, playing or watching football,
-                  reading about all things tech and finance or eating and
-                  drinking my weight in coffee and pastries.
+                  skating, exercising, playing or watching football, reading
+                  about all things tech and finance or eating and drinking my
+                  weight in coffee and pastries.
                 </p>
 
                 <p>
