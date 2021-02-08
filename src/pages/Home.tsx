@@ -18,7 +18,7 @@ export const Home: React.FC<IGLOBALSTATE> = (props) => {
   return (
     <main className="content__main">
       <div className="main-page-template">
-        <div className="main-page-template__container">
+        <div className="main-page-template__container home">
           {/* LEFT COLUMN */}
           <div className="main-page-template__left-column flex">
             <div className="main-page-template__left-column-container">

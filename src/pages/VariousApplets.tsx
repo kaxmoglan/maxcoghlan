@@ -180,11 +180,13 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
                       </a>
                     </div>
                   </div>
-                  <img
-                    className="tablet-only__image"
-                    src={chordGeneratorTablet}
-                    alt="A screen shot of the Chord Generator app on a tablet device"
-                  />
+                  <div className="tablet-only__image-container">
+                    <img
+                      className="tablet-only__image"
+                      src={chordGeneratorTablet}
+                      alt="A screen shot of the Chord Generator app on a tablet device"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -193,11 +195,13 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
             <div className="wide">
               <div className="mobile-only">
                 <div className="mobile-only__container">
-                  <img
-                    className="mobile-only__image"
-                    src={calculatorMobile}
-                    alt="A screen shot of the Calculator app on a mobile device"
-                  />
+                  <div className="mobile-only__image-container">
+                    <img
+                      className="mobile-only__image"
+                      src={calculatorMobile}
+                      alt="A screen shot of the Calculator app on a mobile device"
+                    />
+                  </div>
                   <div className="mobile-only__text">
                     <h2>A CALCULATOR</h2>
                     <p>I made a calculator.</p>
@@ -338,11 +342,13 @@ export const VariousApplets: React.FC<IGLOBALSTATE> = (props) => {
             <div className="wide">
               <div className="mobile-only">
                 <div className="mobile-only__container">
-                  <img
-                    className="mobile-only__image"
-                    src={pomodoroMobile}
-                    alt="A screen shot of the Pomodoro Clock app on a mobile device"
-                  />
+                  <div className="mobile-only__image-container">
+                    <img
+                      className="mobile-only__image"
+                      src={pomodoroMobile}
+                      alt="A screen shot of the Pomodoro Clock app on a mobile device"
+                    />
+                  </div>
                   <div className="mobile-only__text">
                     <h2>A POMODORO CLOCK</h2>
 

@@ -18,6 +18,31 @@
       letter-spacing: 0.03rem;
       line-height: 3rem;
       margin: 3rem 0;
+
+      @include lg-screen {
+        font-size: 2rem;
+      }
+
+      @include md-screen {
+        font-size: 2.3rem;
+      }
+    }
+
+    &.about,
+    &.home {
+      @include md-screen {
+        text-align: center;
+        grid-template-columns: 1fr;
+        min-height: initial;
+        margin-top: 0;
+
+        .animation-frame {
+          left: 13%;
+          top: -8rem;
+
+          width: 75%;
+        }
+      }
     }
   }
 
@@ -44,6 +69,10 @@
         letter-spacing: 0.03rem;
         line-height: 2.2rem;
         margin-bottom: 2rem;
+
+        @include lg-screen {
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -54,6 +83,20 @@
     &.home-page-title {
       font-size: 5rem;
       margin-bottom: 0;
+
+      @include lg-screen {
+        font-size: 4rem;
+      }
+      @include md-screen {
+        font-size: 5rem;
+      }
+    }
+    &.about-page-title {
+      font-size: 5rem;
+
+      @include lg-screen {
+        font-size: 4rem;
+      }
     }
   }
 
@@ -90,6 +133,16 @@ ILLUSTRATION ANIMATION
         position: absolute;
         bottom: 0;
         right: -5rem;
+
+        @include lg-screen {
+          position: fixed;
+          right: 0;
+        }
+
+        @include md-screen {
+          position: fixed;
+          right: 0rem;
+        }
       }
     }
 
@@ -102,7 +155,13 @@ ILLUSTRATION ANIMATION
       justify-content: center;
       margin-top: 12rem;
       margin-left: 4rem;
-      .animation-frame {
+
+      @include lg-screen {
+        width: 55%;
+      }
+
+      @include md-screen {
+        width: 40%;
       }
     }
   }

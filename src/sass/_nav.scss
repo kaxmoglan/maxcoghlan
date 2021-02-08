@@ -17,9 +17,9 @@
   flex-direction: column;
   justify-content: center;
 
-  @include medium-screen {
-    display: none;
-  }
+  // @include medium-screen {
+  //   display: none;
+  // }
 
   .logo {
     position: absolute;

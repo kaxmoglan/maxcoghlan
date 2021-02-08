@@ -1,5 +1,9 @@
 .project-detail-page {
   .various {
+    &.custom-content {
+      margin-top: 0;
+    }
+
     &__header {
       padding-top: calc((100vh - 75rem) / 2);
       margin: 10rem 0;
@@ -22,12 +26,18 @@
       position: relative;
       pointer-events: none;
       width: 100%;
-      height: 500px;
+      height: 550px;
       display: flex;
       justify-content: center;
+      margin-bottom: 10%;
 
-      &.markdown-images {
-        margin-bottom: 16rem;
+      @include lg-screen {
+        margin-bottom: -5%;
+        height: 500px;
+      }
+
+      @include md-screen {
+        height: 400px;
       }
 
       img {
@@ -52,10 +62,6 @@
         top: 25%;
         left: 0;
       }
-    }
-
-    &.custom-content {
-      margin-top: 15rem;
     }
 
     .links {
@@ -91,6 +97,25 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 5rem;
+
+      @include md-screen {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    &__image-container {
+      display: flex;
+      align-items: center;
+
+      @include md-screen {
+        grid-row: 1;
+
+        img {
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
     }
   }
 
@@ -100,6 +125,13 @@
       display: grid;
       grid-template-columns: 1fr 3fr;
       gap: 10rem;
+      @include md-screen {
+        gap: 5rem;
+      }
+    }
+    &__image-container {
+      display: flex;
+      align-items: center;
     }
   }
 

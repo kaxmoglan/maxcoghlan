@@ -2,6 +2,7 @@
   &__title {
     text-align: center;
     margin-top: calc((100vh - 75rem) / 2);
+    margin-top: 6rem;
     margin-bottom: 6rem;
 
     .million {
@@ -35,6 +36,10 @@
         font-size: 1.3rem;
         letter-spacing: 0.05rem;
         margin-bottom: 0.8rem;
+
+        @include md-screen {
+          font-size: 1.2rem;
+        }
       }
 
       &__container {
@@ -44,6 +49,11 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 5rem;
+
+        @include md-screen {
+          padding: 3rem 2rem;
+          gap: 1rem;
+        }
       }
 
       // LEFT COLUMN
@@ -55,11 +65,20 @@
 
         &-text {
           font-size: 2.4rem;
+
+          @include md-screen {
+            font-size: 1.8rem;
+          }
         }
         &-tagline {
           font-size: 1.4rem;
           margin-top: 1rem;
           color: $light-grey;
+
+          @include md-screen {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+          }
         }
       }
 
@@ -75,11 +94,21 @@
       &__links {
         display: flex;
         flex-direction: column;
+
+        @include md-screen {
+          .project__link {
+            font-size: 1.2rem;
+          }
+        }
       }
 
       &__text {
         font-size: 1.6rem;
         margin-bottom: 0.3rem;
+
+        @include md-screen {
+          font-size: 1.2rem;
+        }
       }
 
       // RIGHT COLUMN
@@ -92,6 +121,11 @@
           grid-template-columns: repeat(3, 1fr);
           gap: 2rem;
 
+          @include md-screen {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+          }
+
           .icon {
             display: flex;
             align-items: center;
@@ -101,30 +135,39 @@
               width: 28px;
               color: $main-font;
               fill: $main-font;
+
+              @include md-screen {
+                width: 22px;
+              }
             }
 
             .fa-php {
-              width: auto;
-              height: 32px;
+              // width: auto;
+              // height: 32px;
+              transform: scale(1.5);
             }
 
             .fa-node {
-              width: auto;
-              height: 36px;
+              // width: auto;
+              // height: 36px;
+              transform: scale(1.5);
             }
 
             .fa-gulp {
-              width: auto;
-              height: 38px;
+              // width: auto;
+              // height: 38px;
+              transform: scale(0.75);
             }
 
             .fa-sass {
-              height: auto;
-              width: 35px;
+              // height: auto;
+              // width: 35px;
+              transform: scale(1.3);
             }
 
             .fa-npm {
-              width: 42px;
+              // width: 42px;
+              transform: scale(1.5);
             }
           }
         }

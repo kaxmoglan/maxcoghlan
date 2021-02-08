@@ -3,6 +3,13 @@
   &__title {
     margin-top: 15vh;
     margin-bottom: 3rem;
+
+    @include lg-screen {
+      margin-top: 10vh;
+    }
+    @include md-screen {
+      margin-top: 10vh;
+    }
   }
 
   &__heading {
@@ -14,6 +21,10 @@
       font-size: 1.8rem;
       letter-spacing: 0.05rem;
       display: inline-block;
+
+      @include lg-screen {
+        font-size: 1.6rem;
+      }
     }
 
     .fa-chevron-right {
@@ -45,6 +56,10 @@
       margin-bottom: 1rem;
       line-height: 2.5rem;
       letter-spacing: 0.04rem;
+
+      @include lg-screen {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -89,12 +104,27 @@
       transition: all 500ms ease;
       transition-delay: initial;
 
-      // border: 2px solid hotpink;
+      @include lg-screen {
+        left: -5rem;
+      }
+
+      @include md-screen {
+        left: -8rem;
+        top: 2rem;
+      }
 
       &.visible {
         opacity: 1;
         transform: scale(1);
         transition-delay: 500ms;
+
+        @include lg-screen {
+          transform: scale(0.8);
+        }
+
+        @include md-screen {
+          transform: scale(0.75);
+        }
       }
 
       .icon {

@@ -8,10 +8,20 @@ BELL PEPPER
   width: 100%;
   height: 100%;
 
+  @include md-screen {
+    grid-row: 1;
+  }
+
   &__container {
     position: relative;
     width: 100%;
     height: 100%;
+
+    @include md-screen {
+      display: flex;
+      justify-content: space-evenly;
+      grid-row-start: 0;
+    }
   }
 
   &__image {
@@ -25,6 +35,18 @@ BELL PEPPER
 
     &.two {
       right: 0;
+    }
+
+    @include md-screen {
+      position: initial;
+      width: 30%;
+
+      &.one {
+        transform: translateY(0);
+      }
+
+      &.two {
+      }
     }
   }
 }

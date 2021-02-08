@@ -1,5 +1,29 @@
-@mixin medium-screen {
-  @media (max-height: 760px) {
+/*
+-----------------------------------------
+DEFAULT: XL SCREEN: W: >= 1100px
+-----------------------------------------
+*/
+
+/*
+-----------------------------------------
+L SCREEN: W: < 1100px
+-----------------------------------------
+*/
+
+@mixin lg-screen {
+  @media only screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+/*
+-----------------------------------------
+M SCREEN: W: 768px > 900px
+-----------------------------------------
+*/
+
+@mixin md-screen {
+  @media only screen and (max-width: 900px) {
     @content;
   }
 }

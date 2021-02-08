@@ -12,11 +12,24 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
+
+    @include md-screen {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__title {
     font-size: 5rem;
     margin-bottom: 1rem;
+
+    @include lg-screen {
+      font-size: 4.5rem;
+    }
+
+    @include md-screen {
+      font-size: 5rem;
+      margin-top: 6rem;
+    }
   }
 
   &__content {
@@ -36,7 +49,16 @@
           color: $main-font;
           width: 2.5rem;
           height: 2.5rem;
+
+          @include lg-screen {
+            width: 2rem;
+          }
         }
+      }
+
+      @include md-screen {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
       }
     }
   }
@@ -53,6 +75,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include md-screen {
+      margin: 5rem 0;
+    }
 
     &-container {
       width: 100%;
@@ -115,6 +141,11 @@
             border: 2px solid $highlight;
           }
         }
+      }
+
+      @include md-screen {
+        display: flex;
+        flex-direction: column;
       }
     }
 

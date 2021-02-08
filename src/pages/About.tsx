@@ -17,11 +17,11 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
   return (
     <main className="content__main">
       <div className="main-page-template">
-        <div className="main-page-template__container">
+        <div className="main-page-template__container about">
           {/* LEFT COLUMN */}
           <div className="main-page-template__left-column flex">
             <div className="main-page-template__left-column-container">
-              <h1 className="main-page-template__title archivo home-page-title">
+              <h1 className="main-page-template__title archivo about-page-title">
                 About <span className="million">M</span>e
               </h1>
 

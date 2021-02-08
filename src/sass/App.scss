@@ -123,6 +123,10 @@ GLOBAL STYLING
     padding-right: 6rem;
     max-width: calc(1200px + 20.5rem);
     margin: 0 auto;
+
+    @include md-screen {
+      padding-right: 10rem;
+    }
   }
 }
 
@@ -138,8 +142,24 @@ GLOBAL STYLING
     width: 86%;
     height: 0.45rem;
     background-color: $main-font;
+
+    @include lg-screen {
+      height: 0.4rem;
+      top: 0;
+    }
   }
 }
+
+// .home-page-title {
+//   .million {
+//     &::before {
+//       @include md-screen {
+//         height: 0.3rem;
+//         left: 0.2rem;
+//       }
+//     }
+//   }
+// }
 
 #tsparticles {
   position: fixed;

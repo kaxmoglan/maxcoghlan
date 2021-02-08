@@ -1,7 +1,7 @@
 .mobile-menu {
-  @include medium-screen {
-    display: flex;
-  }
+  // @include medium-screen {
+  //   display: flex;
+  // }
   display: none;
   position: fixed;
   top: 1rem;

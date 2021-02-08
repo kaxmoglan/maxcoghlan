@@ -11,16 +11,33 @@
     grid-template-columns: 275px auto;
     gap: 10rem;
 
+    @include md-screen {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+
+      height: unset;
+    }
+
     .left-column {
       .panel {
         border: 3px solid $black;
         border-radius: 1rem;
         width: 275px;
+
+        @include md-screen {
+          border: none;
+          width: 100%;
+          height: 100%;
+        }
       }
 
       .blog-header {
         padding: 2rem;
         position: fixed;
+
+        @include md-screen {
+          position: relative;
+        }
 
         &__header {
           text-decoration: none;
@@ -56,6 +73,13 @@
           &:focus {
             outline: none;
           }
+
+          @include md-screen {
+            .logo {
+              font-size: 5rem;
+              margin-top: 3rem;
+            }
+          }
         }
 
         .social {
@@ -72,6 +96,14 @@
                 color: $mid-grey;
               }
             }
+          }
+
+          @include md-screen {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-right: 1rem;
+            padding-top: 1rem;
           }
         }
 
@@ -98,6 +130,21 @@
               transform: translateX(-2px);
             }
           }
+
+          @include md-screen {
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            margin-top: 0;
+          }
+        }
+
+        @include md-screen {
+          position: initial;
+
+          // .panel {
+          //   height: initial;
+          // }
         }
       }
 
@@ -129,6 +176,17 @@
             line-height: 2rem;
           }
         }
+
+        @include md-screen {
+          display: none;
+        }
+      }
+
+      @include md-screen {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        display: flex;
+        justify-content: center;
       }
     }
 
@@ -161,6 +219,12 @@
 
         &__container {
           width: 100%;
+
+          @include md-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
 
           .blog-post-card {
             text-decoration: none;
@@ -378,7 +442,8 @@
             &.typescript,
             &.markdown,
             &.html,
-            &.css {
+            &.css,
+            &.plaintext {
               width: 600px;
               overflow: auto;
               background-color: $bg;
@@ -388,6 +453,14 @@
               code {
                 background-color: initial;
                 color: $main-font;
+              }
+
+              @include lg-screen {
+                width: 450px;
+              }
+
+              @include md-screen {
+                width: 690px;
               }
             }
 
