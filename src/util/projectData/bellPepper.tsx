@@ -27,7 +27,7 @@ import {
 const DATA = {
   url: "bell-pepper-design",
   name: ["BELL PEPPER", "DESIGN"],
-  tagline: "Modern brochure site",
+  tagline: "Clean and modern static site",
   workShort: ["UI / UX", "Front End"],
   workExpanded: ["UI/UX Design", "Front End Development"],
   links: {

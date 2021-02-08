@@ -16,7 +16,7 @@ const DATA = [
   { href: "https://dev.to/kaxmoglan", icon: DevIcon },
   { href: "https://github.com/kaxmoglan", icon: GithubIcon },
   { href: "https://instagram.com/kaxmoglan", icon: InstagramIcon },
-  { href: "#", icon: LinkedInIcon },
+  { href: "https://www.linkedin.com/in/maxcoghlan/", icon: LinkedInIcon },
 ];
 
 const Social: React.FC = () => {
