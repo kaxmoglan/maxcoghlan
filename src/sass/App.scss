@@ -94,6 +94,19 @@ GLOBAL STYLING
   &.light {
     color: $black;
   }
+
+  @include sm-screen {
+    .social {
+      display: none;
+    }
+
+    .contact-page,
+    .blog-page-template {
+      .social {
+        display: flex;
+      }
+    }
+  }
 }
 
 .background {
@@ -126,6 +139,14 @@ GLOBAL STYLING
 
     @include md-screen {
       padding-right: 10rem;
+    }
+
+    @include sm-screen {
+      padding: 5rem 5rem;
+    }
+
+    @include xs-screen {
+      padding: 5rem 6%;
     }
   }
 }

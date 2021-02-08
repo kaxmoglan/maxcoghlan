@@ -27,3 +27,26 @@ M SCREEN: W: 768px > 900px
     @content;
   }
 }
+
+/*
+-----------------------------------------
+S SCREEN: W: 550px > 768px
+-----------------------------------------
+*/
+
+@mixin sm-screen {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+/*
+-----------------------------------------
+XS SCREEN: W: < 550px
+-----------------------------------------
+*/
+
+@mixin xs-screen {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}

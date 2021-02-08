@@ -10,6 +10,12 @@
     @include md-screen {
       margin-top: 10vh;
     }
+    @include sm-screen {
+      margin-top: 5vh;
+    }
+    @include xs-screen {
+      margin-top: 0;
+    }
   }
 
   &__heading {
@@ -113,6 +119,17 @@
         top: 2rem;
       }
 
+      @include sm-screen {
+        left: -9rem;
+        top: 3rem;
+      }
+
+      @include xs-screen {
+        position: fixed;
+        top: 40%;
+        left: -10%;
+      }
+
       &.visible {
         opacity: 1;
         transform: scale(1);
@@ -124,6 +141,16 @@
 
         @include md-screen {
           transform: scale(0.75);
+        }
+
+        @include sm-screen {
+          transform: scale(0.65);
+        }
+        @include xs-screen {
+          opacity: 0.4;
+          pointer-events: none;
+          z-index: -1;
+          transform: scale(0.5);
         }
       }
 

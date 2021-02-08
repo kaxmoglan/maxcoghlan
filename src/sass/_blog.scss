@@ -4,6 +4,10 @@
   height: 100%;
   margin: 0 auto;
 
+  @include xs-screen {
+    padding: 4rem 6%;
+  }
+
   &__container {
     height: 100%;
     width: 100%;
@@ -105,6 +109,10 @@
             padding-right: 1rem;
             padding-top: 1rem;
           }
+          @include xs-screen {
+            transform: scale(0.8);
+            right: -2rem;
+          }
         }
 
         &__back-to-site {
@@ -136,6 +144,11 @@
             top: 1rem;
             left: 2rem;
             margin-top: 0;
+          }
+
+          @include xs-screen {
+            transform: scale(0.9);
+            left: 0.5rem;
           }
         }
 
@@ -461,6 +474,14 @@
 
               @include md-screen {
                 width: 690px;
+              }
+
+              @include sm-screen {
+                width: 520px;
+              }
+
+              @include xs-screen {
+                width: 310px;
               }
             }
 

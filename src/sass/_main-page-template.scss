@@ -26,6 +26,11 @@
       @include md-screen {
         font-size: 2.3rem;
       }
+
+      @include xs-screen {
+        font-size: 2rem;
+        margin-top: 2rem;
+      }
     }
 
     &.about,
@@ -42,6 +47,26 @@
 
           width: 75%;
         }
+      }
+
+      @include sm-screen {
+        .animation-frame {
+          width: 60%;
+          left: 20%;
+        }
+      }
+
+      @include xs-screen {
+        .animation-frame {
+          width: 80%;
+          left: 10%;
+        }
+      }
+    }
+
+    &.skills {
+      @include xs-screen {
+        grid-template-columns: 1fr;
       }
     }
   }
@@ -89,6 +114,10 @@
       }
       @include md-screen {
         font-size: 5rem;
+      }
+      @include xs-screen {
+        font-size: 4.2rem;
+        line-height: 6rem;
       }
     }
     &.about-page-title {
@@ -143,6 +172,14 @@ ILLUSTRATION ANIMATION
           position: fixed;
           right: 0rem;
         }
+
+        @include sm-screen {
+          width: 30%;
+        }
+        @include xs-screen {
+          width: 25%;
+          opacity: 0.8;
+        }
       }
     }
 
@@ -161,7 +198,15 @@ ILLUSTRATION ANIMATION
       }
 
       @include md-screen {
-        width: 40%;
+        width: 45%;
+      }
+
+      @include sm-screen {
+        width: 50%;
+      }
+
+      @include xs-screen {
+        width: 75%;
       }
     }
   }

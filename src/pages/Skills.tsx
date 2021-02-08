@@ -128,7 +128,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
   return (
     <main className="content__main">
       <div className="main-page-template">
-        <div className="main-page-template__container">
+        <div className="main-page-template__container skills">
           {/* LEFT COLUMN */}
           <div className="main-page-template__left-column">
             <div className="main-page-template__left-column-container">

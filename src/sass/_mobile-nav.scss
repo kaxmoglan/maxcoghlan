@@ -1,7 +1,8 @@
 .mobile-menu {
-  // @include medium-screen {
-  //   display: flex;
-  // }
+  @include sm-screen {
+    display: flex;
+  }
+
   display: none;
   position: fixed;
   top: 1rem;
@@ -39,6 +40,10 @@
       position: absolute;
       top: 1rem;
     }
+
+    @include xs-screen {
+      display: none;
+    }
   }
 
   &__container {
@@ -48,6 +53,13 @@
     align-items: center;
     justify-content: center;
     margin-left: -6rem;
+    padding-left: 4rem;
+
+    @include xs-screen {
+      margin-left: 0;
+      padding-left: 0;
+      transform: scale(0.8);
+    }
   }
 
   &__icon {

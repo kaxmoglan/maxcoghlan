@@ -1,9 +1,13 @@
 .projects-page {
   &__title {
     text-align: center;
-    margin-top: calc((100vh - 75rem) / 2);
     margin-top: 6rem;
     margin-bottom: 6rem;
+
+    @include sm-screen {
+      margin-top: 8rem;
+      margin-bottom: 4rem;
+    }
 
     .million {
       &::before {
@@ -40,6 +44,10 @@
         @include md-screen {
           font-size: 1.2rem;
         }
+
+        @include xs-screen {
+          font-size: 1.3rem;
+        }
       }
 
       &__container {
@@ -54,6 +62,12 @@
           padding: 3rem 2rem;
           gap: 1rem;
         }
+
+        @include xs-screen {
+          grid-template-columns: 1fr;
+          gap: 5rem;
+          padding: 3rem 1rem;
+        }
       }
 
       // LEFT COLUMN
@@ -63,11 +77,21 @@
         justify-content: center;
         text-align: right;
 
+        @include xs-screen {
+          text-align: center;
+          align-items: center;
+        }
+
         &-text {
           font-size: 2.4rem;
 
           @include md-screen {
             font-size: 1.8rem;
+          }
+
+          @include xs-screen {
+            font-size: 2.2rem;
+            line-height: 3rem;
           }
         }
         &-tagline {
@@ -79,16 +103,27 @@
             font-size: 1.2rem;
             line-height: 1.8rem;
           }
+
+          @include xs-screen {
+            font-size: 1.4rem;
+          }
         }
       }
 
       // CENTRAL COLUMN
       &__details {
         padding-left: 33%;
+
+        @include xs-screen {
+          padding-left: initial;
+          display: flex;
+          justify-content: space-evenly;
+        }
       }
 
       &__work {
         margin-bottom: 3rem;
+        order: 2;
       }
 
       &__links {
@@ -115,6 +150,10 @@
       &__tech {
         text-align: center;
 
+        @include xs-screen {
+          grid-row: 2;
+        }
+
         .container {
           margin-top: 2rem;
           display: grid;
@@ -124,6 +163,11 @@
           @include md-screen {
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
+          }
+
+          @include xs-screen {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
           }
 
           .icon {

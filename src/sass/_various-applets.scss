@@ -40,6 +40,10 @@
         height: 400px;
       }
 
+      @include xs-screen {
+        height: 300px;
+      }
+
       img {
         position: absolute;
       }
@@ -128,10 +132,22 @@
       @include md-screen {
         gap: 5rem;
       }
+
+      @include xs-screen {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
     &__image-container {
       display: flex;
       align-items: center;
+
+      @include xs-screen {
+        justify-content: center;
+        img {
+          width: 50%;
+        }
+      }
     }
   }
 
