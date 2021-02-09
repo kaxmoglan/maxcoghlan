@@ -35,7 +35,7 @@ S SCREEN: W: 550px > 768px
 */
 
 @mixin sm-screen {
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 800px) {
     @content;
   }
 }

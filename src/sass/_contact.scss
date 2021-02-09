@@ -78,6 +78,7 @@
 
     @include md-screen {
       margin: 5rem 0;
+      align-items: flex-start;
     }
 
     &-container {

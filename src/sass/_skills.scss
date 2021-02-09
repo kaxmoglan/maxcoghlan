@@ -126,8 +126,9 @@
 
       @include xs-screen {
         position: fixed;
-        top: 40%;
+        top: 25%;
         left: -10%;
+        display: none;
       }
 
       &.visible {
@@ -150,7 +151,7 @@
           opacity: 0.4;
           pointer-events: none;
           z-index: -1;
-          transform: scale(0.5);
+          transform: scale(0.7);
         }
       }
 

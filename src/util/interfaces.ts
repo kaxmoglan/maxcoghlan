@@ -11,7 +11,7 @@ export interface IPROJECT {
   workShort: string[];
   workExpanded: string[];
   links: {
-    app: string;
+    app?: string;
     github?: string;
   };
   tech: string[];

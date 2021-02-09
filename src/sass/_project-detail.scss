@@ -320,6 +320,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 5rem;
+      letter-spacing: 0.03rem;
 
       @include xs-screen {
         grid-template-columns: 1fr 1fr;

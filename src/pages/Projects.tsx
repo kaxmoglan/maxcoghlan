@@ -84,16 +84,18 @@ export const Projects: React.FC<IGLOBALSTATE> = (props) => {
                         View Project
                       </Link>
                     </div>
-                    <div>
-                      <a
-                        href={project.links.app}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project__link"
-                      >
-                        Open App
-                      </a>
-                    </div>
+                    {project.links.app !== "" && (
+                      <div>
+                        <a
+                          href={project.links.app}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project__link"
+                        >
+                          Open App
+                        </a>
+                      </div>
+                    )}
                     {project.links.github !== "" && (
                       <div>
                         <a
