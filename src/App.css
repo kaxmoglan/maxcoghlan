@@ -1272,7 +1272,10 @@ BELL PEPPER
                 align-items: flex-start; } }
     .contact-page__form-container {
       width: 100%;
-      max-width: 430px; }
+      max-width: 430px;
+      -webkit-transform: translateY(60px);
+          -ms-transform: translateY(60px);
+              transform: translateY(60px); }
     .contact-page__form .contact-form fieldset {
       margin: 0;
       padding: 0;
@@ -1337,6 +1340,7 @@ BELL PEPPER
             -ms-flex-direction: column;
                 flex-direction: column; } }
     .contact-page__form .submit-btn {
+      width: 100%;
       font-size: 1.6rem;
       padding: 1rem 2rem;
       background: none;
@@ -1357,6 +1361,31 @@ BELL PEPPER
       .contact-page__form .submit-btn:hover {
         border: 2px solid #08fdd8;
         color: #08fdd8; }
+      .contact-page__form .submit-btn:disabled:hover {
+        border: 2px solid #707070;
+        color: #707070;
+        cursor: initial; }
+  .contact-page__user-messages {
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .contact-page__user-messages p {
+      font-size: 1.4rem;
+      letter-spacing: 0.02rem;
+      line-height: 2.2rem;
+      text-align: center;
+      color: #dddbdb; }
 
 .main-page-template {
   min-height: 100vh;

@@ -84,6 +84,7 @@
     &-container {
       width: 100%;
       max-width: 430px;
+      transform: translateY(60px);
     }
 
     .contact-form {
@@ -151,6 +152,7 @@
     }
 
     .submit-btn {
+      width: 100%;
       font-size: 1.6rem;
       padding: 1rem 2rem;
       background: none;
@@ -167,6 +169,30 @@
         border: 2px solid $highlight;
         color: $highlight;
       }
+
+      &:disabled {
+        &:hover {
+          border: 2px solid $mid-grey;
+          color: $mid-grey;
+          cursor: initial;
+        }
+      }
+    }
+  }
+
+  &__user-messages {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 1.4rem;
+      letter-spacing: 0.02rem;
+      line-height: 2.2rem;
+      text-align: center;
+      color: $main-font;
     }
   }
 }

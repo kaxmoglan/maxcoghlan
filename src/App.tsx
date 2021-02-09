@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import { FormspreeProvider } from "@formspree/react";
 
 // COMPONENTS
 import { DesktopNav, MobileNav } from "./components/Nav";
@@ -56,11 +57,13 @@ function App() {
                 unmountOnExit
               >
                 <div className="content">
-                  <Component
-                    setTheme={setTheme}
-                    setShowNav={setShowNav}
-                    setShowSocial={setShowSocial}
-                  />
+                  <FormspreeProvider project="1610128407981457186">
+                    <Component
+                      setTheme={setTheme}
+                      setShowNav={setShowNav}
+                      setShowSocial={setShowSocial}
+                    />
+                  </FormspreeProvider>
                 </div>
               </CSSTransition>
             )}

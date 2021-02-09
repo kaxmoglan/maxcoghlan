@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 
 import Social from "../components/Social";
 
-import Particles from "react-tsparticles";
-import particlesConfig from "../util/particlesjs-config.json";
+import { useForm } from "@formspree/react";
+import Loader from "react-loader-spinner";
 
 import { IGLOBALSTATE } from "../util/interfaces";
 import { CONTACTPAGEANIMATIONFRAMES } from "../util/animations/animations";
 
 export const Contact: React.FC<IGLOBALSTATE> = (props) => {
   const { setTheme, setShowNav, setShowSocial } = props;
+
+  const [state, handleSubmit] = useForm("contactForm");
 
   useEffect(() => {
     setTheme("dark");
@@ -42,7 +44,7 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
           {/* RIGHT COLUMN */}
           <div className="contact-page__form">
             <div className="contact-page__form-container">
-              <form action="#" method="post" className="contact-form">
+              <form onSubmit={handleSubmit} className="contact-form">
                 <fieldset className="details">
                   <div className="text-input">
                     {/* <label htmlFor="name">Name*</label> */}
@@ -76,8 +78,39 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
                     required
                   ></textarea>
                 </fieldset>
-                <input type="submit" value="Send" className="submit-btn" />
+                <button
+                  type="submit"
+                  disabled={state.submitting || state.succeeded}
+                  className="submit-btn"
+                >
+                  {state.submitting ? (
+                    <>Sending...</>
+                  ) : state.succeeded ? (
+                    <>Sent</>
+                  ) : (
+                    <>Send</>
+                  )}
+                </button>
               </form>
+              <div className="contact-page__user-messages">
+                {state.submitting && (
+                  <Loader
+                    type="TailSpin"
+                    color="#08fdd8"
+                    height={50}
+                    width={50}
+                    className="spinner"
+                  />
+                )}{" "}
+                {state.errors.length > 0 && (
+                  <p className="error">
+                    Something went wrong. Off I go debugging again...
+                  </p>
+                )}{" "}
+                {state.succeeded && (
+                  <p className="success">Thanks for getting in touch!</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
