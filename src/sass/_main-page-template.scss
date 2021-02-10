@@ -88,6 +88,10 @@
     &-container {
       width: 100%;
       padding: 9rem 0;
+
+      @include xxs-screen {
+        padding-top: 5rem;
+      }
     }
 
     .about-me {

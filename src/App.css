@@ -720,6 +720,9 @@ BLOG
     @media only screen and (max-width: 600px) {
       .project-detail-page__header {
         padding-top: 8rem; } }
+    @media only screen and (max-width: 339px) {
+      .project-detail-page__header {
+        padding-top: 4rem; } }
     .project-detail-page__header .container {
       height: 100%;
       display: grid;
@@ -962,6 +965,16 @@ BLOG
           grid-template-columns: 1fr 1fr;
           padding: 2rem 2rem;
           gap: 3rem 5rem; } }
+      @media only screen and (max-width: 339px) {
+        .project-detail-page .project-details__container {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          text-align: center; } }
     .project-detail-page .project-details__header {
       color: #707070;
       font-size: 1.3rem;
@@ -1471,6 +1484,9 @@ BELL PEPPER
     .main-page-template__left-column-container {
       width: 100%;
       padding: 9rem 0; }
+      @media only screen and (max-width: 339px) {
+        .main-page-template__left-column-container {
+          padding-top: 5rem; } }
     .main-page-template__left-column .about-me {
       margin: 4rem 0; }
       .main-page-template__left-column .about-me p {
@@ -1654,6 +1670,9 @@ ILLUSTRATION ANIMATION
   @media only screen and (max-width: 600px) {
     .skills__title {
       margin-top: 0; } }
+  @media only screen and (max-width: 339px) {
+    .skills__title {
+      margin-top: 2rem; } }
 
 .skills__heading {
   cursor: pointer;

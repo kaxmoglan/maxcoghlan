@@ -16,6 +16,9 @@
     @include xs-screen {
       margin-top: 0;
     }
+    @include xxs-screen {
+      margin-top: 2rem;
+    }
   }
 
   &__heading {
