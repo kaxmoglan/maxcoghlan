@@ -14,7 +14,7 @@ import {
   NodeIcon,
   GulpIcon,
   SassIcon,
-  NpmIcon,
+  YarnIcon,
 } from "../icons";
 
 // PROJECT DATA
@@ -30,7 +30,7 @@ const DATA = {
     github: "https://github.com/kaxmoglan/maxcoghlan",
   },
   tech: ["React", "Typescript", "Node.js", "Sass", "Gulp"],
-  icons: [ReactIcon, TypescriptIcon, GulpIcon, SassIcon, NpmIcon, NodeIcon],
+  icons: [ReactIcon, TypescriptIcon, GulpIcon, SassIcon, YarnIcon, NodeIcon],
   subheading: "UI/UX | Front End",
   description: "this.portfolioApp! Built with React, Typescript and Sass.",
   mobileImg: {

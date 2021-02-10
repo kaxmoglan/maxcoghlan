@@ -40,6 +40,7 @@ BELL PEPPER
     @include md-screen {
       position: initial;
       width: 30%;
+      height: 100%;
 
       &.one {
         transform: translateY(0);

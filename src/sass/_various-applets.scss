@@ -41,7 +41,7 @@
       }
 
       @include xs-screen {
-        height: 300px;
+        height: 260px;
       }
 
       img {
@@ -74,6 +74,13 @@
       .link-seperator {
         display: inline-block;
         margin: 0 1rem;
+      }
+
+      @include xs-screen {
+        border: 2px solid $mid-grey;
+        border-radius: 1rem;
+        padding: 2rem 0 1rem 0;
+        @include glass;
       }
     }
   }
