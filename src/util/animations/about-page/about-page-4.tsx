@@ -21,25 +21,25 @@ export const aboutPage4 = (
         y2="231.59999999999997"
         spreadMethod="pad"
       >
-        <stop offset="4.705882352941177%" stop-color="#2DFCD8" />
+        <stop offset="4.705882352941177%" stopColor="#2DFCD8" />
 
-        <stop offset="5.882352941176471%" stop-color="#2BF0CE" />
+        <stop offset="5.882352941176471%" stopColor="#2BF0CE" />
 
-        <stop offset="11.764705882352942%" stop-color="#21BBA1" />
+        <stop offset="11.764705882352942%" stopColor="#21BBA1" />
 
-        <stop offset="18.03921568627451%" stop-color="#198C79" />
+        <stop offset="18.03921568627451%" stopColor="#198C79" />
 
-        <stop offset="24.313725490196077%" stop-color="#136558" />
+        <stop offset="24.313725490196077%" stopColor="#136558" />
 
-        <stop offset="30.58823529411765%" stop-color="#0F453C" />
+        <stop offset="30.58823529411765%" stopColor="#0F453C" />
 
-        <stop offset="37.254901960784316%" stop-color="#0D2C27" />
+        <stop offset="37.254901960784316%" stopColor="#0D2C27" />
 
-        <stop offset="43.92156862745098%" stop-color="#0C1A18" />
+        <stop offset="43.92156862745098%" stopColor="#0C1A18" />
 
-        <stop offset="51.372549019607845%" stop-color="#0C0F0F" />
+        <stop offset="51.372549019607845%" stopColor="#0C0F0F" />
 
-        <stop offset="59.6078431372549%" stop-color="#0C0C0C" />
+        <stop offset="59.6078431372549%" stopColor="#0C0C0C" />
       </linearGradient>
 
       <g id="Layer12_0_FILL">

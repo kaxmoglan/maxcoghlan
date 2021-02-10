@@ -21,25 +21,25 @@ export const homePage1 = (
         y2="558.95"
         spreadMethod="pad"
       >
-        <stop offset="15.686274509803921%" stop-color="#0C0C0C" />
+        <stop offset="15.686274509803921%" stopColor="#0C0C0C" />
 
-        <stop offset="31.372549019607842%" stop-color="#0C0F0E" />
+        <stop offset="31.372549019607842%" stopColor="#0C0F0E" />
 
-        <stop offset="42.745098039215684%" stop-color="#0C1816" />
+        <stop offset="42.745098039215684%" stopColor="#0C1816" />
 
-        <stop offset="52.94117647058823%" stop-color="#0D2824" />
+        <stop offset="52.94117647058823%" stopColor="#0D2824" />
 
-        <stop offset="61.96078431372549%" stop-color="#0E3F37" />
+        <stop offset="61.96078431372549%" stopColor="#0E3F37" />
 
-        <stop offset="70.98039215686275%" stop-color="#125C50" />
+        <stop offset="70.98039215686275%" stopColor="#125C50" />
 
-        <stop offset="79.2156862745098%" stop-color="#17806E" />
+        <stop offset="79.2156862745098%" stopColor="#17806E" />
 
-        <stop offset="87.45098039215686%" stop-color="#1EAA92" />
+        <stop offset="87.45098039215686%" stopColor="#1EAA92" />
 
-        <stop offset="95.29411764705883%" stop-color="#27DABB" />
+        <stop offset="95.29411764705883%" stopColor="#27DABB" />
 
-        <stop offset="100%" stop-color="#2DFCD8" />
+        <stop offset="100%" stopColor="#2DFCD8" />
       </linearGradient>
 
       <g id="Layer1_0_FILL">
