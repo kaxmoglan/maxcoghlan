@@ -30,6 +30,10 @@
       font-size: 5rem;
       margin-top: 6rem;
     }
+
+    @include xxs-screen {
+      font-size: 4rem;
+    }
   }
 
   &__content {
@@ -79,6 +83,10 @@
     @include md-screen {
       margin: 5rem 0;
       align-items: flex-start;
+    }
+
+    @include xxs-screen {
+      margin-top: 0;
     }
 
     &-container {

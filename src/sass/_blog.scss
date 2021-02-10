@@ -8,6 +8,10 @@
     padding: 4rem 6%;
   }
 
+  @include xxs-screen {
+    padding: 4rem 3%;
+  }
+
   &__container {
     height: 100%;
     width: 100%;
@@ -84,6 +88,11 @@
               margin-top: 3rem;
             }
           }
+          @include xxs-screen {
+            .logo {
+              font-size: 4rem;
+            }
+          }
         }
 
         .social {
@@ -113,6 +122,10 @@
             transform: scale(0.8);
             right: -2rem;
           }
+
+          @include xxs-screen {
+            left: auto;
+          }
         }
 
         &__back-to-site {
@@ -130,6 +143,10 @@
           p {
             font-size: 1.4rem;
             transition: all 250ms ease;
+
+            @include xxs-screen {
+              display: none;
+            }
           }
 
           &:hover {
@@ -150,14 +167,14 @@
             transform: scale(0.9);
             left: 0.5rem;
           }
+
+          @include xxs-screen {
+            left: 1rem;
+          }
         }
 
         @include md-screen {
           position: initial;
-
-          // .panel {
-          //   height: initial;
-          // }
         }
       }
 
@@ -196,8 +213,6 @@
       }
 
       @include md-screen {
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
         display: flex;
         justify-content: center;
       }
@@ -249,6 +264,10 @@
               font-size: 2rem;
               color: $dark-grey;
               transition: all 250ms ease;
+
+              @include xxs-screen {
+                text-align: center;
+              }
             }
 
             &__description {
@@ -257,18 +276,32 @@
               margin-top: 2rem;
               color: $dark-grey;
               transition: all 250ms ease;
+
+              @include xxs-screen {
+                text-align: center;
+              }
             }
 
             &__meta {
               margin-top: 3rem;
               display: flex;
               justify-content: space-between;
+
+              @include xxs-screen {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+              }
             }
 
             &__tags {
               font-size: 1.2rem;
               color: $mid-grey;
               font-style: italic;
+
+              @include xxs-screen {
+                margin: 1rem;
+              }
             }
 
             &__date {
@@ -316,8 +349,7 @@
 
         &__title {
           font-size: 3.5rem;
-          line-height: 5rem;
-          // text-align: center;
+          line-height: 4.5rem;
 
           margin-bottom: 2rem;
         }
@@ -389,6 +421,7 @@
           h2 {
             font-size: 2.5rem;
             margin: 5rem 0 2rem 0;
+            line-height: 3.2rem;
           }
 
           h3 {
@@ -482,6 +515,10 @@
 
               @include xs-screen {
                 width: 310px;
+              }
+
+              @include xxs-screen {
+                width: 240px;
               }
             }
 

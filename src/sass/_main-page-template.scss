@@ -31,6 +31,10 @@
         font-size: 2rem;
         margin-top: 2rem;
       }
+
+      @include xxs-screen {
+        font-size: 1.8rem;
+      }
     }
 
     &.about,
@@ -118,6 +122,10 @@
       @include xs-screen {
         font-size: 4.2rem;
         line-height: 6rem;
+      }
+      @include xxs-screen {
+        font-size: 3.2rem;
+        line-height: 5rem;
       }
     }
     &.about-page-title {
@@ -207,6 +215,11 @@ ILLUSTRATION ANIMATION
 
       @include xs-screen {
         width: 75%;
+      }
+
+      @include xxs-screen {
+        width: 90%;
+        margin-top: 8rem;
       }
     }
   }
