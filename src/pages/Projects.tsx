@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import Particles from "react-tsparticles";
-import particlesConfig from "../util/particlesjs-config.json";
 
 import { PROJECTS } from "../util/projects";
 import { IGLOBALSTATE } from "../util/interfaces";
@@ -38,7 +36,6 @@ export const Projects: React.FC<IGLOBALSTATE> = (props) => {
   return (
     <main className="content__main">
       <div className="projects-page">
-        {/* <Particles id="tsparticles" options={particlesConfig} /> */}
         <h1 className="projects-page__title">
           <span className="million">M</span>y Work
         </h1>

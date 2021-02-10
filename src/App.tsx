@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { FormspreeProvider } from "@formspree/react";
 
@@ -69,7 +69,6 @@ function App() {
             )}
           </Route>
         ))}
-        {/* <Route render={() => <Redirect to="/" />} /> */}
       </div>
     </Router>
   );

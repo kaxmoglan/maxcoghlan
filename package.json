@@ -17,7 +17,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-transition-group": "^4.4.1",
-    "react-tsparticles": "^1.18.11",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
