@@ -171,16 +171,17 @@ GLOBAL STYLING
   }
 }
 
-// .home-page-title {
-//   .million {
-//     &::before {
-//       @include md-screen {
-//         height: 0.3rem;
-//         left: 0.2rem;
-//       }
-//     }
-//   }
-// }
+// FIX FOR XXS SCREENS ON HOME PAGE
+.home-page-title {
+  .million {
+    &::before {
+      @include xxs-screen {
+        left: 0.2rem;
+        height: 0.3rem;
+      }
+    }
+  }
+}
 
 #tsparticles {
   position: fixed;
