@@ -159,7 +159,6 @@ GLOBAL STYLING
     position: absolute;
     left: 0.3rem;
     top: 0.1rem;
-    width: 2.8rem;
     width: 86%;
     height: 0.45rem;
     background-color: $main-font;
@@ -167,6 +166,19 @@ GLOBAL STYLING
     @include lg-screen {
       height: 0.4rem;
       top: 0;
+    }
+    @include xs-screen {
+      width: 83%;
+    }
+  }
+}
+
+.projects-page__title {
+  .million {
+    &::before {
+      @include xs-screen {
+        width: 85%;
+      }
     }
   }
 }

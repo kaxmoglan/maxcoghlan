@@ -2520,7 +2520,6 @@ GLOBAL STYLING
     position: absolute;
     left: 0.3rem;
     top: 0.1rem;
-    width: 2.8rem;
     width: 86%;
     height: 0.45rem;
     background-color: #dddbdb; }
@@ -2528,6 +2527,13 @@ GLOBAL STYLING
       .million::before {
         height: 0.4rem;
         top: 0; } }
+    @media only screen and (max-width: 600px) {
+      .million::before {
+        width: 83%; } }
+
+@media only screen and (max-width: 600px) {
+  .projects-page__title .million::before {
+    width: 85%; } }
 
 @media only screen and (max-width: 339px) {
   .home-page-title .million::before {
