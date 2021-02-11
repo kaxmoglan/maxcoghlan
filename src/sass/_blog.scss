@@ -483,6 +483,7 @@
 
             &.shell,
             &.javascript,
+            &.python,
             &.json,
             &.yaml,
             &.typescript,
@@ -625,6 +626,25 @@
                 color: $pastelPurple;
               }
               .c {
+                color: $comment;
+              }
+            }
+            &.python {
+              .k {
+                color: $pastelPurple;
+              }
+              .nf,
+              .nb {
+                color: $pastelYellow;
+              }
+              .n {
+                color: $pastelBlue;
+              }
+              .o,
+              .ow {
+                color: $pastelGreen;
+              }
+              .c1 {
                 color: $comment;
               }
             }
