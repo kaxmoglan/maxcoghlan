@@ -63,6 +63,12 @@
                 top: 0;
                 width: 85%;
                 transition: all 250ms ease;
+
+                @include md-screen {
+                  left: 3px;
+                  width: 84%;
+                  height: 0.5rem;
+                }
               }
             }
           }
