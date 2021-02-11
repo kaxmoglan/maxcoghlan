@@ -1969,8 +1969,8 @@ ILLUSTRATION ANIMATION
             transition: all 250ms ease; }
             @media only screen and (max-width: 900px) {
               .blog-page-template__container .left-column .blog-header__header .logo .million::before {
-                left: 3px;
-                width: 84%;
+                left: 3.5px;
+                width: 83%;
                 height: 0.5rem; } }
         .blog-page-template__container .left-column .blog-header__header .the-blog {
           font-size: 1.6rem;
