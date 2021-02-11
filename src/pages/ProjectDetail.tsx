@@ -142,26 +142,28 @@ export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
               <div className="description__container">
                 <p className="description__text">{project.description}</p>
                 <div className="description__links">
-                  <a
-                    href={project.links.app}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project__link"
-                  >
-                    Open App
-                  </a>
+                  {project.links.app !== "" && (
+                    <a
+                      href={project.links.app}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project__link"
+                    >
+                      Open App
+                    </a>
+                  )}
+                  {project.links.app !== "" && project.links.github !== "" && (
+                    <p> | </p>
+                  )}
                   {project.links.github !== "" && (
-                    <>
-                      <p> | </p>
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project__link"
-                      >
-                        GitHub
-                      </a>
-                    </>
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project__link"
+                    >
+                      GitHub
+                    </a>
                   )}
                 </div>
               </div>
@@ -227,16 +229,18 @@ export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
             <div className="project-details__links">
               <div className="project-details__links-container">
                 <p className="project-details__header">LINKS</p>
-                <div>
-                  <a
-                    href={project.links.app}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project__link"
-                  >
-                    Open App
-                  </a>
-                </div>
+                {project.links.app !== "" && (
+                  <div>
+                    <a
+                      href={project.links.app}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project__link"
+                    >
+                      Open App
+                    </a>
+                  </div>
+                )}
                 {project.links.github !== "" && (
                   <div>
                     <a
