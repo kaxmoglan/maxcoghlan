@@ -23,7 +23,8 @@ M SCREEN: W: < 901px
 */
 
 @mixin md-screen {
-  @media only screen and (max-width: 900px), screen and (max-height: 800px) {
+  @media only screen and (max-width: 900px) /*,
+    screen and (max-height: 800px) */ {
     @content;
   }
 }
@@ -35,7 +36,7 @@ S SCREEN: W: < 801px
 */
 
 @mixin sm-screen {
-  @media screen and (max-width: 800px), screen and (max-height: 800px) {
+  @media screen and (max-width: 800px) /*, screen and (max-height: 800px) */ {
     @content;
   }
 }
@@ -60,6 +61,24 @@ XXS SCREEN: W: < 340px
 
 @mixin xxs-screen {
   @media only screen and (max-width: 339px) {
+    @content;
+  }
+}
+
+/*
+-----------------------------------------
+SCREEN HEIGHTS FOR DESKTOP NAV BAR
+-----------------------------------------
+*/
+
+@mixin height-800 {
+  @media only screen and (max-height: 800px) {
+    @content;
+  }
+}
+
+@mixin height-700 {
+  @media only screen and (max-height: 700px) {
     @content;
   }
 }

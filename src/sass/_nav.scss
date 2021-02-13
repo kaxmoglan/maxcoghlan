@@ -17,6 +17,16 @@
   flex-direction: column;
   justify-content: center;
 
+  @include height-800 {
+    height: 65rem;
+    top: calc((100vh - 65rem) / 2);
+  }
+  @include height-700 {
+    height: 55rem;
+    top: calc((100vh - 55rem) / 2);
+    padding-top: 3rem;
+  }
+
   @include sm-screen {
     display: none;
   }
