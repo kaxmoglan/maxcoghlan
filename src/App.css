@@ -197,7 +197,7 @@ BLOG
       height: 55rem;
       top: calc((100vh - 55rem) / 2);
       padding-top: 3rem; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px), screen and (max-height: 580px) {
     .navbar {
       display: none; } }
   .navbar .logo {
@@ -352,7 +352,7 @@ BLOG
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px), screen and (max-height: 580px) {
     .mobile-menu {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -515,7 +515,7 @@ BLOG
   text-align: center;
   margin-top: 6rem;
   margin-bottom: 6rem; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px), screen and (max-height: 580px) {
     .projects-page__title {
       margin-top: 8rem;
       margin-bottom: 4rem; } }
@@ -1490,7 +1490,7 @@ BELL PEPPER
           left: 13%;
           top: -8rem;
           width: 75%; } }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 800px), screen and (max-height: 580px) {
       .main-page-template__container.about .animation-frame, .main-page-template__container.home .animation-frame {
         width: 60%;
         left: 20%; } }
@@ -1592,7 +1592,7 @@ ILLUSTRATION ANIMATION
         .animation-frame__container.skills .animation-frame {
           position: fixed;
           right: 0rem; } }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 800px), screen and (max-height: 580px) {
         .animation-frame__container.skills .animation-frame {
           width: 25%; } }
       @media only screen and (max-width: 600px) {
@@ -1620,7 +1620,7 @@ ILLUSTRATION ANIMATION
       @media only screen and (max-width: 900px) {
         .animation-frame__container.contact {
           width: 45%; } }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 800px), screen and (max-height: 580px) {
         .animation-frame__container.contact {
           width: 50%; } }
       @media only screen and (max-width: 600px) {
@@ -1698,7 +1698,7 @@ ILLUSTRATION ANIMATION
   @media only screen and (max-width: 900px) {
     .skills__title {
       margin-top: 10vh; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px), screen and (max-height: 580px) {
     .skills__title {
       margin-top: 5vh; } }
   @media only screen and (max-width: 600px) {
@@ -1797,7 +1797,7 @@ ILLUSTRATION ANIMATION
       .skills__icons-container {
         left: -8rem;
         top: 2rem; } }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 800px), screen and (max-height: 580px) {
       .skills__icons-container {
         left: -9rem;
         top: 0rem; } }
@@ -1825,7 +1825,7 @@ ILLUSTRATION ANIMATION
           -webkit-transform: scale(0.75);
               -ms-transform: scale(0.75);
                   transform: scale(0.75); } }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 800px), screen and (max-height: 580px) {
         .skills__icons-container.visible {
           -webkit-transform: scale(0.65);
               -ms-transform: scale(0.65);
@@ -2332,7 +2332,7 @@ ILLUSTRATION ANIMATION
               @media only screen and (max-width: 900px) {
                 .blog-page-template__container .right-column .blog-post__body .highlight.shell, .blog-page-template__container .right-column .blog-post__body .highlight.javascript, .blog-page-template__container .right-column .blog-post__body .highlight.python, .blog-page-template__container .right-column .blog-post__body .highlight.json, .blog-page-template__container .right-column .blog-post__body .highlight.yaml, .blog-page-template__container .right-column .blog-post__body .highlight.typescript, .blog-page-template__container .right-column .blog-post__body .highlight.markdown, .blog-page-template__container .right-column .blog-post__body .highlight.html, .blog-page-template__container .right-column .blog-post__body .highlight.css, .blog-page-template__container .right-column .blog-post__body .highlight.plaintext {
                   width: 690px; } }
-              @media screen and (max-width: 800px) {
+              @media screen and (max-width: 800px), screen and (max-height: 580px) {
                 .blog-page-template__container .right-column .blog-post__body .highlight.shell, .blog-page-template__container .right-column .blog-post__body .highlight.javascript, .blog-page-template__container .right-column .blog-post__body .highlight.python, .blog-page-template__container .right-column .blog-post__body .highlight.json, .blog-page-template__container .right-column .blog-post__body .highlight.yaml, .blog-page-template__container .right-column .blog-post__body .highlight.typescript, .blog-page-template__container .right-column .blog-post__body .highlight.markdown, .blog-page-template__container .right-column .blog-post__body .highlight.html, .blog-page-template__container .right-column .blog-post__body .highlight.css, .blog-page-template__container .right-column .blog-post__body .highlight.plaintext {
                   width: 520px; } }
               @media only screen and (max-width: 600px) {
@@ -2488,7 +2488,7 @@ GLOBAL STYLING
       color: #000; }
   .App.light {
     color: #000; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px), screen and (max-height: 580px) {
     .App .social {
       display: none; }
     .App .contact-page .social,
@@ -2524,7 +2524,7 @@ GLOBAL STYLING
     @media only screen and (max-width: 900px) {
       .content__main {
         padding-right: 10rem; } }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 800px), screen and (max-height: 580px) {
       .content__main {
         padding: 5rem 5rem; } }
     @media only screen and (max-width: 600px) {
