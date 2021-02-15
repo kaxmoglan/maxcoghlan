@@ -452,9 +452,13 @@
 
           code {
             background-color: $light-grey;
-            padding: 0.2rem 1rem;
+            // padding: 0.2rem 1rem;
             font-size: 1.4rem;
             border-radius: 0.2rem;
+          }
+
+          p code {
+            padding: 0.2rem 1rem;
           }
 
           table {
