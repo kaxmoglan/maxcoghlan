@@ -2299,11 +2299,12 @@ ILLUSTRATION ANIMATION
             max-width: 100%;
             margin: 0 auto; }
           .blog-page-template__container .right-column .blog-post__body code {
-            background-color: #cecece;
+            background-color: #dbdbdb;
             font-size: 1.4rem;
             border-radius: 0.2rem; }
-          .blog-page-template__container .right-column .blog-post__body p code {
-            padding: 0.2rem 1rem; }
+          .blog-page-template__container .right-column .blog-post__body p code,
+          .blog-page-template__container .right-column .blog-post__body li code {
+            padding: 0.2rem 0.5rem; }
           .blog-page-template__container .right-column .blog-post__body table {
             padding: 1rem;
             margin: 4rem 0;
