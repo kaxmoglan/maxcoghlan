@@ -37,7 +37,7 @@ const DATA = {
     "Back End Development",
   ],
   links: {
-    app: "https://www.themoderncalligraphystudio.com",
+    app: "https://www.thehampshirecalligraphystudio.com",
     github: "https://github.com/kaxmoglan/the-modern-calligraphy-studio",
   },
   tech: [
