@@ -26,24 +26,24 @@ RESETS
 -----------------------------------------
 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-  font-size: 10px;
-  font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: $background;
+	font-size: 10px;
+	font-family: "Roboto", sans-serif;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: $background;
 }
 
 html,
 body,
 #root,
 .App {
-  height: 100%;
+	height: 100%;
 }
 
 /*
@@ -54,17 +54,17 @@ FONTS
 
 .archivo,
 .page-header {
-  font-family: "Archivo", "Roboto", sans-serif;
+	font-family: "Archivo", "Roboto", sans-serif;
 }
 
 a {
-  color: inherit;
+	color: inherit;
 }
 
 h1 {
-  font-size: 4rem;
-  // margin: 2rem 0;
-  display: block;
+	font-size: 4rem;
+	// margin: 2rem 0;
+	display: block;
 }
 
 /*
@@ -74,219 +74,219 @@ GLOBAL STYLING
 */
 
 .App {
-  transition: all 1000ms ease;
-  display: flex;
-  justify-content: center;
+	transition: all 1000ms ease;
+	display: flex;
+	justify-content: center;
 
-  &.dark {
-    color: $main-font;
+	&.dark {
+		color: $main-font;
 
-    p::selection,
-    h1::selection,
-    a::selection,
-    h2::selection,
-    span::selection {
-      background: $highlight;
-      color: $black;
-    }
-  }
+		p::selection,
+		h1::selection,
+		a::selection,
+		h2::selection,
+		span::selection {
+			background: $highlight;
+			color: $black;
+		}
+	}
 
-  &.light {
-    color: $black;
-  }
+	&.light {
+		color: $black;
+	}
 
-  @include sm-screen {
-    .social {
-      display: none;
-    }
+	@include sm-screen {
+		.social {
+			display: none;
+		}
 
-    .contact-page,
-    .blog-page-template {
-      .social {
-        display: flex;
-      }
-    }
-  }
+		.contact-page,
+		.blog-page-template {
+			.social {
+				display: flex;
+			}
+		}
+	}
 }
 
 .background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  transition: all 1000ms ease;
-  pointer-events: none;
-  z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	transition: all 1000ms ease;
+	pointer-events: none;
+	z-index: -1;
 
-  &.dark {
-    background-color: $background;
-  }
-  &.light {
-    background-color: $white;
-  }
+	&.dark {
+		background-color: $background;
+	}
+	&.light {
+		background-color: $white;
+	}
 }
 
 .content {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 
-  &__main {
-    padding-left: 14.5rem;
-    padding-right: 6rem;
-    max-width: calc(1200px + 20.5rem);
-    margin: 0 auto;
+	&__main {
+		padding-left: 14.5rem;
+		padding-right: 6rem;
+		max-width: calc(1200px + 20.5rem);
+		margin: 0 auto;
 
-    @include md-screen {
-      padding-right: 10rem;
-    }
+		@include md-screen {
+			padding-right: 10rem;
+		}
 
-    @include sm-screen {
-      padding: 5rem 5rem;
-    }
+		@include sm-screen {
+			padding: 5rem 5rem;
+		}
 
-    @include xs-screen {
-      padding: 5rem 6%;
-    }
-  }
+		@include xs-screen {
+			padding: 5rem 6%;
+		}
+	}
 }
 
 .million {
-  position: relative;
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0.3rem;
-    top: 0.1rem;
-    width: 86%;
-    height: 0.45rem;
-    background-color: $main-font;
+	position: relative;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0.35rem;
+		top: 0.1rem;
+		width: 86%;
+		height: 0.45rem;
+		background-color: $main-font;
 
-    @include lg-screen {
-      height: 0.4rem;
-      top: 0;
-    }
-    @include xs-screen {
-      width: 83%;
-    }
-  }
+		@include lg-screen {
+			height: 0.4rem;
+			top: 0;
+		}
+		@include xs-screen {
+			width: 83%;
+		}
+	}
 }
 
 .projects-page__title {
-  .million {
-    &::before {
-      @include xs-screen {
-        width: 85%;
-      }
-    }
-  }
+	.million {
+		&::before {
+			@include xs-screen {
+				width: 85%;
+			}
+		}
+	}
 }
 
 // FIX FOR XXS SCREENS ON HOME PAGE
 .home-page-title {
-  .million {
-    &::before {
-      @include xxs-screen {
-        left: 0.2rem;
-        height: 0.3rem;
-      }
-    }
-  }
+	.million {
+		&::before {
+			@include xxs-screen {
+				left: 0.2rem;
+				height: 0.3rem;
+			}
+		}
+	}
 }
 
 #tsparticles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 0;
-  animation: fade-in-particles 3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 0;
+	animation: fade-in-particles 3s;
 }
 
 @keyframes fade-in-particles {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .project__link {
-  display: inline-block;
-  font-size: 1.6rem;
-  text-decoration: none;
-  position: relative;
-  margin-bottom: 1.5rem;
-  color: $main-font;
-  transition: all 250ms ease;
+	display: inline-block;
+	font-size: 1.6rem;
+	text-decoration: none;
+	position: relative;
+	margin-bottom: 1.5rem;
+	color: $main-font;
+	transition: all 250ms ease;
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 0.2rem;
-    width: 3rem;
-    background-color: $highlight;
-    bottom: -0.5rem;
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 0.2rem;
+		width: 3rem;
+		background-color: $highlight;
+		bottom: -0.5rem;
 
-    transition: all 250ms ease;
-  }
+		transition: all 250ms ease;
+	}
 
-  &:focus {
-    outline: 0;
-  }
+	&:focus {
+		outline: 0;
+	}
 
-  &:hover {
-    // color: lighten($main-font, 15%);
-    &::after {
-      width: 100%;
-    }
-  }
+	&:hover {
+		// color: lighten($main-font, 15%);
+		&::after {
+			width: 100%;
+		}
+	}
 
-  &.mirror {
-    &::after {
-      right: 0;
-    }
-  }
+	&.mirror {
+		&::after {
+			right: 0;
+		}
+	}
 }
 
 .contact-button {
-  display: inline-block;
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
-  border: 2px solid $highlight;
-  border-radius: 1rem;
-  color: $highlight;
-  text-decoration: none;
+	display: inline-block;
+	font-size: 1.6rem;
+	padding: 1rem 2rem;
+	border: 2px solid $highlight;
+	border-radius: 1rem;
+	color: $highlight;
+	text-decoration: none;
 
-  transition: all 300ms ease;
-  cursor: pointer;
+	transition: all 300ms ease;
+	cursor: pointer;
 
-  .million {
-    &::before {
-      background-color: $highlight;
-      left: 1px;
-      top: 0;
-      height: 1px;
-      transition: all 300ms ease;
-    }
-  }
+	.million {
+		&::before {
+			background-color: $highlight;
+			left: 1px;
+			top: 0;
+			height: 1px;
+			transition: all 300ms ease;
+		}
+	}
 
-  &:hover {
-    border: 2px solid darken($highlight, 15%);
-    color: lighten($highlight, 10%);
+	&:hover {
+		border: 2px solid darken($highlight, 15%);
+		color: lighten($highlight, 10%);
 
-    .million {
-      &::before {
-        background-color: lighten($highlight, 10%);
-        top: -2px;
-      }
-    }
-  }
+		.million {
+			&::before {
+				background-color: lighten($highlight, 10%);
+				top: -2px;
+			}
+		}
+	}
 }

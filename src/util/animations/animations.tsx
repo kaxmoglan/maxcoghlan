@@ -22,34 +22,34 @@ import { contactPage3 } from "./contact-page/contact-page-3";
 import { contactPage4 } from "./contact-page/contact-page-4";
 import { contactPage5 } from "./contact-page/contact-page-5";
 
-export const HOMEPAGEANIMATIONFRAMES = [
-  homePage1,
-  homePage2,
-  homePage3,
-  homePage4,
-  homePage5,
+export const HOME_PAGE_ANIMATION_FRAMES = [
+	homePage1,
+	homePage2,
+	homePage3,
+	homePage4,
+	homePage5,
 ];
 
-export const SKILLSPAGEANIMATIONFRAMES = [
-  skillsPage1,
-  skillsPage2,
-  skillsPage3,
-  skillsPage4,
-  skillsPage5,
+export const SKILLS_PAGE_ANIMATION_FRAMES = [
+	skillsPage1,
+	skillsPage2,
+	skillsPage3,
+	skillsPage4,
+	skillsPage5,
 ];
 
-export const ABOUTPAGEANIMATIONFRAMES = [
-  aboutPage1,
-  aboutPage2,
-  aboutPage3,
-  aboutPage4,
-  aboutPage5,
+export const ABOUT_PAGE_ANIMATION_FRAMES = [
+	aboutPage1,
+	aboutPage2,
+	aboutPage3,
+	aboutPage4,
+	aboutPage5,
 ];
 
-export const CONTACTPAGEANIMATIONFRAMES = [
-  contactPage1,
-  contactPage2,
-  contactPage3,
-  contactPage4,
-  contactPage5,
+export const CONTACT_PAGE_ANIMATION_FRAMES = [
+	contactPage1,
+	contactPage2,
+	contactPage3,
+	contactPage4,
+	contactPage5,
 ];
