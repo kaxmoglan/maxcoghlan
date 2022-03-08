@@ -1,8 +1,12 @@
-const gulp = require("gulp");
-const { parallel } = require("gulp");
-const autoprefixer = require("gulp-autoprefixer");
-const imagemin = require("gulp-imagemin");
-const sass = require("gulp-sass")(require("node-sass"));
+import gulp from "gulp";
+import imagemin from "gulp-imagemin";
+import autoprefixer from "gulp-autoprefixer";
+import gulpSass from "gulp-sass";
+import nodeSass from "node-sass";
+
+const sass = gulpSass(nodeSass);
+
+const { parallel } = gulp;
 
 // FILE LOCATIONS
 const files = {
@@ -29,12 +33,7 @@ function styles() {
 function images() {
 	return gulp
 		.src(files.src.images)
-		.pipe(
-			imagemin([
-				imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.mozjpeg({ quality: 75, progressive: true }),
-			])
-		)
+		.pipe(imagemin())
 		.pipe(gulp.dest(files.dest.images));
 }
 
@@ -45,7 +44,7 @@ function watch() {
 }
 
 // EXPORTS
-exports.styles = styles;
-exports.images = images;
-exports.watch = watch;
-exports.build = parallel(styles, images);
+export { styles, images, watch };
+
+const build = parallel(styles, images);
+export default build;

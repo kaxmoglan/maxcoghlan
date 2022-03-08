@@ -55,13 +55,13 @@ import SkillsCloud from "../components/SkillsCloud";
 const FRONT_END_ICONS: Array<JSX.Element> = [
 	JavascriptIcon,
 	TypescriptIcon,
-	ReduxIcon,
-	IosIcon,
-	MaterialIcon,
-	ReactIcon,
-	AndroidIcon,
 	BootstrapIcon,
 	SassIcon,
+	ReduxIcon,
+	ReactIcon,
+	IosIcon,
+	MaterialIcon,
+	AndroidIcon,
 	TailwindIcon,
 ];
 

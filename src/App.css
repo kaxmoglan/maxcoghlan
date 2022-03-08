@@ -938,6 +938,15 @@ BLOG
             .project-detail-page .custom-content .project-body .wide .half-and-half .left-column h2,
             .project-detail-page .custom-content .project-body .wide .half-and-half .right-column h2 {
               margin-top: 2rem; }
+            .project-detail-page .custom-content .project-body .wide .half-and-half .left-column h3,
+            .project-detail-page .custom-content .project-body .wide .half-and-half .right-column h3 {
+              font-size: 1.8rem;
+              margin: 1rem 0; }
+            .project-detail-page .custom-content .project-body .wide .half-and-half .left-column.inside-out,
+            .project-detail-page .custom-content .project-body .wide .half-and-half .right-column.inside-out {
+              -webkit-box-pack: start;
+                  -ms-flex-pack: start;
+                      justify-content: flex-start; }
           @media only screen and (max-width: 900px) {
             .project-detail-page .custom-content .project-body .wide .half-and-half {
               grid-template-columns: 1fr;
@@ -2522,13 +2531,14 @@ GLOBAL STYLING
           justify-content: center; }
   .App.dark {
     color: #dddbdb; }
-    .App.dark p::-moz-selection, .App.dark h1::-moz-selection, .App.dark a::-moz-selection, .App.dark h2::-moz-selection, .App.dark span::-moz-selection {
+    .App.dark p::-moz-selection, .App.dark h1::-moz-selection, .App.dark a::-moz-selection, .App.dark h2::-moz-selection, .App.dark strong::-moz-selection, .App.dark span::-moz-selection {
       background: #08fdd8;
       color: #000; }
     .App.dark p::selection,
     .App.dark h1::selection,
     .App.dark a::selection,
     .App.dark h2::selection,
+    .App.dark strong::selection,
     .App.dark span::selection {
       background: #08fdd8;
       color: #000; }

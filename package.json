@@ -2,6 +2,7 @@
 	"name": "maxcoghlan",
 	"version": "0.1.0",
 	"private": true,
+	"type": "module",
 	"dependencies": {
 		"@formspree/react": "2.2.3",
 		"@testing-library/jest-dom": "5.11.4",
@@ -53,7 +54,7 @@
 		"@types/react-transition-group": "4.4.0",
 		"gulp": "4.0.2",
 		"gulp-autoprefixer": "7.0.1",
-		"gulp-imagemin": "7.1.0",
+		"gulp-imagemin": "8.0.0",
 		"gulp-sass": "5.1.0"
 	}
 }

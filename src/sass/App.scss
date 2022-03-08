@@ -63,7 +63,6 @@ a {
 
 h1 {
 	font-size: 4rem;
-	// margin: 2rem 0;
 	display: block;
 }
 
@@ -85,6 +84,7 @@ GLOBAL STYLING
 		h1::selection,
 		a::selection,
 		h2::selection,
+		strong::selection,
 		span::selection {
 			background: $highlight;
 			color: $black;
