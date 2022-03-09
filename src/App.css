@@ -2531,13 +2531,14 @@ GLOBAL STYLING
           justify-content: center; }
   .App.dark {
     color: #dddbdb; }
-    .App.dark p::-moz-selection, .App.dark h1::-moz-selection, .App.dark a::-moz-selection, .App.dark h2::-moz-selection, .App.dark strong::-moz-selection, .App.dark span::-moz-selection {
+    .App.dark p::-moz-selection, .App.dark h1::-moz-selection, .App.dark a::-moz-selection, .App.dark h2::-moz-selection, .App.dark h3::-moz-selection, .App.dark strong::-moz-selection, .App.dark span::-moz-selection {
       background: #08fdd8;
       color: #000; }
     .App.dark p::selection,
     .App.dark h1::selection,
     .App.dark a::selection,
     .App.dark h2::selection,
+    .App.dark h3::selection,
     .App.dark strong::selection,
     .App.dark span::selection {
       background: #08fdd8;
