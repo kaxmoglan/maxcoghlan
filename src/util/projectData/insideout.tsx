@@ -44,6 +44,7 @@ const DATA = {
 	tech: [
 		"React Native",
 		"React",
+		"Redux",
 		"Koa",
 		"Express",
 		"Prisma",
@@ -114,14 +115,15 @@ const DATA = {
 
 						<p>
 							I worked closely with the CTO and UX Designer to refresh the look
-							and user experience of InsideOut's mobile app. I then worked with
-							a senior mobile developer to create a component library from
-							scratch, build new screens, and make a brand new onboarding flow
-							for users when they first install the app. I also worked on
-							building new features like integrating Google Fit, Apple Health
-							Kit and Intercom for user support and live chat, as well as multi
-							factor authentication, push notifications with Firebase and deep
-							link functionality with metrics from Branch IO.
+							and user experience of InsideOut's mobile app which was built on
+							React Native and Redux. I then worked with a senior mobile
+							developer to create a component library from scratch, build new
+							screens, and make a brand new onboarding flow for users when they
+							first install the app. I worked on building new features like
+							integrating Google Fit, Apple Health Kit and Intercom for user
+							support and live chat, as well as multi-factor authentication,
+							push notifications with Firebase and deep link functionality with
+							metrics from Branch IO.
 						</p>
 
 						<p>
@@ -212,13 +214,35 @@ const DATA = {
 							formerly required tech-intervention to free up our time too.
 						</p>
 
+						<h2>Hiring</h2>
+						<p>
+							I helped the CTO hire and onboard the rest of the development
+							team. This included conducting interviews and tech tests as well
+							as help onboard new hires and get them set up with the codebase.
+						</p>
+
+						<h2>VR</h2>
+						<p>
+							I was part of a small team who put together a 'proof of concept'
+							for a VR meditation experience. This included putting together 2D
+							and 3D VR meditation videos using Adobe Premiere Pro, and creating
+							virtual environments using Unity.
+						</p>
+
 						<h2>Honorary Mentions</h2>
 						<p>
-							As well as these larger projects, I also maintained the Wordpress
-							site, put together a proof of concept for the business' adoption
-							of Terraform, set up an automated phone line with Twilio, wrote
-							more documentation than you could shake a stick at, and responded
-							to customer support queries that required technical assistance.
+							As well as these larger projects, I maintained the Wordpress site,
+							put together a proof of concept for the business' adoption of
+							Terraform, wrote several JS scripts that queried data from the
+							database and output a user-friendly CSV file, set up an automated
+							phone line with Twilio and responded to customer support queries
+							that required technical assistance and I re-wrote the mobile-app's
+							styling so it didn't break when a device's accessibility features
+							were enabled with larger text sizes. On top of writing
+							documentation for everything I built, as well as for areas of the
+							codebase that weren't covered, I wrote documentation for getting
+							the entire codebase set up with Apple Silicon as I was an early
+							adopter of the new M1 architecture.
 						</p>
 					</div>
 				</div>

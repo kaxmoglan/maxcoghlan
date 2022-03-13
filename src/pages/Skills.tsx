@@ -164,8 +164,8 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
 									<div className="skills__content">
 										<p>
-											TypeScript, React, React Native (iOS and Android), Redux,
-											Recoil, Tailwind, MaterialUI, Sass
+											TypeScript, JavaScript, React, React Native (iOS and
+											Android), Redux, Recoil, Tailwind, MaterialUI, Sass
 										</p>
 									</div>
 								</div>
@@ -205,7 +205,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 											Windows & WSL
 										</p>
 										<p>
-											<strong>Testing: </strong>Jest, Cucumber, Gherkin, Sinon
+											<strong>Testing: </strong>Jest, Cucumber, Sinon
 										</p>
 										<p>
 											<strong>Adobe: </strong>XD, Photoshop, Illustrator,
