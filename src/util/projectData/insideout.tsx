@@ -116,14 +116,14 @@ const DATA = {
 						<p>
 							I worked closely with the CTO and UX Designer to refresh the look
 							and user experience of InsideOut's mobile app which was built on
-							React Native and Redux. I then worked with a senior mobile
-							developer to create a component library from scratch, build new
-							screens, and make a brand new onboarding flow for users when they
-							first install the app. I worked on building new features like
+							React Native and Redux. I was part of a team who created a
+							component library from scratch, built new screens, and make a
+							brand new onboarding flow for users when they first installed the
+							app. I also worked specifically on building new features like
 							integrating Google Fit, Apple Health Kit and Intercom for user
 							support and live chat, as well as multi-factor authentication,
-							push notifications with Firebase and deep link functionality with
-							metrics from Branch IO.
+							push notifications with Firebase, and deep link functionality with
+							metrics from Branch.io.
 						</p>
 
 						<p>
@@ -149,32 +149,35 @@ const DATA = {
 
 						<h3>Auth</h3>
 						<p>
-							I was the lead developer for creating the Authentication
-							Micro-Service which I built using Typescript, Koa, Prisma and
-							Postgres with feature and unit tests written with Cucumber, Jest
+							I was the lead developer in charge of creating the Authentication
+							micro-service which I built using Typescript, Koa, Prisma and
+							Postgres, with feature and unit tests written with Cucumber, Jest
 							and Sinon. All the logic was written without the use of libraries
-							(except the encryption part which I left to BCrypt) and it was
+							(except for the encryption part which I left to BCrypt) and it was
 							deployed in a Docker container to AWS.
 						</p>
 
 						<h3>Bookings</h3>
 						<p>
-							I advocated for and led a team of 2 to build a new micro-service
+							I advocated for and led a team to build a new micro-service
 							designed to replace all the pre-existing booking functionality in
 							the API. The aim was to fix several large bugs that had been
-							plaguing support in one hit, whilst breaking off a large chunk of
-							the monolith API. This was a large, core part of the app, so it
-							was a big challenge to get right, but the result was a clean,
-							modern, end-to-end tested micro-service that pushed the overall
-							rebuild project further whilst improving user experience and
-							freeing up support time.
+							plaguing the business in one hit, whilst breaking off a large
+							chunk of the monolith API. This was a large, core part of the app,
+							so it was a big challenge to get right, but the result was a
+							clean, modern, end-to-end tested micro-service that pushed the
+							overall rebuild project further, whilst improving user experience
+							and freeing up support time. It also brought much needed and
+							requested features from the users including worldwide timezone
+							support and calendar integration with Google, iCloud, Microsoft
+							Excahgne and more.
 						</p>
 
 						<h3>Libraries</h3>
 						<p>
 							I wrote a series of NPM libraries to be used across all new
-							backend services including a tokens library designed to check,
-							verify and refresh tokens, an access control library designed to
+							backend services, including a tokens library designed to check,
+							verify and refresh tokens, an 'access control' library designed to
 							grant or deny access to users based on their account details, and
 							a headers library designed to check and sanitize any request
 							headers.
@@ -184,26 +187,27 @@ const DATA = {
 						<p>
 							Alongside rebuilding the backend, we also had to build new
 							features into the existing API - one of my bigger projects being
-							building in multi factor authentication. This was, of course, on
+							building in multi-factor authentication. This was, of course, on
 							top of day-to-day maintenance and bug fixes - my most memorable
-							being correctly formatting phone numbers to the E.164 standard to
-							fit in with our use of Twilio's API, linking users automatically
-							to their employer's subscription based on their email address, and
-							fixing a timezone bug which supported users making bookings in all
-							timezones, factoring in country-specific daylight savings.
+							being correctly formatting phone numbers from around the world to
+							the E.164 standard to fit in with our use of Twilio's API, linking
+							users automatically to their employer's subscription based on
+							their email address, and fixing a timezone bug which supported
+							users making bookings in all timezones, factoring in
+							country-specific daylight savings.
 						</p>
 					</div>
 					<div className="right-column inside-out">
 						<h2>Internal Dashboard</h2>
 
 						<p>
-							As part of a team of 2, I designed and built a dashboard intended
-							for internal use that tracked the progress of users' journeys
-							through the platform. We used React, Tailwind and Framer with
-							Typescript on the front end, and Koa, Prisma and Postgres with
-							Typescript on the back end. This project also included a realtime
-							alerting system that tapped into a messaging service we wrote with
-							STOMP.
+							As part of a team of 2, I designed and developed a dashboard
+							intended for internal use that tracked the progress of users'
+							journeys through the platform. We used React, Tailwind and Framer
+							with Typescript on the front end, and Koa, Prisma and Postgres
+							with Typescript on the back end. This project also included a
+							realtime alerting system that tapped into a messaging service we
+							wrote with STOMP.
 						</p>
 
 						<p>
@@ -235,8 +239,8 @@ const DATA = {
 							put together a proof of concept for the business' adoption of
 							Terraform, wrote several JS scripts that queried data from the
 							database and output a user-friendly CSV file, set up an automated
-							phone line with Twilio and responded to customer support queries
-							that required technical assistance and I re-wrote the mobile-app's
+							phone line with Twilio, responded to customer support queries that
+							required technical assistance, and I re-wrote the mobile-app's
 							styling so it didn't break when a device's accessibility features
 							were enabled with larger text sizes. On top of writing
 							documentation for everything I built, as well as for areas of the
