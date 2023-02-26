@@ -1,20 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import Social from "../components/Social";
-
-import { useForm } from "@formspree/react";
-import Loader from "react-loader-spinner";
-
-import { IGLOBALSTATE } from "../util/interfaces";
-import { CONTACT_PAGE_ANIMATION_FRAMES } from "../util/animations/animations";
+import Social from '../components/Social';
+import { useForm } from '@formspree/react';
+import Loader from 'react-loader-spinner';
+import { CONTACT_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
+import type { IGLOBALSTATE } from '../util/interfaces';
 
 export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 	const { setTheme, setShowNav, setShowSocial } = props;
 
-	const [state, handleSubmit] = useForm("contactForm");
+	const [state, handleSubmit] = useForm('contactForm');
 
 	useEffect(() => {
-		setTheme("dark");
+		setTheme('dark');
 		setShowNav(true);
 		setShowSocial(false);
 	}, [setTheme, setShowNav, setShowSocial]);
@@ -22,14 +20,22 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 	return (
 		<main className="content__main">
 			<div className="contact-page">
-				{/* <Particles id="tsparticles" options={particlesConfig} /> */}
 				<div className="contact-page__container">
 					{/* LEFT COLUMN */}
 					<div className="contact-page__content">
 						<div className="contact-page__content-container">
-							<h1 className="contact-page__title">
+							<h1
+								className="contact-page__title"
+								style={{ textAlign: 'center' }}
+							>
 								Contact <span className="million">M</span>e
 							</h1>
+							<div className="copy">
+								<p style={{ textAlign: 'center' }}>
+									Get in touch for freelance work, tutoring, career advice, mock
+									tech tests, mock interviews and portfolio & CV reviews.
+								</p>
+							</div>
 							<Social />
 						</div>
 						<div className="animation-frame__container contact">
@@ -47,7 +53,6 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 							<form onSubmit={handleSubmit} className="contact-form">
 								<fieldset className="details">
 									<div className="text-input">
-										{/* <label htmlFor="name">Name*</label> */}
 										<input
 											type="text"
 											name="name"
@@ -57,7 +62,6 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 										/>
 									</div>
 									<div className="text-input">
-										{/* <label htmlFor="email">Email*</label> */}
 										<input
 											type="email"
 											name="email"
@@ -68,7 +72,6 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 									</div>
 								</fieldset>
 								<fieldset className="message-area">
-									{/* <label htmlFor="message">Message*</label> */}
 									<textarea
 										placeholder="Message*"
 										name="message"
@@ -101,12 +104,12 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 										width={50}
 										className="spinner"
 									/>
-								)}{" "}
+								)}{' '}
 								{state.errors.length > 0 && (
 									<p className="error">
 										Something went wrong. Off I go debugging again...
 									</p>
-								)}{" "}
+								)}{' '}
 								{state.succeeded && (
 									<p className="success">Thanks for getting in touch!</p>
 								)}

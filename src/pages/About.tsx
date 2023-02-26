@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import { ContactBtn } from "../components/ContactBtn";
-import { ABOUT_PAGE_ANIMATION_FRAMES } from "../util/animations/animations";
+import { ContactBtn } from '../components/ContactBtn';
+import { ABOUT_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
 
-import { IGLOBALSTATE } from "../util/interfaces";
+import { IGLOBALSTATE } from '../util/interfaces';
 
 export const About: React.FC<IGLOBALSTATE> = (props) => {
 	const { setTheme, setShowNav, setShowSocial } = props;
 
 	useEffect(() => {
-		setTheme("dark");
+		setTheme('dark');
 		setShowNav(true);
 		setShowSocial(true);
 	}, [setTheme, setShowNav, setShowSocial]);
@@ -25,7 +25,7 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 								About <span className="million">M</span>e
 							</h1>
 
-							<div className="about-me">
+							<div className="copy">
 								<p>
 									I'm a full stack developer based in Winchester and London,
 									England. When I'm not coding, I'm usually making music,
@@ -38,21 +38,15 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 
 								<p>
 									I enjoy true full stack development and have the most
-									experience with Typescript, React and React Native on the
-									front end, with Node.js using Koa, Express, Prisma and
-									Postgres on the backend with Docker and AWS. I also have
-									experience and enjoy working with Wordpress, PHP, Python and
-									Django but I'm always looking to further my knowledge and try
-									new technologies. My latest enthusiast project is a Crypto and
-									CFD algo-trading bot which is written in Typescript, but I'm
-									also keen to further my knowledge in Swift, Java, Kotlin, Go
-									and Rust.
+									experience with TypeScript, React & React Native on the front
+									end, and Node.js, Express, Koa, Prisma, GraphQL, MongoDB,
+									Postgres and Docker on the back end.
 								</p>
 
 								<p>
-									I mostly work remotely and have experience working freelance
-									and for startups. I'm always interested in new and exciting
-									projects and opportunities so feel free to get in touch!
+									I'm always looking to further my knowledge and other peoples',
+									try new technologies and work on new and exciting projects, so
+									feel free to get in touch!
 								</p>
 							</div>
 

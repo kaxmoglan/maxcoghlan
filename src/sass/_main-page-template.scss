@@ -93,21 +93,6 @@
 				padding-top: 5rem;
 			}
 		}
-
-		.about-me {
-			margin: 4rem 0;
-
-			p {
-				font-size: 1.6rem;
-				letter-spacing: 0.03rem;
-				line-height: 2.2rem;
-				margin-bottom: 2rem;
-
-				@include lg-screen {
-					font-size: 1.4rem;
-				}
-			}
-		}
 	}
 
 	&__title {
@@ -147,10 +132,6 @@
 		&-container {
 			width: 100%;
 			height: 100%;
-
-			&.skills {
-				// position: absolute;
-			}
 		}
 	}
 }

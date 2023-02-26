@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // ICONS
 import {
@@ -6,19 +6,17 @@ import {
 	TwitterIcon,
 	DevIcon,
 	GithubIcon,
-	// InstagramIcon,
 	LinkedInIcon,
 	GitlabIcon,
-} from "../util/icons";
+} from '../util/icons';
 
 const DATA = [
-	{ href: "mailto:max.coghlan@gmail.com", icon: ContactIcon },
-	{ href: "https://twitter.com/kaxMoglan", icon: TwitterIcon },
-	{ href: "https://dev.to/kaxmoglan", icon: DevIcon },
-	{ href: "https://gitlab.com/kaxmoglan", icon: GitlabIcon },
-	{ href: "https://github.com/kaxmoglan", icon: GithubIcon },
-	// { href: "https://instagram.com/kaxmoglan", icon: InstagramIcon },
-	{ href: "https://www.linkedin.com/in/maxcoghlan/", icon: LinkedInIcon },
+	{ href: 'mailto:max.coghlan@gmail.com', icon: ContactIcon },
+	{ href: 'https://twitter.com/kaxMoglan', icon: TwitterIcon },
+	{ href: 'https://dev.to/kaxmoglan', icon: DevIcon },
+	{ href: 'https://gitlab.com/kaxmoglan', icon: GitlabIcon },
+	{ href: 'https://github.com/kaxmoglan', icon: GithubIcon },
+	{ href: 'https://www.linkedin.com/in/maxcoghlan/', icon: LinkedInIcon },
 ];
 
 const Social: React.FC = () => {

@@ -1,24 +1,24 @@
 // FONTS
 // Main font: Roboto
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
 
 // Header font: Archivo
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
-@import "colors";
-@import "responsive";
-@import "page-transitions";
-@import "nav";
-@import "mobile-nav";
-@import "social";
-@import "projects";
-@import "project-detail";
-@import "project-custom";
-@import "various-applets";
-@import "contact";
-@import "main-page-template";
-@import "skills";
-@import "blog";
+@import 'colors';
+@import 'responsive';
+@import 'page-transitions';
+@import 'nav';
+@import 'mobile-nav';
+@import 'social';
+@import 'projects';
+@import 'project-detail';
+@import 'project-custom';
+@import 'various-applets';
+@import 'contact';
+@import 'main-page-template';
+@import 'skills';
+@import 'blog';
 
 /*
 -----------------------------------------
@@ -33,7 +33,7 @@ RESETS
 
 html {
 	font-size: 10px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	background-color: $background;
@@ -54,7 +54,7 @@ FONTS
 
 .archivo,
 .page-header {
-	font-family: "Archivo", "Roboto", sans-serif;
+	font-family: 'Archivo', 'Roboto', sans-serif;
 }
 
 a {
@@ -155,7 +155,7 @@ GLOBAL STYLING
 .million {
 	position: relative;
 	&::before {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		left: 0.35rem;
@@ -196,28 +196,6 @@ GLOBAL STYLING
 	}
 }
 
-#tsparticles {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	z-index: 0;
-	animation: fade-in-particles 3s;
-}
-
-@keyframes fade-in-particles {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 .project__link {
 	display: inline-block;
 	font-size: 1.6rem;
@@ -228,11 +206,11 @@ GLOBAL STYLING
 	transition: all 250ms ease;
 
 	&::after {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		height: 0.2rem;
-		width: 3rem;
+		width: 2rem;
 		background-color: $highlight;
 		bottom: -0.5rem;
 
@@ -244,7 +222,6 @@ GLOBAL STYLING
 	}
 
 	&:hover {
-		// color: lighten($main-font, 15%);
 		&::after {
 			width: 100%;
 		}
@@ -288,6 +265,21 @@ GLOBAL STYLING
 				background-color: lighten($highlight, 10%);
 				top: -2px;
 			}
+		}
+	}
+}
+
+.copy {
+	margin: 4rem 0;
+
+	p {
+		font-size: 1.6rem;
+		letter-spacing: 0.03rem;
+		line-height: 2.2rem;
+		margin-bottom: 2rem;
+
+		@include lg-screen {
+			font-size: 1.4rem;
 		}
 	}
 }

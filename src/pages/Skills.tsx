@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 // ICONS
 import {
@@ -13,12 +13,12 @@ import {
 	GitIcon,
 	GithubIcon,
 	GitlabIcon,
+	GraphQLIcon,
 	HerokuIcon,
 	IllustratorIcon,
 	IosIcon,
 	JavascriptIcon,
 	JestIcon,
-	KoaIcon,
 	MaterialIcon,
 	MongoIcon,
 	NodeIcon,
@@ -35,22 +35,11 @@ import {
 	VsCodeIcon,
 	WordpressIcon,
 	XdIcon,
+} from '../util/icons';
 
-	// UNUSED
-	// CssIcon,
-	// PhpIcon,
-	// JqueryIcon,
-	// SublimeTextIcon,
-	// JinjaIcon,
-	// WebpackIcon,
-	// GulpIcon,
-	// MySqlIcon,
-	// HtmlIcon,
-} from "../util/icons";
-
-import { SKILLS_PAGE_ANIMATION_FRAMES } from "../util/animations/animations";
-import { IGLOBALSTATE } from "../util/interfaces";
-import SkillsCloud from "../components/SkillsCloud";
+import { SKILLS_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
+import SkillsCloud from '../components/SkillsCloud';
+import type { IGLOBALSTATE } from '../util/interfaces';
 
 const FRONT_END_ICONS: Array<JSX.Element> = [
 	JavascriptIcon,
@@ -71,7 +60,7 @@ const BACK_END_ICONS: Array<JSX.Element> = [
 	PythonIcon,
 	WordpressIcon,
 	AwsIcon,
-	KoaIcon,
+	GraphQLIcon,
 	DjangoIcon,
 	PostgresIcon,
 	MongoIcon,
@@ -101,14 +90,14 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 	const { setTheme, setShowNav, setShowSocial } = props;
 
 	useEffect(() => {
-		setTheme("dark");
+		setTheme('dark');
 		setShowNav(true);
 		setShowSocial(true);
 	}, [setTheme, setShowNav, setShowSocial]);
 
-	const handleAccordion = (menu: string) => {
+	const handleAccordion = (menu: 'FRONT_END' | 'BACK_END' | 'OTHER') => {
 		switch (menu) {
-			case "front-end":
+			case 'FRONT_END':
 				if (showFrontEnd) {
 					return;
 				} else {
@@ -117,7 +106,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 					setShowOther(false);
 					return;
 				}
-			case "back-end":
+			case 'BACK_END':
 				if (showBackEnd) {
 					return;
 				} else {
@@ -126,7 +115,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 					setShowOther(false);
 					return;
 				}
-			case "other":
+			case 'OTHER':
 				if (showOther) {
 					return;
 				} else {
@@ -136,6 +125,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 					return;
 				}
 			default:
+				console.error('Unknown menu type.');
 				return;
 		}
 	};
@@ -151,12 +141,12 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 							<div className="skills">
 								<div
 									className={`skills__category ${
-										showFrontEnd ? "visible" : ""
+										showFrontEnd ? 'visible' : ''
 									}`}
 								>
 									<div
 										className="skills__heading"
-										onClick={() => handleAccordion("front-end")}
+										onClick={() => handleAccordion('FRONT_END')}
 									>
 										<h2 className="skills__heading-text">Front End</h2>
 										{ChevronIcon}
@@ -164,17 +154,17 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
 									<div className="skills__content">
 										<p>
-											TypeScript, JavaScript, React, React Native (iOS and
-											Android), Redux, Recoil, Tailwind, MaterialUI, Sass
+											TypeScript, JavaScript, React, React Native, Redux,
+											Recoil, Tailwind, MaterialUI, Sass.
 										</p>
 									</div>
 								</div>
 								<div
-									className={`skills__category ${showBackEnd ? "visible" : ""}`}
+									className={`skills__category ${showBackEnd ? 'visible' : ''}`}
 								>
 									<div
 										className="skills__heading"
-										onClick={() => handleAccordion("back-end")}
+										onClick={() => handleAccordion('BACK_END')}
 									>
 										<h2 className="skills__heading-text">Back End</h2>
 										{ChevronIcon}
@@ -182,48 +172,43 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
 									<div className="skills__content">
 										<p>
-											Node.js, Koa, Express, Postgres, Prisma, AWS, Docker,
-											Webpack, Python, Django, PHP, Wordpress, SQL, MongoDB,
-											Firebase, Terraform
+											Node.js, Koa, Express, Postgres, Prisma, GraphQL, MongoDB,
+											Docker, AWS, Python, Django, PHP, Wordpress, Firebase.
 										</p>
 									</div>
 								</div>
 								<div
-									className={`skills__category ${showOther ? "visible" : ""}`}
+									className={`skills__category ${showOther ? 'visible' : ''}`}
 								>
 									<div
 										className="skills__heading"
-										onClick={() => handleAccordion("other")}
+										onClick={() => handleAccordion('OTHER')}
 									>
 										<h2 className="skills__heading-text">Other</h2>
 										{ChevronIcon}
 									</div>
 
 									<div className="skills__content">
-										<p>
-											Git, GitHub, Gitlab, Heroku, Netlify, Linux, MacOS,
-											Windows & WSL
-										</p>
+										<p>Git, GitHub, Gitlab, Linux, MacOS, Windows & WSL.</p>
 										<p>
 											<strong>Testing: </strong>Jest, Cucumber, Sinon
 										</p>
 										<p>
 											<strong>Adobe: </strong>XD, Photoshop, Illustrator,
-											Premiere Pro, After Effects, Lightroom, Acrobat
+											Premiere Pro, After Effects.
 										</p>
 										<p>
 											<strong>Apple: </strong>Final Cut Pro, Logic Pro, Pages,
-											Numbers
+											Numbers.
 										</p>
 										<p>
 											<strong>Microsoft: </strong>Word, Excel, VSCode (my
-											current editor of choice)
+											current editor of choice).
 										</p>
 										<p>
-											<strong>More: </strong>Confluence, Branch.io, Sentry,
-											Intercom, Figma, Workflowy, Notion, Jira, DaVinci Resolve,
-											Ableton Live, Pro Tools, Pug (Jade), Jinja, Mongoose, EJS,
-											SublimeText
+											<strong>Other: </strong>Confluence, Jira, Branch.io,
+											Figma, Sentry, Intercom, SublimeText, Workflowy, Notion,
+											DaVinci Resolve, Ableton Live, Pro Tools.
 										</p>
 									</div>
 								</div>
@@ -236,21 +221,21 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 						<div className="skills__icons">
 							<div
 								className={`skills__icons-container ${
-									showFrontEnd ? "visible" : ""
+									showFrontEnd ? 'visible' : ''
 								}`}
 							>
 								<SkillsCloud icons={FRONT_END_ICONS} />
 							</div>
 							<div
 								className={`skills__icons-container ${
-									showBackEnd ? "visible" : ""
+									showBackEnd ? 'visible' : ''
 								}`}
 							>
 								<SkillsCloud icons={BACK_END_ICONS} />
 							</div>
 							<div
 								className={`skills__icons-container ${
-									showOther ? "visible" : ""
+									showOther ? 'visible' : ''
 								}`}
 							>
 								<SkillsCloud icons={OTHER_ICONS} />

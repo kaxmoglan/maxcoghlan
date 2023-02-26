@@ -1,16 +1,13 @@
-import React, { useEffect } from "react";
-
-import { ContactBtn } from "../components/ContactBtn";
-
-import { HOME_PAGE_ANIMATION_FRAMES } from "../util/animations/animations";
-
-import { IGLOBALSTATE } from "../util/interfaces";
+import React, { useEffect } from 'react';
+import { ContactBtn } from '../components/ContactBtn';
+import { HOME_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
+import { IGLOBALSTATE } from '../util/interfaces';
 
 export const Home: React.FC<IGLOBALSTATE> = (props) => {
 	const { setTheme, setShowNav, setShowSocial } = props;
 
 	useEffect(() => {
-		setTheme("dark");
+		setTheme('dark');
 		setShowNav(true);
 		setShowSocial(true);
 	}, [setTheme, setShowNav, setShowSocial]);
@@ -26,8 +23,8 @@ export const Home: React.FC<IGLOBALSTATE> = (props) => {
 								Hi, <br /> I'm <span className="million">M</span>aximilian.
 							</h1>
 							<h2 className="home-page-subtitle">
-								full-stack developer. <br />
-								tech enthusiast.
+								Full stack developer, <br />
+								educator & tech enthusiast.
 							</h2>
 							<ContactBtn />
 						</div>

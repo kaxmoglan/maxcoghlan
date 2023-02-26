@@ -1,13 +1,7 @@
-import React from "react";
-
-// IMPORT IMAGES
-
-import desktopImg from "../../images/dist/projects/insideout/insideout-desktop.png";
-import tabletImg from "../../images/dist/projects/insideout/insideout-tablet.png";
-import mobileImg from "../../images/dist/projects/insideout/insideout-mobile.png";
-
-// IMPORT ICONS
-
+import React from 'react';
+import desktopImg from '../../images/dist/projects/insideout/insideout-desktop.png';
+import tabletImg from '../../images/dist/projects/insideout/insideout-tablet.png';
+import mobileImg from '../../images/dist/projects/insideout/insideout-mobile.png';
 import {
 	TailwindIcon,
 	ReactIcon,
@@ -21,40 +15,40 @@ import {
 	PrismaIcon,
 	JestIcon,
 	DockerIcon,
-} from "../icons";
+} from '../icons';
+import type { IPROJECT } from '../interfaces';
 
 // PROJECT DATA
-
-const DATA = {
-	url: "insideout",
-	name: ["INSIDE OUT"],
-	tagline: "Mental health platform",
-	workShort: ["Mobile App", "Front End", "Back End", "UI/UX"],
+const DATA: IPROJECT = {
+	url: 'insideout',
+	name: ['INSIDE OUT'],
+	tagline: 'Mental health platform',
+	workShort: ['Mobile App', 'Front End', 'Back End', 'UI/UX'],
 	workExpanded: [
-		"Mobile App Development",
-		"Infrastructure Design",
-		"Front End Development",
-		"Back End Development",
-		"UI/UX Design",
+		'Mobile App Development',
+		'Infrastructure Design',
+		'Front End Development',
+		'Back End Development',
+		'UI/UX Design',
 	],
 	links: {
-		app: "https://www.lettheinsideout.com",
-		github: "",
+		app: 'https://www.lettheinsideout.com',
+		github: '',
 	},
 	tech: [
-		"React Native",
-		"React",
-		"Redux",
-		"Koa",
-		"Express",
-		"Prisma",
-		"Postgres",
-		"Tailwind",
-		"Framer",
-		"AWS",
-		"Figma",
-		"Jest",
-		"Cucumber",
+		'React Native',
+		'React',
+		'Redux',
+		'Koa',
+		'Express',
+		'Prisma',
+		'Postgres',
+		'Tailwind',
+		'Framer',
+		'AWS',
+		'Figma',
+		'Jest',
+		'Cucumber',
 	],
 	icons: [
 		ReduxIcon,
@@ -70,9 +64,9 @@ const DATA = {
 		PostgresIcon,
 		PrismaIcon,
 	],
-	subheading: "Mobile App | Front End | Back End | Infrastructure Design",
+	subheading: 'Mobile App | Front End | Back End | Infrastructure Design',
 	description:
-		"An on-demand mental health platform comprising of an iOS and Android mobile app, several React apps for internal use, a Wordpress site, and containerised infrastructure hosted on AWS. The stack comprised of React and React Native, Typescript, Prisma, Koa, Express and Postgres with some Tailwind thrown in for good measure.",
+		'An on-demand mental health platform comprising of an iOS and Android mobile app, several React apps for internal use, a Wordpress site, and containerised infrastructure hosted on AWS. The stack comprised of React and React Native, Typescript, Prisma, Koa, Express and Postgres with some Tailwind thrown in for good measure.',
 	mobileImg: {
 		src: mobileImg,
 		alt: "A screen shot of The Modern Calligraphy Studio's home page on a smart phone",

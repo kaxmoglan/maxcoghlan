@@ -1,217 +1,220 @@
 .projects-page {
-  &__title {
-    text-align: center;
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+	&__title {
+		text-align: center;
+		margin-top: 6rem;
+		margin-bottom: 6rem;
 
-    @include sm-screen {
-      margin-top: 8rem;
-      margin-bottom: 4rem;
-    }
+		@include sm-screen {
+			margin-top: 8rem;
+			margin-bottom: 4rem;
+		}
 
-    .million {
-      &::before {
-        left: 0.25rem;
-      }
-    }
-  }
-  .projects {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    margin-bottom: 15rem;
+		.million {
+			&::before {
+				left: 0.25rem;
+			}
+		}
+	}
+	.projects {
+		position: relative;
+		z-index: 10;
+		width: 100%;
+		margin-bottom: 15rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-    .project-card {
-      margin: 2rem 0;
-      width: 95%;
-      max-width: 800px;
-      transition: all 250ms ease;
+		.project-card {
+			margin: 2rem 0;
+			width: 95%;
+			max-width: 800px;
+			transition: all 250ms ease;
 
-      @include glass;
-      border: 2px solid $mid-grey;
-      border-radius: 1rem;
+			@include glass;
+			border: 2px solid $mid-grey;
+			border-radius: 1rem;
 
-      &__header {
-        color: $mid-grey;
-        font-size: 1.3rem;
-        letter-spacing: 0.05rem;
-        margin-bottom: 0.8rem;
+			&__header {
+				color: $mid-grey;
+				font-size: 1.3rem;
+				letter-spacing: 0.05rem;
+				margin-bottom: 0.8rem;
 
-        @include md-screen {
-          font-size: 1.2rem;
-        }
+				@include md-screen {
+					font-size: 1.2rem;
+				}
 
-        @include xs-screen {
-          font-size: 1.3rem;
-        }
-      }
+				@include xs-screen {
+					font-size: 1.3rem;
+				}
+			}
 
-      &__container {
-        width: 100%;
-        height: 100%;
-        padding: 6rem 4rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5rem;
+			&__container {
+				width: 100%;
+				height: 100%;
+				padding: 6rem 4rem;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 5rem;
 
-        @include md-screen {
-          padding: 3rem 2rem;
-          gap: 1rem;
-        }
+				@include md-screen {
+					padding: 3rem 2rem;
+					gap: 1rem;
+				}
 
-        @include xs-screen {
-          grid-template-columns: 1fr;
-          gap: 5rem;
-          padding: 3rem 1rem;
-        }
-      }
+				@include xs-screen {
+					grid-template-columns: 1fr;
+					gap: 5rem;
+					padding: 3rem 1rem;
+				}
+			}
 
-      // LEFT COLUMN
-      &__name {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: right;
+			// LEFT COLUMN
+			&__name {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: right;
 
-        @include xs-screen {
-          text-align: center;
-          align-items: center;
-        }
+				@include xs-screen {
+					text-align: center;
+					align-items: center;
+				}
 
-        &-text {
-          font-size: 2.4rem;
+				&-text {
+					font-size: 2.4rem;
 
-          @include md-screen {
-            font-size: 1.8rem;
-          }
+					@include md-screen {
+						font-size: 1.8rem;
+					}
 
-          @include xs-screen {
-            font-size: 2.2rem;
-            line-height: 3rem;
-          }
-        }
-        &-tagline {
-          font-size: 1.4rem;
-          margin-top: 1rem;
-          color: $light-grey;
+					@include xs-screen {
+						font-size: 2.2rem;
+						line-height: 3rem;
+					}
+				}
+				&-tagline {
+					font-size: 1.4rem;
+					margin-top: 1rem;
+					color: $light-grey;
 
-          @include md-screen {
-            font-size: 1.2rem;
-            line-height: 1.8rem;
-          }
+					@include md-screen {
+						font-size: 1.2rem;
+						line-height: 1.8rem;
+					}
 
-          @include xs-screen {
-            font-size: 1.4rem;
-          }
-        }
-      }
+					@include xs-screen {
+						font-size: 1.4rem;
+					}
+				}
+			}
 
-      // CENTRAL COLUMN
-      &__details {
-        padding-left: 33%;
+			// CENTRAL COLUMN
+			&__details {
+				padding-left: 33%;
 
-        @include xs-screen {
-          padding-left: initial;
-          display: flex;
-          justify-content: space-evenly;
-        }
-      }
+				@include xs-screen {
+					padding-left: initial;
+					display: flex;
+					justify-content: space-evenly;
+				}
+			}
 
-      &__work {
-        margin-bottom: 3rem;
-        order: 2;
-      }
+			&__work {
+				margin-bottom: 3rem;
+				order: 2;
+			}
 
-      &__links {
-        display: flex;
-        flex-direction: column;
+			&__links {
+				display: flex;
+				flex-direction: column;
 
-        @include md-screen {
-          .project__link {
-            font-size: 1.2rem;
-          }
-        }
-      }
+				@include md-screen {
+					.project__link {
+						font-size: 1.2rem;
+					}
+				}
+			}
 
-      &__text {
-        font-size: 1.6rem;
-        margin-bottom: 0.3rem;
+			&__text {
+				font-size: 1.6rem;
+				margin-bottom: 0.3rem;
 
-        @include md-screen {
-          font-size: 1.2rem;
-        }
-      }
+				@include md-screen {
+					font-size: 1.2rem;
+				}
+			}
 
-      // RIGHT COLUMN
-      &__tech {
-        text-align: center;
+			// RIGHT COLUMN
+			&__tech {
+				text-align: center;
 
-        @include xs-screen {
-          grid-row: 2;
-        }
+				@include xs-screen {
+					grid-row: 2;
+				}
 
-        .container {
-          margin-top: 2rem;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
+				.container {
+					margin-top: 2rem;
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					gap: 2rem;
 
-          @include md-screen {
-            gap: 1rem;
-          }
+					@include md-screen {
+						gap: 1rem;
+					}
 
-          @include xs-screen {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-          }
+					@include xs-screen {
+						grid-template-columns: repeat(3, 1fr);
+						gap: 2rem;
+					}
 
-          .icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+					.icon {
+						display: flex;
+						align-items: center;
+						justify-content: center;
 
-            svg {
-              width: 28px;
-              color: $main-font;
-              fill: $main-font;
+						svg {
+							width: 28px;
+							color: $main-font;
+							fill: $main-font;
 
-              @include md-screen {
-                width: 22px;
-              }
-            }
+							@include md-screen {
+								width: 22px;
+							}
+						}
 
-            .fa-php {
-              transform: scale(1.5);
-            }
+						.fa-php {
+							transform: scale(1.5);
+						}
 
-            .fa-node {
-              transform: scale(1.5);
-            }
+						.fa-node {
+							transform: scale(1.5);
+						}
 
-            .fa-gulp {
-              transform: scale(0.75);
-            }
+						.fa-gulp {
+							transform: scale(0.75);
+						}
 
-            .fa-sass {
-              transform: scale(1.3);
-            }
+						.fa-sass {
+							transform: scale(1.3);
+						}
 
-            .fa-npm {
-              transform: scale(1.5);
-            }
-            .fa-yarn {
-              transform: scale(1.2);
-            }
-            .fa-react {
-              transform: scale(1.1);
-            }
-          }
-        }
-      }
-    }
-  }
+						.fa-npm {
+							transform: scale(1.5);
+						}
+						.fa-yarn {
+							transform: scale(1.2);
+						}
+						.fa-react {
+							transform: scale(1.1);
+						}
+						#mongo-icon {
+							transform: scale(0.6);
+						}
+					}
+				}
+			}
+		}
+	}
 }

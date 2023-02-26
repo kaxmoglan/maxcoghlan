@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 /*
 -----------------------------------------
-BLOG => CODE COLOURS
+BLOG: CODE COLOURS
 -----------------------------------------
 */
 /*
@@ -712,6 +712,10 @@ BLOG
             -webkit-transform: scale(1.1);
                 -ms-transform: scale(1.1);
                     transform: scale(1.1); }
+          .projects-page .projects .project-card__tech .container .icon #mongo-icon {
+            -webkit-transform: scale(0.6);
+                -ms-transform: scale(0.6);
+                    transform: scale(0.6); }
 
 .project-detail-page {
   padding-bottom: 8rem;
@@ -1266,8 +1270,6 @@ BELL PEPPER
   FORM
   -----------------------------------------
   */ }
-  .contact-page #tsparticles {
-    z-index: -1; }
   .contact-page__container {
     width: 100%;
     height: 95vh;
@@ -1385,7 +1387,7 @@ BELL PEPPER
       height: 15rem;
       color: #dddbdb;
       font-size: 1.6rem;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
       padding: 1.2rem;
       background: none;
       background-color: rgba(29, 29, 29, 0.8);
@@ -1530,16 +1532,6 @@ BELL PEPPER
       @media only screen and (max-width: 339px) {
         .main-page-template__left-column-container {
           padding-top: 5rem; } }
-    .main-page-template__left-column .about-me {
-      margin: 4rem 0; }
-      .main-page-template__left-column .about-me p {
-        font-size: 1.6rem;
-        letter-spacing: 0.03rem;
-        line-height: 2.2rem;
-        margin-bottom: 2rem; }
-        @media only screen and (max-width: 1100px) {
-          .main-page-template__left-column .about-me p {
-            font-size: 1.4rem; } }
   .main-page-template__title {
     margin-bottom: 3rem; }
     .main-page-template__title.home-page-title {
@@ -1924,6 +1916,10 @@ ILLUSTRATION ANIMATION
         -webkit-transform: scale(0.9);
             -ms-transform: scale(0.9);
                 transform: scale(0.9); }
+      .skills__icons-container .icon #graphql-icon {
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2); }
       .skills__icons-container .icon:nth-child(1) {
         top: 0;
         left: 2%; }
@@ -1941,7 +1937,7 @@ ILLUSTRATION ANIMATION
         left: 10%; }
       .skills__icons-container .icon:nth-child(6) {
         top: 35%;
-        left: 40%; }
+        left: 42%; }
       .skills__icons-container .icon:nth-child(7) {
         top: 30%;
         left: 70%; }
@@ -2487,7 +2483,7 @@ RESETS
 
 html {
   font-size: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #0c0c0c; }
@@ -2505,7 +2501,7 @@ FONTS
 */
 .archivo,
 .page-header {
-  font-family: "Archivo", "Roboto", sans-serif; }
+  font-family: 'Archivo', 'Roboto', sans-serif; }
 
 a {
   color: inherit; }
@@ -2591,7 +2587,7 @@ GLOBAL STYLING
 .million {
   position: relative; }
   .million::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: 0.35rem;
@@ -2616,32 +2612,6 @@ GLOBAL STYLING
     left: 0.2rem;
     height: 0.3rem; } }
 
-#tsparticles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 0;
-  -webkit-animation: fade-in-particles 3s;
-          animation: fade-in-particles 3s; }
-
-@-webkit-keyframes fade-in-particles {
-  0% {
-    opacity: 0; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fade-in-particles {
-  0% {
-    opacity: 0; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
 .project__link {
   display: inline-block;
   font-size: 1.6rem;
@@ -2653,11 +2623,11 @@ GLOBAL STYLING
   -o-transition: all 250ms ease;
   transition: all 250ms ease; }
   .project__link::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     height: 0.2rem;
-    width: 3rem;
+    width: 2rem;
     background-color: #08fdd8;
     bottom: -0.5rem;
     -webkit-transition: all 250ms ease;
@@ -2696,3 +2666,14 @@ GLOBAL STYLING
     .contact-button:hover .million::before {
       background-color: #3bfde0;
       top: -2px; }
+
+.copy {
+  margin: 4rem 0; }
+  .copy p {
+    font-size: 1.6rem;
+    letter-spacing: 0.03rem;
+    line-height: 2.2rem;
+    margin-bottom: 2rem; }
+    @media only screen and (max-width: 1100px) {
+      .copy p {
+        font-size: 1.4rem; } }

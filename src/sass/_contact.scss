@@ -1,206 +1,202 @@
 .contact-page {
-  margin: 0 auto;
+	margin: 0 auto;
 
-  #tsparticles {
-    z-index: -1;
-  }
+	&__container {
+		width: 100%;
+		height: 95vh;
 
-  &__container {
-    width: 100%;
-    height: 95vh;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 6rem;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+		@include md-screen {
+			grid-template-columns: 1fr;
+		}
+	}
 
-    @include md-screen {
-      grid-template-columns: 1fr;
-    }
-  }
+	&__title {
+		font-size: 5rem;
+		margin-bottom: 1rem;
 
-  &__title {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+		@include lg-screen {
+			font-size: 4.5rem;
+		}
 
-    @include lg-screen {
-      font-size: 4.5rem;
-    }
+		@include md-screen {
+			font-size: 5rem;
+			margin-top: 6rem;
+		}
 
-    @include md-screen {
-      font-size: 5rem;
-      margin-top: 6rem;
-    }
+		@include xxs-screen {
+			font-size: 4rem;
+		}
+	}
 
-    @include xxs-screen {
-      font-size: 4rem;
-    }
-  }
+	&__content {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
-  &__content {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+		&-container {
+			margin-top: -2rem;
+			.social {
+				position: initial;
 
-    &-container {
-      margin-top: -2rem;
-      .social {
-        position: initial;
+				svg {
+					color: $main-font;
+					width: 2.5rem;
+					height: 2.5rem;
 
-        svg {
-          color: $main-font;
-          width: 2.5rem;
-          height: 2.5rem;
+					@include lg-screen {
+						width: 2rem;
+					}
+				}
+			}
 
-          @include lg-screen {
-            width: 2rem;
-          }
-        }
-      }
+			@include md-screen {
+				margin-top: 3rem;
+				margin-bottom: 3rem;
+			}
+		}
+	}
 
-      @include md-screen {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-      }
-    }
-  }
-
-  /*
+	/*
   -----------------------------------------
   FORM
   -----------------------------------------
   */
 
-  &__form {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	&__form {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-    @include md-screen {
-      margin: 5rem 0;
-      align-items: flex-start;
-    }
+		@include md-screen {
+			margin: 5rem 0;
+			align-items: flex-start;
+		}
 
-    @include xxs-screen {
-      margin-top: 0;
-    }
+		@include xxs-screen {
+			margin-top: 0;
+		}
 
-    &-container {
-      width: 100%;
-      max-width: 430px;
-      transform: translateY(60px);
-    }
+		&-container {
+			width: 100%;
+			max-width: 430px;
+			transform: translateY(60px);
+		}
 
-    .contact-form {
-      fieldset {
-        margin: 0;
-        padding: 0;
-        border: none;
-      }
+		.contact-form {
+			fieldset {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
 
-      .text-input {
-        margin-bottom: 2rem;
-        input {
-          width: 100%;
-          background: none;
-          @include glass;
-          color: $main-font;
-          font-size: 1.6rem;
-          border: none;
-          border: 2px solid $light-grey;
-          border-radius: 1rem;
-          padding: 1rem 1.4rem;
+			.text-input {
+				margin-bottom: 2rem;
+				input {
+					width: 100%;
+					background: none;
+					@include glass;
+					color: $main-font;
+					font-size: 1.6rem;
+					border: none;
+					border: 2px solid $light-grey;
+					border-radius: 1rem;
+					padding: 1rem 1.4rem;
 
-          transition: all 250ms ease;
+					transition: all 250ms ease;
 
-          &:focus {
-            border: 2px solid $highlight;
-            outline: none;
-          }
-        }
-      }
+					&:focus {
+						border: 2px solid $highlight;
+						outline: none;
+					}
+				}
+			}
 
-      .message-area {
-        // margin-top: 2rem;
-        label {
-          display: block;
-          font-size: 1.6rem;
-          color: $mid-grey;
-          margin-bottom: 1rem;
-        }
+			.message-area {
+				// margin-top: 2rem;
+				label {
+					display: block;
+					font-size: 1.6rem;
+					color: $mid-grey;
+					margin-bottom: 1rem;
+				}
 
-        textarea {
-          width: 100%;
-          height: 15rem;
-          color: $main-font;
-          font-size: 1.6rem;
-          font-family: "Roboto", sans-serif;
-          padding: 1.2rem;
-          background: none;
-          @include glass;
-          border-radius: 1rem;
-          border: 2px solid $mid-grey;
-          transition: all 250ms ease;
+				textarea {
+					width: 100%;
+					height: 15rem;
+					color: $main-font;
+					font-size: 1.6rem;
+					font-family: 'Roboto', sans-serif;
+					padding: 1.2rem;
+					background: none;
+					@include glass;
+					border-radius: 1rem;
+					border: 2px solid $mid-grey;
+					transition: all 250ms ease;
 
-          &:focus {
-            outline: none;
-            border: 2px solid $highlight;
-          }
-        }
-      }
+					&:focus {
+						outline: none;
+						border: 2px solid $highlight;
+					}
+				}
+			}
 
-      @include md-screen {
-        display: flex;
-        flex-direction: column;
-      }
-    }
+			@include md-screen {
+				display: flex;
+				flex-direction: column;
+			}
+		}
 
-    .submit-btn {
-      width: 100%;
-      font-size: 1.6rem;
-      padding: 1rem 2rem;
-      background: none;
-      @include glass;
-      color: $mid-grey;
-      border: 2px solid $mid-grey;
-      border-radius: 1rem;
-      margin-top: 2rem;
+		.submit-btn {
+			width: 100%;
+			font-size: 1.6rem;
+			padding: 1rem 2rem;
+			background: none;
+			@include glass;
+			color: $mid-grey;
+			border: 2px solid $mid-grey;
+			border-radius: 1rem;
+			margin-top: 2rem;
 
-      transition: all 250ms ease;
-      cursor: pointer;
+			transition: all 250ms ease;
+			cursor: pointer;
 
-      &:hover {
-        border: 2px solid $highlight;
-        color: $highlight;
-      }
+			&:hover {
+				border: 2px solid $highlight;
+				color: $highlight;
+			}
 
-      &:disabled {
-        &:hover {
-          border: 2px solid $mid-grey;
-          color: $mid-grey;
-          cursor: initial;
-        }
-      }
-    }
-  }
+			&:disabled {
+				&:hover {
+					border: 2px solid $mid-grey;
+					color: $mid-grey;
+					cursor: initial;
+				}
+			}
+		}
+	}
 
-  &__user-messages {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	&__user-messages {
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
-    p {
-      font-size: 1.4rem;
-      letter-spacing: 0.02rem;
-      line-height: 2.2rem;
-      text-align: center;
-      color: $main-font;
-    }
-  }
+		p {
+			font-size: 1.4rem;
+			letter-spacing: 0.02rem;
+			line-height: 2.2rem;
+			text-align: center;
+			color: $main-font;
+		}
+	}
 }
