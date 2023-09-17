@@ -8,6 +8,8 @@ import {
 	ReactIcon,
 	GraphQLIcon,
 	MongoIcon,
+	YarnIcon,
+	NxIcon,
 } from '../icons';
 import type { IPROJECT } from '../interfaces';
 
@@ -37,6 +39,8 @@ const DATA: IPROJECT = {
 		MaterialIcon,
 		AwsIcon,
 		MongoIcon,
+		YarnIcon,
+		NxIcon,
 	],
 	subheading: 'Front End | Back End',
 	description: 'Coming soon.',

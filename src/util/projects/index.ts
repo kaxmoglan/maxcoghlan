@@ -7,12 +7,14 @@ import maxcoghlan from './maxcoghlan';
 import insideout from './insideout';
 import aibo from './aibo';
 import ev from './ev';
+import duVide from './duVide';
 
 // ARRAY OF ALL PROJECTS
 export const PROJECTS = [
 	ev,
 	insideout,
 	aibo,
+	duVide,
 	modernCalligraphy,
 	bellPepper,
 	humblr,
