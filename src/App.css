@@ -56,11 +56,9 @@ SCREEN HEIGHTS FOR DESKTOP NAV BAR
           transform: scale(1);
   -webkit-transition: opacity 300ms, -webkit-transform 300ms;
   transition: opacity 300ms, -webkit-transform 300ms;
-  -o-transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
   -webkit-transition-delay: 300ms;
-       -o-transition-delay: 300ms;
           transition-delay: 300ms; }
 
 .content-exit {
@@ -76,7 +74,6 @@ SCREEN HEIGHTS FOR DESKTOP NAV BAR
           transform: translateY(10px);
   -webkit-transition: opacity 300ms, -webkit-transform 300ms;
   transition: opacity 300ms, -webkit-transform 300ms;
-  -o-transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms;
   transition: opacity 300ms, transform 300ms, -webkit-transform 300ms; }
 
@@ -87,7 +84,6 @@ PROJECT DETAIL PAGE
 */
 .project-detail-page {
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease; }
   .project-detail-page.fade-in {
     opacity: 1;
@@ -117,7 +113,6 @@ BLOG
       -ms-transform: translateY(10px);
           transform: translateY(10px);
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease; }
 
 .blog-animate-enter-active {
@@ -126,13 +121,11 @@ BLOG
       -ms-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition-delay: 300ms;
-       -o-transition-delay: 300ms;
           transition-delay: 300ms; }
 
 .blog-animate-exit {
   opacity: 1;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease; }
 
 .blog-animate-exit-active {
@@ -144,7 +137,6 @@ BLOG
 .blog-loading-spinner-enter {
   opacity: 0;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease; }
 
 .blog-loading-spinner-enter-active {
@@ -153,7 +145,6 @@ BLOG
 .blog-loading-spinner-exit {
   opacity: 1;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease; }
 
 .blog-loading-spinner-exit-active {
@@ -169,7 +160,6 @@ BLOG
   border-radius: 1rem;
   border: 2px solid #707070;
   -webkit-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
   transition: all 500ms ease;
   overflow: hidden;
   background-color: rgba(29, 29, 29, 0.8);
@@ -221,7 +211,6 @@ BLOG
       font-weight: bold; }
     .navbar .logo .aximilian {
       -webkit-transition: all 250ms ease;
-      -o-transition: all 250ms ease;
       transition: all 250ms ease;
       position: absolute;
       display: inline-block;
@@ -238,7 +227,6 @@ BLOG
             align-items: center;
     height: 6.5rem;
     -webkit-transition: all 350ms ease;
-    -o-transition: all 350ms ease;
     transition: all 350ms ease;
     text-decoration: none; }
     .navbar__link:focus {
@@ -250,7 +238,6 @@ BLOG
       margin: 0 3rem 0 2rem; }
       .navbar__link-icon svg {
         -webkit-transition: all 350ms ease;
-        -o-transition: all 350ms ease;
         transition: all 350ms ease;
         color: #dddbdb;
         width: 2.2rem; }
@@ -263,11 +250,9 @@ BLOG
       stroke-dasharray: 250;
       stroke-dashoffset: 250;
       -webkit-transition: all 2000ms ease-out;
-      -o-transition: all 2000ms ease-out;
       transition: all 2000ms ease-out; }
       .navbar__link-text-container {
         -webkit-transition: all 250ms ease;
-        -o-transition: all 250ms ease;
         transition: all 250ms ease;
         opacity: 0;
         -webkit-transform: translateX(-2rem);
@@ -279,7 +264,6 @@ BLOG
         color: #08fdd8; }
       .navbar__link:hover .navbar__link-text {
         -webkit-transition: all 750ms ease;
-        -o-transition: all 750ms ease;
         transition: all 750ms ease;
         stroke-dashoffset: 500;
         fill: transparent; }
@@ -350,7 +334,6 @@ BLOG
   border-radius: 1rem;
   background-color: rgba(29, 29, 29, 0.8);
   -webkit-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
   transition: all 500ms ease; }
   @media screen and (max-width: 800px), screen and (max-height: 580px) {
     .mobile-menu {
@@ -429,7 +412,6 @@ BLOG
     padding: 2rem; }
     .mobile-menu__icon svg {
       -webkit-transition: all 500ms ease;
-      -o-transition: all 500ms ease;
       transition: all 500ms ease;
       height: 2.2rem; }
   .mobile-menu__link {
@@ -477,7 +459,6 @@ BLOG
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
   transition: all 500ms ease;
   padding-top: 1rem;
   z-index: 999; }
@@ -488,7 +469,6 @@ BLOG
       width: 2rem;
       color: #707070;
       -webkit-transition: all 250ms ease;
-      -o-transition: all 250ms ease;
       transition: all 250ms ease; }
     .social .link:focus {
       outline: 0; }
@@ -542,7 +522,6 @@ BLOG
     width: 95%;
     max-width: 800px;
     -webkit-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
     transition: all 250ms ease;
     background-color: rgba(29, 29, 29, 0.8);
     border: 2px solid #707070;
@@ -1367,7 +1346,6 @@ BELL PEPPER
         border-radius: 1rem;
         padding: 1rem 1.4rem;
         -webkit-transition: all 250ms ease;
-        -o-transition: all 250ms ease;
         transition: all 250ms ease; }
         @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
           .contact-page__form .contact-form .text-input input {
@@ -1394,7 +1372,6 @@ BELL PEPPER
       border-radius: 1rem;
       border: 2px solid #707070;
       -webkit-transition: all 250ms ease;
-      -o-transition: all 250ms ease;
       transition: all 250ms ease; }
       @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
         .contact-page__form .contact-form .message-area textarea {
@@ -1424,7 +1401,6 @@ BELL PEPPER
       border-radius: 1rem;
       margin-top: 2rem;
       -webkit-transition: all 250ms ease;
-      -o-transition: all 250ms ease;
       transition: all 250ms ease;
       cursor: pointer; }
       @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
@@ -1728,7 +1704,6 @@ ILLUSTRATION ANIMATION
     position: relative;
     top: 1px;
     -webkit-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
     transition: all 300ms ease; }
   .skills__heading:hover .fa-chevron-right {
     -webkit-animation: chevrondance 250ms;
@@ -1742,7 +1717,6 @@ ILLUSTRATION ANIMATION
           transform: translateY(-10px);
   pointer-events: none;
   -webkit-transition: all 1s ease;
-  -o-transition: all 1s ease;
   transition: all 1s ease; }
   .skills__content p {
     font-size: 1.5rem;
@@ -1786,10 +1760,8 @@ ILLUSTRATION ANIMATION
         -ms-transform: scale(0);
             transform: scale(0);
     -webkit-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
     transition: all 500ms ease;
     -webkit-transition-delay: initial;
-         -o-transition-delay: initial;
             transition-delay: initial; }
     @media only screen and (max-width: 1100px) {
       .skills__icons-container {
@@ -1814,7 +1786,6 @@ ILLUSTRATION ANIMATION
           -ms-transform: scale(1);
               transform: scale(1);
       -webkit-transition-delay: 500ms;
-           -o-transition-delay: 500ms;
               transition-delay: 500ms; }
       @media only screen and (max-width: 1100px) {
         .skills__icons-container.visible {
@@ -2017,7 +1988,6 @@ ILLUSTRATION ANIMATION
         text-decoration: none;
         text-align: center;
         -webkit-transition: all 250ms ease;
-        -o-transition: all 250ms ease;
         transition: all 250ms ease; }
         .blog-page-template__container .left-column .blog-header__header .logo {
           font-size: 3.3rem;
@@ -2028,7 +1998,6 @@ ILLUSTRATION ANIMATION
             top: 0;
             width: 85%;
             -webkit-transition: all 250ms ease;
-            -o-transition: all 250ms ease;
             transition: all 250ms ease; }
             @media only screen and (max-width: 900px) {
               .blog-page-template__container .left-column .blog-header__header .logo .million::before {
@@ -2093,12 +2062,10 @@ ILLUSTRATION ANIMATION
           width: 1.5rem;
           margin-right: 1rem;
           -webkit-transition: all 250ms ease;
-          -o-transition: all 250ms ease;
           transition: all 250ms ease; }
         .blog-page-template__container .left-column .blog-header__back-to-site p {
           font-size: 1.4rem;
           -webkit-transition: all 250ms ease;
-          -o-transition: all 250ms ease;
           transition: all 250ms ease; }
           @media only screen and (max-width: 339px) {
             .blog-page-template__container .left-column .blog-header__back-to-site p {
@@ -2211,7 +2178,6 @@ ILLUSTRATION ANIMATION
               font-size: 2rem;
               color: #1d1d1d;
               -webkit-transition: all 250ms ease;
-              -o-transition: all 250ms ease;
               transition: all 250ms ease; }
               @media only screen and (max-width: 339px) {
                 .blog-page-template__container .right-column .blog-post-all__container .blog-post-card__title {
@@ -2222,7 +2188,6 @@ ILLUSTRATION ANIMATION
               margin-top: 2rem;
               color: #1d1d1d;
               -webkit-transition: all 250ms ease;
-              -o-transition: all 250ms ease;
               transition: all 250ms ease; }
               @media only screen and (max-width: 339px) {
                 .blog-page-template__container .right-column .blog-post-all__container .blog-post-card__description {
@@ -2295,7 +2260,6 @@ ILLUSTRATION ANIMATION
           .blog-page-template__container .right-column .blog-post__footer-link {
             margin: 0 1rem;
             -webkit-transition: all 250ms ease;
-            -o-transition: all 250ms ease;
             transition: all 250ms ease; }
             .blog-page-template__container .right-column .blog-post__footer-link:hover {
               color: #000; }
@@ -2313,7 +2277,6 @@ ILLUSTRATION ANIMATION
             margin-bottom: 2rem; }
             .blog-page-template__container .right-column .blog-post__body p a {
               -webkit-transition: all 250ms ease;
-              -o-transition: all 250ms ease;
               transition: all 250ms ease; }
               .blog-page-template__container .right-column .blog-post__body p a:hover {
                 color: #707070; }
@@ -2517,7 +2480,6 @@ GLOBAL STYLING
 */
 .App {
   -webkit-transition: all 1000ms ease;
-  -o-transition: all 1000ms ease;
   transition: all 1000ms ease;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2557,7 +2519,6 @@ GLOBAL STYLING
   width: 100vw;
   height: 100vh;
   -webkit-transition: all 1000ms ease;
-  -o-transition: all 1000ms ease;
   transition: all 1000ms ease;
   pointer-events: none;
   z-index: -1; }
@@ -2620,7 +2581,6 @@ GLOBAL STYLING
   margin-bottom: 1.5rem;
   color: #dddbdb;
   -webkit-transition: all 250ms ease;
-  -o-transition: all 250ms ease;
   transition: all 250ms ease; }
   .project__link::after {
     content: '';
@@ -2631,7 +2591,6 @@ GLOBAL STYLING
     background-color: #08fdd8;
     bottom: -0.5rem;
     -webkit-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
     transition: all 250ms ease; }
   .project__link:focus {
     outline: 0; }
@@ -2649,7 +2608,6 @@ GLOBAL STYLING
   color: #08fdd8;
   text-decoration: none;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease;
   cursor: pointer; }
   .contact-button .million::before {
@@ -2658,7 +2616,6 @@ GLOBAL STYLING
     top: 0;
     height: 1px;
     -webkit-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
     transition: all 300ms ease; }
   .contact-button:hover {
     border: 2px solid #01b79c;
