@@ -1,22 +1,22 @@
-import gulp from "gulp";
-import imagemin from "gulp-imagemin";
-import autoprefixer from "gulp-autoprefixer";
-import gulpSass from "gulp-sass";
-import nodeSass from "node-sass";
+import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
+import autoprefixer from 'gulp-autoprefixer';
+import gulpSass from 'gulp-sass';
+import * as sassLib from 'sass';
 
-const sass = gulpSass(nodeSass);
+const sass = gulpSass(sassLib);
 
 const { parallel } = gulp;
 
 // FILE LOCATIONS
 const files = {
 	src: {
-		sass: "./src/sass/**/*.scss",
-		images: "./src/images/src/**/*",
+		sass: './src/sass/**/*.scss',
+		images: './src/images/src/**/*',
 	},
 	dest: {
-		sass: "./src",
-		images: "./src/images/dist",
+		sass: './src',
+		images: './src/images/dist',
 	},
 };
 
@@ -24,8 +24,8 @@ const files = {
 function styles() {
 	return gulp
 		.src(files.src.sass)
-		.pipe(sass().on("error", sass.logError))
-		.pipe(autoprefixer("last 4 versions"))
+		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer('last 4 versions'))
 		.pipe(gulp.dest(files.dest.sass));
 }
 
