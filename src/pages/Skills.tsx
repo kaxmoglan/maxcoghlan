@@ -154,8 +154,8 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 
 									<div className="skills__content">
 										<p>
-											TypeScript, JavaScript, React, React Native, Redux,
-											Recoil, Tailwind, MaterialUI, Sass.
+											TypeScript, JavaScript, React, React Native, Astro, Redux,
+											Recoil, MobX, Tailwind, MaterialUI, Sass.
 										</p>
 									</div>
 								</div>
@@ -173,7 +173,8 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 									<div className="skills__content">
 										<p>
 											Node.js, Koa, Express, Postgres, Prisma, GraphQL, MongoDB,
-											Docker, AWS, Python, Django, PHP, Wordpress, Firebase.
+											Docker, AWS, Kubernetes, Jenkins, Python, Django, PHP,
+											Wordpress, Firebase.
 										</p>
 									</div>
 								</div>
@@ -189,9 +190,13 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 									</div>
 
 									<div className="skills__content">
-										<p>Git, GitHub, Gitlab, Linux, MacOS, Windows & WSL.</p>
 										<p>
-											<strong>Testing: </strong>Jest, Cucumber, Sinon
+											Git, GitHub, Gitlab, BitBucket, Vim, Linux, MacOS, Windows
+											& WSL.
+										</p>
+										<p>
+											<strong>Testing: </strong>Jest, Cypress, Playwright,
+											Cucumber.
 										</p>
 										<p>
 											<strong>Adobe: </strong>XD, Photoshop, Illustrator,
@@ -207,8 +212,8 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 										</p>
 										<p>
 											<strong>Other: </strong>Confluence, Jira, Branch.io,
-											Figma, Sentry, Intercom, SublimeText, Workflowy, Notion,
-											DaVinci Resolve, Ableton Live, Pro Tools.
+											Twilio, Figma, Sentry, Intercom, Notion, DaVinci Resolve,
+											Ableton Live, Pro Tools.
 										</p>
 									</div>
 								</div>

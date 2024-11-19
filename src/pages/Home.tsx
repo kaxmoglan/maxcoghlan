@@ -23,8 +23,8 @@ export const Home: React.FC<IGLOBALSTATE> = (props) => {
 								Hi, <br /> I'm <span className="million">M</span>aximilian.
 							</h1>
 							<h2 className="home-page-subtitle">
-								Full stack developer, <br />
-								educator & tech enthusiast.
+								Senior full stack developer
+								<br />& technical leader.
 							</h2>
 							<ContactBtn />
 						</div>
