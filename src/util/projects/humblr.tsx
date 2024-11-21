@@ -23,7 +23,7 @@ const DATA: IPROJECT = {
 		'Back End Development',
 	],
 	links: {
-		app: 'https://humblr-sm.web.app/',
+		// app: 'https://humblr-sm.web.app/',
 		github: 'https://github.com/kaxmoglan/humblr',
 	},
 	tech: [
