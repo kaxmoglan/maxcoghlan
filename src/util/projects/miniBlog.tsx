@@ -13,7 +13,7 @@ import type { IPROJECT } from '../interfaces';
 
 const DATA: IPROJECT = {
 	url: 'mini-blog',
-	name: ["MAX'S", 'MINI BLOG'],
+	name: ['MINI BLOG'],
 	tagline: 'Full stack blogging platform',
 	workShort: ['UI / UX', 'Front End', 'Back End'],
 	workExpanded: [
@@ -32,15 +32,15 @@ const DATA: IPROJECT = {
 		'A full stack blogging platform built with Python, Django and Bootstrap and deployed on Heroku (until they removed the free tier).',
 	mobileImg: {
 		src: mobileImg,
-		alt: "A screen shot of Max's Mini Blog's home page on a smart phone",
+		alt: "A screen shot of Mini Blog's home page on a smart phone",
 	},
 	tabletImg: {
 		src: tabletImg,
-		alt: "A screen shot of Max's Mini Blog's home page on a tablet computer",
+		alt: "A screen shot of Mini Blog's home page on a tablet computer",
 	},
 	desktopImg: {
 		src: desktopImg,
-		alt: "A screen shot of Max's Mini Blog's home page on a desktop computer",
+		alt: "A screen shot of Mini Blog's home page on a desktop computer",
 	},
 	content: (
 		<div className="project-body">
