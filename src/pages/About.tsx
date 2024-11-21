@@ -28,18 +28,18 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 							<div className="copy">
 								<p>
 									I'm a senior full stack developer and technical leader based
-									in Winchester, Hampshire. I specialise in TypeScript and React
-									on the front end, and Node.js, Express, Koa, Prisma, GraphQL,
-									MongoDB and Postgres on the back end. I also have experience
-									with React Native, Python, Django, Wordpress and other
-									technologies.
+									in Winchester, Hampshire currently working in the FinTech
+									sector. I specialise in Typescript with React on the front
+									end, and Node.js, Postgres, GraphQL and MongoDB on the back
+									end. I also have experience with React Native, Python, Django,
+									Wordpress and other technologies.
 								</p>
 
 								<p>
 									When I'm not coding, I enjoy making music, watching films, ice
-									skating, weight training, football, reading about all things
-									tech and finance and eating and drinking my weight in coffee
-									and pastries. I also have a little dog named Logan who will
+									skating, weight training, football, reading about tech and
+									finance and eating and drinking my weight in coffee and
+									pastries. I also have a little dog named Logan who will
 									happily fill up the rest of my time.
 								</p>
 

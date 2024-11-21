@@ -62,8 +62,8 @@ const DATA: IPROJECT = {
 
 				<h2>THE SOLUTION</h2>
 				<p>
-					I designed the site in Adobe XD and, upon approval, made a bespoke app
-					using a Node.js development environment with Gulp, Pug, Sass and
+					I designed the site in Adobe XD and, upon approval, built a bespoke
+					site using a Node.js development environment with Gulp, Pug, Sass and
 					Javascript.
 				</p>
 			</div>
@@ -76,15 +76,15 @@ const DATA: IPROJECT = {
 						<p>
 							The original site made it hard to see what the business offered at
 							a glance. The company offers a lot of services, all of which were
-							hidden under one ‘services’ drop-down menu and even when you
+							hidden under one 'services' drop-down menu and even when you
 							clicked through to different pages, you were met with large bodies
 							of text that hid the main points.
 						</p>
 
 						<p>
-							I restructured the site to emphasise the company’s slogan,
-							‘Design, Marketing, Events’ and created, what I referred to as, ‘3
-							mini sites’:
+							I restructured the site to emphasise the company's slogan,
+							'Design, Marketing, Events' and created what I referred to as '3
+							mini sites':
 						</p>
 						<ul>
 							<li>- A Design mini-site to host all design-related services</li>
@@ -103,7 +103,7 @@ const DATA: IPROJECT = {
 							Once the site was split up into more user-friendly sections, I
 							restructured the text on every page so that the main points of
 							each article were easy to see thus, in theory, increasing the
-							company’s conversion rate.
+							company's conversion rate.
 						</p>
 						<p className="subheading">The Mobile Menu</p>
 						<p>
@@ -115,16 +115,16 @@ const DATA: IPROJECT = {
 						<p className="subheading">Show Me The Websites</p>
 						<p>
 							My last main challenge was finding a way to showcase Bell Pepper
-							Design’s previous websites without links that take users away from
+							Design's previous websites without links that take users away from
 							the site, or intrusive screen shots that detract from the design
 							of the app itself.
 						</p>
 						<p>
-							My solution was an interactive scrolling experience built using
-							the GSAP library where the user (as part of the natural page
-							scroll) is greeted with a computer screen that they turn on and
-							scroll through each Bell Pepper Design’s site before returning to
-							the natural page flow.
+							My solution was a scroll-based animation using GSAP where the user
+							(as part of the natural page scroll) is greeted with a computer
+							screen that they turn on and scroll through a selection of Bell
+							Pepper Design's projects before returning to the natural page
+							flow.
 						</p>
 					</div>
 					<div className="bell-pepper-images">

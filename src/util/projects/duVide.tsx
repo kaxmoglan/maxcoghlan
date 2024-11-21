@@ -55,11 +55,11 @@ const DATA: IPROJECT = {
 				<h2>THE SOLUTION</h2>
 				<p>
 					I used Astro and Sass to create the landing page and hosted it on
-					Netlify for quick, easy and cost effective CI/CD deployments. The
+					Netlify for quick and easy (and free!) CI/CD deployments. The
 					animation frames were created by an animator using Adobe After Effects
 					and exported as SVGs. I animated between the SVG frames using CSS
 					Animations. I also dynamically imported and embedded all the frames so
-					that should the animation change in the future, it's easily updated.
+					that should the animation change in the future, it's easily updatable.
 				</p>
 			</div>
 		</div>
