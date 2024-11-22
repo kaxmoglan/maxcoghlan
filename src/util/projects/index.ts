@@ -8,12 +8,14 @@ import insideout from './insideout';
 import aibo from './aibo';
 import ev from './ev';
 import duVide from './duVide';
+import dj92 from './dj92';
 
 // ARRAY OF ALL PROJECTS
 export const PROJECTS = [
 	ev,
 	insideout,
 	aibo,
+	dj92,
 	duVide,
 	modernCalligraphy,
 	bellPepper,
