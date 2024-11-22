@@ -4,7 +4,6 @@ import { About } from '../pages/About';
 import { Skills } from '../pages/Skills';
 import { Projects } from '../pages/Projects';
 import { ProjectDetail } from '../pages/ProjectDetail';
-import { VariousApplets } from '../pages/VariousApplets';
 import { Contact } from '../pages/Contact';
 import { Blog } from '../pages/Blog';
 
@@ -15,7 +14,6 @@ export const ROUTES = [
 	{ path: '/skills', Component: Skills },
 	{ path: '/projects', Component: Projects },
 	{ path: '/projects/:id', Component: ProjectDetail },
-	{ path: '/projects/custom/various-applets', Component: VariousApplets },
 	{ path: '/contact', Component: Contact },
 	{ path: '/blog/:id', Component: Blog },
 ];

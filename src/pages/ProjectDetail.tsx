@@ -42,8 +42,8 @@ export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
 						});
 					} else {
 						setPrevProject({
-							name: 'Various Applets',
-							url: '/projects/custom/various-applets',
+							name: PROJECTS[PROJECTS.length - 1].name.join(' '),
+							url: PROJECTS[PROJECTS.length - 1].url,
 						});
 					}
 
@@ -54,8 +54,8 @@ export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
 						});
 					} else {
 						setNextProject({
-							name: 'Various Applets',
-							url: '/projects/custom/various-applets',
+							name: PROJECTS[0].name.join(' '),
+							url: PROJECTS[0].url,
 						});
 					}
 				}, 300);
@@ -80,7 +80,6 @@ export const ProjectDetail: React.FC<IGLOBALSTATE> = (props) => {
 	// NEXT & PREV PROJECT LOAD
 	useEffect(() => {
 		getProject();
-
 		// eslint-disable-next-line
 	}, [id]);
 

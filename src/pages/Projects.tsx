@@ -3,25 +3,6 @@ import { Link } from 'react-router-dom';
 import { PROJECTS } from '../util/projects';
 import type { IGLOBALSTATE } from '../util/interfaces';
 
-// ICONS AND ARRAY FOR 'VARIOUS APPLETS' PROJECTS
-import {
-	ReactIcon,
-	SassIcon,
-	HtmlIcon,
-	JavascriptIcon,
-	NodeIcon,
-	GulpIcon,
-} from '../util/icons';
-
-const appletIcons = [
-	JavascriptIcon,
-	GulpIcon,
-	HtmlIcon,
-	SassIcon,
-	ReactIcon,
-	NodeIcon,
-];
-
 export const Projects: React.FC<IGLOBALSTATE> = (props) => {
 	const { setTheme, setShowNav, setShowSocial } = props;
 
@@ -120,58 +101,6 @@ export const Projects: React.FC<IGLOBALSTATE> = (props) => {
 							</div>
 						</div>
 					))}
-
-					{/* VARIOUS APPLETS CARD */}
-					<div className="project-card">
-						<div className="project-card__container">
-							{/* LEFT COLUMN */}
-							<div className="project-card__name">
-								<p className="project-card__header">PROJECT</p>
-								<p className="project-card__name-text">
-									VARIOUS
-									<br />
-									APPLETS
-								</p>
-								<p className="project-card__name-tagline">
-									A collection of small projects
-								</p>
-							</div>
-
-							{/* MIDDLE COLUMN */}
-							<div className="project-card__details">
-								<div className="project-card__work">
-									<p className="project-card__header">WORK</p>
-
-									<p className="project-card__text">UI / UX</p>
-									<p className="project-card__text">Front End</p>
-								</div>
-
-								<div className="project-card__links">
-									<p className="project-card__header">LINKS</p>
-									<div>
-										<Link
-											className="project__link"
-											to="/projects/custom/various-applets"
-										>
-											View Projects
-										</Link>
-									</div>
-								</div>
-							</div>
-
-							{/* RIGHT COLUMN */}
-							<div className="project-card__tech">
-								<p className="project-card__header">TECH</p>
-								<div className="container">
-									{appletIcons.map((icon, i) => (
-										<div key={i} className="icon">
-											{icon}
-										</div>
-									))}
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</main>
