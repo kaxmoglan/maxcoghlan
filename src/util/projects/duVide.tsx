@@ -46,13 +46,13 @@ const DATA: IPROJECT = {
 	content: (
 		<div className="project-body">
 			<div className="narrow">
-				<h2>THE BRIEF</h2>
+				<h2>Requirements</h2>
 				<p>
 					DJ Du Vide wanted me to build and host a landing page he had designed,
 					complete with a custom CSS SVG animation of his logo.
 				</p>
 
-				<h2>THE SOLUTION</h2>
+				<h2>Solution</h2>
 				<p>
 					I used Astro and Sass to create the landing page and hosted it on
 					Netlify for quick and easy (and free!) CI/CD deployments. The

@@ -82,7 +82,7 @@ const DATA: IPROJECT = {
 	content: (
 		<div className="project-body">
 			<div className="narrow">
-				<h2>AN OVERVIEW</h2>
+				<h2>Overview</h2>
 				<p>
 					I was the first developer to be brought into a small engineering team
 					tasked with breaking apart their monolith API into containerised

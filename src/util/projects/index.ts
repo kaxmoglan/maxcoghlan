@@ -9,10 +9,12 @@ import aibo from './aibo';
 import ev from './ev';
 import duVide from './duVide';
 import dj92 from './dj92';
+import ofa from './ofa';
 
 // ARRAY OF ALL PROJECTS
 export const PROJECTS = [
 	ev,
+	ofa,
 	insideout,
 	aibo,
 	dj92,

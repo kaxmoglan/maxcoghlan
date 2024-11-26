@@ -71,7 +71,7 @@ const DATA: IPROJECT = {
 	content: (
 		<div className="project-body">
 			<div className="narrow">
-				<h2>THE BRIEF</h2>
+				<h2>Requirements</h2>
 				<p>
 					The Modern Calligraphy Studio wanted a fully editable e-commerce
 					solution built in Wordpress with WooCommerce. The design brief was for
@@ -92,7 +92,7 @@ const DATA: IPROJECT = {
 					</div>
 
 					<div className="right-column">
-						<h2>The Solution</h2>
+						<h2>Solution</h2>
 						<p>
 							I designed the site in Adobe XD and, upon approval, built a
 							Wordpress theme using PHP, Sass, Javascript and the Bootstrap

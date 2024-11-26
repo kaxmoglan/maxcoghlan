@@ -40,13 +40,13 @@ const DATA: IPROJECT = {
 	content: (
 		<div className="project-body">
 			<div className="narrow">
-				<h2>THE BRIEF</h2>
+				<h2>Requirements</h2>
 				<p>
 					DJ92 had designed a desktop-only single page website that had scroll
 					based animations that they wanted me to build and host.
 				</p>
 
-				<h2>THE SOLUTION</h2>
+				<h2>Solution</h2>
 				<p>
 					I used Vite and React to create the site, Framer to implement the
 					scroll-based animations, and Netlify for hosting and quick and easy

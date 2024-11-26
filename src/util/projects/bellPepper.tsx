@@ -52,7 +52,7 @@ const DATA: IPROJECT = {
 	content: (
 		<div className="project-body">
 			<div className="narrow">
-				<h2>THE BRIEF</h2>
+				<h2>Requirements</h2>
 				<p>
 					Bell Pepper Design (formerly Charlie Apple) wanted a complete
 					re-design of their old website. They gave me free rein over the
@@ -60,7 +60,7 @@ const DATA: IPROJECT = {
 					SEO.
 				</p>
 
-				<h2>THE SOLUTION</h2>
+				<h2>Solution</h2>
 				<p>
 					I designed the site in Adobe XD and, upon approval, built a bespoke
 					site using a Node.js development environment with Gulp, Pug, Sass and
