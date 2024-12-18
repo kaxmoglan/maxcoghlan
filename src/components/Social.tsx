@@ -2,7 +2,6 @@ import React from 'react';
 
 // ICONS
 import {
-	ContactIcon,
 	TwitterIcon,
 	DevIcon,
 	GithubIcon,
@@ -11,7 +10,6 @@ import {
 } from '../util/icons';
 
 const DATA = [
-	{ href: 'mailto:max.coghlan@gmail.com', icon: ContactIcon },
 	{ href: 'https://twitter.com/kaxMoglan', icon: TwitterIcon },
 	{ href: 'https://dev.to/kaxmoglan', icon: DevIcon },
 	{ href: 'https://gitlab.com/kaxmoglan', icon: GitlabIcon },

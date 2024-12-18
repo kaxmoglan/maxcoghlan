@@ -72,9 +72,8 @@ const DATA: IPROJECT = {
 				</p>
 				<p>
 					Towards the end of the project, resources were (unfortunately for the
-					project) reallocated and I was selected to become the senior and only
-					developer on the project to see it through, and I'm pleased to say we
-					were able to complete and release on time.
+					project) reallocated so I was selected to become the senior (and
+					only!) developer on the project to see it through.
 				</p>
 				<p></p>
 			</div>

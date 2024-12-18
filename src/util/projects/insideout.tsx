@@ -164,7 +164,7 @@ const DATA: IPROJECT = {
 							and freeing up support time. It also brought much needed and
 							requested features from the users including worldwide timezone
 							support and calendar integration with Google, iCloud, Microsoft
-							Excahgne and more.
+							Exchange and more.
 						</p>
 
 						<h3>Libraries</h3>
