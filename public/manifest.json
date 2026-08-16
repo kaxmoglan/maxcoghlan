@@ -1,6 +1,6 @@
 {
 	"short_name": "Max Coghlan",
-	"name": "Maximilian Coghlan - Full Stack Developer",
+	"name": "Maximilian Coghlan - Engineering Lead",
 	"icons": [
 		{
 			"src": "/icons/android-chrome-192x192.png",
@@ -30,6 +30,6 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff"
+	"theme_color": "#e5572e",
+	"background_color": "#faf6f2"
 }

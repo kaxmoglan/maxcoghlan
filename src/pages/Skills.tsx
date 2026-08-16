@@ -82,8 +82,11 @@ const OTHER_ICONS: Array<JSX.Element> = [
 	DockerIcon,
 ];
 
+type Menu = 'LEADERSHIP' | 'FRONT_END' | 'BACK_END' | 'OTHER';
+
 export const Skills: React.FC<IGLOBALSTATE> = (props) => {
-	const [showFrontEnd, setShowFrontEnd] = useState(true);
+	const [showLeadership, setShowLeadership] = useState(true);
+	const [showFrontEnd, setShowFrontEnd] = useState(false);
 	const [showBackEnd, setShowBackEnd] = useState(false);
 	const [showOther, setShowOther] = useState(false);
 
@@ -95,39 +98,11 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 		setShowSocial(true);
 	}, [setTheme, setShowNav, setShowSocial]);
 
-	const handleAccordion = (menu: 'FRONT_END' | 'BACK_END' | 'OTHER') => {
-		switch (menu) {
-			case 'FRONT_END':
-				if (showFrontEnd) {
-					return;
-				} else {
-					setShowFrontEnd(true);
-					setShowBackEnd(false);
-					setShowOther(false);
-					return;
-				}
-			case 'BACK_END':
-				if (showBackEnd) {
-					return;
-				} else {
-					setShowFrontEnd(false);
-					setShowBackEnd(true);
-					setShowOther(false);
-					return;
-				}
-			case 'OTHER':
-				if (showOther) {
-					return;
-				} else {
-					setShowFrontEnd(false);
-					setShowBackEnd(false);
-					setShowOther(true);
-					return;
-				}
-			default:
-				console.error('Unknown menu type.');
-				return;
-		}
+	const handleAccordion = (menu: Menu) => {
+		setShowLeadership(menu === 'LEADERSHIP');
+		setShowFrontEnd(menu === 'FRONT_END');
+		setShowBackEnd(menu === 'BACK_END');
+		setShowOther(menu === 'OTHER');
 	};
 
 	return (
@@ -139,6 +114,30 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 						<div className="main-page-template__left-column-container">
 							<h1 className="skills__title">Skills</h1>
 							<div className="skills">
+								<div
+									className={`skills__category ${
+										showLeadership ? 'visible' : ''
+									}`}
+								>
+									<div
+										className="skills__heading"
+										onClick={() => handleAccordion('LEADERSHIP')}
+									>
+										<h2 className="skills__heading-text">
+											Leadership &amp; Delivery
+										</h2>
+										{ChevronIcon}
+									</div>
+
+									<div className="skills__content">
+										<p>
+											Technical direction &amp; architecture decisions,
+											mentoring &amp; 1:1s, sprint planning &amp; delivery,
+											code review &amp; quality bar, hiring &amp; interviewing,
+											stakeholder communication, roadmap input.
+										</p>
+									</div>
+								</div>
 								<div
 									className={`skills__category ${
 										showFrontEnd ? 'visible' : ''
@@ -192,7 +191,7 @@ export const Skills: React.FC<IGLOBALSTATE> = (props) => {
 									<div className="skills__content">
 										<p>
 											Git, GitHub, Gitlab, BitBucket, Vim, Linux, MacOS, Windows
-											& WSL.
+											&amp; WSL.
 										</p>
 										<p>
 											<strong>Testing: </strong>Jest, Cypress, Playwright,

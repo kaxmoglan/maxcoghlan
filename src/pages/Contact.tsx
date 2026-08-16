@@ -20,7 +20,7 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 	return (
 		<main className="content__main">
 			<div className="contact-page">
-				<div className="contact-page__container">
+				<div className="contact-page__container reverse">
 					{/* LEFT COLUMN */}
 					<div className="contact-page__content">
 						<div className="contact-page__content-container">
@@ -28,12 +28,14 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 								className="contact-page__title"
 								style={{ textAlign: 'center' }}
 							>
-								Contact <span className="million">M</span>e
+								Get in touch
 							</h1>
 							<div className="copy">
 								<p style={{ textAlign: 'center' }}>
-									Get in touch for freelance work, tutoring, career advice, mock
-									tech tests, mock interviews and portfolio & CV reviews.
+									I'm currently open to conversations about Engineering Manager
+									and Director of Engineering roles. I'm also happy to talk
+									freelance work, tutoring, mock interviews and CV or portfolio
+									reviews.
 								</p>
 							</div>
 							<Social />
@@ -99,7 +101,7 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 								{state.submitting && (
 									<Loader
 										type="TailSpin"
-										color="#08fdd8"
+										color="#E5572E"
 										height={50}
 										width={50}
 										className="spinner"

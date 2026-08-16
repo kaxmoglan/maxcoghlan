@@ -1,9 +1,6 @@
 // FONTS
-// Main font: Roboto
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
-
-// Header font: Archivo
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+// Single-family discipline: Inter for both display and body.
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 @import 'colors';
 @import 'responsive';
@@ -11,13 +8,9 @@
 @import 'nav';
 @import 'mobile-nav';
 @import 'social';
-@import 'projects';
-@import 'project-detail';
-@import 'project-custom';
 @import 'contact';
 @import 'main-page-template';
 @import 'skills';
-@import 'blog';
 
 /*
 -----------------------------------------
@@ -32,10 +25,10 @@ RESETS
 
 html {
 	font-size: 10px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Inter', sans-serif;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	background-color: $background;
+	background-color: $paper;
 }
 
 html,
@@ -53,7 +46,9 @@ FONTS
 
 .archivo,
 .page-header {
-	font-family: 'Archivo', 'Roboto', sans-serif;
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.02em;
 }
 
 a {
@@ -62,6 +57,8 @@ a {
 
 h1 {
 	font-size: 4rem;
+	font-weight: 700;
+	letter-spacing: -0.025em;
 	display: block;
 }
 
@@ -72,27 +69,20 @@ GLOBAL STYLING
 */
 
 .App {
-	transition: all 1000ms ease;
+	color: $ink;
+	transition: all 500ms ease;
 	display: flex;
 	justify-content: center;
 
-	&.dark {
-		color: $main-font;
-
-		p::selection,
-		h1::selection,
-		a::selection,
-		h2::selection,
-		h3::selection,
-		strong::selection,
-		span::selection {
-			background: $highlight;
-			color: $black;
-		}
-	}
-
-	&.light {
-		color: $black;
+	p::selection,
+	h1::selection,
+	a::selection,
+	h2::selection,
+	h3::selection,
+	strong::selection,
+	span::selection {
+		background: $accent;
+		color: $accent-ink;
 	}
 
 	@include sm-screen {
@@ -100,8 +90,7 @@ GLOBAL STYLING
 			display: none;
 		}
 
-		.contact-page,
-		.blog-page-template {
+		.contact-page {
 			.social {
 				display: flex;
 			}
@@ -115,16 +104,9 @@ GLOBAL STYLING
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	transition: all 1000ms ease;
+	background-color: $paper;
 	pointer-events: none;
 	z-index: -1;
-
-	&.dark {
-		background-color: $background;
-	}
-	&.light {
-		background-color: $white;
-	}
 }
 
 .content {
@@ -132,25 +114,26 @@ GLOBAL STYLING
 	height: 100%;
 
 	&__main {
-		padding-left: 14.5rem;
-		padding-right: 6rem;
-		max-width: calc(1200px + 20.5rem);
+		padding: 12rem 6rem 6rem;
+		max-width: calc(1200px + 12rem);
 		margin: 0 auto;
 
 		@include md-screen {
-			padding-right: 10rem;
+			padding: 11rem 4rem 5rem;
 		}
 
 		@include sm-screen {
-			padding: 5rem 5rem;
+			padding: 9rem 5rem 5rem;
 		}
 
 		@include xs-screen {
-			padding: 5rem 6%;
+			padding: 9rem 6% 5rem;
 		}
 	}
 }
 
+// THE "M" WORDMARK — an overline bar standing for the roman-numeral
+// multiplication mark ("million"). Kept from the original brand.
 .million {
 	position: relative;
 	&::before {
@@ -161,7 +144,7 @@ GLOBAL STYLING
 		top: 0.1rem;
 		width: 86%;
 		height: 0.45rem;
-		background-color: $main-font;
+		background-color: $accent;
 
 		@include lg-screen {
 			height: 0.4rem;
@@ -169,16 +152,6 @@ GLOBAL STYLING
 		}
 		@include xs-screen {
 			width: 83%;
-		}
-	}
-}
-
-.projects-page__title {
-	.million {
-		&::before {
-			@include xs-screen {
-				width: 85%;
-			}
 		}
 	}
 }
@@ -195,76 +168,43 @@ GLOBAL STYLING
 	}
 }
 
-.project__link {
-	display: inline-block;
-	font-size: 1.6rem;
-	text-decoration: none;
-	position: relative;
-	margin-bottom: 1.5rem;
-	color: $main-font;
-	transition: all 250ms ease;
-
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		height: 0.2rem;
-		width: 2rem;
-		background-color: $highlight;
-		bottom: -0.5rem;
-
-		transition: all 250ms ease;
-	}
-
-	&:focus {
-		outline: 0;
-	}
-
-	&:hover {
-		&::after {
-			width: 100%;
-		}
-	}
-
-	&.mirror {
-		&::after {
-			right: 0;
-		}
-	}
-}
+/*
+-----------------------------------------
+PILL CTA
+-----------------------------------------
+*/
 
 .contact-button {
-	display: inline-block;
-	font-size: 1.6rem;
-	padding: 1rem 2rem;
-	border: 2px solid $highlight;
-	border-radius: 1rem;
-	color: $highlight;
+	display: inline-flex;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	padding: 1.1rem 2.4rem;
+	background-color: $accent;
+	border: 2px solid $accent;
+	border-radius: 999px;
+	color: $accent-ink;
 	text-decoration: none;
 
-	transition: all 300ms ease;
+	transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
 	cursor: pointer;
 
 	.million {
 		&::before {
-			background-color: $highlight;
-			left: 1px;
-			top: 0;
-			height: 1px;
-			transition: all 300ms ease;
+			background-color: $accent-ink;
 		}
 	}
 
-	&:hover {
-		border: 2px solid darken($highlight, 15%);
-		color: lighten($highlight, 10%);
+	&:hover,
+	&:focus-visible {
+		background-color: darken($accent, 8%);
+		border-color: darken($accent, 8%);
+		transform: translateY(-1px);
+	}
 
-		.million {
-			&::before {
-				background-color: lighten($highlight, 10%);
-				top: -2px;
-			}
-		}
+	&:focus-visible {
+		outline: 2px solid $ink;
+		outline-offset: 3px;
 	}
 }
 
@@ -273,8 +213,9 @@ GLOBAL STYLING
 
 	p {
 		font-size: 1.6rem;
-		letter-spacing: 0.03rem;
+		letter-spacing: 0.01rem;
 		line-height: 2.2rem;
+		color: $ink-2;
 		margin-bottom: 2rem;
 
 		@include lg-screen {

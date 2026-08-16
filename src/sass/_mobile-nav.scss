@@ -1,8 +1,4 @@
 .mobile-menu {
-	@include sm-screen {
-		display: flex;
-	}
-
 	display: none;
 	position: fixed;
 	top: 1rem;
@@ -13,8 +9,9 @@
 	z-index: 999;
 	margin: auto;
 	overflow: hidden;
-	border: 2px solid $mid-grey;
+	border: 1px solid $rule;
 	border-radius: 1rem;
+	box-shadow: 0 4px 24px rgba(42, 33, 28, 0.06);
 	@include glass;
 	transition: all 500ms ease;
 
@@ -23,12 +20,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-right: 2px solid $mid-grey;
+		border-right: 1px solid $rule;
 		border-radius: 2px;
 		font-size: 3.5rem;
 		font-weight: bold;
 		text-decoration: none;
-		color: $main-font;
+		color: $ink;
 
 		width: 6rem;
 		height: 100%;
@@ -36,7 +33,7 @@
 		&-million {
 			height: 0.3rem;
 			width: 2.4rem;
-			background-color: $main-font;
+			background-color: $accent;
 			position: absolute;
 			top: 1rem;
 		}
@@ -74,6 +71,7 @@
 		svg {
 			transition: all 500ms ease;
 			height: 2.2rem;
+			color: $ink-2;
 		}
 	}
 
@@ -83,11 +81,15 @@
 		justify-content: center;
 
 		&.active,
-		&:focus {
-			outline: 0;
+		&:focus-visible {
 			.mobile-menu__icon svg {
-				color: $highlight;
+				color: $accent;
 			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid $accent;
+			outline-offset: -2px;
 		}
 	}
 
@@ -105,5 +107,9 @@
 
 	&-exit-active {
 		transform: translateY(-100px);
+	}
+
+	@include sm-screen {
+		display: flex;
 	}
 }

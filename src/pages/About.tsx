@@ -17,7 +17,7 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 	return (
 		<main className="content__main">
 			<div className="main-page-template">
-				<div className="main-page-template__container about">
+				<div className="main-page-template__container about reverse">
 					{/* LEFT COLUMN */}
 					<div className="main-page-template__left-column flex">
 						<div className="main-page-template__left-column-container">
@@ -27,25 +27,33 @@ export const About: React.FC<IGLOBALSTATE> = (props) => {
 
 							<div className="copy">
 								<p>
-									I'm a senior full stack developer and technical leader based
-									in Winchester, Hampshire currently working in the FinTech
-									sector. I specialise in Typescript with React on the front
-									end, and Node.js, Postgres, GraphQL and MongoDB on the back
-									end. I also have experience with React Native, Python, Django,
-									Wordpress and other technologies.
+									I'm a Dev Lead based in Winchester, Hampshire, currently
+									working in the FinTech sector. I split my time between
+									setting technical direction, mentoring the engineers on my
+									team, and staying hands-on — TypeScript and React on the
+									front end, Node.js, Postgres, GraphQL and MongoDB on the
+									back end.
 								</p>
 
 								<p>
-									When I'm not coding, I enjoy making music, watching films, ice
-									skating, weight training, football, reading about tech and
-									finance and eating and drinking my weight in coffee and
+									Day to day that means shaping architecture decisions, running
+									planning and code review, and helping the developers around
+									me grow — the parts of the job that made me want to move from
+									writing code to leading the people who write it.
+								</p>
+
+								<p>
+									When I'm not working, I enjoy making music, watching films,
+									ice skating, weight training, football, reading about tech
+									and finance and eating and drinking my weight in coffee and
 									pastries. I also have a little dog named Logan who will
 									happily fill up the rest of my time.
 								</p>
 
 								<p>
-									I'm always looking to work on new and exciting projects, so
-									feel free to get in touch!
+									I'm always happy to talk about engineering leadership, team
+									growth, or a role where I can do more of both — feel free to
+									get in touch.
 								</p>
 							</div>
 

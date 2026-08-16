@@ -1,34 +1,21 @@
-$black: #000;
-$white: #fff;
+// -----------------------------------------
+// COLORS — Coral (modern-minimal)
+// Source of truth: design.md
+// -----------------------------------------
 
-$main-font: #dddbdb;
-$background: #0c0c0c;
-$light-grey: #cecece;
-
-$mid-grey: #707070;
-$dark-grey: #1d1d1d;
-$highlight: #08fdd8;
+$paper: #faf6f2; // page background
+$paper-2: #f1eae3; // card / raised surface
+$ink: #2a211c; // primary text, headings
+$ink-2: #55483f; // secondary text, illustration linework
+$rule: #e4dad0; // hairline borders / dividers
+$accent: #e5572e; // coral accent — CTAs, active states, focus, mark
+$accent-ink: #fff8f5; // text on filled accent surfaces
 
 @mixin glass {
-	background-color: rgba(29, 29, 29, 0.8);
+	background-color: rgba(255, 255, 255, 0.72);
 
 	@supports (backdrop-filter: blur()) {
-		background-color: rgba(103, 103, 103, 0.2);
-		backdrop-filter: blur(4px);
+		background-color: rgba(255, 255, 255, 0.6);
+		backdrop-filter: blur(10px);
 	}
 }
-
-/*
------------------------------------------
-BLOG: CODE COLOURS
------------------------------------------
-*/
-
-// Shell
-$bg: #17181a;
-$comment: #8b8b8b;
-
-$pastelPurple: #b6a6ff;
-$pastelBlue: #84e6ff;
-$pastelYellow: #fac96f;
-$pastelGreen: #aefcb2;

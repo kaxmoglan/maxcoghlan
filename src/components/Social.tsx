@@ -10,11 +10,11 @@ import {
 } from '../util/icons';
 
 const DATA = [
-	{ href: 'https://twitter.com/kaxMoglan', icon: TwitterIcon },
-	{ href: 'https://dev.to/kaxmoglan', icon: DevIcon },
-	{ href: 'https://gitlab.com/kaxmoglan', icon: GitlabIcon },
-	{ href: 'https://github.com/kaxmoglan', icon: GithubIcon },
 	{ href: 'https://www.linkedin.com/in/maxcoghlan/', icon: LinkedInIcon },
+	{ href: 'https://github.com/kaxmoglan', icon: GithubIcon },
+	{ href: 'https://gitlab.com/kaxmoglan', icon: GitlabIcon },
+	{ href: 'https://dev.to/kaxmoglan', icon: DevIcon },
+	{ href: 'https://twitter.com/kaxMoglan', icon: TwitterIcon },
 ];
 
 const Social: React.FC = () => {

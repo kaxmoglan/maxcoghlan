@@ -1,9 +1,7 @@
 import {
 	HomeIcon,
 	AboutIcon,
-	BlogIcon,
 	ContactIcon,
-	ProjectsIcon,
 	SkillsIcon,
 } from './navigationIcons';
 
@@ -76,7 +74,6 @@ export {
 	ArrowLeftIcon,
 	AstroIcon,
 	AwsIcon,
-	BlogIcon,
 	BootstrapIcon,
 	ChevronIcon,
 	ContactIcon,
@@ -115,7 +112,6 @@ export {
 	PhpIcon,
 	PostgresIcon,
 	PrismaIcon,
-	ProjectsIcon,
 	PythonIcon,
 	ReactIcon,
 	ReduxIcon,

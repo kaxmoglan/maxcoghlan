@@ -23,8 +23,9 @@ export const Home: React.FC<IGLOBALSTATE> = (props) => {
 								Hi, <br /> I'm <span className="million">M</span>aximilian.
 							</h1>
 							<h2 className="home-page-subtitle">
-								Senior full stack developer
-								<br />& technical leader.
+								I lead engineering teams and set technical direction —
+								currently a Dev Lead, working toward Engineering Manager and,
+								eventually, CTO.
 							</h2>
 							<ContactBtn />
 						</div>

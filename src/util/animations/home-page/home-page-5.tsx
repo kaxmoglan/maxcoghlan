@@ -23,25 +23,25 @@ export const homePage5 = (
 				y2="558.95"
 				spreadMethod="pad"
 			>
-				<stop offset="15.686274509803921%" stopColor="#0C0C0C" />
+				<stop offset="15.686274509803921%" stopColor="#FAF6F2" />
 
-				<stop offset="31.372549019607842%" stopColor="#0C0F0E" />
+				<stop offset="31.372549019607842%" stopColor="#FAF4F0" />
 
-				<stop offset="42.745098039215684%" stopColor="#0C1816" />
+				<stop offset="42.745098039215684%" stopColor="#F9EEE8" />
 
-				<stop offset="52.94117647058823%" stopColor="#0D2824" />
+				<stop offset="52.94117647058823%" stopColor="#F8E3DB" />
 
-				<stop offset="61.96078431372549%" stopColor="#0E3F37" />
+				<stop offset="61.96078431372549%" stopColor="#F6D4C8" />
 
-				<stop offset="70.98039215686275%" stopColor="#125C50" />
+				<stop offset="70.98039215686275%" stopColor="#F3C1B1" />
 
-				<stop offset="79.2156862745098%" stopColor="#17806E" />
+				<stop offset="79.2156862745098%" stopColor="#F0A993" />
 
-				<stop offset="87.45098039215686%" stopColor="#1EAA92" />
+				<stop offset="87.45098039215686%" stopColor="#EC8D71" />
 
-				<stop offset="95.29411764705883%" stopColor="#27DABB" />
+				<stop offset="95.29411764705883%" stopColor="#E86E4A" />
 
-				<stop offset="100%" stopColor="#2DFCD8" />
+				<stop offset="100%" stopColor="#E5572E" />
 			</linearGradient>
 
 			<g id="Layer1_0_FILL">
@@ -56,7 +56,7 @@ L 942.95 676.75 1201 604.95 1201 513 942.95 441.2 Z"
 
 			<g id="Layer5_0_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 937.65 390.05
@@ -68,7 +68,7 @@ Q 945.9 403.9 943.4 406.5 939.95 409.75 938.3 411.5 937.55 412.3 938.3 413.3 939
 
 			<g id="Layer5_1_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 946.2 410.4
@@ -80,7 +80,7 @@ Q 976 418 976.75 419.3 977.5 420.6 978.75 419.9 985.2 416.35 986.05 415.85 989.1
 
 			<g id="Layer5_2_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 954.75 418.4
@@ -90,7 +90,7 @@ Q 954.75 418.65 954.95 418.75 956.1 419.3 957.95 419.3 959 419.35 961.05 419.25 
 
 			<g id="Layer5_3_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 924.6 468.7
@@ -100,7 +100,7 @@ Q 924.2 468.55 923.95 468.85 922.2 471.4 921.25 472.6 919.5 474.75 917.3 474.85 
 
 			<g id="Layer5_4_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 896.25 444
@@ -125,7 +125,7 @@ L 896.25 444 Z"
 
 			<g id="Layer5_5_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 880.65 455.4
@@ -135,7 +135,7 @@ Q 880.75 455.35 880.7 455.25 880.05 452.65 878.85 451.1 877.4 449.25 875.45 447.
 
 			<g id="Layer5_6_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 871.5 454.5
@@ -149,7 +149,7 @@ Q 872.8 455.45 872.1 454.6 871.9 454.35 871.5 454.5 Z"
 
 			<g id="Layer5_7_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 963.4 509
@@ -163,7 +163,7 @@ Q 964.45 510.7 964.3 509.7 964.25 508.95 963.4 509 Z"
 
 			<g id="Layer5_8_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 952.5 512.6
@@ -180,7 +180,7 @@ Q 953.9 515.95 953.8 515.2 953.7 513.95 953.5 513.35 953.2 512.55 952.5 512.6 Z"
 
 			<g id="Layer5_9_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 940.5 513.35
@@ -194,7 +194,7 @@ Q 941.6 514.8 941.45 514.05 941.35 513.35 940.5 513.35 Z"
 
 			<g id="Layer5_10_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 932.35 515.85
@@ -210,7 +210,7 @@ L 932.45 516.1 932.35 515.85 Z"
 
 			<g id="Layer5_11_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 961.8 542.25
@@ -225,7 +225,7 @@ Q 961.95 541.15 961.8 542.25 Z"
 
 			<g id="Layer5_12_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 953.6 539.15
@@ -239,7 +239,7 @@ Q 955.1 542.6 954.95 541.45 954.85 540 954.15 539.35 953.95 539.1 953.6 539.15 Z
 
 			<g id="Layer5_13_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 946.25 539.95
@@ -254,7 +254,7 @@ L 946.2 539.95 946.25 539.95 Z"
 
 			<g id="Layer5_14_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 917.95 551.7
@@ -264,7 +264,7 @@ Q 919.1 552.4 923.5 555.25 930.95 560.1 934.4 562 940.35 565.35 946 566.8 953.6 
 
 			<g id="Layer5_15_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 928.45 557.75
@@ -278,7 +278,7 @@ Q 907.535546875 571.22109375 910.95 570.25 915.7 568.85 919 567.65 928.05 564.4 
 
 			<g id="Layer5_16_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 819.95 592.1
@@ -290,7 +290,7 @@ Q 1083.25 605.1 1086.35 605.35 1094.15 606 1098.35 609.5 1100.45 611.25 1101.7 6
 
 			<g id="Layer5_17_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1113 613.85
@@ -306,7 +306,7 @@ Q 1114.5 613.65 1113.5 613.6 1113.2 613.6 1113 613.85 Z"
 
 			<g id="Layer5_18_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1123.25 631.55
@@ -318,7 +318,7 @@ Q 1144 646.45 1150.25 651.95 1153.95 655.2 1156.7 657.85 1160.5 661.55 1161.7 66
 
 			<g id="Layer5_19_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1133.4 669.95
@@ -330,7 +330,7 @@ Q 1135.25 670.65 1134.9 670.25 1134.25 669.6 1133.4 669.95 Z"
 
 			<g id="Layer5_20_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1130.65 673.45
@@ -340,7 +340,7 @@ Q 1130.05 673.2 1129.6 673.65 1129.2 674.05 1128 675.85 1127.5 676.7 1126.55 677
 
 			<g id="Layer5_21_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 932.6 591.15
@@ -354,7 +354,7 @@ Q 937.1 592.05 936.05 591.85 934.25 591.55 933.05 591 932.75 590.85 932.6 591.15
 
 			<g id="Layer5_22_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1142.2 617.9
@@ -364,7 +364,7 @@ Q 1141.2 617.25 1140.2 617.35 1139.05 617.5 1138.85 618.7 1138.75 619.15 1139.15
 
 			<g id="Layer5_23_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 814 566.95
@@ -374,7 +374,7 @@ Q 821.55 566.6 831.1 567.25 848.4 568.3 863.55 571.4 873 573.4 880.95 576.05 885
 
 			<g id="Layer5_24_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 828 578.95
@@ -384,7 +384,7 @@ Q 836.45 577.1 845.15 576.25 848.85 575.9 853.9 575.8 856.8 575.75 862.65 575.7 
 
 			<g id="Layer5_25_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 796.6 616.35
@@ -394,7 +394,7 @@ Q 795.95 616.05 795.5 616.7 793.35 620.15 793.25 627 793.25 632.2 795.05 638 797
 
 			<g id="Layer5_26_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1163.45 684.55
@@ -414,7 +414,7 @@ Q 1175.45 694.9 1171.7 690.6 1168.55 686.95 1167.65 686.05 1164.65 683.05 1163.4
 
 			<g id="Layer5_27_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1102.7 685.75
@@ -428,7 +428,7 @@ Q 1102.65 687.15 1102.7 687 1102.85 686.35 1102.7 685.75 Z"
 
 			<g id="Layer5_28_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1112.25 706.45
@@ -443,7 +443,7 @@ Q 1132.65 705.35 1112.25 706.45 Z"
 
 			<g id="Layer5_29_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1115.55 713.05
@@ -457,7 +457,7 @@ Q 1130.75 709.55 1117.25 710 1107.3 710.05 1102.4 710.35 1101 710.45 1101 711.85
 
 			<g id="Layer5_30_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1198.7 498.3
@@ -469,7 +469,7 @@ Q 1196.4541015625 630.4 1196.4 630.45 1195.5 631.2 1196.1 632.2 1196.65 633.25 1
 
 			<g id="Layer5_31_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1198.2 497.85
@@ -485,7 +485,7 @@ Q 1205.95 498 1203.85 497.4 1201.55 496.75 1200.75 496.65 1198.6 496.45 1198.2 4
 
 			<g id="Layer5_32_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1222.9 507.75
@@ -495,7 +495,7 @@ Q 1222.25 507.75 1222.2 508.4 1221.65 516.65 1222 530 1222.15 537.2 1222.15 551.
 
 			<g id="Layer5_33_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1223.5 625.45
@@ -509,7 +509,7 @@ Q 1214.1 628.15 1218.45 627.05 1221.3517578125 626.2482421875 1223.5 625.45 Z"
 
 			<g id="Layer5_34_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1196.9 514.9
@@ -519,7 +519,7 @@ Q 1196.8 514.7 1196.55 514.75 1193.7 515.55 1190.15 520.5 1187.85 523.8 1185.8 5
 
 			<g id="Layer5_35_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1225.5 546.4
@@ -529,7 +529,7 @@ Q 1224.8 546.7 1225.05 547.4 1225.7 549.2 1227.7 553.8 1229.45 557.8 1230.2 560.
 
 			<g id="Layer5_36_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1169.8 656.75
@@ -543,7 +543,7 @@ Q 1171.45 654.95 1169.85 656.3 1169.6 656.5 1169.8 656.75 Z"
 
 			<g id="Layer5_37_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1170.65 637.15
@@ -557,7 +557,7 @@ Q 1172.4 639 1172.5 638.7 1172.65 637.85 1172.15 637.3 1171.5 636.65 1170.65 637
 
 			<g id="Layer5_38_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 1109.05 674.1
@@ -567,7 +567,7 @@ Q 1109.15 673.4 1108.45 673.2 1105 672.55 1104.4 672.35 1103.25 672 1102.55 671.
 
 			<g id="Layer5_39_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 913.35 457.15
@@ -579,7 +579,7 @@ Q 919.5234375 458.2921875 919.5 458.3 920.0232421875 457.598828125 919.8 456.75 
 
 			<g id="Layer5_40_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 915.15 457.75
@@ -599,7 +599,7 @@ L 915.1 457.9 915.15 457.75 Z"
 
 			<g id="Layer5_41_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 883.7 384.05
@@ -617,7 +617,7 @@ Q 896.1 384.5 891.95 382.3 889.45 380.95 887 381.05 883.95 381.2 883.7 384.05 Z"
 
 			<g id="Layer5_43_MEMBER_1_FILL">
 				<path
-					fill="#DDDBDB"
+					fill="#55483F"
 					stroke="none"
 					d="
 M 965.15 455.2
