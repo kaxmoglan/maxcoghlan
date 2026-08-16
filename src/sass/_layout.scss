@@ -1,0 +1,302 @@
+/*
+-----------------------------------------
+SHARED CONTAINER
+-----------------------------------------
+*/
+
+.wrap {
+	max-width: 78rem;
+	margin: 0 auto;
+	padding-inline: var(--content-pad);
+}
+
+/*
+-----------------------------------------
+HERO — dark ink-band, full-height on Home, shorter on interior pages
+-----------------------------------------
+*/
+
+.hero {
+	background-color: var(--color-ink-band);
+	color: var(--color-on-band);
+	padding-top: calc(var(--space-4xl) + var(--space-lg));
+	padding-bottom: var(--space-3xl);
+
+	&--home {
+		min-height: 100dvh;
+		display: flex;
+		align-items: center;
+		padding-bottom: var(--space-4xl);
+	}
+
+	&__inner {
+		max-width: 78rem;
+		margin: 0 auto;
+		padding-inline: var(--content-pad);
+		width: 100%;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 7fr 5fr;
+		gap: var(--space-2xl);
+		align-items: center;
+
+		@include md-screen {
+			grid-template-columns: 1fr;
+			gap: var(--space-xl);
+		}
+	}
+
+	&__title {
+		color: var(--color-on-band);
+		font-size: var(--text-display-s);
+	}
+
+	&__subtitle {
+		color: var(--color-on-band);
+		font-weight: 300;
+		margin-top: var(--space-md);
+	}
+
+	&__lede {
+		color: var(--color-on-band-2);
+		font-size: var(--text-md);
+		line-height: 1.6;
+		max-width: 52ch;
+		margin-top: var(--space-lg);
+	}
+
+	&__highlights {
+		list-style: none;
+		margin-top: var(--space-xl);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+
+		li {
+			position: relative;
+			padding-left: var(--space-lg);
+			color: var(--color-on-band-2);
+			font-size: var(--text-base);
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0.55em;
+				width: 6px;
+				height: 6px;
+				background-color: var(--color-accent);
+			}
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-lg);
+		margin-top: var(--space-xl);
+		flex-wrap: wrap;
+	}
+
+	&__illustration {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 500 / 356;
+		max-width: 30rem;
+		margin-inline: auto;
+
+		@include md-screen {
+			max-width: 20rem;
+		}
+	}
+}
+
+/*
+-----------------------------------------
+PITCH — bio + honest highlights, light section under the Home hero
+-----------------------------------------
+*/
+
+.pitch {
+	padding-block: var(--space-3xl);
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 7fr 5fr;
+		gap: var(--space-2xl);
+
+		@include md-screen {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__aside {
+		border-left: 1px solid var(--color-rule);
+		padding-left: var(--space-xl);
+
+		@include md-screen {
+			border-left: none;
+			padding-left: 0;
+			border-top: 1px solid var(--color-rule);
+			padding-top: var(--space-xl);
+		}
+	}
+
+	&__highlights {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+		margin-bottom: var(--space-xl);
+
+		li {
+			position: relative;
+			padding-left: var(--space-lg);
+			color: var(--color-ink-2);
+			font-size: var(--text-base);
+			line-height: 1.5;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0.5em;
+				width: 6px;
+				height: 6px;
+				background-color: var(--color-accent);
+			}
+
+			a {
+				color: var(--color-ink);
+				text-decoration: underline;
+				text-underline-offset: 2px;
+			}
+		}
+	}
+}
+
+/*
+-----------------------------------------
+PROOF BAND — full-bleed alternating diptych on a dark surface.
+Honest replacement for the source's fabricated client case-study bands:
+real facts, illustration as the "proof" side instead of a client logo.
+-----------------------------------------
+*/
+
+.proof-band {
+	background-color: var(--color-ink-band-2);
+	color: var(--color-on-band);
+	padding-block: var(--space-3xl);
+
+	&__grid {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2xl);
+
+		@include md-screen {
+			flex-direction: column;
+			text-align: left;
+		}
+	}
+
+	&--reverse &__grid {
+		flex-direction: row-reverse;
+
+		@include md-screen {
+			flex-direction: column;
+		}
+	}
+
+	&__text {
+		flex: 1 1 50%;
+		min-width: 0;
+	}
+
+	&__visual {
+		flex: 1 1 50%;
+		min-width: 0;
+		position: relative;
+		width: 100%;
+		aspect-ratio: 275 / 480;
+		max-width: 20rem;
+		margin-inline: auto;
+	}
+
+	h3 {
+		color: var(--color-on-band);
+		font-size: var(--text-xl);
+		font-weight: 300;
+		margin-bottom: var(--space-md);
+	}
+
+	p {
+		color: var(--color-on-band-2);
+		font-size: var(--text-base);
+		line-height: 1.6;
+		max-width: 46ch;
+	}
+}
+
+/*
+-----------------------------------------
+LONGFORM — About page narrative diptych
+-----------------------------------------
+*/
+
+.longform {
+	padding-block: var(--space-3xl);
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 5fr 7fr;
+		gap: var(--space-2xl);
+		align-items: start;
+
+		@include md-screen {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__illustration {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 329 / 191;
+		max-width: 22rem;
+
+		@include md-screen {
+			max-width: 16rem;
+			margin: 0 auto var(--space-lg);
+		}
+	}
+
+	&__title {
+		margin-bottom: var(--space-lg);
+	}
+}
+
+/*
+-----------------------------------------
+GENERIC PAGE HERO (interior pages: About / Skills / Articles / Contact)
+-----------------------------------------
+*/
+
+.page-hero {
+	background-color: var(--color-ink-band);
+	color: var(--color-on-band);
+	padding-top: calc(var(--space-4xl) + var(--space-lg));
+	padding-bottom: var(--space-2xl);
+
+	&__title {
+		color: var(--color-on-band);
+	}
+
+	&__lede {
+		color: var(--color-on-band-2);
+		font-size: var(--text-md);
+		line-height: 1.6;
+		max-width: 60ch;
+		margin-top: var(--space-md);
+	}
+}

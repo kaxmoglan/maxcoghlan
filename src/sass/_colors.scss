@@ -1,34 +1,72 @@
-$black: #000;
-$white: #fff;
-
-$main-font: #dddbdb;
-$background: #0c0c0c;
-$light-grey: #cecece;
-
-$mid-grey: #707070;
-$dark-grey: #1d1d1d;
-$highlight: #08fdd8;
-
-@mixin glass {
-	background-color: rgba(29, 29, 29, 0.8);
-
-	@supports (backdrop-filter: blur()) {
-		background-color: rgba(103, 103, 103, 0.2);
-		backdrop-filter: blur(4px);
-	}
-}
-
 /*
 -----------------------------------------
-BLOG: CODE COLOURS
+DESIGN TOKENS — studied-DNA (johnkavanagh.co.uk), see /design.md
 -----------------------------------------
 */
 
-// Shell
-$bg: #17181a;
-$comment: #8b8b8b;
+:root {
+	// SURFACE
+	--color-paper: oklch(98% 0.005 240);
+	--color-paper-2: oklch(96% 0.006 240);
+	--color-rule: oklch(88% 0.008 240);
 
-$pastelPurple: #b6a6ff;
-$pastelBlue: #84e6ff;
-$pastelYellow: #fac96f;
-$pastelGreen: #aefcb2;
+	// INK
+	--color-ink-2: oklch(46% 0.02 255);
+	--color-ink: oklch(26% 0.02 258);
+
+	// DARK BAND (hero / CTA)
+	--color-ink-band: oklch(22% 0.08 258);
+	--color-ink-band-2: oklch(30% 0.07 258);
+	--color-on-band: oklch(97% 0.006 240);
+	--color-on-band-2: oklch(80% 0.015 245);
+
+	// ACCENT
+	--color-accent: oklch(53% 0.15 250);
+	--color-accent-hover: oklch(45% 0.15 250);
+	--color-focus: oklch(62% 0.16 250);
+	--color-error: oklch(52% 0.18 25);
+
+	// FLUID CONTAINER PADDING
+	--content-pad: clamp(1.5rem, 6vw, 4rem);
+
+	// SPACING — 4pt scale
+	--space-3xs: 0.125rem;
+	--space-2xs: 0.25rem;
+	--space-xs: 0.5rem;
+	--space-sm: 0.75rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2.5rem;
+	--space-2xl: 4rem;
+	--space-3xl: 6rem;
+	--space-4xl: 9rem;
+
+	// TYPE SCALE — 1.25 ratio
+	--text-xs: 0.75rem;
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.25rem;
+	--text-lg: 1.5625rem;
+	--text-xl: 1.9531rem;
+	--text-2xl: 2.4414rem;
+	--text-3xl: 3.0518rem;
+	--text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+	--text-display-s: clamp(2.25rem, 3.5vw + 1rem, 3.75rem);
+
+	// MOTION
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+	--dur-micro: 120ms;
+	--dur-short: 220ms;
+	--dur-long: 420ms;
+
+	// Z-INDEX
+	--z-base: 1;
+	--z-raised: 10;
+	--z-dropdown: 100;
+	--z-sticky: 200;
+	--z-modal: 400;
+	--z-toast: 500;
+	--z-tooltip: 600;
+}

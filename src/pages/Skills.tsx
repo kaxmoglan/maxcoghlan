@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 // ICONS
 import {
 	AndroidIcon,
 	AwsIcon,
 	BootstrapIcon,
-	ChevronIcon,
 	DjangoIcon,
 	DockerIcon,
 	FigmaIcon,
@@ -38,226 +37,116 @@ import {
 } from '../util/icons';
 
 import { SKILLS_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
-import SkillsCloud from '../components/SkillsCloud';
 import type { IGLOBALSTATE } from '../util/interfaces';
 
-const FRONT_END_ICONS: Array<JSX.Element> = [
-	JavascriptIcon,
-	TypescriptIcon,
-	BootstrapIcon,
-	SassIcon,
-	ReduxIcon,
-	ReactIcon,
-	IosIcon,
-	MaterialIcon,
-	AndroidIcon,
-	TailwindIcon,
+const SERVICES: Array<{
+	heading: string;
+	text: string;
+	icons: Array<JSX.Element> | null;
+}> = [
+	{
+		heading: 'Leadership & Delivery',
+		text: 'Technical direction and architecture decisions, mentoring and 1:1s, sprint planning and delivery, code review and quality bar, hiring and interviewing, stakeholder communication, roadmap input.',
+		icons: null,
+	},
+	{
+		heading: 'Front End',
+		text: 'TypeScript, React, React Native, Redux, Sass, Bootstrap, Tailwind, Material UI.',
+		icons: [
+			JavascriptIcon,
+			TypescriptIcon,
+			ReactIcon,
+			ReduxIcon,
+			SassIcon,
+			BootstrapIcon,
+			TailwindIcon,
+			MaterialIcon,
+			IosIcon,
+			AndroidIcon,
+		],
+	},
+	{
+		heading: 'Back End',
+		text: 'Node.js, Postgres, Prisma, GraphQL, MongoDB, Docker, AWS, Terraform, Python, Django.',
+		icons: [
+			NodeIcon,
+			PostgresIcon,
+			PrismaIcon,
+			GraphQLIcon,
+			MongoIcon,
+			DockerIcon,
+			AwsIcon,
+			TerraformIcon,
+			PythonIcon,
+			DjangoIcon,
+			FirebaseIcon,
+			WordpressIcon,
+		],
+	},
+	{
+		heading: 'Tools & Workflow',
+		text: 'Git, GitHub, GitLab, Heroku, VS Code.',
+		icons: [GitIcon, GithubIcon, GitlabIcon, HerokuIcon, VsCodeIcon],
+	},
+	{
+		heading: 'Testing & Design',
+		text: 'Jest, Figma, Adobe XD, Photoshop, Illustrator.',
+		icons: [JestIcon, FigmaIcon, XdIcon, PhotoshopIcon, IllustratorIcon],
+	},
 ];
 
-const BACK_END_ICONS: Array<JSX.Element> = [
-	NodeIcon,
-	FirebaseIcon,
-	PythonIcon,
-	WordpressIcon,
-	AwsIcon,
-	GraphQLIcon,
-	DjangoIcon,
-	PostgresIcon,
-	MongoIcon,
-	TerraformIcon,
-	PrismaIcon,
-];
-
-const OTHER_ICONS: Array<JSX.Element> = [
-	XdIcon,
-	PhotoshopIcon,
-	IllustratorIcon,
-	HerokuIcon,
-	VsCodeIcon,
-	GitIcon,
-	GithubIcon,
-	JestIcon,
-	FigmaIcon,
-	GitlabIcon,
-	DockerIcon,
-];
-
-export const Skills: React.FC<IGLOBALSTATE> = (props) => {
-	const [showFrontEnd, setShowFrontEnd] = useState(true);
-	const [showBackEnd, setShowBackEnd] = useState(false);
-	const [showOther, setShowOther] = useState(false);
-
-	const { setTheme, setShowNav, setShowSocial } = props;
-
+export const Skills: React.FC<IGLOBALSTATE> = ({ setShowNav }) => {
 	useEffect(() => {
-		setTheme('dark');
 		setShowNav(true);
-		setShowSocial(true);
-	}, [setTheme, setShowNav, setShowSocial]);
-
-	const handleAccordion = (menu: 'FRONT_END' | 'BACK_END' | 'OTHER') => {
-		switch (menu) {
-			case 'FRONT_END':
-				if (showFrontEnd) {
-					return;
-				} else {
-					setShowFrontEnd(true);
-					setShowBackEnd(false);
-					setShowOther(false);
-					return;
-				}
-			case 'BACK_END':
-				if (showBackEnd) {
-					return;
-				} else {
-					setShowFrontEnd(false);
-					setShowBackEnd(true);
-					setShowOther(false);
-					return;
-				}
-			case 'OTHER':
-				if (showOther) {
-					return;
-				} else {
-					setShowFrontEnd(false);
-					setShowBackEnd(false);
-					setShowOther(true);
-					return;
-				}
-			default:
-				console.error('Unknown menu type.');
-				return;
-		}
-	};
+	}, [setShowNav]);
 
 	return (
 		<main className="content__main">
-			<div className="main-page-template">
-				<div className="main-page-template__container skills">
-					{/* LEFT COLUMN */}
-					<div className="main-page-template__left-column">
-						<div className="main-page-template__left-column-container">
-							<h1 className="skills__title">Skills</h1>
-							<div className="skills">
-								<div
-									className={`skills__category ${
-										showFrontEnd ? 'visible' : ''
-									}`}
-								>
-									<div
-										className="skills__heading"
-										onClick={() => handleAccordion('FRONT_END')}
-									>
-										<h2 className="skills__heading-text">Front End</h2>
-										{ChevronIcon}
-									</div>
+			<section className="page-hero">
+				<div className="wrap">
+					<h1 className="page-hero__title">How I usually help</h1>
+					<p className="page-hero__lede">
+						The split between leading and building, and the stack I'm
+						still hands-on in.
+					</p>
+				</div>
+			</section>
 
-									<div className="skills__content">
-										<p>
-											TypeScript, JavaScript, React, React Native, Astro, Redux,
-											Recoil, MobX, Tailwind, MaterialUI, Sass.
-										</p>
-									</div>
+			<section className="services">
+				<div className="wrap services__grid">
+					{SERVICES.map((service, i) => (
+						<div
+							className={`service-tile reveal ${
+								service.icons ? '' : 'service-tile--lead'
+							}`}
+							style={{ '--i': i } as React.CSSProperties}
+							key={service.heading}
+						>
+							<h2>{service.heading}</h2>
+							<p>{service.text}</p>
+							{service.icons && (
+								<div className="service-tile__icons">
+									{service.icons.map((icon, j) => (
+										<span className="service-tile__icon" key={j}>
+											{icon}
+										</span>
+									))}
 								</div>
-								<div
-									className={`skills__category ${showBackEnd ? 'visible' : ''}`}
-								>
-									<div
-										className="skills__heading"
-										onClick={() => handleAccordion('BACK_END')}
-									>
-										<h2 className="skills__heading-text">Back End</h2>
-										{ChevronIcon}
-									</div>
-
-									<div className="skills__content">
-										<p>
-											Node.js, Koa, Express, Postgres, Prisma, GraphQL, MongoDB,
-											Docker, AWS, Kubernetes, Jenkins, Python, Django, PHP,
-											Wordpress, Firebase.
-										</p>
-									</div>
-								</div>
-								<div
-									className={`skills__category ${showOther ? 'visible' : ''}`}
-								>
-									<div
-										className="skills__heading"
-										onClick={() => handleAccordion('OTHER')}
-									>
-										<h2 className="skills__heading-text">Other</h2>
-										{ChevronIcon}
-									</div>
-
-									<div className="skills__content">
-										<p>
-											Git, GitHub, Gitlab, BitBucket, Vim, Linux, MacOS, Windows
-											& WSL.
-										</p>
-										<p>
-											<strong>Testing: </strong>Jest, Cypress, Playwright,
-											Cucumber.
-										</p>
-										<p>
-											<strong>Adobe: </strong>XD, Photoshop, Illustrator,
-											Premiere Pro, After Effects.
-										</p>
-										<p>
-											<strong>Apple: </strong>Final Cut Pro, Logic Pro, Pages,
-											Numbers.
-										</p>
-										<p>
-											<strong>Microsoft: </strong>Word, Excel, VSCode (my
-											current editor of choice).
-										</p>
-										<p>
-											<strong>Other: </strong>Confluence, Jira, Branch.io,
-											Twilio, Figma, Sentry, Intercom, Notion, DaVinci Resolve,
-											Ableton Live, Pro Tools.
-										</p>
-									</div>
-								</div>
-							</div>
+							)}
 						</div>
-					</div>
+					))}
+				</div>
 
-					{/* RIGHT COLUMN */}
-					<div className="main-page-template__right-column">
-						<div className="skills__icons">
-							<div
-								className={`skills__icons-container ${
-									showFrontEnd ? 'visible' : ''
-								}`}
-							>
-								<SkillsCloud icons={FRONT_END_ICONS} />
+				<div className="services__illustration">
+					<div className="animation-frame__container" aria-hidden="true">
+						{SKILLS_PAGE_ANIMATION_FRAMES.map((frame, i) => (
+							<div className="animation-frame" key={i}>
+								{frame}
 							</div>
-							<div
-								className={`skills__icons-container ${
-									showBackEnd ? 'visible' : ''
-								}`}
-							>
-								<SkillsCloud icons={BACK_END_ICONS} />
-							</div>
-							<div
-								className={`skills__icons-container ${
-									showOther ? 'visible' : ''
-								}`}
-							>
-								<SkillsCloud icons={OTHER_ICONS} />
-							</div>
-						</div>
-						<div className="main-page-template__right-column-container">
-							<div className="animation-frame__container skills">
-								{SKILLS_PAGE_ANIMATION_FRAMES.map((frame, i) => (
-									<div className="animation-frame" key={i}>
-										{frame}
-									</div>
-								))}
-							</div>
-						</div>
+						))}
 					</div>
 				</div>
-			</div>
+			</section>
 		</main>
 	);
 };

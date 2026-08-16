@@ -1,82 +1,111 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-// ICONS
-import {
-	HomeIcon,
-	AboutIcon,
-	SkillsIcon,
-	ProjectsIcon,
-	ContactIcon,
-	BlogIcon,
-} from '../util/icons';
+type NavData = { to: string; text: string; exact: boolean };
 
-type NavData = { to: string; icon: JSX.Element; text: string; exact: boolean };
-
-// NAV DATA
+// NAV DATA — plain text links, no CTA button (source's own pattern: the
+// content carries the asks, not the nav).
 const DATA: Array<NavData> = [
-	{ to: '/', icon: HomeIcon, text: 'Home', exact: true },
-	{ to: '/about', icon: AboutIcon, text: 'About', exact: true },
-	{ to: '/skills', icon: SkillsIcon, text: 'Skills', exact: true },
-	{ to: '/projects', icon: ProjectsIcon, text: 'Projects', exact: false },
-	{ to: '/contact', icon: ContactIcon, text: 'Contact', exact: true },
-	{ to: '/blog/home', icon: BlogIcon, text: 'Blog', exact: true },
+	{ to: '/about', text: 'About', exact: true },
+	{ to: '/skills', text: 'Skills', exact: true },
+	{ to: '/articles', text: 'Articles', exact: false },
+	{ to: '/contact', text: 'Contact', exact: true },
 ];
 
-export const MobileNav: React.FC = () => {
-	return (
-		<nav className="mobile-menu">
-			<Link className="mobile-menu__logo" to="/">
-				<div className="mobile-menu__logo-million"></div>
-				<div className="archivo">M</div>
-			</Link>
+export const DesktopNav: React.FC = () => {
+	const [scrolled, setScrolled] = useState(false);
 
-			<div className="mobile-menu__container">
-				{DATA.map((item) => (
-					<NavLink
-						key={item.to}
-						className="mobile-menu__link"
-						activeClassName="active"
-						to={item.to}
-						exact={item.exact}
-						strict
-					>
-						<div className="mobile-menu__icon">{item.icon}</div>
-					</NavLink>
-				))}
-			</div>
-		</nav>
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 64);
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => window.removeEventListener('scroll', onScroll);
+	}, []);
+
+	return (
+		<header className={`nav-bar ${scrolled ? 'is-scrolled' : ''}`}>
+			<Link className="nav-bar__logo" to="/">
+				<span className="million">M</span>aximilian Coghlan
+			</Link>
+			<nav className="nav-bar__links" aria-label="Primary">
+				<ul>
+					{DATA.map((item) => (
+						<li key={item.to}>
+							<NavLink
+								className="nav-bar__link"
+								activeClassName="active"
+								to={item.to}
+								exact={item.exact}
+							>
+								{item.text}
+							</NavLink>
+						</li>
+					))}
+				</ul>
+			</nav>
+		</header>
 	);
 };
 
-export const DesktopNav: React.FC = () => {
-	return (
-		<nav className="navbar">
-			<div className="logo">
-				<div className="logo__million"></div>
-				<p className="archivo">M</p>
-				<p className="archivo aximilian">aximilian.</p>
-			</div>
-			{DATA.map((item) => (
-				<NavLink
-					key={item.to}
-					className="navbar__link"
-					activeClassName="active"
-					to={item.to}
-					exact={item.exact}
-				>
-					<div className="navbar__link-icon">{item.icon}</div>
+export const MobileNav: React.FC = () => {
+	const [open, setOpen] = useState(false);
 
-					<div className="navbar__link-text-container">
-						<svg className="navbar__link-text">
-							<text x="0" y="39">
-								{item.text}
-							</text>
-						</svg>
-					</div>
-				</NavLink>
-			))}
-		</nav>
+	useEffect(() => {
+		document.body.style.overflow = open ? 'hidden' : '';
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [open]);
+
+	useEffect(() => {
+		if (!open) return;
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') setOpen(false);
+		};
+		window.addEventListener('keydown', onKeyDown);
+		return () => window.removeEventListener('keydown', onKeyDown);
+	}, [open]);
+
+	return (
+		<>
+			<header className="mobile-bar">
+				<Link className="mobile-bar__logo" to="/" onClick={() => setOpen(false)}>
+					<span className="million">M</span>aximilian Coghlan
+				</Link>
+				<button
+					type="button"
+					className="mobile-bar__toggle"
+					aria-expanded={open}
+					aria-label={open ? 'Close menu' : 'Open menu'}
+					onClick={() => setOpen((v) => !v)}
+				>
+					<span />
+					<span />
+				</button>
+			</header>
+
+			<div
+				className={`mobile-sheet ${open ? 'is-open' : ''}`}
+				aria-hidden={!open}
+			>
+				<nav aria-label="Primary">
+					<ul>
+						{DATA.map((item) => (
+							<li key={item.to}>
+								<NavLink
+									className="mobile-sheet__link"
+									activeClassName="active"
+									to={item.to}
+									exact={item.exact}
+									onClick={() => setOpen(false)}
+								>
+									{item.text}
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				</nav>
+			</div>
+		</>
 	);
 };

@@ -1,77 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
-import { FormspreeProvider } from "@formspree/react";
+import { BrowserRouter as Router, Route, useLocation } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
+import { FormspreeProvider } from '@formspree/react';
 
 // COMPONENTS
-import { DesktopNav, MobileNav } from "./components/Nav";
-import Social from "./components/Social";
+import { DesktopNav, MobileNav } from './components/Nav';
+import { Footer } from './components/Footer';
 
 // UTIL
-import { ROUTES } from "./util/routes";
+import { ROUTES } from './util/routes';
+
+const ScrollToTop: React.FC = () => {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	return null;
+};
 
 function App() {
-  const [theme, setTheme] = useState("dark");
-  const [showNav, setShowNav] = useState(false);
-  const [showSocial, setShowSocial] = useState(false);
+	const [showNav, setShowNav] = useState(false);
 
-  return (
-    <Router>
-      <div className={`App ${theme}`}>
-        <div className={`background ${theme}`}></div>
-        <CSSTransition
-          in={showSocial}
-          timeout={1000}
-          classNames="social"
-          unmountOnExit
-        >
-          <Social />
-        </CSSTransition>
+	return (
+		<Router>
+			<ScrollToTop />
+			<div className="App">
+				<CSSTransition
+					in={showNav}
+					timeout={500}
+					classNames="navbar"
+					unmountOnExit
+				>
+					<div className="nav-group">
+						<DesktopNav />
+						<MobileNav />
+					</div>
+				</CSSTransition>
 
-        <CSSTransition
-          in={showNav}
-          timeout={1000}
-          classNames="navbar"
-          unmountOnExit
-        >
-          <DesktopNav />
-        </CSSTransition>
-
-        <CSSTransition
-          in={showNav}
-          timeout={1000}
-          classNames="mobile-menu"
-          unmountOnExit
-        >
-          <MobileNav />
-        </CSSTransition>
-
-        {ROUTES.map(({ path, Component }) => (
-          <Route exact key={path} path={path}>
-            {({ match }) => (
-              <CSSTransition
-                in={match != null}
-                timeout={500}
-                classNames="content"
-                unmountOnExit
-              >
-                <div className="content">
-                  <FormspreeProvider project="1610128407981457186">
-                    <Component
-                      setTheme={setTheme}
-                      setShowNav={setShowNav}
-                      setShowSocial={setShowSocial}
-                    />
-                  </FormspreeProvider>
-                </div>
-              </CSSTransition>
-            )}
-          </Route>
-        ))}
-      </div>
-    </Router>
-  );
+				{ROUTES.map(({ path, Component }) => (
+					<Route exact key={path} path={path}>
+						{({ match }) => (
+							<CSSTransition
+								in={match != null}
+								timeout={500}
+								classNames="content"
+								unmountOnExit
+							>
+								<div className="content">
+									<FormspreeProvider project="1610128407981457186">
+										<Component setShowNav={setShowNav} />
+									</FormspreeProvider>
+									<Footer />
+								</div>
+							</CSSTransition>
+						)}
+					</Route>
+				))}
+			</div>
+		</Router>
+	);
 }
 
 export default App;

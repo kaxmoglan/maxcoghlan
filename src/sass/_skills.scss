@@ -1,303 +1,93 @@
-.skills {
-	// LEFT COLUMN
-	&__title {
-		margin-top: 15vh;
-		margin-bottom: 3rem;
+/*
+-----------------------------------------
+SKILLS — flood-accent services grid, adapted from source's
+"How I Usually Help" pattern
+-----------------------------------------
+*/
 
-		@include lg-screen {
-			margin-top: 10vh;
-		}
-		@include md-screen {
-			margin-top: 10vh;
-		}
-		@include sm-screen {
-			margin-top: 5vh;
-		}
-		@include xs-screen {
-			margin-top: 0;
-		}
-		@include xxs-screen {
-			margin-top: 2rem;
-		}
-	}
+.services {
+	position: relative;
+	padding-block: var(--space-3xl);
+	overflow: hidden;
 
-	&__heading {
-		cursor: pointer;
-		display: inline-block;
-		margin-bottom: 1rem;
-
-		&-text {
-			font-size: 1.8rem;
-			letter-spacing: 0.05rem;
-			display: inline-block;
-
-			@include lg-screen {
-				font-size: 1.6rem;
-			}
-		}
-
-		.fa-chevron-right {
-			width: 0.8rem;
-			display: inline-block;
-			color: $highlight;
-			margin-left: 1rem;
-			position: relative;
-			top: 1px;
-			transition: all 300ms ease;
-		}
-
-		&:hover {
-			.fa-chevron-right {
-				animation: chevrondance 250ms;
-			}
-		}
-	}
-
-	&__content {
-		max-height: 0;
-		opacity: 0;
-		transform: translateY(-10px);
-		pointer-events: none;
-		transition: all 1s ease;
-
-		p {
-			font-size: 1.5rem;
-			margin-bottom: 1rem;
-			line-height: 2.5rem;
-			letter-spacing: 0.04rem;
-
-			@include lg-screen {
-				font-size: 1.4rem;
-			}
-		}
-	}
-
-	&__category {
-		margin-bottom: 2rem;
-
-		&.visible {
-			.skills__heading {
-				cursor: initial;
-			}
-			.skills__content {
-				max-height: 500px;
-				opacity: 1;
-				pointer-events: initial;
-				transform: translateY(0);
-			}
-
-			.fa-chevron-right {
-				transform: translateX(0) rotate(90deg);
-			}
-
-			.skills__heading:hover {
-				.fa-chevron-right {
-					animation: none;
-				}
-			}
-		}
-	}
-	// RIGHT COLUMN
-	&__icons {
+	&__grid {
 		position: relative;
+		z-index: var(--z-raised);
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--space-lg);
 
-		&-container {
-			position: absolute;
-			left: 0;
-			width: 450px;
-			height: 280px;
-			margin-top: 20%;
-			overflow: hidden;
-			opacity: 0;
-			transform: scale(0);
-			transition: all 500ms ease;
-			transition-delay: initial;
+		@include sm-screen {
+			grid-template-columns: 1fr;
+		}
+	}
 
-			@include lg-screen {
-				left: -5rem;
-			}
+	&__illustration {
+		position: absolute;
+		right: -3rem;
+		bottom: -2rem;
+		width: 16rem;
+		aspect-ratio: 275 / 480;
+		opacity: 0.9;
+		pointer-events: none;
+		z-index: var(--z-base);
 
-			@include md-screen {
-				left: -8rem;
-				top: 2rem;
-			}
+		@include md-screen {
+			width: 11rem;
+		}
 
-			@include sm-screen {
-				left: -9rem;
-				top: 0rem;
-			}
-
-			@include xs-screen {
-				position: fixed;
-				top: 25%;
-				left: -10%;
-				display: none;
-			}
-
-			&.visible {
-				opacity: 1;
-				transform: scale(1);
-				transition-delay: 500ms;
-
-				@include lg-screen {
-					transform: scale(0.8);
-				}
-
-				@include md-screen {
-					transform: scale(0.75);
-				}
-
-				@include sm-screen {
-					transform: scale(0.65);
-				}
-				@include xs-screen {
-					opacity: 0.4;
-					pointer-events: none;
-					z-index: -1;
-					transform: scale(0.7);
-				}
-			}
-
-			.icon {
-				width: 4rem;
-				margin: 1rem;
-				position: absolute;
-				margin-left: 3rem;
-				svg {
-					fill: $light-grey;
-					color: $light-grey;
-				}
-
-				#gulp-icon,
-				#mongo-icon {
-					transform: scale(0.7);
-				}
-
-				#php-icon {
-					transform: scale(1.5);
-				}
-
-				#node-icon {
-					transform: scale(1.8);
-				}
-
-				#mysql-icon {
-					transform: scale(1.5);
-				}
-
-				#jquery-icon {
-					transform: scale(1.3);
-				}
-
-				#sass-icon {
-					transform: scale(1.3);
-				}
-
-				#react-icon {
-					transform: scale(1.5);
-				}
-
-				#tailwind-icon {
-					transform: scale(1.5);
-				}
-
-				#android-icon {
-					transform: scale(1.2);
-				}
-
-				#ios-icon {
-					transform: scale(1.2);
-				}
-
-				#material-icon {
-					transform: scale(1.2);
-				}
-
-				#prisma-icon {
-					transform: scale(1.2);
-				}
-
-				#postgres-icon {
-					transform: scale(1.3);
-				}
-
-				#terraform-icon {
-					transform: scale(1.3);
-				}
-
-				#koa-icon {
-					transform: scale(1.3);
-				}
-
-				#aws-icon {
-					transform: scale(1.3);
-				}
-
-				#django-icon {
-					transform: scale(0.9);
-				}
-
-				#graphql-icon {
-					transform: scale(1.2);
-				}
-
-				&:nth-child(1) {
-					top: 0;
-					left: 2%;
-				}
-				&:nth-child(2) {
-					top: 8%;
-					left: 28%;
-				}
-				&:nth-child(3) {
-					top: 0;
-					left: 50%;
-				}
-				&:nth-child(4) {
-					top: 5%;
-					left: 75%;
-				}
-				&:nth-child(5) {
-					top: 30%;
-					left: 10%;
-				}
-				&:nth-child(6) {
-					top: 35%;
-					left: 42%;
-				}
-				&:nth-child(7) {
-					top: 30%;
-					left: 70%;
-				}
-				&:nth-child(8) {
-					top: 60%;
-					left: 0;
-				}
-				&:nth-child(9) {
-					top: 60%;
-					left: 58%;
-				}
-				&:nth-child(10) {
-					top: 65%;
-					left: 30%;
-				}
-				&:nth-child(11) {
-					top: 62%;
-					left: 78%;
-				}
-			}
+		@include sm-screen {
+			display: none;
 		}
 	}
 }
 
-@keyframes chevrondance {
-	0% {
-		transform: translateX(0);
+.service-tile {
+	background-color: var(--color-accent);
+	color: var(--color-on-band);
+	padding: var(--space-xl);
+
+	h2 {
+		color: var(--color-on-band);
+		font-size: var(--text-lg);
+		font-weight: 700;
+		text-transform: none;
+		margin-bottom: var(--space-sm);
 	}
-	50% {
-		transform: translateX(2px);
+
+	p {
+		color: var(--color-on-band-2);
+		font-size: var(--text-sm);
+		line-height: 1.55;
 	}
-	100% {
-		transform: translateX(0);
+
+	&--lead {
+		grid-column: 1 / -1;
+		background-color: var(--color-ink-band);
+
+		p {
+			max-width: 60ch;
+		}
+	}
+
+	&__icons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-sm);
+		margin-top: var(--space-lg);
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+
+		svg {
+			width: 100%;
+			height: 100%;
+			color: var(--color-on-band);
+		}
 	}
 }

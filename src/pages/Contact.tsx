@@ -1,123 +1,102 @@
 import React, { useEffect } from 'react';
-
-import Social from '../components/Social';
 import { useForm } from '@formspree/react';
 import Loader from 'react-loader-spinner';
+import Social from '../components/Social';
 import { CONTACT_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
 import type { IGLOBALSTATE } from '../util/interfaces';
 
-export const Contact: React.FC<IGLOBALSTATE> = (props) => {
-	const { setTheme, setShowNav, setShowSocial } = props;
-
+export const Contact: React.FC<IGLOBALSTATE> = ({ setShowNav }) => {
 	const [state, handleSubmit] = useForm('contactForm');
 
 	useEffect(() => {
-		setTheme('dark');
 		setShowNav(true);
-		setShowSocial(false);
-	}, [setTheme, setShowNav, setShowSocial]);
+	}, [setShowNav]);
 
 	return (
 		<main className="content__main">
-			<div className="contact-page">
-				<div className="contact-page__container">
-					{/* LEFT COLUMN */}
-					<div className="contact-page__content">
-						<div className="contact-page__content-container">
-							<h1
-								className="contact-page__title"
-								style={{ textAlign: 'center' }}
-							>
-								Contact <span className="million">M</span>e
-							</h1>
-							<div className="copy">
-								<p style={{ textAlign: 'center' }}>
-									Get in touch for freelance work, tutoring, career advice, mock
-									tech tests, mock interviews and portfolio & CV reviews.
-								</p>
+			<section className="page-hero">
+				<div className="wrap">
+					<h1 className="page-hero__title">Get in touch</h1>
+					<p className="page-hero__lede">
+						I'm currently open to conversations about Engineering
+						Manager and Head of Engineering roles. Also happy to talk
+						freelance work, mentoring, mock interviews, or CV and
+						portfolio reviews.
+					</p>
+				</div>
+			</section>
+
+			<section className="contact-page">
+				<div className="wrap contact-page__grid">
+					<div>
+						<div className="contact-page__illustration">
+							<div className="animation-frame__container" aria-hidden="true">
+								{CONTACT_PAGE_ANIMATION_FRAMES.map((frame, i) => (
+									<div className="animation-frame" key={i}>
+										{frame}
+									</div>
+								))}
 							</div>
-							<Social />
 						</div>
-						<div className="animation-frame__container contact">
-							{CONTACT_PAGE_ANIMATION_FRAMES.map((frame, i) => (
-								<div className="animation-frame" key={i}>
-									{frame}
-								</div>
-							))}
+						<div className="contact-page__social">
+							<Social />
 						</div>
 					</div>
 
-					{/* RIGHT COLUMN */}
-					<div className="contact-page__form">
-						<div className="contact-page__form-container">
-							<form onSubmit={handleSubmit} className="contact-form">
-								<fieldset className="details">
-									<div className="text-input">
-										<input
-											type="text"
-											name="name"
-											id="name"
-											required
-											placeholder="Name*"
-										/>
-									</div>
-									<div className="text-input">
-										<input
-											type="email"
-											name="email"
-											id="email"
-											placeholder="Email*"
-											required
-										/>
-									</div>
-								</fieldset>
-								<fieldset className="message-area">
-									<textarea
-										placeholder="Message*"
-										name="message"
-										id="message"
-										cols={30}
-										rows={5}
-										required
-									></textarea>
-								</fieldset>
-								<button
-									type="submit"
-									disabled={state.submitting || state.succeeded}
-									className="submit-btn"
-								>
-									{state.submitting ? (
-										<>Sending...</>
-									) : state.succeeded ? (
-										<>Sent</>
-									) : (
-										<>Send</>
-									)}
-								</button>
-							</form>
-							<div className="contact-page__user-messages">
-								{state.submitting && (
-									<Loader
-										type="TailSpin"
-										color="#08fdd8"
-										height={50}
-										width={50}
-										className="spinner"
-									/>
-								)}{' '}
-								{state.errors.length > 0 && (
-									<p className="error">
-										Something went wrong. Off I go debugging again...
-									</p>
-								)}{' '}
-								{state.succeeded && (
-									<p className="success">Thanks for getting in touch!</p>
-								)}
+					<form onSubmit={handleSubmit} className="contact-form">
+						<div className="contact-form__row">
+							<div className="contact-form__field">
+								<label htmlFor="name">Name</label>
+								<input type="text" name="name" id="name" required />
+							</div>
+							<div className="contact-form__field">
+								<label htmlFor="email">Email</label>
+								<input type="email" name="email" id="email" required />
 							</div>
 						</div>
-					</div>
+
+						<div className="contact-form__field">
+							<label htmlFor="message">Message</label>
+							<textarea name="message" id="message" rows={5} required />
+						</div>
+
+						<button
+							type="submit"
+							disabled={state.submitting || state.succeeded}
+							className="btn btn--filled contact-form__submit"
+						>
+							{state.submitting ? (
+								<>Sending…</>
+							) : state.succeeded ? (
+								<>Sent</>
+							) : (
+								<>Send message</>
+							)}
+						</button>
+
+						<div className="contact-form__messages">
+							{state.submitting && (
+								<Loader
+									type="TailSpin"
+									color="#2A6DC8"
+									height={28}
+									width={28}
+									className="spinner"
+								/>
+							)}
+							{state.errors.length > 0 && (
+								<p className="error">
+									Something went wrong. Try again, or reach me directly
+									via LinkedIn.
+								</p>
+							)}
+							{state.succeeded && (
+								<p className="success">Thanks for getting in touch!</p>
+							)}
+						</div>
+					</form>
 				</div>
-			</div>
+			</section>
 		</main>
 	);
 };

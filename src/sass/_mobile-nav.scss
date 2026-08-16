@@ -1,109 +1,115 @@
-.mobile-menu {
+/*
+-----------------------------------------
+MOBILE NAV — top bar + off-canvas sheet
+-----------------------------------------
+*/
+
+.mobile-bar {
+	display: none;
+
 	@include sm-screen {
 		display: flex;
 	}
 
-	display: none;
 	position: fixed;
-	top: 1rem;
-	width: 90vw;
-	height: 6rem;
+	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 999;
-	margin: auto;
-	overflow: hidden;
-	border: 2px solid $mid-grey;
-	border-radius: 1rem;
-	@include glass;
-	transition: all 500ms ease;
+	z-index: calc(var(--z-modal) + 1);
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-lg);
+	background-color: var(--color-paper);
+	border-bottom: 1px solid var(--color-rule);
 
 	&__logo {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-right: 2px solid $mid-grey;
-		border-radius: 2px;
-		font-size: 3.5rem;
-		font-weight: bold;
-		text-decoration: none;
-		color: $main-font;
-
-		width: 6rem;
-		height: 100%;
-
-		&-million {
-			height: 0.3rem;
-			width: 2.4rem;
-			background-color: $main-font;
-			position: absolute;
-			top: 1rem;
-		}
-
-		@include xs-screen {
-			display: none;
-		}
+		font-size: var(--text-base);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		color: var(--color-ink);
 	}
 
-	&__container {
-		width: 100%;
-		height: 100%;
+	&__toggle {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		justify-content: center;
-		margin-left: -6rem;
-		padding-left: 4rem;
+		gap: 5px;
+		width: 44px;
+		height: 44px;
+		background: none;
+		border: none;
+		cursor: pointer;
 
-		@include xs-screen {
-			margin-left: 0;
-			padding-left: 0;
-			transform: scale(0.8);
+		span {
+			display: block;
+			width: 22px;
+			height: 2px;
+			background-color: var(--color-ink);
+			margin: 0 auto;
+			transition: transform var(--dur-short) var(--ease-out),
+				opacity var(--dur-short) var(--ease-out);
 		}
 
-		@include xxs-screen {
-			transform: scale(0.6);
+		&:focus-visible {
+			outline: 2px solid var(--color-focus);
+			outline-offset: 2px;
 		}
-	}
 
-	&__icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
-		svg {
-			transition: all 500ms ease;
-			height: 2.2rem;
-		}
-	}
-
-	&__link {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		&.active,
-		&:focus {
-			outline: 0;
-			.mobile-menu__icon svg {
-				color: $highlight;
+		&[aria-expanded='true'] {
+			span:first-child {
+				transform: translateY(3.5px) rotate(45deg);
+			}
+			span:last-child {
+				transform: translateY(-3.5px) rotate(-45deg);
 			}
 		}
 	}
+}
 
-	&-enter {
-		transform: translateY(-100px);
+.mobile-sheet {
+	display: none;
+
+	@include sm-screen {
+		display: block;
 	}
 
-	&-enter-active {
-		transform: translateY(0);
+	position: fixed;
+	inset: 0;
+	z-index: var(--z-modal);
+	padding: calc(var(--space-4xl) + var(--space-lg)) var(--space-lg)
+		var(--space-lg);
+	background-color: var(--color-paper);
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-8px);
+	transition: opacity var(--dur-short) var(--ease-out),
+		transform var(--dur-short) var(--ease-out),
+		visibility 0s linear var(--dur-short);
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
 	}
 
-	&-exit {
-		transform: translateY(0);
+	&__link {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--color-ink);
+
+		&.active {
+			color: var(--color-accent);
+		}
 	}
 
-	&-exit-active {
-		transform: translateY(-100px);
+	&.is-open {
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+		transition: opacity var(--dur-short) var(--ease-out),
+			transform var(--dur-short) var(--ease-out);
 	}
 }

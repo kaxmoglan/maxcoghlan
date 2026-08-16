@@ -1,48 +1,31 @@
+/*
+-----------------------------------------
+SOCIAL — icon links. Layout (grid/row) set by the parent context
+(.site-footer__social, .contact-page__social).
+-----------------------------------------
+*/
+
 .social {
-  position: fixed;
-  right: 1rem;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 500ms ease;
-  padding-top: 1rem;
-  z-index: 999;
+	.link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 
-  .link {
-    margin: 0 0.5rem;
-    svg {
-      height: 2rem;
-      width: 2rem;
-      color: $mid-grey;
-      transition: all 250ms ease;
-    }
+		svg {
+			height: 1.8rem;
+			width: 1.8rem;
+			color: var(--color-ink-2);
+			transition: color var(--dur-short) var(--ease-out);
+		}
 
-    &:focus {
-      outline: 0;
-    }
+		&:hover svg,
+		&:focus-visible svg {
+			color: var(--color-accent);
+		}
 
-    &:hover,
-    &:focus {
-      svg {
-        color: $highlight;
-      }
-    }
-  }
-
-  &-enter {
-    transform: translateX(200px);
-  }
-
-  &-enter-active {
-    transform: translateX(0);
-  }
-
-  &-exit {
-    transform: translateX(0);
-  }
-
-  &-exit-active {
-    transform: translateX(200px);
-  }
+		&:focus-visible {
+			outline: 2px solid var(--color-focus);
+			outline-offset: 2px;
+		}
+	}
 }

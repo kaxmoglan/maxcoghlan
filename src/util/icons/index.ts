@@ -1,15 +1,4 @@
 import {
-	HomeIcon,
-	AboutIcon,
-	BlogIcon,
-	ContactIcon,
-	ProjectsIcon,
-	SkillsIcon,
-} from './navigationIcons';
-
-import { ArrowLeftIcon, ChevronIcon } from './miscIcons';
-
-import {
 	DevIcon,
 	GithubIcon,
 	InstagramIcon,
@@ -71,15 +60,10 @@ import {
 } from './softwareIcons';
 
 export {
-	AboutIcon,
 	AndroidIcon,
-	ArrowLeftIcon,
 	AstroIcon,
 	AwsIcon,
-	BlogIcon,
 	BootstrapIcon,
-	ChevronIcon,
-	ContactIcon,
 	CssIcon,
 	DevIcon,
 	DjangoIcon,
@@ -92,7 +76,6 @@ export {
 	GraphQLIcon,
 	GulpIcon,
 	HerokuIcon,
-	HomeIcon,
 	HtmlIcon,
 	IllustratorIcon,
 	InstagramIcon,
@@ -115,12 +98,10 @@ export {
 	PhpIcon,
 	PostgresIcon,
 	PrismaIcon,
-	ProjectsIcon,
 	PythonIcon,
 	ReactIcon,
 	ReduxIcon,
 	SassIcon,
-	SkillsIcon,
 	SublimeTextIcon,
 	TailwindIcon,
 	TerraformIcon,

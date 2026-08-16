@@ -1,184 +1,92 @@
-.navbar {
-	z-index: 999;
-	width: 6.5rem;
-	height: 75rem;
+/*
+-----------------------------------------
+DESKTOP NAV — N1b-minus-CTA, frost-on-scroll
+-----------------------------------------
+*/
 
+.nav-bar {
 	position: fixed;
-	top: calc((100vh - 75rem) / 2);
-	left: 2rem;
-	border-radius: 1rem;
-	border: 2px solid $mid-grey;
-
-	transition: all 500ms ease;
-	overflow: hidden;
-	@include glass;
-
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: var(--z-sticky);
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	@include height-800 {
-		height: 65rem;
-		top: calc((100vh - 65rem) / 2);
-	}
-	@include height-700 {
-		height: 55rem;
-		top: calc((100vh - 55rem) / 2);
-		padding-top: 3rem;
-	}
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-lg) clamp(1.5rem, 4vw, 4rem);
+	background-color: transparent;
+	border-bottom: 1px solid transparent;
+	transition: background-color var(--dur-short) var(--ease-out),
+		border-color var(--dur-short) var(--ease-out);
 
 	@include sm-screen {
 		display: none;
 	}
 
-	.logo {
-		position: absolute;
-		top: 0;
-		left: 0;
+	&__logo {
+		font-size: var(--text-md);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+		color: var(--color-on-band);
+		white-space: nowrap;
+		transition: color var(--dur-short) var(--ease-out);
 
-		color: $main-font;
-
-		border-bottom: 2px solid $mid-grey;
-		width: 100%;
-		padding: 1.25rem 0 1rem 1.6rem;
-
-		&__million {
-			position: absolute;
-			width: 2.5rem;
-			left: 1.88rem;
-			top: 1.25rem;
-			height: 0.4rem;
-			background-color: $main-font;
+		&:focus-visible {
+			outline: 2px solid var(--color-focus);
+			outline-offset: 4px;
 		}
+	}
 
-		p {
-			display: inline;
-			font-size: 3.5rem;
-			font-weight: bold;
-		}
-
-		.aximilian {
-			transition: all 250ms ease;
-			position: absolute;
-			display: inline-block;
-			width: 0;
-			opacity: 0;
-			white-space: nowrap;
-			overflow: hidden;
+	&__links {
+		ul {
+			display: flex;
+			align-items: center;
+			gap: clamp(1.25rem, 2.5vw, 2.5rem);
+			list-style: none;
 		}
 	}
 
 	&__link {
-		display: flex;
-		align-items: center;
-		height: 6.5rem;
-		transition: all 350ms ease;
-		text-decoration: none;
+		font-size: var(--text-sm);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--color-on-band-2);
+		white-space: nowrap;
+		padding-bottom: var(--space-3xs);
+		border-bottom: 1.5px solid transparent;
+		transition: color var(--dur-short) var(--ease-out),
+			border-color var(--dur-short) var(--ease-out);
 
-		&:focus {
-			outline: 0;
-			.navbar__link-icon svg {
-				color: $highlight;
-			}
-		}
-
-		&-icon {
-			position: relative;
-			margin: 0 3rem 0 2rem;
-
-			svg {
-				transition: all 350ms ease;
-				color: $main-font;
-				width: 2.2rem;
-			}
-		}
-
-		&-text {
-			&-container {
-				transition: all 250ms ease;
-				opacity: 0;
-				transform: translateX(-2rem);
-			}
-
-			font-size: 1.8rem;
-			height: 6.5rem;
-			stroke: $highlight;
-			fill: $main-font;
-			stroke-width: 1;
-			stroke-dasharray: 250;
-			stroke-dashoffset: 250;
-			transition: all 2000ms ease-out;
-		}
-
-		&:hover {
-			background: rgba(0, 0, 0, 0.5);
-
-			.navbar__link {
-				&-icon {
-					svg {
-						color: $highlight;
-					}
-				}
-				&-text {
-					transition: all 750ms ease;
-					stroke-dashoffset: 500;
-					fill: transparent;
-				}
-			}
-		}
-
+		&:hover,
 		&.active {
-			.navbar__link-icon {
-				svg {
-					color: $highlight;
-				}
+			color: var(--color-on-band);
+			border-color: var(--color-accent);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--color-focus);
+			outline-offset: 4px;
+		}
+	}
+
+	&.is-scrolled {
+		background-color: var(--color-paper);
+		border-bottom-color: var(--color-rule);
+
+		.nav-bar__logo {
+			color: var(--color-ink);
+		}
+
+		.nav-bar__link {
+			color: var(--color-ink-2);
+
+			&:hover,
+			&.active {
+				color: var(--color-ink);
 			}
 		}
 	}
-
-	&:hover {
-		width: 22.5rem;
-
-		.aximilian {
-			opacity: 1;
-			animation: typing 750ms steps(12) forwards;
-			animation-delay: 500ms;
-		}
-
-		.navbar__link-text-container {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
-	&-enter {
-		transform: translateX(-100px);
-	}
-
-	&-enter-active {
-		transform: translateX(0);
-	}
-
-	&-exit {
-		transform: translateX(0);
-	}
-
-	&-exit-active {
-		transform: translateX(-250px);
-	}
 }
 
-// ANIMATIONS
-@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-}
-
-@keyframes blink {
-	50% {
-		border-color: transparent;
-	}
-}

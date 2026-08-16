@@ -1,23 +1,30 @@
-// FONTS
-// Main font: Roboto
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+/* Hallmark · macrostructure: Split Studio · H2 hero knobs: ratio=7/5, right=illustration, divider=negative-space
+ * Ft5-over-Ft3 footer knobs: sentence=38ch, cols=2
+ * theme: studied-DNA (source: url https://johnkavanagh.co.uk/, hybrid WebFetch+live-browser)
+ * paper oklch(98% 0.005 240) · ink oklch(26% 0.02 258) · ink-band oklch(22% 0.08 258) · accent oklch(53% 0.15 250)
+ * display: neutral grotesque, uppercase h1 (Geist candidate) · body: neutral grotesque (Geist) · outlier: mono eyebrows (Geist Mono)
+ * studied: yes · DNA-source: url (public reference for own brand)
+ * pre-emit critique: P5 H4 E4 S5 R4 V5
+ * nav: N1b-minus-CTA (frost-on-scroll) · footer: Ft5-over-Ft3 · slop: pass (42-45)
+ * contrast: pass (40-41) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30)
+ * mobile: pass (34, 49, 50-57)
+ * accent footprint: exceeds default 5% on Skills tiles + hero/CTA bands by deliberate DNA fidelity — see design.md § Theme
+ */
 
-// Header font: Archivo
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,300..800;1,300..800&family=Geist+Mono:ital,wght@0,400..600;1,400..600&display=swap');
 
 @import 'colors';
 @import 'responsive';
 @import 'page-transitions';
 @import 'nav';
 @import 'mobile-nav';
+@import 'footer';
 @import 'social';
-@import 'projects';
-@import 'project-detail';
-@import 'project-custom';
-@import 'contact';
-@import 'main-page-template';
+@import 'layout';
 @import 'skills';
 @import 'blog';
+@import 'contact';
 
 /*
 -----------------------------------------
@@ -31,11 +38,14 @@ RESETS
 }
 
 html {
-	font-size: 10px;
-	font-family: 'Roboto', sans-serif;
-	overflow-x: hidden;
+	font-family: 'Geist', system-ui, sans-serif;
+	overflow-x: clip;
 	overflow-y: scroll;
-	background-color: $background;
+	background-color: var(--color-paper);
+}
+
+body {
+	overflow-x: clip;
 }
 
 html,
@@ -45,114 +55,88 @@ body,
 	height: 100%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 150ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 150ms !important;
+	}
+}
+
 /*
 -----------------------------------------
-FONTS
+TYPE
 -----------------------------------------
 */
-
-.archivo,
-.page-header {
-	font-family: 'Archivo', 'Roboto', sans-serif;
-}
 
 a {
 	color: inherit;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Geist', system-ui, sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.01em;
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: var(--text-display);
+	line-height: 1.05;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	overflow-wrap: anywhere;
+	min-width: 0;
+}
+
+h2 {
+	font-size: var(--text-2xl);
+	font-weight: 300;
+	line-height: 1.15;
+
+	@include sm-screen {
+		font-size: var(--text-xl);
+	}
+}
+
+h3 {
+	font-size: var(--text-lg);
+	font-weight: 700;
+}
+
+.eyebrow {
+	font-family: 'Geist Mono', ui-monospace, monospace;
+	font-size: var(--text-xs);
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-ink-2);
+	margin-bottom: var(--space-sm);
 	display: block;
 }
 
-/*
------------------------------------------
-GLOBAL STYLING
------------------------------------------
-*/
+.copy {
+	max-width: 65ch;
 
-.App {
-	transition: all 1000ms ease;
-	display: flex;
-	justify-content: center;
-
-	&.dark {
-		color: $main-font;
-
-		p::selection,
-		h1::selection,
-		a::selection,
-		h2::selection,
-		h3::selection,
-		strong::selection,
-		span::selection {
-			background: $highlight;
-			color: $black;
-		}
-	}
-
-	&.light {
-		color: $black;
-	}
-
-	@include sm-screen {
-		.social {
-			display: none;
-		}
-
-		.contact-page,
-		.blog-page-template {
-			.social {
-				display: flex;
-			}
-		}
-	}
-}
-
-.background {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	transition: all 1000ms ease;
-	pointer-events: none;
-	z-index: -1;
-
-	&.dark {
-		background-color: $background;
-	}
-	&.light {
-		background-color: $white;
-	}
-}
-
-.content {
-	width: 100%;
-	height: 100%;
-
-	&__main {
-		padding-left: 14.5rem;
-		padding-right: 6rem;
-		max-width: calc(1200px + 20.5rem);
-		margin: 0 auto;
-
-		@include md-screen {
-			padding-right: 10rem;
-		}
+	p {
+		font-size: var(--text-md);
+		line-height: 1.6;
+		margin-bottom: var(--space-lg);
+		color: var(--color-ink-2);
 
 		@include sm-screen {
-			padding: 5rem 5rem;
-		}
-
-		@include xs-screen {
-			padding: 5rem 6%;
+			font-size: var(--text-base);
 		}
 	}
 }
 
 .million {
 	position: relative;
+
 	&::before {
 		content: '';
 		display: block;
@@ -161,7 +145,7 @@ GLOBAL STYLING
 		top: 0.1rem;
 		width: 86%;
 		height: 0.45rem;
-		background-color: $main-font;
+		background-color: var(--color-accent);
 
 		@include lg-screen {
 			height: 0.4rem;
@@ -173,112 +157,210 @@ GLOBAL STYLING
 	}
 }
 
-.projects-page__title {
-	.million {
-		&::before {
-			@include xs-screen {
-				width: 85%;
-			}
-		}
+/*
+-----------------------------------------
+GLOBAL STYLING
+-----------------------------------------
+*/
+
+.App {
+	display: flex;
+	justify-content: center;
+	color: var(--color-ink);
+	background-color: var(--color-paper);
+}
+
+.content {
+	width: 100%;
+	height: 100%;
+
+	&__main {
+		padding-left: 0;
+		padding-right: 0;
+		max-width: 100%;
+		margin: 0 auto;
 	}
 }
 
-// FIX FOR XXS SCREENS ON HOME PAGE
-.home-page-title {
-	.million {
-		&::before {
-			@include xxs-screen {
-				left: 0.2rem;
-				height: 0.3rem;
-			}
-		}
-	}
-}
+/*
+-----------------------------------------
+BUTTONS — filled (primary) / outlined (secondary)
+-----------------------------------------
+*/
 
-.project__link {
-	display: inline-block;
-	font-size: 1.6rem;
-	text-decoration: none;
-	position: relative;
-	margin-bottom: 1.5rem;
-	color: $main-font;
-	transition: all 250ms ease;
-
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		height: 0.2rem;
-		width: 2rem;
-		background-color: $highlight;
-		bottom: -0.5rem;
-
-		transition: all 250ms ease;
-	}
-
-	&:focus {
-		outline: 0;
-	}
-
-	&:hover {
-		&::after {
-			width: 100%;
-		}
-	}
-
-	&.mirror {
-		&::after {
-			right: 0;
-		}
-	}
-}
-
-.contact-button {
-	display: inline-block;
-	font-size: 1.6rem;
-	padding: 1rem 2rem;
-	border: 2px solid $highlight;
-	border-radius: 1rem;
-	color: $highlight;
-	text-decoration: none;
-
-	transition: all 300ms ease;
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+	font-size: var(--text-base);
+	font-weight: 600;
+	padding: var(--space-md) var(--space-lg);
+	white-space: nowrap;
 	cursor: pointer;
+	border: 1.5px solid transparent;
+	transition: transform var(--dur-short) var(--ease-out),
+		background-color var(--dur-short) var(--ease-out),
+		border-color var(--dur-short) var(--ease-out);
 
-	.million {
-		&::before {
-			background-color: $highlight;
-			left: 1px;
-			top: 0;
-			height: 1px;
-			transition: all 300ms ease;
-		}
+	&:focus-visible {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
 	}
 
-	&:hover {
-		border: 2px solid darken($highlight, 15%);
-		color: lighten($highlight, 10%);
+	&:active {
+		transform: translateY(1px);
+	}
+}
 
-		.million {
-			&::before {
-				background-color: lighten($highlight, 10%);
-				top: -2px;
-			}
+.btn--filled {
+	background-color: var(--color-ink);
+	color: var(--color-paper);
+
+	&:hover {
+		background-color: var(--color-ink-2);
+		transform: translateY(-1px);
+	}
+}
+
+.btn--filled-on-band {
+	background-color: var(--color-paper);
+	color: var(--color-ink-band);
+
+	&:hover {
+		background-color: var(--color-on-band-2);
+		transform: translateY(-1px);
+	}
+}
+
+.btn--outline {
+	background-color: transparent;
+	border-color: var(--color-ink);
+	color: var(--color-ink);
+
+	&:hover {
+		background-color: var(--color-paper-2);
+		transform: translateY(-1px);
+	}
+}
+
+.btn--outline-on-band {
+	background-color: transparent;
+	border-color: var(--color-on-band);
+	color: var(--color-on-band);
+
+	&:hover {
+		background-color: var(--color-ink-band-2);
+		transform: translateY(-1px);
+	}
+}
+
+/*
+-----------------------------------------
+REVEAL — one quiet page-load stagger
+-----------------------------------------
+*/
+
+.reveal {
+	opacity: 0;
+	transform: translateY(8px);
+	animation: reveal var(--dur-long) var(--ease-out) forwards;
+	animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+@keyframes reveal {
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		animation: reveal-reduced 150ms linear forwards;
+	}
+	@keyframes reveal-reduced {
+		to {
+			opacity: 1;
+			transform: none;
 		}
 	}
 }
 
-.copy {
-	margin: 4rem 0;
+/*
+-----------------------------------------
+ILLUSTRATION FRAMES — existing crossfade sprite technique, retimed
+Per-page sizing/positioning lives in _layout.scss / _blog.scss.
+-----------------------------------------
+*/
 
-	p {
-		font-size: 1.6rem;
-		letter-spacing: 0.03rem;
-		line-height: 2.2rem;
-		margin-bottom: 2rem;
+.animation-frame {
+	width: 100%;
+	position: absolute;
 
-		@include lg-screen {
-			font-size: 1.4rem;
-		}
+	svg {
+		width: 100%;
+		height: auto;
+	}
+
+	&__container {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+}
+
+#frame-1,
+#frame-2,
+#frame-3,
+#frame-4,
+#frame-5 {
+	opacity: 0;
+	animation: frame-cycle 5s var(--ease-in-out) infinite;
+}
+
+#frame-1 {
+	animation-delay: -4s;
+}
+#frame-2 {
+	animation-delay: -3s;
+}
+#frame-3 {
+	animation-delay: -2s;
+}
+#frame-4 {
+	animation-delay: -1s;
+}
+#frame-5 {
+	animation-delay: 0s;
+}
+
+@keyframes frame-cycle {
+	0% {
+		opacity: 1;
+	}
+	18% {
+		opacity: 1;
+	}
+	22% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#frame-1,
+	#frame-2,
+	#frame-3,
+	#frame-4,
+	#frame-5 {
+		animation: none;
+		opacity: 0;
+	}
+	#frame-1 {
+		opacity: 1;
 	}
 }
