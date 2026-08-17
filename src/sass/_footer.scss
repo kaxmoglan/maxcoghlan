@@ -1,0 +1,41 @@
+/*
+-----------------------------------------
+FOOTER — Ft6 Letter close
+-----------------------------------------
+*/
+
+.site-footer {
+	max-width: 60ch;
+	margin: 0 auto;
+	padding: var(--space-3xl) var(--content-pad) var(--space-2xl);
+
+	&__rule {
+		border: none;
+		border-top: 1px solid var(--color-rule);
+		margin-bottom: var(--space-2xl);
+	}
+
+	&__signoff {
+		font-family: 'Newsreader', ui-serif, Georgia, serif;
+		font-style: italic;
+		font-size: var(--text-lg);
+		color: var(--color-ink);
+		line-height: 1.4;
+		margin-bottom: var(--space-lg);
+	}
+
+	&__postscript {
+		font-size: var(--text-base);
+		color: var(--color-ink-2);
+		margin-bottom: var(--space-xl);
+	}
+
+	&__social {
+		margin-bottom: var(--space-xl);
+	}
+
+	&__legal {
+		font-size: var(--text-xs);
+		color: var(--color-ink-2);
+	}
+}

@@ -1,26 +1,57 @@
 .content {
-  position: absolute;
+	position: relative;
+	width: 100%;
 }
 
 .content-enter {
-  opacity: 0;
-  transform: translateY(10px);
+	opacity: 0;
+	transform: translateY(8px);
 }
 
 .content-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
-  transition-delay: 300ms;
+	opacity: 1;
+	transform: none;
+	transition: opacity var(--dur-long) var(--ease-out),
+		transform var(--dur-long) var(--ease-out);
+	transition-delay: var(--dur-micro);
 }
 
+// The outgoing page detaches from flow only while it fades, so the
+// incoming page (normal flow) can take over scroll height immediately
+// instead of both stacking their heights during the overlap.
 .content-exit {
-  opacity: 1;
-  transform: scale(1);
+	position: absolute;
+	inset: 0;
+	opacity: 1;
+	transform: none;
 }
 
 .content-exit-active {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 300ms, transform 300ms;
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: opacity var(--dur-short) var(--ease-in),
+		transform var(--dur-short) var(--ease-in);
+}
+
+.navbar-enter {
+	opacity: 0;
+	transform: translateY(-8px);
+}
+
+.navbar-enter-active {
+	opacity: 1;
+	transform: none;
+	transition: opacity var(--dur-long) var(--ease-out),
+		transform var(--dur-long) var(--ease-out);
+}
+
+.navbar-exit {
+	opacity: 1;
+}
+
+.navbar-exit-active {
+	opacity: 0;
+	transition: opacity var(--dur-short) var(--ease-in);
 }

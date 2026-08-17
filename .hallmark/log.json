@@ -1,0 +1,13 @@
+[
+	{
+		"date": "2026-08-18",
+		"macrostructure": "per-page (Marquee / Letter / Index)",
+		"theme": "custom",
+		"theme_axes": "paper-band: light (near-white) / display-style: roman-serif / accent-hue: cool (ink-navy ~258°)",
+		"vibe": "serif editorial, near-white paper, ink-navy accent, subtle illustration",
+		"enrichment": "none (existing hand-illustration frame set reused as a small fixed-position accent, not a hero feature)",
+		"nav": "N6 masthead",
+		"footer": "Ft6 letter-close",
+		"brief": "Maximilian Coghlan portfolio · v1 base + v2 fonts/subtlety/blog-voice + serif/Garamond + drop Skills + near-white paper"
+	}
+]

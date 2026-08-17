@@ -1,5 +1,3 @@
 export interface IGLOBALSTATE {
-	setTheme: Function;
-	setShowNav: Function;
-	setShowSocial: Function;
+	setShowNav: (show: boolean) => void;
 }

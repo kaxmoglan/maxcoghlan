@@ -1,101 +1,127 @@
-# Design — Maximilian Coghlan Portfolio
+# Design — Maximilian Coghlan Portfolio (v5, Ink & Paper)
 
-A locked design system for this app. Every page redesign reads this file before
-emitting code. Do not regenerate per page — extend or amend this file when the
-system needs to grow.
+A locked design system for this app. Every page redesign reads this file
+before emitting code. Extend or amend this file when the system needs to
+grow; do not regenerate per page.
+
+## Provenance
+
+Built on the `redesign` (v1) branch's copy and route shape, at the owner's
+explicit direction, with the following deltas requested directly:
+
+1. Serif typography (owner named liking v2's fonts, and Garamond specifically).
+2. Drop v1's 50/50 Split Studio — the illustration should be a small, quietly
+   placed accent in a consistent spot on every page, matching v2's subtlety,
+   not a page-dominating half-viewport feature.
+3. Drop the standalone Skills page — a tech-logo wall reads mid-level, not
+   Engineering Manager.
+4. Reintroduce a Blog/Articles section, editorial in tone, styled the way
+   `redesign-v2` reads (simple, elegant, serif) — v2 itself never shipped a
+   blog route, so this is a new build in that voice, not a port.
+5. Paper should read close to white, not the warm cream of v1/v2.
 
 ## Genre
-modern-minimal
+
+**Editorial.**
 
 ## Macrostructure family
-One base macrostructure for every page — this is a small four-route personal
-site, not a multi-family app.
 
-- All pages (Home / About / Skills / Contact): **Split Studio** — text on one
-  half, the existing hand-built illustration on the other, alternating sides
-  page to page. Outlined pill CTA sits below the text half. Clear gutter
-  divider between halves, no rules.
+Per-page shape, not one repeated split (this is what v2 got right over v1):
 
-## Theme — Coral (catalog)
-Warm-grey paper, single warm coral accent, Geist-class sans throughout, soft
-pill CTAs. Chosen over Cobalt (Coral's modern-minimal sibling) because Cobalt's
-signature moves — live API/JSON hero, ⌘K palette, code-as-hero — belong to
-developer-tool products, not a leadership portfolio. Coral reads confident and
-human without forcing a dev-tool trope onto a bio site.
+- **Home** → **Marquee** — one large statement, a short "currently" line,
+  typographic CTA. No symmetric split.
+- **About** → **Letter** — first-person continuous prose, ~60ch measure,
+  salutation-style heading.
+- **Contact** → **Letter, form-as-signoff** — same literary voice; the form is
+  typeset minimally (underlined fields, no boxed card).
+- **Articles** → **Index** — a plain chronological list (date + title +
+  excerpt, hairline rules between entries), no cards, no illustration —
+  content carries the page. **Article detail** → simple serif long-form page.
 
-Project ships this as SCSS variables in `src/sass/_colors.scss` (this project's
-existing token mechanism) rather than a parallel `tokens.css` — the site has no
-CSS-custom-property consumption elsewhere, so a second unused token format
-would be dead weight.
+## Illustration placement — the one deliberate constraint this build adds
 
-| Token | Value | Role |
+Every prior pass (v1's 50/50, v3/v4's full hero illustration) treated the
+illustration as a structural half of the page. This build treats it as a
+**signature mark**: one fixed-size rail (`.page-illustration`, ~13rem wide),
+always upper-right of the main text column, on **Home, About, and Contact
+only** — never on Articles (the index page and its posts are content-first;
+adding an illustration there would be the fourth different treatment instead
+of a consistent one). Same size, same position, same opacity treatment on
+all three pages it appears on — a quiet recurring detail, not a rotating
+hero.
+
+## Theme — Ink & Paper (custom)
+
+Near-white paper (this build's #1 correction from v1/v2's warm cream) with
+the same ink-navy accent v2 used — navy is not a cream problem, it's the
+part of v2 that already read considered rather than another rounded-pill
+SaaS palette, so it stays. OKLCH is the source of truth.
+
+| Token | OKLCH | Role |
 |---|---|---|
-| `$paper` | `#FAF6F2` | Page background |
-| `$paper-2` | `#F1EAE3` | Card / raised-surface background |
-| `$ink` | `#2A211C` | Primary text, headings |
-| `$ink-2` | `#55483F` | Secondary text, illustration linework |
-| `$rule` | `#E4DAD0` | Hairline borders / dividers |
-| `$accent` | `#E5572E` | Coral accent — CTAs, active nav state, focus rings, mark |
-| `$accent-ink` | `#FFF8F5` | Text on filled accent surfaces |
+| `--color-paper` | `oklch(99% 0.003 75)` | Page background — barely-there warmth, reads as white |
+| `--color-paper-2` | `oklch(97% 0.004 75)` | Card / raised surface |
+| `--color-rule` | `oklch(88% 0.006 75)` | Hairline borders / dividers |
+| `--color-ink-2` | `oklch(42% 0.01 70)` | Secondary text, captions |
+| `--color-ink` | `oklch(20% 0.012 60)` | Primary text, headings |
+| `--color-accent` | `oklch(38% 0.10 258)` | Ink-navy — links, active states, rules |
+| `--color-accent-hover` | `oklch(32% 0.095 258)` | Accent hover/pressed |
+| `--color-focus` | `oklch(55% 0.14 258)` | Focus ring — brighter for visibility |
 
 ## Typography
-- Display: **Inter**, weight 600–700 (Geist is not distributable via Google
-  Fonts on a CRA app without bundling a font package; Inter is the practical
-  same-lineage substitute the modern-minimal genre already treats as
-  acceptable). Tight tracking (`-0.02em` to `-0.03em`) on headings.
-- Body: **Inter**, weight 400. Single-family discipline — no serif pairing.
-- Display tracking: `-0.025em` on h1/h2.
-- Hero title: `clamp(2.75rem, 4vw + 1.5rem, 4.75rem)`.
+
+- **Display**: Newsreader — roman serif, optical-size aware. The owner named
+  liking this from v2 directly.
+- **Body**: EB Garamond — the owner named liking Garamond specifically. This
+  is the delta from v2 (which paired Newsreader with sans IBM Plex Sans body);
+  v5 goes fully serif, display + body both classical, for a more consistently
+  literary read.
+- **Outlier** (≤ 2 slots): Geist Mono — masthead issue-line, article date
+  labels. Never a third body face.
+- Scale ratio 1.25, 16px body floor. Headings: tight tracking (`-0.01em`).
+  Mono labels: loose tracking (`0.1em`), uppercase.
 
 ## Spacing
-Existing rem-based scale in `_responsive.scss` / `_main-page-template.scss` is
-kept; no new spacing system introduced. Section gutters increased to read as
-more generous / composed per modern-minimal.
+
+Standard 4pt scale (`--space-*`). Pages scroll normally — Marquee/Letter/
+Index are not fixed single-viewport panels like v1's Split Studio pages.
 
 ## Motion
-- Easing: `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out) for all reveals/hovers.
-- Reveal: opposite Split Studio halves cross-fade in, slightly staggered.
-- No bounce, no parallax, no autoplay.
-- `prefers-reduced-motion: reduce` collapses all motion to instant/opacity-only.
 
-## Microinteractions stance
-- Silent success on the contact form (inline confirmation text, no toast).
-- Hover states: coral underline-grow on nav/links, 1px border-colour shift to
-  coral on focusable surfaces.
-- Focus rings always visible instantly, never animated in.
+- Easing: `cubic-bezier(0.16, 1, 0.3, 1)`.
+- One quiet fade-up entrance per section on first paint. No bounce, no
+  parallax, no autoplay.
+- The existing hand-illustration frame crossfade is kept (retimed to this
+  system's tokens) since the illustration itself is being asked to feature
+  *less*, not be replaced.
+- `prefers-reduced-motion: reduce` collapses everything to instant/150ms.
 
 ## CTA voice
-- Primary CTA: filled coral pill, white text — "Get in touch" (site-wide
-  primary action, per brief).
-- Secondary CTA: coral-outlined pill on paper.
-- Nav CTA: same filled coral pill, smaller, right-aligned in the floating nav.
+
+Typographic only — ink-navy text link with an underline, "Get in touch →".
+No filled pill (that was v1's Coral relic). Matches the Letter sign-off
+register and keeps the accent's footprint restrained.
 
 ## Nav / Footer
-- **Nav: N5 Floating pill** — detached top nav, blur backdrop, soft shadow,
-  text links (not icon-only) + trailing "Get in touch" button. Carries the
-  existing M-with-overline mark as the wordmark.
-- **Footer: omitted.** Each route is a fixed, single-viewport page (`min-height:
-  100vh` sections, no page scroll) behind the persistent floating nav —
-  there's no scroll-to-the-bottom moment for a footer to close out, and
-  forcing one in would either overflow the viewport or shrink content-column
-  height. The floating nav (carrying the wordmark) is the site's only
-  persistent chrome, by design.
 
-## Per-page allowances
-- All pages may use the existing hand-built SVG illustrations (already
-  produced; recoloured to this palette, not redrawn).
-- No enrichment beyond the existing illustrations — no stock imagery, no
-  invented metrics/stats.
+- **Nav: N6 Newspaper masthead** — centred serif-italic wordmark, thin mono
+  issue-line above ("Winchester, UK · Dev Lead" — accurate to the current
+  title, not "Engineering Manager", which the owner doesn't hold yet; the
+  aspiration lives in the prose, not a false label), inline link row
+  (Home / About / Articles / Contact) beneath, hairline rule closing it off.
+- **Footer: Ft6 Letter close** — sign-off line + LinkedIn link, present on
+  every page now that pages actually scroll to a bottom.
 
 ## What pages MUST share
-- The M-with-overline wordmark mark, in `$accent`.
-- Coral accent + its restrained placement (< 5% of any viewport).
-- Inter as the only typeface family.
-- Pill CTA voice (filled primary / outlined secondary), same radius + padding.
-- Split Studio structure: text half + illustration half, alternating sides.
+
+- Newsreader + EB Garamond, Geist Mono confined to the two label slots.
+- Near-white paper, ink-navy accent, typographic (not pill) CTA voice.
+- N6 masthead nav + Ft6 footer.
+- `.page-illustration` — identical size/position — on Home, About, Contact
+  only.
+- No fabricated metrics, no client names, no testimonials.
 
 ## What pages MAY differ on
-- Which side the text/illustration sit on (alternates: Home text-left, About
-  text-right, Skills text-left, Contact text-right).
-- Section content shape within the text half (Home: hero + CTA; About: prose;
-  Skills: accordion + icon cloud; Contact: copy + social + form).
+
+- Macrostructure per page (Marquee / Letter / Index).
+- Prose measure and section composition within that macrostructure.

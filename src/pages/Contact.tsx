@@ -1,46 +1,25 @@
 import React, { useEffect } from 'react';
-
-import Social from '../components/Social';
 import { useForm } from '@formspree/react';
 import Loader from 'react-loader-spinner';
+import Social from '../components/Social';
 import { CONTACT_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
 import type { IGLOBALSTATE } from '../util/interfaces';
 
-export const Contact: React.FC<IGLOBALSTATE> = (props) => {
-	const { setTheme, setShowNav, setShowSocial } = props;
-
+export const Contact: React.FC<IGLOBALSTATE> = ({ setShowNav }) => {
 	const [state, handleSubmit] = useForm('contactForm');
 
 	useEffect(() => {
-		setTheme('dark');
 		setShowNav(true);
-		setShowSocial(false);
-	}, [setTheme, setShowNav, setShowSocial]);
+	}, [setShowNav]);
 
 	return (
 		<main className="content__main">
-			<div className="contact-page">
-				<div className="contact-page__container reverse">
-					{/* LEFT COLUMN */}
-					<div className="contact-page__content">
-						<div className="contact-page__content-container">
-							<h1
-								className="contact-page__title"
-								style={{ textAlign: 'center' }}
-							>
-								Get in touch
-							</h1>
-							<div className="copy">
-								<p style={{ textAlign: 'center' }}>
-									I'm currently open to conversations about Engineering Manager
-									and Director of Engineering roles. I'm also happy to talk
-									freelance work, tutoring, mock interviews and CV or portfolio
-									reviews.
-								</p>
-							</div>
-							<Social />
-						</div>
-						<div className="animation-frame__container contact">
+			<article className="wrap letter">
+				<div className="letter__head">
+					<h1 className="letter__salutation">Get in touch</h1>
+
+					<div className="page-illustration" aria-hidden="true">
+						<div className="animation-frame__container">
 							{CONTACT_PAGE_ANIMATION_FRAMES.map((frame, i) => (
 								<div className="animation-frame" key={i}>
 									{frame}
@@ -48,78 +27,69 @@ export const Contact: React.FC<IGLOBALSTATE> = (props) => {
 							))}
 						</div>
 					</div>
-
-					{/* RIGHT COLUMN */}
-					<div className="contact-page__form">
-						<div className="contact-page__form-container">
-							<form onSubmit={handleSubmit} className="contact-form">
-								<fieldset className="details">
-									<div className="text-input">
-										<input
-											type="text"
-											name="name"
-											id="name"
-											required
-											placeholder="Name*"
-										/>
-									</div>
-									<div className="text-input">
-										<input
-											type="email"
-											name="email"
-											id="email"
-											placeholder="Email*"
-											required
-										/>
-									</div>
-								</fieldset>
-								<fieldset className="message-area">
-									<textarea
-										placeholder="Message*"
-										name="message"
-										id="message"
-										cols={30}
-										rows={5}
-										required
-									></textarea>
-								</fieldset>
-								<button
-									type="submit"
-									disabled={state.submitting || state.succeeded}
-									className="submit-btn"
-								>
-									{state.submitting ? (
-										<>Sending...</>
-									) : state.succeeded ? (
-										<>Sent</>
-									) : (
-										<>Send</>
-									)}
-								</button>
-							</form>
-							<div className="contact-page__user-messages">
-								{state.submitting && (
-									<Loader
-										type="TailSpin"
-										color="#E5572E"
-										height={50}
-										width={50}
-										className="spinner"
-									/>
-								)}{' '}
-								{state.errors.length > 0 && (
-									<p className="error">
-										Something went wrong. Off I go debugging again...
-									</p>
-								)}{' '}
-								{state.succeeded && (
-									<p className="success">Thanks for getting in touch!</p>
-								)}
-							</div>
-						</div>
-					</div>
 				</div>
-			</div>
+
+				<div className="letter__body copy">
+					<p>
+						I'm currently open to conversations about Engineering
+						Manager and Head of Engineering roles. I'm also happy to
+						talk freelance work, tutoring, mock interviews and CV or
+						portfolio reviews.
+					</p>
+				</div>
+
+				<Social />
+
+				<form onSubmit={handleSubmit} className="contact-form">
+					<div className="contact-form__field">
+						<label htmlFor="name">Name</label>
+						<input type="text" name="name" id="name" required />
+					</div>
+					<div className="contact-form__field">
+						<label htmlFor="email">Email</label>
+						<input type="email" name="email" id="email" required />
+					</div>
+					<div className="contact-form__field">
+						<label htmlFor="message">Message</label>
+						<textarea name="message" id="message" rows={4} required />
+					</div>
+
+					<button
+						type="submit"
+						disabled={state.submitting || state.succeeded}
+						className="text-link contact-form__submit"
+					>
+						{state.submitting ? (
+							<>Sending…</>
+						) : state.succeeded ? (
+							<>Sent</>
+						) : (
+							<>Send →</>
+						)}
+					</button>
+
+					<div className="contact-form__messages">
+						{state.submitting && (
+							<Loader
+								type="TailSpin"
+								color="#2C3E66"
+								height={24}
+								width={24}
+								className="spinner"
+							/>
+						)}
+						{state.errors.length > 0 && (
+							<p className="error">
+								Something went wrong. Try again, or reach me
+								directly via LinkedIn.
+							</p>
+						)}
+						{state.succeeded && (
+							<p className="success">Thanks for getting in touch!</p>
+						)}
+					</div>
+				</form>
+			</article>
 		</main>
 	);
 };

@@ -1,115 +1,70 @@
-.navbar {
-	z-index: 999;
-	display: flex;
-	align-items: center;
-	gap: 3rem;
+/*
+-----------------------------------------
+DESKTOP NAV — N6 Newspaper masthead
+-----------------------------------------
+*/
 
-	position: fixed;
-	top: 2rem;
-	left: 50%;
-	transform: translateX(-50%);
-
-	padding: 1rem 1rem 1rem 1.8rem;
-	border-radius: 999px;
-	border: 1px solid $rule;
-	box-shadow: 0 4px 24px rgba(42, 33, 28, 0.06);
-
-	transition: all 500ms ease;
-	@include glass;
+.masthead {
+	display: block;
 
 	@include sm-screen {
 		display: none;
 	}
 
-	&__logo {
-		position: relative;
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-		color: $ink;
-		font-size: 2rem;
-		font-weight: 700;
-		flex-shrink: 0;
+	width: 100%;
+	padding: var(--space-2xl) var(--content-pad) 0;
+	text-align: center;
+
+	&__issue-line {
+		margin-bottom: var(--space-sm);
 	}
 
-	&__logo-million {
-		position: absolute;
-		width: 1.4rem;
-		left: 0.1rem;
-		top: -0.4rem;
-		height: 0.25rem;
-		background-color: $accent;
+	&__wordmark {
+		display: block;
+		font-family: 'Newsreader', ui-serif, Georgia, serif;
+		font-style: italic;
+		font-weight: 500;
+		font-size: var(--text-2xl);
+		color: var(--color-ink);
+		margin-bottom: var(--space-lg);
+
+		&:focus-visible {
+			outline: 2px solid var(--color-focus);
+			outline-offset: 4px;
+		}
 	}
 
-	&__links {
-		display: flex;
-		align-items: center;
-		gap: 2.2rem;
+	&__nav {
+		border-top: 1px solid var(--color-rule);
+		border-bottom: 1px solid var(--color-rule);
+		padding-block: var(--space-md);
+
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: var(--space-xl);
+			list-style: none;
+		}
 	}
 
 	&__link {
-		position: relative;
-		font-size: 1.4rem;
-		font-weight: 500;
-		text-decoration: none;
-		color: $ink-2;
-		padding: 0.4rem 0;
-		transition: color 250ms ease;
-
-		&::after {
-			content: '';
-			position: absolute;
-			left: 0;
-			bottom: -0.2rem;
-			width: 0;
-			height: 2px;
-			background-color: $accent;
-			transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1);
-		}
+		font-size: var(--text-base);
+		color: var(--color-ink-2);
+		padding-bottom: var(--space-3xs);
+		border-bottom: 1px solid transparent;
+		transition: color var(--dur-short) var(--ease-out),
+			border-color var(--dur-short) var(--ease-out);
 
 		&:hover,
-		&:focus-visible {
-			color: $ink;
-
-			&::after {
-				width: 100%;
-			}
-		}
-
-		&:focus-visible {
-			outline: none;
-		}
-
 		&.active {
-			color: $ink;
-			font-weight: 600;
-
-			&::after {
-				width: 100%;
-			}
-		}
-	}
-
-	&__cta {
-		flex-shrink: 0;
-		font-size: 1.3rem;
-		font-weight: 600;
-		text-decoration: none;
-		color: $accent-ink;
-		background-color: $accent;
-		border-radius: 999px;
-		padding: 0.9rem 1.8rem;
-		transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
-
-		&:hover,
-		&:focus-visible {
-			background-color: darken($accent, 8%);
-			transform: translateY(-1px);
+			color: var(--color-ink);
+			border-color: var(--color-accent);
 		}
 
 		&:focus-visible {
-			outline: 2px solid $ink;
-			outline-offset: 3px;
+			outline: 2px solid var(--color-focus);
+			outline-offset: 4px;
 		}
 	}
 }

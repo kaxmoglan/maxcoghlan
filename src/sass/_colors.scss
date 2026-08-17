@@ -1,21 +1,66 @@
-// -----------------------------------------
-// COLORS — Coral (modern-minimal)
-// Source of truth: design.md
-// -----------------------------------------
+/*
+-----------------------------------------
+DESIGN TOKENS — Ink & Paper, see /design.md
+-----------------------------------------
+*/
 
-$paper: #faf6f2; // page background
-$paper-2: #f1eae3; // card / raised surface
-$ink: #2a211c; // primary text, headings
-$ink-2: #55483f; // secondary text, illustration linework
-$rule: #e4dad0; // hairline borders / dividers
-$accent: #e5572e; // coral accent — CTAs, active states, focus, mark
-$accent-ink: #fff8f5; // text on filled accent surfaces
+:root {
+	// SURFACE
+	--color-paper: oklch(99% 0.003 75);
+	--color-paper-2: oklch(97% 0.004 75);
+	--color-rule: oklch(88% 0.006 75);
 
-@mixin glass {
-	background-color: rgba(255, 255, 255, 0.72);
+	// INK
+	--color-ink-2: oklch(42% 0.01 70);
+	--color-ink: oklch(20% 0.012 60);
 
-	@supports (backdrop-filter: blur()) {
-		background-color: rgba(255, 255, 255, 0.6);
-		backdrop-filter: blur(10px);
-	}
+	// ACCENT — ink-navy
+	--color-accent: oklch(38% 0.1 258);
+	--color-accent-hover: oklch(32% 0.095 258);
+	--color-focus: oklch(55% 0.14 258);
+	--color-error: oklch(50% 0.16 25);
+
+	// FLUID CONTAINER PADDING
+	--content-pad: clamp(1.5rem, 6vw, 4rem);
+
+	// SPACING — 4pt scale
+	--space-3xs: 0.125rem;
+	--space-2xs: 0.25rem;
+	--space-xs: 0.5rem;
+	--space-sm: 0.75rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2.5rem;
+	--space-2xl: 4rem;
+	--space-3xl: 6rem;
+	--space-4xl: 9rem;
+
+	// TYPE SCALE — 1.25 ratio
+	--text-xs: 0.75rem;
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.25rem;
+	--text-lg: 1.5625rem;
+	--text-xl: 1.9531rem;
+	--text-2xl: 2.4414rem;
+	--text-3xl: 3.0518rem;
+	--text-display: clamp(2.75rem, 5vw + 1rem, 4.75rem);
+	--text-display-s: clamp(2.25rem, 3.5vw + 1rem, 3.5rem);
+
+	// MOTION
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+	--dur-micro: 120ms;
+	--dur-short: 220ms;
+	--dur-long: 420ms;
+
+	// Z-INDEX
+	--z-base: 1;
+	--z-raised: 10;
+	--z-dropdown: 100;
+	--z-sticky: 200;
+	--z-modal: 400;
+	--z-toast: 500;
+	--z-tooltip: 600;
 }

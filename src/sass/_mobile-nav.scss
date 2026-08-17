@@ -1,115 +1,113 @@
-.mobile-menu {
+/*
+-----------------------------------------
+MOBILE NAV — top bar + off-canvas sheet
+-----------------------------------------
+*/
+
+.mobile-bar {
 	display: none;
-	position: fixed;
-	top: 1rem;
-	width: 90vw;
-	height: 6rem;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	margin: auto;
-	overflow: hidden;
-	border: 1px solid $rule;
-	border-radius: 1rem;
-	box-shadow: 0 4px 24px rgba(42, 33, 28, 0.06);
-	@include glass;
-	transition: all 500ms ease;
-
-	&__logo {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-right: 1px solid $rule;
-		border-radius: 2px;
-		font-size: 3.5rem;
-		font-weight: bold;
-		text-decoration: none;
-		color: $ink;
-
-		width: 6rem;
-		height: 100%;
-
-		&-million {
-			height: 0.3rem;
-			width: 2.4rem;
-			background-color: $accent;
-			position: absolute;
-			top: 1rem;
-		}
-
-		@include xs-screen {
-			display: none;
-		}
-	}
-
-	&__container {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-left: -6rem;
-		padding-left: 4rem;
-
-		@include xs-screen {
-			margin-left: 0;
-			padding-left: 0;
-			transform: scale(0.8);
-		}
-
-		@include xxs-screen {
-			transform: scale(0.6);
-		}
-	}
-
-	&__icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
-		svg {
-			transition: all 500ms ease;
-			height: 2.2rem;
-			color: $ink-2;
-		}
-	}
-
-	&__link {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		&.active,
-		&:focus-visible {
-			.mobile-menu__icon svg {
-				color: $accent;
-			}
-		}
-
-		&:focus-visible {
-			outline: 2px solid $accent;
-			outline-offset: -2px;
-		}
-	}
-
-	&-enter {
-		transform: translateY(-100px);
-	}
-
-	&-enter-active {
-		transform: translateY(0);
-	}
-
-	&-exit {
-		transform: translateY(0);
-	}
-
-	&-exit-active {
-		transform: translateY(-100px);
-	}
 
 	@include sm-screen {
 		display: flex;
+	}
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: calc(var(--z-modal) + 1);
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-lg);
+	background-color: var(--color-paper);
+	border-bottom: 1px solid var(--color-rule);
+
+	&__wordmark {
+		font-family: 'Newsreader', ui-serif, Georgia, serif;
+		font-style: italic;
+		font-weight: 500;
+		font-size: var(--text-lg);
+		color: var(--color-ink);
+	}
+
+	&__toggle {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 5px;
+		width: 44px;
+		height: 44px;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		span {
+			display: block;
+			width: 22px;
+			height: 2px;
+			background-color: var(--color-ink);
+			margin: 0 auto;
+			transition: transform var(--dur-short) var(--ease-out);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--color-focus);
+			outline-offset: 2px;
+		}
+
+		&[aria-expanded='true'] {
+			span:first-child {
+				transform: translateY(3.5px) rotate(45deg);
+			}
+			span:last-child {
+				transform: translateY(-3.5px) rotate(-45deg);
+			}
+		}
+	}
+}
+
+.mobile-sheet {
+	display: none;
+
+	@include sm-screen {
+		display: block;
+	}
+
+	position: fixed;
+	inset: 0;
+	z-index: var(--z-modal);
+	padding: calc(var(--space-4xl) + var(--space-lg)) var(--space-lg)
+		var(--space-lg);
+	background-color: var(--color-paper);
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-8px);
+	transition: opacity var(--dur-short) var(--ease-out),
+		transform var(--dur-short) var(--ease-out),
+		visibility 0s linear var(--dur-short);
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
+	}
+
+	&__link {
+		font-family: 'Newsreader', ui-serif, Georgia, serif;
+		font-size: var(--text-xl);
+		color: var(--color-ink);
+
+		&.active {
+			color: var(--color-accent);
+		}
+	}
+
+	&.is-open {
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+		transition: opacity var(--dur-short) var(--ease-out),
+			transform var(--dur-short) var(--ease-out);
 	}
 }

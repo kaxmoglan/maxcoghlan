@@ -1,49 +1,46 @@
 import React, { useEffect } from 'react';
-import { ContactBtn } from '../components/ContactBtn';
+import { Link } from 'react-router-dom';
 import { HOME_PAGE_ANIMATION_FRAMES } from '../util/animations/animations';
-import { IGLOBALSTATE } from '../util/interfaces';
+import type { IGLOBALSTATE } from '../util/interfaces';
 
-export const Home: React.FC<IGLOBALSTATE> = (props) => {
-	const { setTheme, setShowNav, setShowSocial } = props;
-
+export const Home: React.FC<IGLOBALSTATE> = ({ setShowNav }) => {
 	useEffect(() => {
-		setTheme('dark');
 		setShowNav(true);
-		setShowSocial(true);
-	}, [setTheme, setShowNav, setShowSocial]);
+	}, [setShowNav]);
 
 	return (
 		<main className="content__main">
-			<div className="main-page-template">
-				<div className="main-page-template__container home">
-					{/* LEFT COLUMN */}
-					<div className="main-page-template__left-column flex">
-						<div className="main-page-template__left-column-container">
-							<h1 className="main-page-template__title archivo home-page-title">
-								Hi, <br /> I'm <span className="million">M</span>aximilian.
-							</h1>
-							<h2 className="home-page-subtitle">
-								I lead engineering teams and set technical direction —
-								currently a Dev Lead, working toward Engineering Manager and,
-								eventually, CTO.
-							</h2>
-							<ContactBtn />
-						</div>
-					</div>
-					{/* RIGHT COLUMN */}
-					<div className="main-page-template__right-column">
-						<div className="main-page-template__right-column-container">
-							<div className="animation-frame__container">
-								{HOME_PAGE_ANIMATION_FRAMES.map((frame, i) => (
-									<div className="animation-frame" key={i}>
-										{frame}
-									</div>
-								))}
+			<section className="wrap marquee">
+				<h1 className="marquee__statement">
+					Hi, I'm <span className="million">M</span>aximilian — I lead
+					engineering teams.
+				</h1>
+			</section>
+
+			<hr className="wrap marquee__rule" aria-hidden="true" />
+
+			<section className="wrap marquee__below">
+				<div className="marquee__below-text">
+					<p className="mono-label">Currently</p>
+					<h2 className="marquee__subtitle">
+						Dev Lead, working toward Engineering Manager and,
+						eventually, CTO.
+					</h2>
+					<Link className="text-link" to="/contact">
+						Get in touch →
+					</Link>
+				</div>
+
+				<div className="page-illustration" aria-hidden="true">
+					<div className="animation-frame__container">
+						{HOME_PAGE_ANIMATION_FRAMES.map((frame, i) => (
+							<div className="animation-frame" key={i}>
+								{frame}
 							</div>
-						</div>
+						))}
 					</div>
 				</div>
-			</div>
+			</section>
 		</main>
 	);
 };
