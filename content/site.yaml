@@ -1,0 +1,20 @@
+name: Maximilian Coghlan
+
+# CONFIRM: current title — "Technical Lead" is what the old site and the v5
+# redesign notes used. Still accurate?
+title: Technical Lead
+field: FinTech
+location: Winchester, UK
+
+links:
+  email: max.coghlan@gmail.com
+  linkedin: https://www.linkedin.com/in/maximilian-coghlan/
+  # CONFIRM: include GitHub in the built site, or just keep it on file?
+  github: https://github.com/kaxmoglan
+
+seo:
+  # CONFIRM: the one-line description for <meta>, search results, link previews
+  description: >-
+    Maximilian Coghlan — engineering leader in FinTech, based in Winchester, UK.
+  # Old domain, assumed unchanged
+  url: https://www.maxcoghlan.com
