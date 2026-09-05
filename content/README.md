@@ -8,47 +8,48 @@ here.
 
 | File | What it holds |
 |---|---|
-| `site.yaml` | Global metadata — name, title, location, links, SEO defaults |
-| `home.md` | Hero: the positioning line and its supporting sentence |
-| `about.md` | The leadership narrative / bio |
-| `approach.md` | How I lead — the recurring "how I work" material |
+| `site.yaml` | Global metadata — name, title, company, location, email, SEO |
+| `home.md` | Hero: the positioning line (+ alternates to choose from) |
+| `about.md` | The leadership narrative / bio (+ shorter version, pull-quote) |
 | `evdigital.md` | The one flagship story, framed around leadership scope |
-| `contact.md` | Contact section copy — what I'm open to |
+| `contact.md` | Contact section copy |
 
 ## Conventions
 
-- First person, plain voice — the way the old About page read, with the
-  emphasis moved from "developer" to "leader".
+- First person, plain voice — the emphasis moved from "developer" to "leader".
 - No fabricated metrics, no client names beyond what the current site already
-  publishes, no testimonials. Anything uncertain is marked `<!-- CONFIRM: … -->`.
+  publishes, no testimonials. Remaining uncertainties marked `<!-- CONFIRM -->`.
 - Frontmatter (between `---`) is structured data the build can read directly;
   the body is prose.
-- Where a design needs a shorter version of something, the file carries a
-  "shorter versions" section rather than us rewriting from scratch each time.
+- Where a design needs a shorter version of something, the file carries it
+  rather than us rewriting from scratch each time.
 
-## Not included (yet)
+## Decisions locked (2026-09-06)
 
-- **Writing / articles.** An earlier redesign attempt wanted a blog section.
-  Nothing here assumes one. If you want it, it's a new content type (one file
-  per post) — say the word.
-- **Projects / skills pages.** Deliberately absent. Per the positioning
-  decision, technical range is a given, not a showcase. The full skills list
-  from the old site is preserved as a comment at the bottom of `about.md` in
-  case it's ever wanted for a CV.
+- **10 years** experience — About heading commits to it.
+- Title: **Technical Lead**, current. Company: **EV**, named.
+- **"Award-winning"** stays (no specific award named).
+- Role dates: not tracked.
+- **Services line dropped** (freelance / tutoring / mock interviews / CV
+  reviews) — doesn't fit the leadership framing.
+- **External social links removed** for now (LinkedIn, GitHub). Email only.
+- **`approach.md` dropped.** The Understand/Align/Ship/Grow framing was
+  Claude's placeholder, not Max's. Recoverable from git history (commit 6e64f77)
+  if a "how I lead" section is wanted later — but it would need to be rewritten
+  in his own words. The one pull-quote line worth keeping was moved to
+  `about.md`.
 
-## Open questions (need Max's input)
+## Still open
 
-Search all files for `<!-- CONFIRM` — collected here:
+- `home.md` — pick a headline (or write a new one). Deferred to the design pass
+  on purpose.
+- `about.md` — keep / cut / reword the personal line (music, football, dog).
+- `about.md` — is the pull-quote line true to how Max thinks? Keep or drop.
+- `site.yaml` — confirm the SEO description line.
 
-- **Years of experience** — the About heading needs a real figure or a
-  different framing. What year did you start?
-- **Current job title** — using "Technical Lead". Right? Still current?
-- **Employer name** — the old site never names it, only the product
-  ("EVDigital"). Name the company, or keep it product-only?
-- **"Award-winning"** — carried over from the old site's wording. Name the
-  award(s), or drop the phrase?
-- **Role dates** — `evdigital.md` has an empty `period`.
-- **Services line** (freelance / tutoring / mock interviews / CV reviews) —
-  keep, soften, or drop for the leadership framing?
-- **Personal note** (music, football, the dog) — keep a light line or omit?
-- **GitHub link** — include it? The account is mostly older practice projects.
+## Not included
+
+- **Writing / articles.** No blog assumed. If wanted, it's a new content type
+  (one file per post).
+- **Projects / skills pages.** Deliberately absent — technical range is a
+  given, not a showcase. Old skills list preserved as a comment in `about.md`.

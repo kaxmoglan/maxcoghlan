@@ -1,10 +1,7 @@
 ---
 name: EVDigital
-# CONFIRM: name the employer (the product lives at ev.uk), or keep it
-# product-only the way the old site does?
+company: EV
 role: Senior developer → Technical lead
-# CONFIRM: dates
-period: ""
 link: https://www.ev.uk
 tech: [TypeScript, React, GraphQL, MongoDB, Node, Express]
 # Already listed publicly on the current site:
@@ -14,10 +11,10 @@ clients: [AIB, Scottish Widows, WTW]
 The one piece of work worth putting weight on — not as a case study, but as
 the shape of the scope.
 
-EVDigital was a suite of six financial-advice web apps on a shared backend —
-a mix of direct-to-consumer products and bespoke client builds (including for
-AIB), all built around forecast modelling and part of a wider omni-channel
-advice journey.
+EVDigital was an award-winning suite of six financial-advice web apps on a
+shared backend — a mix of direct-to-consumer products and bespoke client
+builds (including for AIB), all built around forecast modelling and part of a
+wider omni-channel advice journey.
 
 I joined as a senior developer and was made technical lead. I ran three
 development teams: daily standups, translating business requirements into
@@ -26,17 +23,14 @@ clients directly, mentoring graduate developers and running internal
 workshops. I designed and rolled out a new testing strategy across every
 EVDigital app, built proofs of concept, and helped hire and onboard the team.
 
-<!-- CONFIRM: "award-winning" — the old site uses the phrase. Name the award,
-     or cut it? -->
-
 ## Shorter versions
 
 **Two sentences** (design with less room):
 
-> As technical lead on EVDigital, I ran three teams building a suite of six
-> fintech advice apps for clients including AIB and Scottish Widows — owning
-> delivery, estimates, client conversations, hiring, and a new cross-app
-> testing strategy.
+> As technical lead on EVDigital at EV, I ran three teams building an
+> award-winning suite of six fintech advice apps for clients including AIB and
+> Scottish Widows — owning delivery, estimates, client conversations, hiring,
+> and a new cross-app testing strategy.
 
 **One line** (supporting evidence only — this is what the mockups have used):
 
