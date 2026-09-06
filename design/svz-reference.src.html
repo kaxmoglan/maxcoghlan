@@ -77,11 +77,56 @@
     display:flex;flex-direction:column;justify-content:center;
     padding-top:120px;padding-bottom:80px;
   }
-  .hero__shape{
-    position:absolute;top:-10%;right:-12%;width:640px;height:640px;
+  /* ---------- HERO BACKGROUND SHAPES (drifting charcoal geometry, à la svz.agency) ---------- */
+  .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .hero__bg > *{position:absolute;}
+
+  /* faint outline ring, top-right — the shape that was already here */
+  .bg-ring{
+    top:-14%;right:-12%;width:min(680px,60vw);aspect-ratio:1;
     border:1px solid var(--color-smoke);border-radius:50%;
-    pointer-events:none;
+    animation:bg-ring 120s linear infinite;
   }
+  /* big charcoal plus with a punched-out centre, lower-left, bleeding off */
+  .bg-plus{
+    left:-9%;bottom:2%;width:min(440px,40vw);aspect-ratio:1;
+    background:var(--color-charcoal);
+    clip-path:polygon(38% 0,62% 0,62% 38%,100% 38%,100% 62%,62% 62%,62% 100%,38% 100%,38% 62%,0 62%,0 38%,38% 38%);
+    animation:bg-spin 68s linear infinite;
+  }
+  .bg-plus::after{content:"";position:absolute;inset:35%;border-radius:50%;background:var(--color-void);}
+  /* smaller charcoal cross, upper-left, spinning the other way */
+  .bg-cross{
+    left:6%;top:8%;width:min(180px,16vw);aspect-ratio:1;
+    background:var(--color-smoke);
+    clip-path:polygon(40% 0,60% 0,60% 40%,100% 40%,100% 60%,60% 60%,60% 100%,40% 100%,40% 60%,0 60%,0 40%,40% 40%);
+    animation:bg-spin-rev 84s linear infinite;
+  }
+  /* angled bar, mid-right, slow wander */
+  .bg-bar{
+    right:-6%;top:30%;width:min(460px,38vw);height:clamp(26px,3.2vw,48px);
+    background:var(--color-charcoal);
+    animation:bg-wander 58s ease-in-out infinite alternate;
+  }
+  /* charcoal disc bleeding off the bottom-left */
+  .bg-disc{
+    left:30%;bottom:-30%;width:min(420px,36vw);aspect-ratio:1;border-radius:50%;
+    background:var(--color-charcoal);
+    animation:bg-wander-2 76s ease-in-out infinite alternate;
+  }
+
+  @keyframes bg-spin{to{transform:rotate(360deg);}}
+  @keyframes bg-spin-rev{to{transform:rotate(-360deg);}}
+  @keyframes bg-ring{to{transform:rotate(360deg);}}
+  @keyframes bg-wander{
+    from{transform:translate(0,0) rotate(-16deg);}
+    to{transform:translate(-46px,34px) rotate(-6deg);}
+  }
+  @keyframes bg-wander-2{
+    from{transform:translate(0,0) rotate(0deg);}
+    to{transform:translate(-54px,-40px) rotate(28deg);}
+  }
+  @media (max-width:640px){ .bg-bar,.bg-disc{display:none;} }
 
   /* ---------- HERO ANIMATION (hand-drawn flipbook, glow recoloured to arterial red) ---------- */
   /* Real flipbook: all 5 frames are ONE 500x1780 <svg> strip; a steps()
@@ -159,6 +204,7 @@
   @media (prefers-reduced-motion: reduce){
     * { scroll-behavior:auto !important; }
     .hero__anim .anim__strip{animation:none;}
+    .hero__bg > *{animation:none;}
   }
 </style>
 
@@ -173,7 +219,13 @@
 </nav>
 
 <header class="hero pad" id="top">
-  <div class="hero__shape"></div>
+  <div class="hero__bg" aria-hidden="true">
+    <div class="bg-ring"></div>
+    <div class="bg-plus"></div>
+    <div class="bg-cross"></div>
+    <div class="bg-bar"></div>
+    <div class="bg-disc"></div>
+  </div>
   <div class="hero__anim" aria-hidden="true"><!--ANIM_FRAMES--></div>
   <h1 class="hero__title">
     <span class="italic">Hi, I'm</span>
