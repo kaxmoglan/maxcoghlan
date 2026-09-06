@@ -1,0 +1,228 @@
+<title>SVZ</title>
+<style>
+  :root{
+    --color-void:#080808;
+    --color-absolute:#000000;
+    --color-charcoal:#171617;
+    --color-smoke:#262525;
+    --color-graphite:#393939;
+    --color-bone:#fcfcfc;
+    --color-linen:#f3efef;
+    --color-ash:#d4d2d2;
+    --color-pebble:#b5b2b2;
+    --color-iron:#525252;
+    --color-arterial-red:#fe1e34;
+    --color-crimson:#ff0000;
+
+    --font-display:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-editorial:'Playfair Display',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--color-void);
+    color:var(--color-bone);
+    font-family:var(--font-display);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,p{margin:0;}
+  h1,h2,h3{text-wrap:balance;}
+  a{color:inherit;text-decoration:none;}
+  .pad{padding-left:48px;padding-right:48px;}
+  @media (max-width:640px){.pad{padding-left:24px;padding-right:24px;}}
+
+  /* ---------- NAV (floating frosted pill) ---------- */
+  .nav{
+    position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:50;
+    display:flex;align-items:center;gap:8px;
+    padding:8px;
+    background:rgba(255,255,255,0.09);
+    backdrop-filter:blur(20px) saturate(1.7);
+    -webkit-backdrop-filter:blur(20px) saturate(1.7);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:14px;
+  }
+  .nav__mark{
+    display:flex;align-items:center;justify-content:center;
+    width:40px;height:40px;border-radius:10px;
+    background:rgba(255,255,255,0.2);
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;line-height:1;color:var(--color-bone);
+  }
+  .nav__link{
+    padding:11px 18px;border-radius:10px;
+    font-size:15px;font-weight:500;letter-spacing:-0.01em;
+    color:var(--color-bone);
+    transition:background 0.2s ease;
+  }
+  .nav__link:hover,.nav__link:focus-visible{background:rgba(255,255,255,0.1);outline:none;}
+  @media (max-width:480px){
+    .nav__link{padding:9px 12px;font-size:14px;}
+  }
+
+  /* ---------- MILLION MARK (M with vinculum — Roman numeral for 1,000,000) ---------- */
+  .mil{position:relative;display:inline-block;}
+  .nav__mark .mil::before{
+    content:"";position:absolute;
+    left:50%;transform:translateX(-50%);width:0.78em;
+    top:-5px;height:3px;
+    background:currentColor;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100vh;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:center;
+    padding-top:120px;padding-bottom:80px;
+  }
+  .hero__shape{
+    position:absolute;top:-10%;right:-12%;width:640px;height:640px;
+    border:1px solid var(--color-smoke);border-radius:50%;
+    pointer-events:none;
+  }
+
+  /* ---------- HERO ANIMATION (hand-drawn flipbook, glow recoloured to arterial red) ---------- */
+  .hero__anim{
+    position:absolute;right:clamp(0px,2.5vw,40px);bottom:0;z-index:1;
+    width:clamp(220px,27vw,370px);
+    aspect-ratio:500 / 356;
+    pointer-events:none;
+  }
+  .hero__anim svg{
+    position:absolute;inset:0;width:100%;height:100%;
+    opacity:0;
+    transform:translateZ(0);       /* keep each frame on its own compositor layer */
+    will-change:opacity;
+    backface-visibility:hidden;
+  }
+  .hero__anim #frame-1{animation:flip 1s infinite;animation-delay:1s;}
+  .hero__anim #frame-2{animation:flip 1s infinite;animation-delay:0.2s;}
+  .hero__anim #frame-3{animation:flip 1s infinite;animation-delay:0.4s;}
+  .hero__anim #frame-4{animation:flip 1s infinite;animation-delay:0.6s;}
+  .hero__anim #frame-5{animation:flip 1s infinite;animation-delay:0.8s;}
+  /* opacity is a compositor-only property here — the swap never triggers a
+     repaint of the (large) SVG, so no blank frame at the loop seam */
+  @keyframes flip{
+    0%,20%{opacity:1;}
+    21%,100%{opacity:0;}
+  }
+  @media (max-width:760px){ .hero__anim{display:none;} }
+  .hero__kicker{
+    position:relative;z-index:2;
+    font-size:10px;letter-spacing:0.308em;text-transform:uppercase;color:var(--color-ash);
+    margin-top:22px;
+  }
+  .hero__title{position:relative;z-index:2;}
+  .hero__title .caps{
+    display:block;
+    font-weight:700;text-transform:uppercase;
+    font-size:clamp(52px,13vw,160px);
+    line-height:0.9;letter-spacing:-0.06em;
+    color:var(--color-bone);
+  }
+  .hero__title .italic{
+    display:block;
+    font-family:var(--font-editorial);font-style:italic;font-weight:400;
+    font-size:clamp(24px,4.2vw,42px);
+    line-height:1.2;letter-spacing:-0.02em;
+    color:var(--color-ash);
+    margin:0 0 8px 4px;
+  }
+  .hero__dot{
+    display:inline-block;width:0.13em;height:0.13em;border-radius:50%;
+    background:var(--color-arterial-red);margin-left:0.09em;
+    vertical-align:baseline;position:relative;top:0.03em;
+  }
+  .ghost-link__arrow{
+    display:inline-block;transform:rotate(45deg);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .section{padding:96px 0;}
+  .about__kicker{font-size:10px;letter-spacing:0.308em;text-transform:uppercase;color:var(--color-ash);margin-bottom:24px;}
+  .about__body{max-width:60ch;}
+  .about__body p{font-size:15px;line-height:1.65;letter-spacing:-0.24px;color:var(--color-ash);}
+  .about__body p + p{margin-top:16px;}
+
+  /* ---------- FOOTER ---------- */
+  .footer{background:var(--color-charcoal);padding:64px 0 48px;}
+  .footer__top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:56px;}
+  .footer__col-label{font-size:10px;letter-spacing:0.308em;text-transform:uppercase;color:var(--color-pebble);margin-bottom:16px;}
+  .footer__links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .footer__links a{font-size:14px;color:var(--color-bone);}
+  .footer__cta{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:0.071em;text-transform:uppercase;color:var(--color-bone);
+  }
+  .footer__bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    padding-top:24px;border-top:1px solid var(--color-graphite);
+    font-size:12px;color:var(--color-pebble);letter-spacing:0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    * { scroll-behavior:auto !important; }
+    .hero__anim svg{animation:none;}
+    .hero__anim #frame-1{opacity:1;}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@1,400;1,900&display=swap" rel="stylesheet">
+
+<nav class="nav">
+  <a class="nav__mark" href="#top" aria-label="Top of page"><span class="mil">M</span></a>
+  <a class="nav__link" href="#about">About</a>
+  <a class="nav__link" href="#contact">Contact</a>
+</nav>
+
+<header class="hero pad" id="top">
+  <div class="hero__shape"></div>
+  <div class="hero__anim" aria-hidden="true"><!--ANIM_FRAMES--></div>
+  <h1 class="hero__title">
+    <span class="italic">Hi, I'm</span>
+    <span class="caps">Maximilian<span class="hero__dot"></span></span>
+  </h1>
+  <p class="hero__kicker">Technical leader, engineering strategist, speaker and mentor.</p>
+</header>
+
+<section class="section pad" id="about">
+  <p class="about__kicker">About</p>
+  <div class="about__body">
+    <p>
+      I'm a technical lead, engineering strategist and speaker based in
+      Winchester. With a strong engineering foundation across Typescript,
+      Node and cloud ecosystems, and having co-founded and exited a media
+      production &amp; agency business earlier in my career, my focus now
+      centres around designing resilient systems, setting technical
+      direction and building high-performing and happy engineering cultures.
+      My most recent projects are in the fintech and health tech spaces
+      where I've worked on multi-award winning apps, and in partnership
+      with major high street banks.
+    </p>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="pad">
+    <div class="footer__top">
+      <div>
+        <p class="footer__col-label">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:max.coghlan@gmail.com">max.coghlan@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-label">&nbsp;</p>
+        <a class="footer__cta" href="mailto:max.coghlan@gmail.com">Get in touch <span class="ghost-link__arrow">↗</span><span class="hero__dot" style="width:10px;height:10px;"></span></a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Maximilian Coghlan</span>
+      <span>Winchester, UK</span>
+    </div>
+  </div>
+</footer>
