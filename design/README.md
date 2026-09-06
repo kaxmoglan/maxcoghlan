@@ -37,14 +37,15 @@ wrapper stripped). `build-anim.py`:
 Placement: `.hero__anim`, absolute, bottom-right, ~370px max, behind the
 headline, hidden below 760px.
 
-**Loop mechanism** (this took a few tries):
+**Loop mechanism** (this took a few tries — final approach):
 
-- All 5 frames stay rendered permanently at `opacity:0`, each promoted to its
-  own compositor layer (`transform:translateZ(0)`, `will-change:opacity`).
-- `@keyframes flip` (1s, `infinite`, staggered 0.2s) toggles `opacity` 1↔0,
-  `0–20%` visible.
-- Why not `visibility` like the current site: in a fresh document the large
-  SVGs aren't kept warm, so flipping `visibility:hidden→visible` forces a
-  re-rasterise that drops a blank frame once per loop. `opacity` on an
-  already-composited layer is compositor-only — no repaint, no flash.
-- Frozen on frame 1 under `prefers-reduced-motion`.
+- `build-anim.py` nests the 5 frames as `500×356` cells at `y = 0, 356, …`
+  inside one `500×1780` `<svg class="anim__strip">`.
+- CSS: `.hero__anim` is an `overflow:hidden` window; the strip is `height:500%`
+  and animated `transform: translateY(0 → -100%)` with
+  `animation: flipbook 1s steps(5) infinite`.
+- One element, one paint, discrete jumps. Nothing is ever hidden/shown or
+  repainted, so there's no loop-seam frame-drop — and unlike the earlier
+  `visibility` / `opacity` toggle attempts it behaves identically in Firefox
+  (which is unreliable at layerising many large SVGs).
+- Frozen on frame 1 under `prefers-reduced-motion` (`animation:none`).

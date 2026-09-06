@@ -84,29 +84,23 @@
   }
 
   /* ---------- HERO ANIMATION (hand-drawn flipbook, glow recoloured to arterial red) ---------- */
+  /* Real flipbook: all 5 frames are ONE 500x1780 <svg> strip; a steps()
+     transform slides it. One element, one paint, discrete jumps — no frame
+     ever has to be toggled or repainted, so no loop-seam flash in any browser. */
   .hero__anim{
     position:absolute;right:clamp(0px,2.5vw,40px);bottom:0;z-index:1;
     width:clamp(220px,27vw,370px);
     aspect-ratio:500 / 356;
+    overflow:hidden;
     pointer-events:none;
   }
-  .hero__anim svg{
-    position:absolute;inset:0;width:100%;height:100%;
-    opacity:0;
-    transform:translateZ(0);       /* keep each frame on its own compositor layer */
-    will-change:opacity;
-    backface-visibility:hidden;
+  .hero__anim .anim__strip{
+    display:block;width:100%;height:500%;
+    animation:flipbook 1s steps(5) infinite;
   }
-  .hero__anim #frame-1{animation:flip 1s infinite;animation-delay:1s;}
-  .hero__anim #frame-2{animation:flip 1s infinite;animation-delay:0.2s;}
-  .hero__anim #frame-3{animation:flip 1s infinite;animation-delay:0.4s;}
-  .hero__anim #frame-4{animation:flip 1s infinite;animation-delay:0.6s;}
-  .hero__anim #frame-5{animation:flip 1s infinite;animation-delay:0.8s;}
-  /* opacity is a compositor-only property here — the swap never triggers a
-     repaint of the (large) SVG, so no blank frame at the loop seam */
-  @keyframes flip{
-    0%,20%{opacity:1;}
-    21%,100%{opacity:0;}
+  @keyframes flipbook{
+    from{transform:translateY(0);}
+    to{transform:translateY(-100%);}
   }
   @media (max-width:760px){ .hero__anim{display:none;} }
   .hero__kicker{
@@ -164,8 +158,7 @@
 
   @media (prefers-reduced-motion: reduce){
     * { scroll-behavior:auto !important; }
-    .hero__anim svg{animation:none;}
-    .hero__anim #frame-1{opacity:1;}
+    .hero__anim .anim__strip{animation:none;}
   }
 </style>
 
@@ -181,18 +174,8 @@
 
 <header class="hero pad" id="top">
   <div class="hero__shape"></div>
-  <div class="hero__anim" aria-hidden="true"><svg
-		xmlns="http://www.w3.org/2000/svg"
-		version="1.1"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		preserveAspectRatio="none"
-		x="0px"
-		y="0px"
-		width="500px"
-		height="356px"
-		viewBox="0 0 500 356"
-		id="frame-1"
-	>
+  <div class="hero__anim" aria-hidden="true"><svg class="anim__strip" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 1780" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0" y="0" width="500" height="356" viewBox="0 0 500 356" id="frame-1">
 		<defs>
 			<linearGradient
 				id="f1__Gradient_1"
@@ -1015,18 +998,7 @@ Q 1098 675.65 1098 675.55 1097.95 675.4 1097.85 675.4 1097.15 675.4 1096.55 675.
 			<use xlink:href="#f1__Layer1_42_MEMBER_1_FILL" />
 		</g>
 	</svg>
-<svg
-		xmlns="http://www.w3.org/2000/svg"
-		version="1.1"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		preserveAspectRatio="none"
-		x="0px"
-		y="0px"
-		width="500px"
-		height="356px"
-		viewBox="0 0 500 356"
-		id="frame-2"
-	>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0" y="356" width="500" height="356" viewBox="0 0 500 356" id="frame-2">
 		<defs>
 			<linearGradient
 				id="f2__Gradient_1"
@@ -1763,18 +1735,7 @@ Q 880.05 454.85 880.65 455.4 881.2 455.9 881.7 455.95 882.05 456.05 882.05 455.7
 			<use xlink:href="#f2__Layer2_40_MEMBER_1_FILL" />
 		</g>
 	</svg>
-<svg
-		xmlns="http://www.w3.org/2000/svg"
-		version="1.1"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		preserveAspectRatio="none"
-		x="0px"
-		y="0px"
-		width="500px"
-		height="356px"
-		viewBox="0 0 500 356"
-		id="frame-3"
-	>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0" y="712" width="500" height="356" viewBox="0 0 500 356" id="frame-3">
 		<defs>
 			<linearGradient
 				id="f3__Gradient_1"
@@ -2525,18 +2486,7 @@ Q 882.1 455.15 881.85 454.6 881.7 454.25 881.4 453.35 881.2 452.55 880.9 452.15 
 			<use xlink:href="#f3__Layer3_40_MEMBER_1_FILL" />
 		</g>
 	</svg>
-<svg
-		xmlns="http://www.w3.org/2000/svg"
-		version="1.1"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		preserveAspectRatio="none"
-		x="0px"
-		y="0px"
-		width="500px"
-		height="356px"
-		viewBox="0 0 500 356"
-		id="frame-4"
-	>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0" y="1068" width="500" height="356" viewBox="0 0 500 356" id="frame-4">
 		<defs>
 			<linearGradient
 				id="f4__Gradient_1"
@@ -3302,18 +3252,7 @@ Q 966.6 456.25 966.9 456.4 970.6 458.3 983 463.7 988.4 465.95 990.35 467.05 993.
 			<use xlink:href="#f4__Layer4_43_MEMBER_1_FILL" />
 		</g>
 	</svg>
-<svg
-		xmlns="http://www.w3.org/2000/svg"
-		version="1.1"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		preserveAspectRatio="none"
-		x="0px"
-		y="0px"
-		width="500px"
-		height="356px"
-		viewBox="0 0 500 356"
-		id="frame-5"
-	>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0" y="1424" width="500" height="356" viewBox="0 0 500 356" id="frame-5">
 		<defs>
 			<linearGradient
 				id="f5__Gradient_1"
@@ -4102,7 +4041,8 @@ Q 964.95 455.55 965.3 455.75 968.95 457.7 980.95 463.3 990.75 467.85 996.35 471.
 		<g transform="matrix( 1, 0, 0, 1, -749.25,-373.05) ">
 			<use xlink:href="#f5__Layer5_43_MEMBER_1_FILL" />
 		</g>
-	</svg></div>
+	</svg>
+</svg></div>
   <h1 class="hero__title">
     <span class="italic">Hi, I'm</span>
     <span class="caps">Maximilian<span class="hero__dot"></span></span>
