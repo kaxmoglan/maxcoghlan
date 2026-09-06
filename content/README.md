@@ -47,14 +47,18 @@ the rebuild.
 
 - **`about.md` personal line** (music, football, dog) — keep a trimmed version
   after the paragraph, or not?
-- **The mockup's "STILL SHIPPING." transition + the linen pull-quote**
-  ("The best technical decision…") — both lean IC-delivery and are now
-  slightly off-key against the strategist / systems / culture / speaker
-  positioning. Need Max's call: replace, rework, or cut. Nothing in the
-  content files depends on them yet.
 - **`site.yaml` SEO description** — confirm the line.
 - **EVDigital on the page** — the home blurb no longer names it. Keep
   `evdigital.md` purely as reference, or does a design section surface it?
+- **Page is now very short** — hero + about paragraph + footer only. On-brand
+  for the SVZ aesthetic, but flag if it needs another section.
+
+## Resolved
+
+- "STILL SHIPPING." transition band and the "move faster next quarter"
+  pull-quote — **both cut** (2026-09-06). Read too IC-delivery against the
+  strategist / systems / culture / speaker positioning. `#approach` section
+  gone; nav trimmed to About / Contact.
 
 ## Not included
 
