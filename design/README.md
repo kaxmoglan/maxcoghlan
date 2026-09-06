@@ -18,8 +18,8 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
 - Headline: "Hi, I'm" (Playfair italic) / "MAXIMILIAN" (Inter 700 caps) with
   a red dot as the full stop. Roles sub-line under it.
 - No "About" link in the hero.
-- Background: `.hero__bg` — charcoal geometric shapes (cross, plus with a
-  punched-out centre, angled bar, disc) + the faint outline ring top-right.
+- Background: `.hero__bg` — charcoal shapes — two cogs (a
+  "Cog-hlan" nod; rotation is their natural motion), an angled bar, a disc + the faint outline ring top-right.
   Modelled on the opening seconds of svz.agency (the actual site behind this
   design). Behind the text (z-index 0), frozen under `prefers-reduced-motion`,
   bar+disc hidden below 640px.
