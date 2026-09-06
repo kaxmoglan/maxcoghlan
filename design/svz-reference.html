@@ -77,54 +77,82 @@
     display:flex;flex-direction:column;justify-content:center;
     padding-top:120px;padding-bottom:80px;
   }
-  /* ---------- HERO BACKGROUND SHAPES (drifting charcoal geometry, à la svz.agency) ---------- */
+  /* ---------- HERO BACKGROUND SHAPES (roaming charcoal geometry, à la svz.agency) ----------
+     Each shape follows its own slow looping path (transform). On top of that,
+     JS sets --mx/--my (cursor offset from centre, -1..1, negated) and each
+     shape parallaxes by --d px via the `translate` property — which composes
+     with the animated `transform` instead of fighting it. */
   .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
-  .hero__bg > *{position:absolute;}
+  .hero__bg > *{
+    position:absolute;
+    translate: calc(var(--mx,0) * var(--d,0px)) calc(var(--my,0) * var(--d,0px));
+    transition: translate .8s cubic-bezier(.16,1,.3,1);
+  }
 
-  /* faint outline ring, top-right — the shape that was already here */
   .bg-ring{
+    --d:10px;
     top:-14%;right:-12%;width:min(680px,60vw);aspect-ratio:1;
     border:1px solid var(--color-smoke);border-radius:50%;
-    animation:bg-ring 120s linear infinite;
+    animation:roam-ring 130s linear infinite;
   }
-  /* big charcoal plus with a punched-out centre, lower-left, bleeding off */
   .bg-plus{
+    --d:38px;
     left:-9%;bottom:2%;width:min(440px,40vw);aspect-ratio:1;
     background:var(--color-charcoal);
     clip-path:polygon(38% 0,62% 0,62% 38%,100% 38%,100% 62%,62% 62%,62% 100%,38% 100%,38% 62%,0 62%,0 38%,38% 38%);
-    animation:bg-spin 68s linear infinite;
+    animation:roam-plus 72s linear infinite;
   }
   .bg-plus::after{content:"";position:absolute;inset:35%;border-radius:50%;background:var(--color-void);}
-  /* smaller charcoal cross, upper-left, spinning the other way */
   .bg-cross{
-    left:6%;top:8%;width:min(180px,16vw);aspect-ratio:1;
+    --d:28px;
+    left:4%;top:6%;width:min(180px,16vw);aspect-ratio:1;
     background:var(--color-smoke);
     clip-path:polygon(40% 0,60% 0,60% 40%,100% 40%,100% 60%,60% 60%,60% 100%,40% 100%,40% 60%,0 60%,0 40%,40% 40%);
-    animation:bg-spin-rev 84s linear infinite;
+    animation:roam-cross 86s linear infinite;
   }
-  /* angled bar, mid-right, slow wander */
   .bg-bar{
-    right:-6%;top:30%;width:min(460px,38vw);height:clamp(26px,3.2vw,48px);
+    --d:44px;
+    right:-6%;top:28%;width:min(460px,38vw);height:clamp(26px,3.2vw,48px);
     background:var(--color-charcoal);
-    animation:bg-wander 58s ease-in-out infinite alternate;
+    animation:roam-bar 64s linear infinite;
   }
-  /* charcoal disc bleeding off the bottom-left */
   .bg-disc{
-    left:30%;bottom:-30%;width:min(420px,36vw);aspect-ratio:1;border-radius:50%;
+    --d:32px;
+    left:26%;bottom:-30%;width:min(420px,36vw);aspect-ratio:1;border-radius:50%;
     background:var(--color-charcoal);
-    animation:bg-wander-2 76s ease-in-out infinite alternate;
+    animation:roam-disc 98s linear infinite;
   }
 
-  @keyframes bg-spin{to{transform:rotate(360deg);}}
-  @keyframes bg-spin-rev{to{transform:rotate(-360deg);}}
-  @keyframes bg-ring{to{transform:rotate(360deg);}}
-  @keyframes bg-wander{
-    from{transform:translate(0,0) rotate(-16deg);}
-    to{transform:translate(-46px,34px) rotate(-6deg);}
+  @keyframes roam-ring{
+    0%{transform:translate(0,0) rotate(0deg);}
+    50%{transform:translate(-40px,30px) rotate(180deg);}
+    100%{transform:translate(0,0) rotate(360deg);}
   }
-  @keyframes bg-wander-2{
-    from{transform:translate(0,0) rotate(0deg);}
-    to{transform:translate(-54px,-40px) rotate(28deg);}
+  @keyframes roam-plus{
+    0%{transform:translate(0,0) rotate(0deg);}
+    25%{transform:translate(120px,-50px) rotate(90deg);}
+    50%{transform:translate(60px,70px) rotate(180deg);}
+    75%{transform:translate(-80px,25px) rotate(270deg);}
+    100%{transform:translate(0,0) rotate(360deg);}
+  }
+  @keyframes roam-cross{
+    0%{transform:translate(0,0) rotate(0deg);}
+    25%{transform:translate(-70px,90px) rotate(-90deg);}
+    50%{transform:translate(40px,150px) rotate(-180deg);}
+    75%{transform:translate(110px,60px) rotate(-270deg);}
+    100%{transform:translate(0,0) rotate(-360deg);}
+  }
+  @keyframes roam-bar{
+    0%{transform:translate(0,0) rotate(-16deg);}
+    33%{transform:translate(-130px,60px) rotate(-8deg);}
+    66%{transform:translate(-60px,-40px) rotate(-22deg);}
+    100%{transform:translate(0,0) rotate(-16deg);}
+  }
+  @keyframes roam-disc{
+    0%{transform:translate(0,0) rotate(0deg);}
+    33%{transform:translate(90px,-40px) rotate(12deg);}
+    66%{transform:translate(-70px,-20px) rotate(-8deg);}
+    100%{transform:translate(0,0) rotate(0deg);}
   }
   @media (max-width:640px){ .bg-bar,.bg-disc{display:none;} }
 
@@ -4139,3 +4167,32 @@ Q 964.95 455.55 965.3 455.75 968.95 457.7 980.95 463.3 990.75 467.85 996.35 471.
     </div>
   </div>
 </footer>
+
+<script>
+  /* Cursor parallax for the hero background shapes.
+     Sets --mx/--my on .hero__bg (cursor offset from centre, -1..1, negated
+     for a true-parallax feel); the shapes each translate by their own --d. */
+  (function () {
+    var bg = document.querySelector('.hero__bg');
+    var hero = document.querySelector('.hero');
+    if (!bg || !hero) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var raf = 0, tx = 0, ty = 0;
+    function apply() {
+      raf = 0;
+      bg.style.setProperty('--mx', tx.toFixed(3));
+      bg.style.setProperty('--my', ty.toFixed(3));
+    }
+    window.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      tx = -(((e.clientX - r.left) / r.width) - 0.5) * 2;
+      ty = -(((e.clientY - r.top) / r.height) - 0.5) * 2;
+      if (!raf) raf = requestAnimationFrame(apply);
+    }, { passive: true });
+    window.addEventListener('mouseleave', function () {
+      tx = ty = 0;
+      if (!raf) raf = requestAnimationFrame(apply);
+    }, { passive: true });
+  })();
+</script>
