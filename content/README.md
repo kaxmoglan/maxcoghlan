@@ -8,48 +8,56 @@ here.
 
 | File | What it holds |
 |---|---|
-| `site.yaml` | Global metadata — name, title, company, location, email, SEO |
-| `home.md` | Hero: the positioning line (+ alternates to choose from) |
-| `about.md` | The leadership narrative / bio (+ shorter version, pull-quote) |
-| `evdigital.md` | The one flagship story, framed around leadership scope |
+| `site.yaml` | Global metadata — name, roles, company, location, email, SEO |
+| `home.md` | Hero lines + the home-page about blurb |
+| `about.md` | The about paragraph (same copy; home = about in this design) |
+| `evdigital.md` | EVDigital detail — backing reference, not currently surfaced |
 | `contact.md` | Contact section copy |
 
-## Conventions
+## Design direction
 
-- First person, plain voice — the emphasis moved from "developer" to "leader".
-- No fabricated metrics, no client names beyond what the current site already
-  publishes, no testimonials. Remaining uncertainties marked `<!-- CONFIRM -->`.
-- Frontmatter (between `---`) is structured data the build can read directly;
-  the body is prose.
-- Where a design needs a shorter version of something, the file carries it
-  rather than us rewriting from scratch each time.
+**Locked: "branding" (the SVZ mockup).**
+Live reference: https://claude.ai/code/artifact/889c8a19-e2db-4da6-b930-1105506987a2
+High-fashion editorial — void-black canvas, giant caps + italic serif hero,
+one arterial-red accent. We iterate on that artifact; it becomes the spec for
+the rebuild.
 
-## Decisions locked (2026-09-06)
+### Hero (locked layout)
 
-- **10 years** experience — About heading commits to it.
-- Title: **Technical Lead**, current. Company: **EV**, named.
-- **"Award-winning"** stays (no specific award named).
-- Role dates: not tracked.
-- **Services line dropped** (freelance / tutoring / mock interviews / CV
-  reviews) — doesn't fit the leadership framing.
-- **External social links removed** for now (LinkedIn, GitHub). Email only.
-- **`approach.md` dropped.** The Understand/Align/Ship/Grow framing was
-  Claude's placeholder, not Max's. Recoverable from git history (commit 6e64f77)
-  if a "how I lead" section is wanted later — but it would need to be rewritten
-  in his own words. The one pull-quote line worth keeping was moved to
-  `about.md`.
+- Line 1, italic serif: **Hi, I'm**
+- Line 2, large caps: **Maximilian** — red accent dot after the name
+- Sub-line (small tracked uppercase label): **Technical leader, engineering
+  strategist, speaker and mentor.**
+
+## Decisions locked
+
+- Roles line: **technical leader, engineering strategist, speaker and mentor**.
+- Company: **EV**. Title (short form): **Technical Lead**.
+- Career note now in the About paragraph: **co-founded and exited a media
+  production & agency business** earlier in his career.
+- Recent work spans **fintech and health tech**; **multi-award winning apps**;
+  **in partnership with major high street banks**.
+- 10 years experience (not currently stated in copy, but the framing assumes
+  it — fine to leave implicit).
+- Services line dropped; external social links removed (email only).
+- `approach.md` deleted — the Understand/Align/Ship/Grow framing was Claude's
+  placeholder. Recoverable at commit 6e64f77.
 
 ## Still open
 
-- `home.md` — pick a headline (or write a new one). Deferred to the design pass
-  on purpose.
-- `about.md` — keep / cut / reword the personal line (music, football, dog).
-- `about.md` — is the pull-quote line true to how Max thinks? Keep or drop.
-- `site.yaml` — confirm the SEO description line.
+- **`about.md` personal line** (music, football, dog) — keep a trimmed version
+  after the paragraph, or not?
+- **The mockup's "STILL SHIPPING." transition + the linen pull-quote**
+  ("The best technical decision…") — both lean IC-delivery and are now
+  slightly off-key against the strategist / systems / culture / speaker
+  positioning. Need Max's call: replace, rework, or cut. Nothing in the
+  content files depends on them yet.
+- **`site.yaml` SEO description** — confirm the line.
+- **EVDigital on the page** — the home blurb no longer names it. Keep
+  `evdigital.md` purely as reference, or does a design section surface it?
 
 ## Not included
 
-- **Writing / articles.** No blog assumed. If wanted, it's a new content type
-  (one file per post).
-- **Projects / skills pages.** Deliberately absent — technical range is a
-  given, not a showcase. Old skills list preserved as a comment in `about.md`.
+- **Writing / articles.** No blog assumed.
+- **Projects / skills pages.** Deliberately absent. Old skills list preserved
+  as a comment in `about.md`.

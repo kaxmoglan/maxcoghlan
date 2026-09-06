@@ -1,47 +1,36 @@
 ---
-heading: Ten years in engineering. Most of them leading.
+# No heading in the SVZ direction — just the "ABOUT" eyebrow + this paragraph.
+eyebrow: About
 ---
 
-I'm a technical lead at EV, in FinTech, based in Winchester. I'm responsible
-for a group of engineers and the work they ship — how it gets scoped and
-estimated, how it reaches production, and how the people doing it are
-growing.
+I'm a technical lead, engineering strategist and speaker based in Winchester.
+With a strong engineering foundation across Typescript, Node and cloud
+ecosystems, and having co-founded and exited a media production & agency
+business earlier in my career, my focus now centres around designing
+resilient systems, setting technical direction and building high-performing
+and happy engineering cultures. My most recent projects are in the fintech
+and health tech spaces where I've worked on multi-award winning apps, and in
+partnership with major high street banks.
 
-I started as a full-stack developer and spent years hands-on before the
-balance tipped toward leading. I still read and write code, but the work now
-is judgment: deciding what's worth building, keeping a team pointed the same
-way, and being the person who talks to clients and stakeholders directly
-about technical trade-offs and what they cost.
-
-<!-- CONFIRM: personal line — keep, cut, or reword? Draft: -->
-<!-- Outside work: music, film, weight training, football, and a dog called
-     Logan who takes up whatever time is left. -->
-
-## Shorter version
-
-For a design with less room (one paragraph):
-
-> I'm a technical lead at EV, in FinTech, based in Winchester — responsible
-> for a group of engineers and the work they ship. I came up as a full-stack
-> developer and still write code, but the job now is judgment: what's worth
-> building, keeping a team aligned, and owning the technical conversation with
-> clients and stakeholders.
-
-## Pull-quote option
-
-Several of the mockups wanted a short standalone statement somewhere on the
-page. Candidate line:
-
-> The best technical decision is usually the one that lets the team move
-> faster next quarter.
-
-<!-- CONFIRM: does this line ring true? It's Claude's, carried over from the
-     mockups. Keep, reword, or drop. -->
+<!-- CONFIRM: personal line — still undecided. If kept, it would go after the
+     paragraph above. Draft: "Outside work: music, film, weight training,
+     football, and a dog called Logan." -->
 
 ---
 
 <!--
-CURRENT LIVE SITE — About page, verbatim (what this file replaces):
+SUPERSEDED DRAFT (Claude's earlier leadership rewrite — kept for reference):
+
+  "I'm a technical lead at EV, in FinTech, based in Winchester. I'm
+  responsible for a group of engineers and the work they ship — how it gets
+  scoped and estimated, how it reaches production, and how the people doing
+  it are growing. I started as a full-stack developer and spent years
+  hands-on before the balance tipped toward leading. I still read and write
+  code, but the work now is judgment: deciding what's worth building, keeping
+  a team pointed the same way, and being the person who talks to clients and
+  stakeholders directly about technical trade-offs and what they cost."
+
+CURRENT LIVE SITE — About page, verbatim:
 
   "I'm a senior full stack developer and technical leader based in Winchester,
   Hampshire currently working in the FinTech sector. I specialise in Typescript
@@ -57,14 +46,11 @@ CURRENT LIVE SITE — About page, verbatim (what this file replaces):
   I'm always looking to work on new and exciting projects, so feel free to get
   in touch!"
 
-FULL SKILLS INVENTORY (from the old site — reference only, not page copy):
-
+FULL SKILLS INVENTORY (old site — reference only, not page copy):
   Front end:  TypeScript, JavaScript, React, React Native, Astro, Redux,
               Recoil, MobX, Tailwind, MaterialUI, Sass
   Back end:   Node.js, Koa, Express, Postgres, Prisma, GraphQL, MongoDB,
               Docker, AWS, Kubernetes, Jenkins, Python, Django, PHP, WordPress,
               Firebase
   Testing:    Jest, Cypress, Playwright, Cucumber
-  Tooling:    Git / GitHub / GitLab / BitBucket, Vim, Linux / macOS / WSL,
-              Figma, Sentry, Jira, Confluence, Notion
 -->

@@ -1,8 +1,15 @@
 name: Maximilian Coghlan
+
+# The four-part positioning line used under the hero.
+roles: [Technical leader, Engineering strategist, Speaker, Mentor]
+# Short form for <meta>/CV where the full line is too long:
 title: Technical Lead
-company: EV
 field: FinTech
+company: EV
 location: Winchester, UK
+
+# Career note that now appears in the About paragraph:
+# co-founded and exited a media production & agency business earlier in career.
 
 links:
   email: max.coghlan@gmail.com
@@ -11,6 +18,7 @@ links:
 seo:
   # CONFIRM: the one-line description for <meta>, search results, link previews
   description: >-
-    Maximilian Coghlan — engineering leader in FinTech, based in Winchester, UK.
-  # Old domain, assumed unchanged
+    Maximilian Coghlan — technical leader, engineering strategist and speaker
+    based in Winchester. Resilient systems, technical direction, and
+    high-performing engineering cultures.
   url: https://www.maxcoghlan.com
