@@ -84,9 +84,11 @@
   /* ---------- HERO BACKGROUND (80s / Memphis scatter, low-contrast grey) ----------
      Procedural: seeded scatter of triangles / squares / circles / dots /
      diagonal strokes + the "shape with a dot on it" motif, all in dark greys
-     on the void. Positions are fixed (seeded scatter, redrawn on resize);
-     most of the angular shapes (never circles) turn on the spot.
-     Behind the text, z-index 0.
+     on the void, on a jittered grid. ~2/3 of the angular shapes (never
+     circles) turn slowly on the spot. Most shapes run a slow fade cycle
+     (hidden -> fade in -> hold -> fade out) and reincarnate as a new shape
+     at a fresh spot in their cell each cycle, so pieces keep appearing and
+     disappearing across the field. Behind the text, z-index 0.
      (The falling-shapes variant was tried and set aside — see history.) */
   .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
   .hero__pattern{position:absolute;inset:0;width:100%;height:100%;display:block;}
@@ -210,10 +212,14 @@
 
 <script>
   /* Hero background — 80s / Memphis scatter in low-contrast grey. Procedural
-     and seeded (stable positions). The scatter is fixed; about half of the
-     angular shapes (squares / triangles / strokes — never circles) turn
-     on the spot, a turn every ~13-29s. Reduced motion: one static
-     frame. Loop pauses when the tab is hidden. */
+     and seeded, laid out on a jittered grid so coverage stays even. About
+     2/3 of the angular shapes (squares / triangles / strokes — never
+     circles) turn on the spot, a turn every ~13-29s. Most shapes also live
+     on their own slow cycle: hidden, fade in, hold, fade out — and each
+     time one completes a cycle it reincarnates at a fresh spot in its grid
+     cell as a new shape, so pieces keep appearing and disappearing across
+     the field. Reduced motion: one static full-opacity frame. Loop pauses
+     when the tab is hidden. */
   (function () {
     var hero = document.querySelector('.hero');
     var canvas = document.querySelector('.hero__pattern');
@@ -231,41 +237,55 @@
       };
     }
     var GREYS = ['#151515', '#1c1c1c', '#242424', '#2c2c2c', '#353535'];
-    var W = 0, H = 0, bits = [], raf = 0, t0 = 0, spinning = false;
+    var W = 0, H = 0, bits = [], raf = 0, t0 = 0, cw = 0, ch = 0;
+    var rng = mulberry32(0x9E3779B9);   // runtime stream for reincarnations
+
+    // (re)roll a shape's look + spin, keeping its home cell (b.cx, b.cy)
+    function rollShape(b, R) {
+      var kind = R();
+      var canSpin = kind < 0.40 || kind >= 0.76;
+      b.s = 9 + R() * R() * 48;
+      b.kind = kind;
+      b.x = b.cx + (R() - 0.5) * cw * 1.15;
+      b.y = b.cy + (R() - 0.5) * ch * 1.15;
+      b.grey = GREYS[(R() * GREYS.length) | 0];
+      b.dotGrey = GREYS[(R() * GREYS.length) | 0];
+      b.hasDot = kind < 0.54 && R() < 0.33;
+      b.dotR = 2.5 + R() * 4;
+      b.strokeH = 3 + R() * 2;
+      b.lines = 2 + ((R() * 2) | 0);
+      b.lineLen = 28 + R() * 44;
+      b.rot0 = R() * 6.2832;
+      b.rotV = (canSpin && R() < 0.66)
+        ? (0.22 + R() * 0.28) * (R() < 0.5 ? -1 : 1)   // 0.22-0.50 rad/s, ~one turn / 13-29s
+        : 0;
+    }
+    // gap -> fade in -> hold -> fade out, all in seconds
+    function rollLife(b, R) {
+      b.tGap = 1.5 + R() * 6;
+      b.tFade = 1.4 + R() * 1.6;
+      b.tVis = 10 + R() * 16;
+      b.cycle = b.tGap + b.tFade + b.tVis + b.tFade;
+    }
 
     function build() {
-      var rand = mulberry32(20250907);
+      var R = mulberry32(20250907);
       var count = Math.round(Math.min(190, Math.max(70, (W * H) / 9000)));
       var cols = Math.ceil(Math.sqrt(count * W / H));
       var rows = Math.ceil(count / cols);
-      var cw = W / cols, ch = H / rows;
-      bits = []; spinning = false;
+      cw = W / cols; ch = H / rows;
+      bits = [];
       for (var r = 0; r < rows; r++) for (var c = 0; c < cols; c++) {
-        var s = 9 + rand() * rand() * 48;
-        var kind = rand();
-        // only shapes where rotation actually reads: squares, triangles, strokes, speed-lines
-        var canSpin = kind < 0.40 || kind >= 0.76;
-        var spinRoll = rand();
-        var rotV = (canSpin && spinRoll < 0.66)
-          ? (0.22 + rand() * 0.28) * (rand() < 0.5 ? -1 : 1)   // ~2/3 of the angular shapes; 0.22-0.50 rad/s, ~one turn / 13-29s
-          : 0;
-        if (rotV) spinning = true;
-        bits.push({
-          x: (c + 0.5) * cw + (rand() - 0.5) * cw * 1.15,
-          y: (r + 0.5) * ch + (rand() - 0.5) * ch * 1.15,
-          s: s, kind: kind,
-          grey: GREYS[(rand() * GREYS.length) | 0],
-          dotGrey: GREYS[(rand() * GREYS.length) | 0],
-          hasDot: kind < 0.54 && rand() < 0.33,
-          dotR: 2.5 + rand() * 4,
-          strokeH: 3 + rand() * 2,
-          lines: 2 + ((rand() * 2) | 0),
-          lineLen: 28 + rand() * 44,
-          rot0: rand() * 6.2832,
-          rotV: rotV
-        });
+        var b = { cx: (c + 0.5) * cw, cy: (r + 0.5) * ch };
+        rollShape(b, R);
+        b.fades = R() < 0.72;
+        rollLife(b, R);
+        b.t0off = -(R() * b.cycle);   // u = el - t0off; start somewhere mid-cycle
+        b.lastCyc = 0;
+        bits.push(b);
       }
     }
+
     function shape(b) {
       var s = b.s, k = b.kind;
       ctx.fillStyle = b.grey;
@@ -290,20 +310,46 @@
         ctx.beginPath(); ctx.arc(0, 0, Math.max(3, s * 0.17), 0, 6.2832); ctx.fill();
       }
     }
+
+    function alphaAt(b, u) {
+      var x = u % b.cycle; if (x < 0) x += b.cycle;
+      if (x < b.tGap) return 0;
+      x -= b.tGap;
+      if (x < b.tFade) return x / b.tFade;
+      x -= b.tFade;
+      if (x < b.tVis) return 1;
+      x -= b.tVis;
+      return 1 - x / b.tFade;
+    }
+
     function paint(now) {
       var el = (now - t0) / 1000;
       ctx.clearRect(0, 0, W, H);
       for (var i = 0; i < bits.length; i++) {
         var b = bits[i];
+        var a = 1;
+        if (b.fades && !reduce) {
+          var u = el - b.t0off;
+          var cyc = Math.floor(u / b.cycle);
+          if (cyc !== b.lastCyc) {           // finished a cycle -> reincarnate elsewhere
+            rollShape(b, rng); rollLife(b, rng);
+            b.t0off = el; b.lastCyc = 0; u = 0;
+          }
+          a = alphaAt(b, u);
+          if (a <= 0.002) continue;
+        }
         ctx.save();
+        ctx.globalAlpha = a;
         ctx.translate(b.x, b.y);
-        ctx.rotate(b.rot0 + b.rotV * el);
+        ctx.rotate(b.rot0 + b.rotV * (reduce ? 0 : el));
         shape(b);
         ctx.restore();
       }
+      ctx.globalAlpha = 1;
     }
+
     function frame(now) { raf = 0; paint(now); raf = requestAnimationFrame(frame); }
-    function start() { if (!raf && spinning && !reduce) { if (!t0) t0 = performance.now(); raf = requestAnimationFrame(frame); } }
+    function start() { if (!raf && !reduce) { if (!t0) t0 = performance.now(); raf = requestAnimationFrame(frame); } }
     function stop() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
 
     function resize() {
@@ -313,7 +359,7 @@
       canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
       build();
-      if (spinning && !reduce) start();
+      if (!reduce) start();
       else { stop(); t0 = performance.now(); paint(t0); }
     }
 

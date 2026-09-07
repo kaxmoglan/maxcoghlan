@@ -22,15 +22,25 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
   (z-index 0). An **80s / Memphis scatter** — triangles, rotated squares,
   circles, small dots, single diagonal strokes, groups of parallel "speed
   lines", and the "shape with a dot on it" motif. Procedural + seeded
-  (`mulberry32`, so positions are stable), rebuilt on resize. All in
-  low-contrast greys (`GREYS` `#151515`–`#353535`) on the void, sized biased
-  small with the occasional large one; `count = (W·H)/9000` (~130 on desktop).
-  - Positions are fixed. A few of the **angular** shapes (squares, triangles,
-    strokes, speed-lines — never circles/dots, where a spin is invisible)
-    rotate on the spot: `rotV` 0.22–0.50 rad/s, ≈ one turn per 13–29s,
-    ~2/3 of the eligible shapes. The rest are static. The rAF loop only
-    runs if any shape is spinning and `prefers-reduced-motion` is not set
-    (then it's one static frame); it pauses when the tab is hidden.
+  (`mulberry32`), laid out on a **jittered grid** (one shape per cell, so
+  coverage stays even), rebuilt on resize. All in low-contrast greys
+  (`GREYS` `#151515`–`#353535`) on the void, sized biased small with the
+  occasional large one; `count = (W·H)/9000` (~130 on desktop).
+  - **Rotation:** the **angular** shapes (squares, triangles, strokes,
+    speed-lines — never circles/dots, where a spin is invisible) can turn
+    on the spot: `rotV` 0.22–0.50 rad/s, ≈ one turn per 13–29s, ~2/3 of the
+    eligible shapes.
+  - **Fade cycle:** ~72% of shapes (`b.fades`) run an independent slow
+    cycle — `tGap` hidden (1.5–7.5s) → `tFade` fade in (1.4–3s) → `tVis`
+    hold (10–26s) → `tFade` fade out. Phases are randomised so only a
+    handful are mid-transition at once. **Each time a shape finishes a
+    cycle it reincarnates** (`rollShape` from the runtime `rng` stream): a
+    new shape type at a fresh jittered spot **within its home cell**, so the
+    swap is invisible (happens at α≈0) and the grid never clumps or thins.
+    The other ~28% are permanent anchors.
+  - rAF loop runs continuously unless `prefers-reduced-motion` is set (then
+    one static full-opacity frame, no rotation); pauses when the tab is
+    hidden.
   - `<script>` at end of `<body>`. No cursor interaction.
   - Modelled on an 80s Memphis wallpaper Max supplied, in grey rather than the
     reference's bold colours.
