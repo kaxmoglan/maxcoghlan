@@ -86,7 +86,11 @@ strip = (
 )
 
 html = TPL.read_text()
-assert "<!--ANIM_FRAMES-->" in html, "placeholder missing from template"
-html = html.replace("<!--ANIM_FRAMES-->", strip)
+if "<!--ANIM_FRAMES-->" in html:
+    html = html.replace("<!--ANIM_FRAMES-->", strip)
+    note = "with animation"
+else:
+    # animation currently parked (see branch `hero-fx`) — pass the template through
+    note = "no ANIM_FRAMES placeholder — passed through (animation parked)"
 OUT.write_text(html)
-print(f"built {OUT.relative_to(ROOT)}: {OUT.stat().st_size} bytes")
+print(f"built {OUT.relative_to(ROOT)}: {OUT.stat().st_size} bytes ({note})")

@@ -36,6 +36,18 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
   - Modelled loosely on the opening seconds of svz.agency (the actual site
     behind this design), but abstracted well away from its literal shapes.
 
+## Parked (branch `hero-fx`, commit 34a13ce)
+
+The hero **background node field** and the **hand-drawn flipbook animation**
+are removed from the working design for now so the rest can move on. Both are
+intact on branch `hero-fx`. To bring them back: check the two files
+(`design/svz-reference.src.html`, `design/build-anim.py`) out of `hero-fx`
+and rerun `python3 design/build-anim.py` — or `git revert` the removal
+commit. `build-anim.py` is a no-op passthrough while the `<!--ANIM_FRAMES-->`
+placeholder is absent from the template.
+
+The two sections below describe them as they were.
+
 ## Hero animation
 
 The hand-drawn flipbook (a figure hammering at a keyboard, monitor glow) is
