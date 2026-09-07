@@ -18,23 +18,26 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
 - Headline: "Hi, I'm" (Playfair italic) / "MAXIMILIAN" (Inter 700 caps) with
   a red dot as the full stop. Roles sub-line under it.
 - No "About" link in the hero.
-- Background: `.hero__bg` > `<canvas class="hero__nodes">`, behind the text
-  (z-index 0). A whisper-faint jittered grid of ~50–80 dots (`REST` alpha
-  0.05). While the pointer moves over the hero, nodes near it brighten, a
-  faint line draws from each to the pointer, and neighbouring lit nodes link
-  up — everything scaled by a global `strength`.
-  - **Ease in / fade out**: `strength` eases toward 1 (`IN_TAU` 90ms) while
-    the pointer is moving, then toward 0 (`OUT_TAU` 190ms) once it's been
-    still for `HOLD` (450ms). Moves under 5px (`JITTER2`) don't count as
-    movement — stops trackpad noise from holding the reveal open.
-  - `<script>` at end of `<body>`. rAF loop runs only while `strength > 0`
-    or the pointer is active. Reduced motion: static dots, no interaction.
-  - The earlier passes — drifting charcoal shapes, then cogs, then a
-    cursor-parallax — all read as clip-art / "creative-coding demo" and were
-    dropped. This is the version Max kept. History for those is in commits up
-    to 8b91ca6 if ever wanted.
-  - Modelled loosely on the opening seconds of svz.agency (the actual site
-    behind this design), but abstracted well away from its literal shapes.
+- Background: `.hero__bg` > `<canvas class="hero__pattern">`, behind the text
+  (z-index 0). An **80s / Memphis scatter** — triangles, rotated squares,
+  circles, small dots, single diagonal strokes, groups of parallel "speed
+  lines", and the "shape with a dot on it" motif. Procedural + seeded
+  (`mulberry32`, so positions are stable), rebuilt on resize. All in
+  low-contrast greys (`GREYS` `#151515`–`#353535`) on the void, sized biased
+  small with the occasional large one; `count = (W·H)/9000` (~130 on desktop).
+  - Positions are fixed. A few of the **angular** shapes (squares, triangles,
+    strokes, speed-lines — never circles/dots, where a spin is invisible)
+    rotate on the spot: `rotV` 0.22–0.50 rad/s, ≈ one turn per 13–29s,
+    ~2/3 of the eligible shapes. The rest are static. The rAF loop only
+    runs if any shape is spinning and `prefers-reduced-motion` is not set
+    (then it's one static frame); it pauses when the tab is hidden.
+  - `<script>` at end of `<body>`. No cursor interaction.
+  - Modelled on an 80s Memphis wallpaper Max supplied, in grey rather than the
+    reference's bold colours.
+  - **Tried and set aside** (all in `rebuild` history): a cursor-reactive node
+    field (up to 34a13ce, now parked on `hero-fx`); drifting charcoal
+    shapes / cogs / cursor-parallax (to 8b91ca6); and a falling-shapes variant
+    of this Memphis pattern (in the diff before this was committed static).
 
 ## Parked (branch `hero-fx`, commit 34a13ce)
 
