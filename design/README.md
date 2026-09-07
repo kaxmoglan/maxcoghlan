@@ -18,20 +18,23 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
 - Headline: "Hi, I'm" (Playfair italic) / "MAXIMILIAN" (Inter 700 caps) with
   a red dot as the full stop. Roles sub-line under it.
 - No "About" link in the hero.
-- Background: `.hero__bg` — charcoal shapes — two cogs (a
-  "Cog-hlan" nod; rotation is their natural motion), an angled bar, a disc + the faint outline ring top-right.
-  Modelled on the opening seconds of svz.agency (the actual site behind this
-  design). Behind the text (z-index 0), frozen under `prefers-reduced-motion`,
-  bar+disc hidden below 640px.
-  - **Roam**: each shape runs its own slow looping path (`@keyframes roam-*`,
-    64–130s, big translate + full rotate, returns to start).
-  - **Cursor parallax**: the `<script>` at the end sets `--mx/--my` on
-    `.hero__bg` (pointer offset from centre, −1..1, negated); each shape
-    offsets by its own `--d` (10–44px) via the `translate` *property*, which
-    composes with the animated `transform` instead of overriding it. Eased
-    (`transition: translate`), rAF-throttled, disabled under reduced motion.
-  - Deliberately NOT cursor-repulsion — too "creative-coding demo" for this
-    design's register, and most shapes sit behind the headline/animation.
+- Background: `.hero__bg` > `<canvas class="hero__nodes">`, behind the text
+  (z-index 0). A whisper-faint jittered grid of ~50–80 dots (`REST` alpha
+  0.05). While the pointer moves over the hero, nodes near it brighten, a
+  faint line draws from each to the pointer, and neighbouring lit nodes link
+  up — everything scaled by a global `strength`.
+  - **Ease in / fade out**: `strength` eases toward 1 (`IN_TAU` 90ms) while
+    the pointer is moving, then toward 0 (`OUT_TAU` 190ms) once it's been
+    still for `HOLD` (450ms). Moves under 5px (`JITTER2`) don't count as
+    movement — stops trackpad noise from holding the reveal open.
+  - `<script>` at end of `<body>`. rAF loop runs only while `strength > 0`
+    or the pointer is active. Reduced motion: static dots, no interaction.
+  - The earlier passes — drifting charcoal shapes, then cogs, then a
+    cursor-parallax — all read as clip-art / "creative-coding demo" and were
+    dropped. This is the version Max kept. History for those is in commits up
+    to 8b91ca6 if ever wanted.
+  - Modelled loosely on the opening seconds of svz.agency (the actual site
+    behind this design), but abstracted well away from its literal shapes.
 
 ## Hero animation
 

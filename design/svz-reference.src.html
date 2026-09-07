@@ -77,84 +77,13 @@
     display:flex;flex-direction:column;justify-content:center;
     padding-top:120px;padding-bottom:80px;
   }
-  /* ---------- HERO BACKGROUND SHAPES (roaming charcoal geometry, à la svz.agency) ----------
-     Each shape follows its own slow looping path (transform). On top of that,
-     JS sets --mx/--my (cursor offset from centre, -1..1, negated) and each
-     shape parallaxes by --d px via the `translate` property — which composes
-     with the animated `transform` instead of fighting it. */
+  /* ---------- HERO BACKGROUND ----------
+     A whisper-faint node field on canvas. At rest the nodes are barely
+     visible; moving the cursor brightens the nodes near it and draws hairlines
+     to the pointer and between neighbours — the interaction is the reveal.
+     Script at the end of <body>. */
   .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
-  .hero__bg > *{
-    position:absolute;
-    translate: calc(var(--mx,0) * var(--d,0px)) calc(var(--my,0) * var(--d,0px));
-    transition: translate .8s cubic-bezier(.16,1,.3,1);
-  }
-
-  .bg-ring{
-    --d:10px;
-    top:-14%;right:-12%;width:min(680px,60vw);aspect-ratio:1;
-    border:1px solid var(--color-smoke);border-radius:50%;
-    animation:roam-ring 130s linear infinite;
-  }
-  /* cogs — a nod to "Cog-hlan"; rotation is their natural motion */
-  .bg-cog{display:block;}
-  .bg-cog polygon{fill:var(--color-charcoal);}
-  .bg-cog circle{fill:var(--color-void);}
-  .bg-cog--lg{
-    --d:38px;
-    left:-11%;bottom:0;width:min(460px,42vw);aspect-ratio:1;
-    animation:roam-cog-lg 72s linear infinite;
-  }
-  .bg-cog--sm{
-    --d:28px;
-    left:3%;top:5%;width:min(190px,17vw);aspect-ratio:1;
-    animation:roam-cog-sm 86s linear infinite;
-  }
-  .bg-cog--sm polygon{fill:var(--color-smoke);}
-  .bg-bar{
-    --d:44px;
-    right:-6%;top:28%;width:min(460px,38vw);height:clamp(26px,3.2vw,48px);
-    background:var(--color-charcoal);
-    animation:roam-bar 64s linear infinite;
-  }
-  .bg-disc{
-    --d:32px;
-    left:26%;bottom:-30%;width:min(420px,36vw);aspect-ratio:1;border-radius:50%;
-    background:var(--color-charcoal);
-    animation:roam-disc 98s linear infinite;
-  }
-
-  @keyframes roam-ring{
-    0%{transform:translate(0,0) rotate(0deg);}
-    50%{transform:translate(-40px,30px) rotate(180deg);}
-    100%{transform:translate(0,0) rotate(360deg);}
-  }
-  @keyframes roam-cog-lg{
-    0%{transform:translate(0,0) rotate(0deg);}
-    25%{transform:translate(120px,-50px) rotate(90deg);}
-    50%{transform:translate(60px,70px) rotate(180deg);}
-    75%{transform:translate(-80px,25px) rotate(270deg);}
-    100%{transform:translate(0,0) rotate(360deg);}
-  }
-  @keyframes roam-cog-sm{
-    0%{transform:translate(0,0) rotate(0deg);}
-    25%{transform:translate(-70px,90px) rotate(-90deg);}
-    50%{transform:translate(40px,150px) rotate(-180deg);}
-    75%{transform:translate(110px,60px) rotate(-270deg);}
-    100%{transform:translate(0,0) rotate(-360deg);}
-  }
-  @keyframes roam-bar{
-    0%{transform:translate(0,0) rotate(-16deg);}
-    33%{transform:translate(-130px,60px) rotate(-8deg);}
-    66%{transform:translate(-60px,-40px) rotate(-22deg);}
-    100%{transform:translate(0,0) rotate(-16deg);}
-  }
-  @keyframes roam-disc{
-    0%{transform:translate(0,0) rotate(0deg);}
-    33%{transform:translate(90px,-40px) rotate(12deg);}
-    66%{transform:translate(-70px,-20px) rotate(-8deg);}
-    100%{transform:translate(0,0) rotate(0deg);}
-  }
-  @media (max-width:640px){ .bg-bar,.bg-disc{display:none;} }
+  .hero__nodes{position:absolute;inset:0;width:100%;height:100%;}
 
   /* ---------- HERO ANIMATION (hand-drawn flipbook, glow recoloured to arterial red) ---------- */
   /* Real flipbook: all 5 frames are ONE 500x1780 <svg> strip; a steps()
@@ -232,7 +161,6 @@
   @media (prefers-reduced-motion: reduce){
     * { scroll-behavior:auto !important; }
     .hero__anim .anim__strip{animation:none;}
-    .hero__bg > *{animation:none;}
   }
 </style>
 
@@ -248,11 +176,7 @@
 
 <header class="hero pad" id="top">
   <div class="hero__bg" aria-hidden="true">
-    <div class="bg-ring"></div>
-    <svg class="bg-cog bg-cog--lg" viewBox="0 0 100 100"><polygon points="86.97,51.39 97.62,56.02 96.49,61.94 84.89,62.31 82.64,67.42 79.09,72.86 84.99,82.86 80.60,86.98 70.99,80.47 66.17,83.28 60.10,85.60 58.99,97.15 53.01,97.91 49.07,86.99 43.52,86.43 37.25,84.73 29.56,93.43 24.28,90.53 27.51,79.38 23.35,75.67 19.27,70.60 7.94,73.12 5.37,67.67 14.53,60.55 13.35,55.10 13.03,48.61 2.38,43.98 3.51,38.06 15.11,37.69 17.36,32.58 20.91,27.14 15.01,17.14 19.40,13.02 29.01,19.53 33.83,16.72 39.90,14.40 41.01,2.85 46.99,2.09 50.93,13.01 56.48,13.57 62.75,15.27 70.44,6.57 75.72,9.47 72.49,20.62 76.65,24.33 80.73,29.40 92.06,26.88 94.63,32.33 85.47,39.45 86.65,44.90"/><circle cx="50" cy="50" r="15"/></svg>
-    <svg class="bg-cog bg-cog--sm" viewBox="0 0 100 100"><polygon points="86.97,51.39 97.62,56.02 96.49,61.94 84.89,62.31 82.64,67.42 79.09,72.86 84.99,82.86 80.60,86.98 70.99,80.47 66.17,83.28 60.10,85.60 58.99,97.15 53.01,97.91 49.07,86.99 43.52,86.43 37.25,84.73 29.56,93.43 24.28,90.53 27.51,79.38 23.35,75.67 19.27,70.60 7.94,73.12 5.37,67.67 14.53,60.55 13.35,55.10 13.03,48.61 2.38,43.98 3.51,38.06 15.11,37.69 17.36,32.58 20.91,27.14 15.01,17.14 19.40,13.02 29.01,19.53 33.83,16.72 39.90,14.40 41.01,2.85 46.99,2.09 50.93,13.01 56.48,13.57 62.75,15.27 70.44,6.57 75.72,9.47 72.49,20.62 76.65,24.33 80.73,29.40 92.06,26.88 94.63,32.33 85.47,39.45 86.65,44.90"/><circle cx="50" cy="50" r="15"/></svg>
-    <div class="bg-bar"></div>
-    <div class="bg-disc"></div>
+    <canvas class="hero__nodes"></canvas>
   </div>
   <div class="hero__anim" aria-hidden="true"><!--ANIM_FRAMES--></div>
   <h1 class="hero__title">
@@ -301,30 +225,115 @@
 </footer>
 
 <script>
-  /* Cursor parallax for the hero background shapes.
-     Sets --mx/--my on .hero__bg (cursor offset from centre, -1..1, negated
-     for a true-parallax feel); the shapes each translate by their own --d. */
+  /* Hero node field. A static jittered-grid of faint dots on canvas. At rest
+     they're barely visible; while the pointer moves over the hero the nodes
+     near it brighten, a faint line draws from each to the pointer, and
+     neighbouring lit nodes link up. The whole reveal (`strength`) eases in
+     quickly, holds ~2.2s after the pointer stops (small jitter ignored), then
+     eases out. Reduced motion: static dots, no interaction. */
   (function () {
-    var bg = document.querySelector('.hero__bg');
     var hero = document.querySelector('.hero');
-    if (!bg || !hero) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var canvas = document.querySelector('.hero__nodes');
+    if (!hero || !canvas) return;
+    var ctx = canvas.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, nodes = [];
+    var mx = -9999, my = -9999;
+    var strength = 0, lastMove = -1e9, lastX = 0, lastY = 0, lastTs = 0, loopRaf = 0;
+    var REST = 0.05, R = 330, LINK = 185;
+    var NODE_MAX = 0.4, CURSOR_LINE = 0.32, PAIR_LINE = 0.2;
+    var HOLD = 450;               // ms of stillness before the fade-out
+    var IN_TAU = 90, OUT_TAU = 190;   // ease time constants (ms)
+    var JITTER2 = 25;            // ignore pointer moves under 5px (trackpad noise)
 
-    var raf = 0, tx = 0, ty = 0;
-    function apply() {
-      raf = 0;
-      bg.style.setProperty('--mx', tx.toFixed(3));
-      bg.style.setProperty('--my', ty.toFixed(3));
+    function build() {
+      var target = Math.min(80, Math.max(24, Math.round((W * H) / 22000)));
+      var cols = Math.max(2, Math.round(Math.sqrt(target * W / H)));
+      var rows = Math.max(2, Math.round(target / cols));
+      var cw = W / cols, ch = H / rows;
+      nodes = [];
+      for (var r = 0; r < rows; r++) for (var c = 0; c < cols; c++) {
+        nodes.push({
+          x: (c + 0.5) * cw + (Math.random() - 0.5) * cw * 0.8,
+          y: (r + 0.5) * ch + (Math.random() - 0.5) * ch * 0.8
+        });
+      }
     }
-    window.addEventListener('mousemove', function (e) {
-      var r = hero.getBoundingClientRect();
-      tx = -(((e.clientX - r.left) / r.width) - 0.5) * 2;
-      ty = -(((e.clientY - r.top) / r.height) - 0.5) * 2;
-      if (!raf) raf = requestAnimationFrame(apply);
-    }, { passive: true });
-    window.addEventListener('mouseleave', function () {
-      tx = ty = 0;
-      if (!raf) raf = requestAnimationFrame(apply);
-    }, { passive: true });
+    function resize() {
+      var rect = hero.getBoundingClientRect();
+      W = rect.width; H = rect.height;
+      canvas.width = W * DPR; canvas.height = H * DPR;
+      canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      build();
+      draw();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      function prox(d) { var t = d < R ? 1 - d / R : 0; return t * t; }
+
+      for (var i = 0; i < nodes.length; i++) {
+        var p = nodes[i];
+        var t = prox(Math.hypot(p.x - mx, p.y - my)) * strength;
+
+        if (t > 0) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y); ctx.lineTo(mx, my);
+          ctx.strokeStyle = 'rgba(243,239,239,' + (t * CURSOR_LINE).toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          for (var j = i + 1; j < nodes.length; j++) {
+            var q = nodes[j];
+            var t2 = prox(Math.hypot(q.x - mx, q.y - my)) * strength;
+            if (t2 <= 0) continue;
+            var dd = Math.hypot(p.x - q.x, p.y - q.y);
+            if (dd >= LINK) continue;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = 'rgba(243,239,239,' +
+              ((1 - dd / LINK) * Math.min(t, t2) * PAIR_LINE).toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.1 + t * 1.4, 0, 6.2832);
+        ctx.fillStyle = 'rgba(243,239,239,' + (REST + t * NODE_MAX).toFixed(3) + ')';
+        ctx.fill();
+      }
+    }
+    function tick(ts) {
+      loopRaf = 0;
+      var dt = Math.min(50, ts - (lastTs || ts)); lastTs = ts;
+      var target = (performance.now() - lastMove) < HOLD ? 1 : 0;
+      var tau = target > strength ? IN_TAU : OUT_TAU;
+      strength += (target - strength) * (1 - Math.exp(-dt / tau));
+      if (target === 0 && strength < 0.002) strength = 0;
+      draw();
+      if (strength > 0 || target > 0) loopRaf = requestAnimationFrame(tick);
+    }
+    function wake() { if (!loopRaf) loopRaf = requestAnimationFrame(tick); }
+
+    window.addEventListener('resize', resize, { passive: true });
+    if (!reduce) {
+      window.addEventListener('pointermove', function (e) {
+        var rect = hero.getBoundingClientRect();
+        var x = e.clientX - rect.left, y = e.clientY - rect.top;
+        mx = x; my = y;
+        if (y < 0 || y > H) { lastMove = 0; wake(); return; }
+        if ((x - lastX) * (x - lastX) + (y - lastY) * (y - lastY) > JITTER2) {
+          lastMove = performance.now(); lastX = x; lastY = y;
+        }
+        wake();
+      }, { passive: true });
+      document.addEventListener('pointerleave', function () {
+        lastMove = 0;
+        wake();
+      }, { passive: true });
+    }
+    resize();
   })();
 </script>
