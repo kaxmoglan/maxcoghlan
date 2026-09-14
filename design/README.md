@@ -19,17 +19,26 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
   a red dot as the full stop. Roles sub-line under it.
 - No "About" link in the hero.
 - Background: `.hero__bg` > `<canvas class="hero__pattern">`, behind the text
-  (z-index 0). An **80s / Memphis scatter** — triangles, rotated squares,
-  circles, small dots, single diagonal strokes, groups of parallel "speed
-  lines", and the "shape with a dot on it" motif. Procedural + seeded
+  (z-index 0). An **80s / Memphis scatter** — filled squares & triangles,
+  hatched (striped) triangles, crescent arcs, filled circles, concentric
+  rings, small dots, plus/cross bars (which rotate into an X), zigzag
+  strokes, single diagonal strokes, groups of parallel "speed lines", and
+  the "shape with a dot on it" motif. Procedural + seeded
   (`mulberry32`), laid out on a **jittered grid** (one shape per cell, so
   coverage stays even), rebuilt on resize. All in low-contrast greys
   (`GREYS` `#151515`–`#353535`) on the void, sized biased small with the
   occasional large one; `count = (W·H)/9000` (~130 on desktop).
-  - **Rotation:** the **angular** shapes (squares, triangles, strokes,
-    speed-lines — never circles/dots, where a spin is invisible) can turn
-    on the spot: `rotV` 0.22–0.50 rad/s, ≈ one turn per 13–29s, ~2/3 of the
-    eligible shapes.
+  - **Shape mix:** the `SHAPES` table (top of the script) is the single
+    tuning point — one row per shape with a relative weight `w` (need not
+    sum to anything), plus `spin` (may it rotate) and `dot` (may it carry
+    the dot motif). `pickShape()` does a weighted pick; row order fixes the
+    integer `b.kind` that `shape()` switches on. Defaults lean on the quiet
+    building blocks (`square`/`triangle`/`dot` ≈ half of all picks) and keep
+    the loud ones (`hatchTri`, `rings`, `zigzag`, `crescent`) rare.
+  - **Rotation:** shapes with `spin:true` (everything except `circle`,
+    `rings`, `dot` — a spin doesn't read on those) can turn on the spot:
+    `rotV` 0.22–0.50 rad/s, ≈ one turn per 13–29s, ~2/3 of the eligible
+    shapes.
   - **Fade cycle:** ~72% of shapes (`b.fades`) run an independent slow
     cycle — `tGap` hidden (1.5–7.5s) → `tFade` fade in (1.4–3s) → `tVis`
     hold (10–26s) → `tFade` fade out. Phases are randomised so only a

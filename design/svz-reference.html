@@ -82,10 +82,13 @@
   }
 
   /* ---------- HERO BACKGROUND (80s / Memphis scatter, low-contrast grey) ----------
-     Procedural: seeded scatter of triangles / squares / circles / dots /
-     diagonal strokes + the "shape with a dot on it" motif, all in dark greys
-     on the void, on a jittered grid. ~2/3 of the angular shapes (never
-     circles) turn slowly on the spot. Most shapes run a slow fade cycle
+     Procedural: seeded scatter of squares / triangles / hatched triangles /
+     crescents / circles / concentric rings / dots / plus-crosses / zigzags /
+     diagonal strokes / speed-lines + the "shape with a dot on it" motif, all
+     in dark greys on the void, on a jittered grid. Per-shape frequency is
+     set by the `SHAPES` weight table at the top of the script. ~2/3 of the
+     angular shapes (never circles / rings / dots) turn slowly on the spot.
+     Most shapes run a slow fade cycle
      (hidden -> fade in -> hold -> fade out) and reincarnate as a new shape
      at a fresh spot in their cell each cycle, so pieces keep appearing and
      disappearing across the field. Behind the text, z-index 0.
@@ -240,23 +243,51 @@
     var W = 0, H = 0, bits = [], raf = 0, t0 = 0, cw = 0, ch = 0;
     var rng = mulberry32(0x9E3779B9);   // runtime stream for reincarnations
 
+    /* How often each shape turns up (relative weights — tune freely; they
+       don't need to sum to anything). `spin` = may rotate on the spot;
+       `dot` = may carry the little dot-on-shape motif. Order fixes the
+       integer id stored on b.kind and read by shape(). */
+    var SHAPES = [
+      { id: 0,  name: 'square',      w: 15, spin: true,  dot: true  },
+      { id: 1,  name: 'triangle',    w: 15, spin: true,  dot: true  },
+      { id: 2,  name: 'hatchTri',    w: 6,  spin: true,  dot: true  },
+      { id: 3,  name: 'crescent',    w: 5,  spin: true,  dot: false },
+      { id: 4,  name: 'circle',      w: 9,  spin: false, dot: false },
+      { id: 5,  name: 'rings',       w: 4,  spin: false, dot: false },
+      { id: 6,  name: 'dot',         w: 18, spin: false, dot: false },
+      { id: 7,  name: 'plus',        w: 8,  spin: true,  dot: false },
+      { id: 8,  name: 'zigzag',      w: 5,  spin: true,  dot: false },
+      { id: 9,  name: 'stroke',      w: 8,  spin: true,  dot: false },
+      { id: 10, name: 'speedlines',  w: 6,  spin: true,  dot: false }
+    ];
+    var CUM = (function () {
+      var a = [], t = 0, i;
+      for (i = 0; i < SHAPES.length; i++) { t += SHAPES[i].w; a.push(t); }
+      for (i = 0; i < a.length; i++) a[i] /= t;
+      return a;
+    })();
+    function pickShape(R) {
+      var u = R(), i;
+      for (i = 0; i < CUM.length; i++) if (u < CUM[i]) return SHAPES[i];
+      return SHAPES[SHAPES.length - 1];
+    }
+
     // (re)roll a shape's look + spin, keeping its home cell (b.cx, b.cy)
     function rollShape(b, R) {
-      var kind = R();
-      var canSpin = kind < 0.40 || kind >= 0.76;
+      var meta = pickShape(R);
+      b.kind = meta.id;
       b.s = 9 + R() * R() * 48;
-      b.kind = kind;
       b.x = b.cx + (R() - 0.5) * cw * 1.15;
       b.y = b.cy + (R() - 0.5) * ch * 1.15;
       b.grey = GREYS[(R() * GREYS.length) | 0];
       b.dotGrey = GREYS[(R() * GREYS.length) | 0];
-      b.hasDot = kind < 0.54 && R() < 0.33;
+      b.hasDot = meta.dot && R() < 0.30;
       b.dotR = 2.5 + R() * 4;
       b.strokeH = 3 + R() * 2;
       b.lines = 2 + ((R() * 2) | 0);
       b.lineLen = 28 + R() * 44;
       b.rot0 = R() * 6.2832;
-      b.rotV = (canSpin && R() < 0.66)
+      b.rotV = (meta.spin && R() < 0.66)
         ? (0.22 + R() * 0.28) * (R() < 0.5 ? -1 : 1)   // 0.22-0.50 rad/s, ~one turn / 13-29s
         : 0;
     }
@@ -287,22 +318,56 @@
     }
 
     function shape(b) {
-      var s = b.s, k = b.kind;
-      ctx.fillStyle = b.grey;
-      if (k < 0.22) {
+      var s = b.s, g = b.grey;
+      ctx.fillStyle = g;
+      if (b.kind === 0) {                   // filled square
         ctx.fillRect(-s / 2, -s / 2, s, s);
-      } else if (k < 0.40) {
+      } else if (b.kind === 1) {            // filled triangle
         ctx.beginPath();
         ctx.moveTo(0, -s * 0.6); ctx.lineTo(s * 0.55, s * 0.45); ctx.lineTo(-s * 0.55, s * 0.45);
         ctx.closePath(); ctx.fill();
-      } else if (k < 0.54) {
+      } else if (b.kind === 2) {            // hatched (striped) triangle
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(0, -s * 0.62); ctx.lineTo(s * 0.58, s * 0.46); ctx.lineTo(-s * 0.58, s * 0.46);
+        ctx.closePath(); ctx.clip();
+        var step = Math.max(3, s * 0.17), bh = Math.max(1.4, s * 0.075);
+        for (var y = -s * 0.6; y < s * 0.5; y += step) ctx.fillRect(-s * 0.62, y, s * 1.24, bh);
+        ctx.restore();
+      } else if (b.kind === 3) {            // crescent / open arc
+        ctx.strokeStyle = g;
+        ctx.lineWidth = Math.max(1.5, s * 0.11);
+        ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.arc(0, 0, s * 0.5, 0.55, 0.55 + 3.6); ctx.stroke();
+      } else if (b.kind === 4) {            // filled circle
         ctx.beginPath(); ctx.arc(0, 0, s * 0.5, 0, 6.2832); ctx.fill();
-      } else if (k < 0.76) {
+      } else if (b.kind === 5) {            // concentric rings
+        ctx.strokeStyle = g;
+        ctx.lineWidth = Math.max(1, s * 0.06);
+        ctx.beginPath(); ctx.arc(0, 0, s * 0.5, 0, 6.2832); ctx.stroke();
+        ctx.beginPath(); ctx.arc(0, 0, s * 0.27, 0, 6.2832); ctx.stroke();
+      } else if (b.kind === 6) {            // small dot
         ctx.beginPath(); ctx.arc(0, 0, b.dotR, 0, 6.2832); ctx.fill();
-      } else if (k < 0.89) {
+      } else if (b.kind === 7) {            // plus / cross (rotates into an X)
+        var arm = s * 0.6, th = Math.max(2.2, s * 0.22);
+        ctx.fillRect(-th / 2, -arm, th, arm * 2);
+        ctx.fillRect(-arm, -th / 2, arm * 2, th);
+      } else if (b.kind === 8) {            // zigzag stroke
+        ctx.strokeStyle = g;
+        ctx.lineWidth = Math.max(1.5, s * 0.09);
+        ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+        var w = s * 1.6, q = w / 4;
+        ctx.beginPath();
+        ctx.moveTo(-w / 2, s * 0.02);
+        ctx.lineTo(-w / 2 + q, -s * 0.34);
+        ctx.lineTo(-w / 2 + 2 * q, s * 0.12);
+        ctx.lineTo(-w / 2 + 3 * q, -s * 0.24);
+        ctx.lineTo(w / 2, s * 0.16);
+        ctx.stroke();
+      } else if (b.kind === 9) {            // single diagonal stroke
         var len = s * 1.5 + 12;
         ctx.fillRect(-len / 2, -2, len, b.strokeH);
-      } else {
+      } else {                             // 10 — parallel "speed lines"
         for (var i = 0; i < b.lines; i++) ctx.fillRect(-b.lineLen / 2, i * 5 - 4, b.lineLen, 2);
       }
       if (b.hasDot) {
