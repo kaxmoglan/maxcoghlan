@@ -25,9 +25,10 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
   strokes, single diagonal strokes, groups of parallel "speed lines", and
   the "shape with a dot on it" motif. Procedural + seeded
   (`mulberry32`), laid out on a **jittered grid** (one shape per cell, so
-  coverage stays even), rebuilt on resize. All in low-contrast greys
-  (`GREYS` `#151515`–`#353535`) on the void, sized biased small with the
-  occasional large one; `count = (W·H)/9000` (~130 on desktop).
+  coverage stays even), rebuilt on resize. All in very low-contrast greys
+  close to the void (`GREYS` `#0d0d0d`–`#212121`), sized biased small with
+  the occasional large one; `count = (W·H)/14000` (~80 on desktop, capped
+  45–120).
   - **Shape mix:** the `SHAPES` table (top of the script) is the single
     tuning point — one row per shape with a relative weight `w` (need not
     sum to anything), plus `spin` (may it rotate) and `dot` (may it carry
@@ -37,7 +38,7 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
     the loud ones (`hatchTri`, `rings`, `zigzag`, `crescent`) rare.
   - **Rotation:** shapes with `spin:true` (everything except `circle`,
     `rings`, `dot` — a spin doesn't read on those) can turn on the spot:
-    `rotV` 0.22–0.50 rad/s, ≈ one turn per 13–29s, ~2/3 of the eligible
+    `rotV` 0.10–0.24 rad/s, ≈ one turn per 26–63s, ~2/3 of the eligible
     shapes.
   - **Fade cycle:** ~72% of shapes (`b.fades`) run an independent slow
     cycle — `tGap` hidden (1.5–7.5s) → `tFade` fade in (1.4–3s) → `tVis`
@@ -57,6 +58,21 @@ Working design reference for the rebuild. The chosen direction is **SVZ**
     field (up to 34a13ce, now parked on `hero-fx`); drifting charcoal
     shapes / cogs / cursor-parallax (to 8b91ca6); and a falling-shapes variant
     of this Memphis pattern (in the diff before this was committed static).
+- **Text glow:** `.hero__glow`, a static `radial-gradient` div between the
+  pattern (z-index 0) and the text (z-index 2), at z-index 1. Roughly
+  centered on the headline block (`ellipse 55% 42% at 26% 52%`), low alpha
+  (`rgba(252,252,252,0.10)`) — lifts the text off the scatter without
+  reading as a spotlight. No JS, no animation.
+  - **Tried and rejected:** a `box-shadow`-based glow sized to the text's
+    own box (`width:fit-content` on `.hero__title`/`.hero__kicker`) instead
+    of a fixed-position wash — Max didn't like it, reverted 2026-09-14.
+- **Film grain:** `.hero__grain`, `z-index:3` — above the pattern *and* the
+  text, so it textures the whole frame rather than just the background.
+  Static SVG `feTurbulence` noise tiled as a `background-image`; the noise
+  drives **alpha** (white speckle, varying opacity) rather than a
+  `mix-blend-mode` against the void — `overlay` barely touches near-black
+  pixels, so that first attempt was invisible. `opacity:0.32`. No JS.
+  Both are trial layers — easy to cut: delete the `<div>` + its one CSS rule.
 
 ## Parked (branch `hero-fx`, commit 34a13ce)
 
